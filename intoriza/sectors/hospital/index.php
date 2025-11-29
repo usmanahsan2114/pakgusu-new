@@ -72,12 +72,12 @@ include($path . 'include/header.php');
                                 <div class="widget bg-white">
                                     <h4 class="widget-title">Sectors We Serve</h4>
                                     <ul class="list-2">
-                                        <li><a href="<?php echo $path; ?>sectors/pharmaceutical-nutraceutical/index.php">Pharmaceutical / Nutraceutical</a></li>
+                                        <li><a href="<?php echo $path; ?>sectors/pharmaceutical/index.php">Pharmaceutical / Nutraceutical</a></li>
                                         <li><a href="<?php echo $path; ?>sectors/hospital/index.php">Hospital</a></li>
                                         <li><a href="<?php echo $path; ?>sectors/food-industry/index.php">Food Industry</a></li>
                                         <li><a href="<?php echo $path; ?>sectors/electronics/index.php">Electronics</a></li>
                                         <li><a href="<?php echo $path; ?>sectors/laboratories/index.php">Laboratories</a></li>
-                                        <li><a href="<?php echo $path; ?>sectors/medical-surgical-devices/index.php">Medical / Surgical Devices</a></li>
+                                        <li><a href="<?php echo $path; ?>sectors/medical-devices/index.php">Medical / Surgical Devices</a></li>
                                     </ul>
                                 </div>
                                 
