@@ -1,6 +1,6 @@
 <?php
 $path = '../';
-$page_title = 'Contact 1';
+$page_title = 'Contact Us';
 include($path . 'include/head.php');
 include($path . 'include/header.php');
 ?>
@@ -23,7 +23,7 @@ include($path . 'include/header.php');
                         
                             <div>
                                 <ul class="wt-breadcrumb breadcrumb-style-2">
-                                    <li><a href="<?php echo $path; ?>index.php">Home</a></li></li>
+                                    <li><a href="<?php echo $path; ?>index.php">Home</a></li>
                                     <li>Contact Us</li>
                                 </ul>
                             </div>

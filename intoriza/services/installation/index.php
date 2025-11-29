@@ -77,7 +77,7 @@ include($path . 'include/header.php');
                                 <div class="widget bg-white">
                                     <h4 class="widget-title">Services</h4>
                                     <ul class="list-2">
-                                        <li><a href="<?php echo $path; ?>services/planning-and-design/index.php">Planning & Design</a></li>
+                                        <li><a href="<?php echo $path; ?>services/planning-design/index.php">Planning & Design</a></li>
                                         <li><a href="<?php echo $path; ?>services/clean-room-construction/index.php">Clean Room Construction</a></li>
                                         <li><a href="<?php echo $path; ?>services/installation/index.php">Installation</a></li>
                                         <li><a href="<?php echo $path; ?>services/after-sale-services/index.php">After-Sale Services</a></li>

@@ -55,13 +55,30 @@ include($path . 'include/header.php');
                                 <p>Established in 1995, Gusu China has grown from a small manufacturing unit to one of Asia's largest cleanroom solution providers. With manufacturing facilities spanning over 200,000 square meters and a workforce of 1,500+ skilled professionals, we serve clients in over 80 countries worldwide.</p>
 
                                 <h4>Manufacturing Excellence</h4>
-                                <p>Gusu China operates multiple ISO-certified manufacturing facilities equipped with:<br>- Advanced CNC machinery for precision manufacturing<br>- Automated production lines<br>- In-house testing and quality control labs<br>- Research and development center<br>- Cleanroom demonstration facilities</p>
+                                <p>Gusu China operates multiple ISO-certified manufacturing facilities equipped with:</p>
+                                <ul class="list-check-circle primary m-b30">
+                                    <li>Advanced CNC machinery for precision manufacturing</li>
+                                    <li>Automated production lines</li>
+                                    <li>In-house testing and quality control labs</li>
+                                    <li>Research and development center</li>
+                                    <li>Cleanroom demonstration facilities</li>
+                                </ul>
 
                                 <h4>Global Presence</h4>
                                 <p>With offices and authorized partners in major cities worldwide, Gusu China ensures consistent product quality and reliable service delivery. Our global network includes manufacturing hubs in China, distribution centers in key markets, and technical support teams available 24/7.</p>
 
+                                <h4>Strategic Partnership</h4>
+                                <p>The collaboration between PakGusu and Gusu China brings together international manufacturing excellence and local expertise. This partnership ensures that Pakistani industries have access to the same high-quality cleanroom products used by global leaders, backed by local support and installation services.</p>
+
                                 <h4>Certifications & Standards</h4>
-                                <p>- ISO 9001:2015 Quality Management<br>- ISO 14001:2015 Environmental Management<br>- CE Certification<br>- FDA Compliance<br>- cGMP Guidelines<br>- International cleanroom standards (ISO 14644)</p>
+                                <ul class="list-check-circle primary m-b30">
+                                    <li>ISO 9001:2015 Quality Management</li>
+                                    <li>ISO 14001:2015 Environmental Management</li>
+                                    <li>CE Certification</li>
+                                    <li>FDA Compliance</li>
+                                    <li>cGMP Guidelines</li>
+                                    <li>International cleanroom standards (ISO 14644)</li>
+                                </ul>
 
                             </div>
                         </div>
@@ -73,9 +90,9 @@ include($path . 'include/header.php');
                                     <h4 class="widget-title">About Us</h4>
                                     <ul class="list-2">
                                         <li><a href="<?php echo $path; ?>about/index.php">Company Overview</a></li>
-                                        <li><a href="<?php echo $path; ?>about/about-pak-gusu/index.php">About Pak Gusu</a></li>
-                                        <li><a href="<?php echo $path; ?>about/about-gusu-china/index.php">About Gusu China</a></li>
-                                        <li><a href="<?php echo $path; ?>about/cleanroom-classifications/index.php">Cleanroom Classifications</a></li>
+                                        <li><a href="<?php echo $path; ?>about/pak-gusu/index.php">About Pak Gusu</a></li>
+                                        <li><a href="<?php echo $path; ?>about/gusu-china/index.php" class="active">About Gusu China</a></li>
+                                        <li><a href="<?php echo $path; ?>about/cleanroom-standards/index.php">Cleanroom Standards</a></li>
                                     </ul>
                                 </div>
                                 

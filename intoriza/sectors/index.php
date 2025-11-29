@@ -55,9 +55,9 @@ include($path . 'include/header.php');
                                         <img src="<?php echo $path; ?>images/gallery/pic1.jpg" alt="">
                                     </div>
                                     <div class="p-a20 bg-white">
-                                        <h4 class="wt-tilte m-b10"><a href="<?php echo $path; ?>sectors/pharmaceutical-nutraceutical/index.php">Pharmaceutical / Nutraceutical</a></h4>
+                                        <h4 class="wt-tilte m-b10"><a href="<?php echo $path; ?>sectors/pharmaceutical/index.php">Pharmaceutical / Nutraceutical</a></h4>
                                         <p>GMP-compliant cleanroom solutions for safe pharmaceutical manufacturing</p>
-                                        <a href="<?php echo $path; ?>sectors/pharmaceutical-nutraceutical/index.php" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>sectors/pharmaceutical/index.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,9 +125,9 @@ include($path . 'include/header.php');
                                         <img src="<?php echo $path; ?>images/gallery/pic6.jpg" alt="">
                                     </div>
                                     <div class="p-a20 bg-white">
-                                        <h4 class="wt-tilte m-b10"><a href="<?php echo $path; ?>sectors/medical-surgical-devices/index.php">Medical / Surgical Devices</a></h4>
+                                        <h4 class="wt-tilte m-b10"><a href="<?php echo $path; ?>sectors/medical-devices/index.php">Medical / Surgical Devices</a></h4>
                                         <p>ISO-compliant cleanrooms for medical device manufacturing</p>
-                                        <a href="<?php echo $path; ?>sectors/medical-surgical-devices/index.php" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>sectors/medical-devices/index.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,6 +136,27 @@ include($path . 'include/header.php');
                 </div>
             </div>
             <!-- SECTORS SECTION END -->
+
+            <!-- CTA SECTION START -->
+            <div class="section-full p-t80 p-b80 bg-primary overlay-wraper" style="background-image:url(<?php echo $path; ?>images/background/bg-7.jpg);">
+                <div class="overlay-main bg-primary opacity-09"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="text-left text-white">
+                                <h2>Industry-Specific Solutions</h2>
+                                <p>We understand your sector's unique challenges and regulatory requirements.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-right">
+                                <a href="<?php echo $path; ?>contact/index.php" class="site-button-secondry site-btn-effect">Discuss Your Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CTA SECTION END -->
             
         </div>
         <!-- CONTENT END -->

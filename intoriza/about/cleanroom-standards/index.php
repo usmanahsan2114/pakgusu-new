@@ -52,13 +52,78 @@ include($path . 'include/header.php');
                                 <p><strong>Cleanrooms are classified according to the number and size of particles permitted per volume of air. Understanding these classifications is crucial for selecting the right cleanroom solution for your specific application.</strong></p>
                                 
                                 <h4>ISO 14644-1 Standards</h4>
-                                <p>The ISO 14644-1 is the international standard for cleanroom classification. Cleanrooms are classified by how clean the air is, based on the number of particles per cubic meter at a specified particle size.<br><br>**Classification Table:**<br><br>| ISO Class | Particle Count (≥0.5 µm per m³) | Equivalent Fed Std 209E |<br>|-----------|----------------------------------|-------------------------|<br>| ISO 1     | 10                               | -                       |<br>| ISO 2     | 100                              | -                       |<br>| ISO 3     | 1,000                            | Class 1                 |<br>| ISO 4     | 10,000                           | Class 10                |<br>| ISO 5     | 100,000                          | Class 100               |<br>| ISO 6     | 1,000,000                        | Class 1,000             |<br>| ISO 7     | -                                | Class 10,000            |<br>| ISO 8     | -                                | Class 100,000           |</p>
+                                <p>The ISO 14644-1 is the international standard for cleanroom classification. Cleanrooms are classified by how clean the air is, based on the number of particles per cubic meter at a specified particle size.</p>
+                                
+                                <h5>Classification Table</h5>
+                                <div class="table-responsive m-b30">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>ISO Class</th>
+                                                <th>Particle Count (≥0.5 µm per m³)</th>
+                                                <th>Equivalent Fed Std 209E</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>ISO 1</td><td>10</td><td>-</td></tr>
+                                            <tr><td>ISO 2</td><td>100</td><td>-</td></tr>
+                                            <tr><td>ISO 3</td><td>1,000</td><td>Class 1</td></tr>
+                                            <tr><td>ISO 4</td><td>10,000</td><td>Class 10</td></tr>
+                                            <tr><td>ISO 5</td><td>100,000</td><td>Class 100</td></tr>
+                                            <tr><td>ISO 6</td><td>1,000,000</td><td>Class 1,000</td></tr>
+                                            <tr><td>ISO 7</td><td>-</td><td>Class 10,000</td></tr>
+                                            <tr><td>ISO 8</td><td>-</td><td>Class 100,000</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
 
                                 <h4>Applications by Classification</h4>
-                                <p>**ISO Class 4-5 (Class 10-100):**<br>- Semiconductor manufacturing<br>- Pharmaceutical aseptic filling<br>- Medical device assembly<br><br>**ISO Class 6-7 (Class 1,000-10,000):**<br>- Pharmaceutical packaging<br>- Medical device manufacturing<br>- Electronics assembly<br>- Hospital operating rooms<br><br>**ISO Class 8 (Class 100,000):**<br>- Food and beverage packaging<br>- Cosmetics manufacturing<br>- General assembly areas</p>
+                                <div class="row m-b30">
+                                    <div class="col-md-4">
+                                        <div class="wt-icon-box-wraper p-a20 bg-gray">
+                                            <h5 class="wt-tilte">ISO Class 4-5</h5>
+                                            <span class="site-text-primary">(Class 10-100)</span>
+                                            <ul class="list-check-circle primary m-t15">
+                                                <li>Semiconductor manufacturing</li>
+                                                <li>Pharmaceutical aseptic filling</li>
+                                                <li>Medical device assembly</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="wt-icon-box-wraper p-a20 bg-gray">
+                                            <h5 class="wt-tilte">ISO Class 6-7</h5>
+                                            <span class="site-text-primary">(Class 1,000-10,000)</span>
+                                            <ul class="list-check-circle primary m-t15">
+                                                <li>Pharmaceutical packaging</li>
+                                                <li>Medical device manufacturing</li>
+                                                <li>Electronics assembly</li>
+                                                <li>Hospital operating rooms</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="wt-icon-box-wraper p-a20 bg-gray">
+                                            <h5 class="wt-tilte">ISO Class 8</h5>
+                                            <span class="site-text-primary">(Class 100,000)</span>
+                                            <ul class="list-check-circle primary m-t15">
+                                                <li>Food and beverage packaging</li>
+                                                <li>Cosmetics manufacturing</li>
+                                                <li>General assembly areas</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <h4>Environmental Parameters</h4>
-                                <p>Beyond particle count, cleanrooms must control:<br><br>**Temperature:** Typically 20-22°C (±2°C)<br>**Humidity:** Usually 45-55% RH (±5%)<br>**Pressure:** Positive differential of 10-15 Pa<br>**Air Changes:** 15-20 per hour (ISO 7-8) to 400-600 per hour (ISO 5)<br>**HEPA Filtration:** 99.97% efficiency at 0.3 µm</p>
+                                <p>Beyond particle count, cleanrooms must control:</p>
+                                <ul class="list-check-circle primary m-b30">
+                                    <li><strong>Temperature:</strong> Typically 20-22°C (±2°C)</li>
+                                    <li><strong>Humidity:</strong> Usually 45-55% RH (±5%)</li>
+                                    <li><strong>Pressure:</strong> Positive differential of 10-15 Pa</li>
+                                    <li><strong>Air Changes:</strong> 15-20 per hour (ISO 7-8) to 400-600 per hour (ISO 5)</li>
+                                    <li><strong>HEPA Filtration:</strong> 99.97% efficiency at 0.3 µm</li>
+                                </ul>
 
                             </div>
                         </div>
@@ -70,9 +135,9 @@ include($path . 'include/header.php');
                                     <h4 class="widget-title">About Us</h4>
                                     <ul class="list-2">
                                         <li><a href="<?php echo $path; ?>about/index.php">Company Overview</a></li>
-                                        <li><a href="<?php echo $path; ?>about/about-pak-gusu/index.php">About Pak Gusu</a></li>
-                                        <li><a href="<?php echo $path; ?>about/about-gusu-china/index.php">About Gusu China</a></li>
-                                        <li><a href="<?php echo $path; ?>about/cleanroom-classifications/index.php">Cleanroom Classifications</a></li>
+                                        <li><a href="<?php echo $path; ?>about/pak-gusu/index.php">About Pak Gusu</a></li>
+                                        <li><a href="<?php echo $path; ?>about/gusu-china/index.php">About Gusu China</a></li>
+                                        <li><a href="<?php echo $path; ?>about/cleanroom-standards/index.php" class="active">Cleanroom Standards</a></li>
                                     </ul>
                                 </div>
                                 

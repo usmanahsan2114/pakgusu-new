@@ -136,6 +136,79 @@ include($path . 'include/header.php');
                 </div>
             </div>
             <!-- PRODUCTS SECTION END -->
+
+            <!-- QUALITY ASSURANCE SECTION START -->
+            <div class="section-full p-t80 p-b50 bg-gray">
+                <div class="container">
+                    <div class="section-head text-center">
+                        <div class="wt-separator-outer separator-center">
+                            <div class="wt-separator">
+                                <span class="site-text-primary text-uppercase sep-line-one">Why Choose Our Products</span>
+                            </div>
+                        </div>
+                        <h2>Quality Assurance</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-white">
+                                    <div class="icon-md site-text-primary m-b20">
+                                        <span class="icon-cell"><i class="flaticon-shield"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <h5 class="wt-tilte">Certified Quality</h5>
+                                        <p>All our products meet international standards including ISO and GMP requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-white">
+                                    <div class="icon-md site-text-primary m-b20">
+                                        <span class="icon-cell"><i class="flaticon-technology"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <h5 class="wt-tilte">Advanced Technology</h5>
+                                        <p>Manufactured using state-of-the-art CNC machinery for precision and durability.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-white">
+                                    <div class="icon-md site-text-primary m-b20">
+                                        <span class="icon-cell"><i class="flaticon-support"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <h5 class="wt-tilte">Expert Support</h5>
+                                        <p>Comprehensive technical support from selection to installation and maintenance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUALITY ASSURANCE SECTION END -->
+
+            <!-- CTA SECTION START -->
+            <div class="section-full p-t80 p-b80 bg-primary overlay-wraper" style="background-image:url(<?php echo $path; ?>images/background/bg-7.jpg);">
+                <div class="overlay-main bg-primary opacity-09"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="text-left text-white">
+                                <h2>Need a Custom Solution?</h2>
+                                <p>Contact our engineering team to discuss your specific cleanroom requirements.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-right">
+                                <a href="<?php echo $path; ?>contact/index.php" class="site-button-secondry site-btn-effect">Get a Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CTA SECTION END -->
             
         </div>
         <!-- CONTENT END -->
