@@ -1,261 +1,232 @@
+# Page-by-Page Section Layout - As Implemented
 
-# Page-by-Page Section Layout
+## Home (`/index.php`)
 
-## Home (`/`)
-
-1. Hero: Headline, subheadline, primary CTA, secondary CTA
-2. Who We Are: Short intro to PakGusu + partner highlight
-3. Our Solutions: Two cards – Products & Turnkey Services
-4. Product Highlights: Cards or carousel for 3–4 key product categories
-5. Industries We Serve: Icon grid linking to industry pages
-6. Why Choose PakGusu: Stats / key differentiators
-7. Latest from Resources: Teaser cards for latest Blog & News articles
-8. Call-to-Action Banner: “Plan Your Cleanroom Project” + CTA button
-9. Global Footer: Links, contact snippet, social icons
+1. **Hero Section**: Video background slider with headline, subheadline, and CTA button
+2. **Company Overview**: Introduction to PakGusu with image and description
+3. **Product Highlights**: Cards showcasing key product categories
+4. **Services Overview**: Service icons with images for 4 main services
+5. **Industries Served**: Icon grid showing sectors served
+6. **Call-to-Action Banner**: "Plan Your Cleanroom Project" with CTA button
+7. **Global Footer**: Links, contact information, social icons
 
 ---
 
-## About Us (`/about`)
+## About Us (`/about/index.php`)
 
-1. Hero: “About PakGusu” heading + background image
-2. Company Snapshot: One-paragraph overview + key facts
-3. Our Story & Timeline: Milestones from founding to today
-4. Partnership with GUSU China: Joint-venture explanation
-5. Mission, Vision & Values: 3–4 value pillars with icons
-6. Our Facility & Capabilities: Manufacturing plant + capabilities list
-7. Quality & Compliance: Standards, certifications, QA philosophy
-8. Leadership / Expertise (optional cards): Key leadership roles
-9. CTA: “Download Company Profile” and “Talk to Our Team”
+1. **Hero**: "About Us" heading + banner image
+2. **About Overview**: One-paragraph introduction to PakGusu
+3. **Subpage Teasers**: Three cards linking to:
+   - About Pak Gusu
+   - About GUSU China  
+   - Cleanroom Standards
 
----
+### About Pak Gusu (`/about/pak-gusu/index.php`)
 
-## Products Overview (`/products`)
+1. **Hero**: Banner with title
+2. **Company Background**: Introduction paragraph
+3. **Mission & Vision**: Side-by-side grid layout
+4. **Our Values**: Styled bullet list with quality, innovation, customer focus, integrity, expertise
+5. **Facilities & Team**: Description of manufacturing facility and team
+6. **Why Choose Us**: Styled bullet list of differentiators
+7. **Team Section**: Team member profiles with images
+8. **Sidebar**: Navigation to other About pages and contact CTA
 
-1. Hero: “Cleanroom Products & Components”
-2. Intro: Short explanation of product range
-3. Product Category Grid: 6 category cards (image + teaser)
-4. How Our Products Integrate: Short explainer on modular system
-5. CTA: “Explore All Products” or “Request Product Catalogue”
+### About GUSU China (`/about/gusu-china/index.php`)
 
-### Cleanroom Panels (`/products/cleanroom-panels`)
+1. **Hero**: Banner with title
+2. **Company Overview**: Introduction to GUSU China
+3. **Manufacturing Excellence**: Styled list of facilities and capabilities
+4. **Global Presence**: Description of international reach
+5. **Strategic Partnership**: Explanation of PakGusu-GUSU collaboration
+6. **Certifications & Standards**: Styled list of ISO certifications, CE, FDA, cGMP
+7. **Sidebar**: Navigation and contact CTA
 
-1. Hero: Product name + visual
-2. Overview: What the panels are and where used
-3. Panel Types: Tabs or cards (PU / XPS / Rockwool)
-4. Key Features & Benefits: Bullet list with icons
-5. Technical Specs: Compact spec table (thickness, cores, fire rating)
-6. Gallery: 3–6 images (installed + cross-section)
-7. Related Solutions: Links to Services & Industries
-8. CTA: “Get Panel Pricing & Specs PDF”
+### Cleanroom Standards (`/about/cleanroom-standards/index.php`)
 
-### Cleanroom Windows (`/products/cleanroom-windows`)
-
-1. Hero
-2. Overview
-3. Design Options: Single / double glazed, blinds, etc.
-4. Key Features & Benefits
-5. Typical Applications
-6. Gallery
-7. Related Solutions
-8. CTA
-
-### Cleanroom Doors (`/products/cleanroom-doors`)
-
-Same structure as Windows, with sub-section for:
-- Swing vs Sliding
-- Hardware & Interlocks
-
-### Pass-Through Chambers (`/products/pass-through-chambers`)
-
-1. Hero
-2. Overview (what pass-throughs do)
-3. Types: Static / Dynamic / UV-sterilizing
-4. Key Features & Safety
-5. Typical Applications
-6. Gallery
-7. CTA
-
-### Aluminum Profiles (`/products/aluminum-profiles`)
-
-1. Hero
-2. Overview
-3. Profile Types: Coving, tracks, ceiling grids
-4. Key Features
-5. Integration with Panels
-6. CTA
-
-### Cleanroom LED Lights (`/products/cleanroom-led-lights`)
-
-1. Hero
-2. Overview
-3. Light Types: Panels, luminaires
-4. Performance & Efficiency
-5. Mounting & Integration
-6. CTA
+1. **Hero**: Banner with title
+2. **Introduction**: What cleanroom classifications are
+3. **ISO 14644-1 Standards**: Explanation with HTML table showing classifications
+4. **Applications by Classification**: Three card boxes showing:
+   - ISO Class 4-5 applications
+   - ISO Class 6-7 applications
+   - ISO Class 8 applications
+5. **Environmental Parameters**: Styled list (temperature, humidity, pressure, air changes, HEPA)
+6. **Sidebar**: Navigation and contact CTA
 
 ---
 
-## Services – Turnkey Cleanroom Solutions (`/services`)
+## Products Overview (`/products/index.php`)
 
-1. Hero: “Turnkey Cleanroom Solutions – Design to Validation”
-2. Overview: One paragraph describing end-to-end service
-3. Process Strip / Timeline: 4 phases as clickable steps
+1. **Hero**: "Our Products" heading + banner
+2. **Introduction**: "Products & Solutions" with description
+3. **Product Category Grid**: 6 product cards with images:
+   - Clean Room Panels
+   - Windows
+   - Doors
+   - Transfer Window
+   - Aluminum Profile
+   - Clean LED Lights
+4. **Quality Assurance**: Three icon boxes highlighting:
+   - Certified Quality
+   - Advanced Technology  
+   - Expert Support
+5. **CTA Banner**: "Need a Custom Solution?" with "Get a Quote" button
+
+### Product Detail Pages (All follow same structure)
+
+Example: Clean Room Panels (`/products/clean-room-panels/index.php`)
+
+1. **Hero**: Product name + banner
+2. **Product Gallery**: Synchronized gallery slider
+3. **Overview**: Product description and introduction
+4. **Key Features**: Styled bullet list
+5. **Applications**: Description of typical use cases
+6. **Technical Specifications**: HTML table with material, core, thickness, size specs
+7. **Sidebar**: Product navigation menu and "Get a Quote" CTA
+
+*Same structure applies to: Windows, Doors, Transfer Window, Aluminum Profile, Clean LED Lights*
+
+---
+
+## Services – Turnkey Solutions (`/services/index.php`)
+
+1. **Hero**: "Our Services" heading + banner
+2. **Introduction**: "Professional Services" description
+3. **Service Cards Grid**: 4 service cards with icons and images:
    - Planning & Design
-   - Construction
-   - Installation & Commissioning
-   - After-Sales & Re-Certification
-4. Planning & Design: Section with sub-bullets
-5. Construction: Section with sub-bullets
-6. Installation & Commissioning: Section with sub-bullets
-7. After-Sales & Maintenance: Section with sub-bullets
-8. Project Workflow Diagram (optional)
-9. CTA: “Request a Turnkey Proposal”
+   - Clean Room Construction
+   - Installation Services
+   - After-Sale Services
+4. **Our Approach**: 4-step process boxes:
+   - Consultation
+   - Design
+   - Execution
+   - Validation
+5. **CTA Banner**: "Ready to Start Your Project?" with contact button
+
+### Service Detail Pages (All follow same structure)
+
+Example: Planning & Design (`/services/planning-design/index.php`)
+
+1. **Hero**: Service name + banner
+2. **Service Overview**: Description of service offering
+3. **What We Offer**: Styled bullet list of deliverables
+4. **Why Choose Us**: Quality and experience statement
+5. **FAQ Section**: Accordion with frequently asked questions
+6. **Sidebar**: Services navigation menu and "Request Service" CTA
+
+*Same structure applies to: Clean Room Construction, Installation, After-Sale Services*
 
 ---
 
-## Industries Overview (`/industries`)
+## Sectors Overview (`/sectors/index.php`)
 
-1. Hero: “Industries We Serve”
-2. Intro Paragraph
-3. Industry Cards Grid:
-   - Pharmaceutical & Nutraceutical
-   - Healthcare & Hospitals
-   - Food & Beverage
+1. **Hero**: "Industry Sectors" heading + banner
+2. **Introduction**: "Sector Expertise" description
+3. **Sector Cards Grid**: 6 industry cards with images:
+   - Pharmaceutical / Nutraceutical
+   - Hospital & Healthcare
+   - Food Industry
    - Electronics Manufacturing
-   - Laboratories & R&D
-   - Medical & Surgical Devices
-4. CTA: “Don’t See Your Industry? Talk to Us.”
+   - Research Laboratories
+   - Medical / Surgical Devices
+4. **CTA Banner**: "Industry-Specific Solutions" with "Discuss Your Project" button
 
-### Pharmaceutical & Nutraceutical (`/industries/pharmaceutical-nutraceutical`)
+### Sector Detail Pages
 
+*Note: Individual sector pages exist but have not yet been standardized in Phase 8. These will be verified in Phase 9.*
+
+Structure should include:
 1. Hero
-2. Industry Challenges & Regulatory Context
-3. PakGusu Solutions: Layout, zoning, finishes
-4. Typical Cleanroom Classes & Grades
-5. Example Use Cases (capsules, sterile, R&D)
-6. Related Products & Services
-7. CTA
-
-### Healthcare & Hospitals (`/industries/healthcare-hospitals`)
-
-Similar structure, with sections:
-- Operating Theatres
-- Isolation Rooms & ICUs
-- Pharmacy Cleanrooms
-
-### Food & Beverage (`/industries/food-beverage`)
-
-Sections for:
-- Hygiene & HACCP
-- Clean Packaging Areas
-- Temperature/Humidity Control
-
-### Electronics Manufacturing (`/industries/electronics-manufacturing`)
-
-Sections for:
-- Particle & ESD Control
-- ISO Classes & Environment
-- Typical Facilities
-
-### Laboratories & R&D (`/industries/laboratories-rnd`)
-
-Sections for:
-- Research & QC Labs
-- Flexibility & Modular Upgrades
-
-### Medical & Surgical Devices (`/industries/medical-surgical-devices`)
-
-Sections for:
-- Device Assembly
-- Sterile Packaging
-- Compliance & Validation
+2. Industry challenges & requirements
+3. PakGusu solutions
+4. Compliance standards
+5. Related products & services
+6. CTA
 
 ---
 
-## Resources (`/resources`)
+## Portfolio (`/portfolio/index.php`)
 
-1. Hero: “Resources & Knowledge Hub”
-2. Intro: Why learning about cleanrooms matters
-3. Featured Resource: Highlight key guide (Standards)
-4. Latest Blog Posts: 2–3 cards
-5. Latest News & Events: 2–3 cards
-6. Link Tiles:
-   - Cleanroom Standards & Classifications
-   - Blog
-   - News & Events
-   - FAQs
-
-### Cleanroom Standards & Classifications (`/resources/cleanroom-standards-classifications`)
-
-1. Hero
-2. What Is a Cleanroom?
-3. ISO 14644-1 Explained
-4. Legacy Standards (FS 209E, BS 5295) – brief
-5. Mapping Classes to Industries
-6. Simple Reference Table or Infographic
-7. CTA: “Need Help Choosing a Class? Contact Us.”
-
-### Blog (`/resources/blog`)
-
-1. Hero: “Cleanroom Insights & Best Practices”
-2. Intro: What the blog covers
-3. Blog Post List: Paginated cards (title, date, summary, tags)
-4. Category/Tag Filters
-5. Featured Post Highlight (optional)
-
-### News & Events (`/resources/news-events`)
-
-1. Hero: “News & Events”
-2. Intro: Company updates, trade shows, announcements
-3. News List: Cards showing title, date, category
-4. Upcoming Events Strip
-5. Archive Navigation (by year/month)
-
-### FAQs (`/resources/faqs`)
-
-1. Hero: “Frequently Asked Questions”
-2. Intro
-3. FAQ Accordion: Grouped by topic
-   - General
-   - Technical
-   - Project & Pricing
-   - Support & Maintenance
-4. CTA: “Didn’t Find Your Answer? Contact Support.”
+1. **Hero**: "Our Work" or "Portfolio" heading + banner
+2. **Introduction**: Description of projects
+3. **View Switcher**: Toggle between Gallery and Masonry views
+4. **Project Grid**: Project cards with images and categories
+5. **Category Filter**: Filter projects by type
 
 ---
 
-## Case Studies (`/case-studies`)
+## Blog (`/blog/index.php`)
 
-1. Hero: “Project Case Studies”
-2. Intro: Why our track record matters
-3. Case Study Cards List:
-   - Thumbnail, title, industry, short result
-4. Filters by Industry
-5. Individual Case Study Template (if separate route chosen):
-   - Project Overview
-   - Challenge
-   - Solution
-   - Results & Metrics
-   - Testimonial (optional)
+1. **Hero**: "Blog" or "Insights" heading + banner
+2. **Introduction**: Blog purpose description
+3. **View Switcher**: Toggle between Grid, List, and Masonry views
+4. **Blog Posts**: Article cards with title, date, excerpt, and featured image
+5. **Category Filter**: Filter posts by category
+6. **Pagination**: Navigate through posts
 
 ---
 
-## Careers (`/careers`)
+## Contact (`/contact/index.php`)
 
-1. Hero: “Careers at PakGusu”
-2. Intro: Company culture and mission
-3. Why Work With Us: 3–4 bullet points
-4. Open Positions List:
-   - Role, location, summary, “View Details”
-5. General Application Call-to-Action
+1. **Hero**: "Contact Us" heading + banner
+2. **Google Map**: Embedded map showing location
+3. **Contact Information**: Three icon boxes showing:
+   - Phone Number
+   - Email Address  
+   - Physical Address
+4. **Contact Form**: Name, Email, Message fields with submit button
+5. **Footer**: Standard global footer
 
 ---
 
-## Contact (`/contact`)
+## Global Elements (All Pages)
 
-1. Hero: “Contact PakGusu”
-2. Intro: How we can help
-3. Contact Form: Name, Email, Phone, Company, Message, Project Type
-4. Contact Details: Address, phone, email, WhatsApp (if used)
-5. Map Embed: Location in Lahore
-6. Support Info: Response time, business hours
+### Header
+- Logo
+- Primary navigation menu (Home, About, Products, Services, Sectors, Blog, Portfolio, Contact)
+- Dynamic `$path` variable for correct asset loading
+
+### Footer
+- Quick links section
+- Company information
+- Contact details
+- Social media icons
+- Copyright notice
+
+### Modular Sections (Used across pages)
+- `company_overview.php` - Homepage company intro
+- `product_highlights.php` - Homepage product showcase
+- `industries_served.php` - Homepage sectors grid
+- `cta_banner.php` - Homepage call-to-action
+- `services_images.php` - Services page service cards
+- `team.php` - About Pak Gusu team section
+- `sync_gallery.php` - Product pages image gallery
+- `accordion.php` - Service pages FAQ section
+
+---
+
+## Implementation Notes
+
+### Phase 8 Completion Status
+✅ **Complete**:
+- Home Page
+- About Section (overview + 3 subpages)
+- Products Section (overview + all product pages)
+- Services Section (overview + all service pages)
+- Sectors Section (overview page)
+- Contact Page
+
+🔄 **In Progress** (Phase 9):
+- Individual sector detail pages
+- Portfolio pages
+- Blog pages
+
+### Technical Details
+- All pages use PHP with `$path` variable for dynamic paths
+- Modular includes used for reusable components
+- Consistent breadcrumb navigation on all subpages
+- Sidebar navigation on detail pages with active state indication
+- Responsive design with Bootstrap grid system
+- View switchers on Portfolio and Blog using JavaScript
