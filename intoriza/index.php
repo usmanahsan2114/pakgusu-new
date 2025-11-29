@@ -56,7 +56,7 @@
                         <div class="wt-header-left">
                             <div class="logo-header">
                                 <div class="logo-header-inner logo-header-one">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="images/logo-dark.png" width="171" height="49" alt="" />
                                     </a>
                                 </div>
@@ -74,42 +74,55 @@
                             <div class="header-nav navbar-collapse collapse nav-dark">
                                 <ul class=" nav navbar-nav nav-line-animation">
                                     <li class="active">
-                                    	<a href="javascript:;" >Home</a>
+                                    	<a href="index.php" >Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="about/index.php">About</a>
                                         <ul class="sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                            <li><a href="index-3.html">Home 3</a></li>
-                                            <li><a href="index-4.html">Home 4</a></li>                                            
+                                            <li><a href="<?php echo $path; ?>about/pak-gusu/index.php">About Pak Gusu</a></li>
+                                            <li><a href="<?php echo $path; ?>about/gusu-china/index.php">About GUSU China</a></li>
+                                            <li><a href="<?php echo $path; ?>about/cleanroom-standards/index.php">Cleanroom Standards</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="about-1.html">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" >Blog</a>
+                                        <a href="javascript:;">Products</a>
                                         <ul class="sub-menu">
-                                            <li><a href="news-grid.html">Grid</a></li>
-                                            <li><a href="news-listing.html">Listing</a></li>
-                                            <li><a href="news-masonry.html">Masonry</a></li>
+                                            <li><a href="products/clean-room-panels/index.php">Clean Room Panels</a></li>
+                                            <li><a href="products/windows/index.php">Windows</a></li>
+                                            <li><a href="products/doors/index.php">Doors</a></li>
+                                            <li><a href="products/transfer-window/index.php">Transfer Window</a></li>
+                                            <li><a href="products/aluminum-profile/index.php">Aluminum Profile</a></li>
+                                            <li><a href="products/clean-led-lights/index.php">Clean LED Lights</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" >Works</a>
+                                        <a href="javascript:;">Services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="work-grid.html">Grid</a></li>
-                                            <li><a href="work-masonry.html">Masonry</a></li>
-                                            <li><a href="project-detail.html">Project Detail</a></li>                                        
+                                            <li><a href="services/planning-design/index.php">Planning & Design</a></li>
+                                            <li><a href="services/clean-room-construction/index.php">Clean Room Construction</a></li>
+                                            <li><a href="services/installation/index.php">Installation</a></li>
+                                            <li><a href="services/after-sale-services/index.php">After Sale Services</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="javascript:;" >Blog detail</a>
+                                        <a href="javascript:;">Sectors</a>
                                         <ul class="sub-menu">
-                                            <li><a href="post-gallery.html">Gallery</a></li>
-                                            <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                        </ul>                                    
+                                            <li><a href="sectors/pharmaceutical/index.php">Pharmaceutical</a></li>
+                                            <li><a href="sectors/hospital/index.php">Hospital</a></li>
+                                            <li><a href="sectors/food-industry/index.php">Food Industry</a></li>
+                                            <li><a href="sectors/electronics/index.php">Electronics</a></li>
+                                            <li><a href="sectors/laboratories/index.php">Laboratories</a></li>
+                                            <li><a href="sectors/medical-devices/index.php">Medical Devices</a></li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a href="contact-1.html">Contact us</a>
+                                        <a href="blog/index.php">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio/index.php">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact/index.php">Contact</a>
                                     </li>                               
                                 </ul>
                             </div>
@@ -1363,11 +1376,8 @@
                     <div class="text-center">
                     	<div class="footer-link">
                             <ul>
-                                <li><a href="about-1.html" data-hover="About">About</a></li>
-                                <li><a href="post-gallery.html" data-hover="Gallery">Gallery</a></li>
-                                <li><a href="news-grid.html" data-hover="Blog">Blog</a></li>
-                                <li><a href="work-masonry.html" data-hover="Portfolio">Portfolio</a></li>
-                                <li><a href="contact-1.html" data-hover="Contact Us">Contact Us</a></li>
+                                <li><a href="about/index.php" data-hover="About">About</a></li>
+                                <li><a href="contact/index.php" data-hover="Contact Us">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1413,8 +1423,8 @@
                                 <h4 class="widget-title">Studio</h4>
                                 <div class="widget-section">
                                     <ul>
-                                        <li><a href="about-1.html">Terms of Condition</a></li>
-                                        <li><a href="post-gallery.html">Privacy Policy</a></li>
+                                        <li><a href="about/index.php">Terms of Condition</a></li>
+                                        <li><a href="about/index.php">Privacy Policy</a></li>
                                     </ul>
                                 </div>                                
                             </div>                           
@@ -1439,6 +1449,11 @@
             </div>
         </footer>
         <!-- FOOTER END -->
+
+        <!-- BUTTON TOP START -->
+		<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+        
+     
 
         <!-- BUTTON TOP START -->
 		<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>

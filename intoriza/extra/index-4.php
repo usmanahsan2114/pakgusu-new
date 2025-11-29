@@ -1,217 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$path = '../';
+$page_title = 'Home Page Style 4';
+include($path . 'include/head.php');
+include($path . 'include/header.php');
+?>
 
-<head>
-
-	<!-- META -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />    
-    <meta name="description" content="" />
-    
-    <!-- FAVICONS ICON -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    
-    <!-- PAGE TITLE HERE -->
-    <title>intoriza Template | Home Page Style 2</title>
-    
-    <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css"><!-- BOOTSTRAP STYLE SHEET -->
-    <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css" /><!-- FONTAWESOME STYLE SHEET -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css"><!-- OWL CAROUSEL STYLE SHEET -->
-    <link rel="stylesheet" href="css/magnific-popup.min.css"><!-- MAGNIFIC POPUP STYLE SHEET -->
-    <link rel="stylesheet" href="css/loader.min.css"><!-- LOADER STYLE SHEET -->    
-    <link rel="stylesheet" href="css/style.css"><!-- MAIN STYLE SHEET -->
-    <link rel="stylesheet" href="css/flaticon.min.css"><!-- FLATICON STYLE SHEET -->
-    <link rel="stylesheet" href="css/skin/skin-1.css" class="skin"><!-- THEME COLOR CHANGE STYLE SHEET -->
-     
-
-    <!-- REVOLUTION SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/settings.css">
-    <!-- REVOLUTION NAVIGATION STYLE -->
-    <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/navigation.css">
- 	 <!-- BEFORE/AFTER ADD-ON FILES  MUST BE INSERTED AFTER THE SLIDER DOM ELEMENTS !-->
-	<link rel='stylesheet' href='plugins/revolution/revolution-addons/beforeafter/css/revolution.addon.beforeafter.css' type='text/css' media='all' />	    
-    
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900" rel="stylesheet"> 
-
-</head>
-
-<body>
-
-	<div class="page-wraper"> 
-       	
-        <!-- HEADER START -->
-        <header class="site-header header-style-1  nav-wide  mobile-sider-drawer-menu">
-            <div class="sticky-header main-bar-wraper">
-                <div class="main-bar bg-white">
-                    <div class="container header-center">
-                        <div class="wt-header-left">
-                            <div class="logo-header">
-                                <div class="logo-header-inner logo-header-one">
-                                    <a href="index.html">
-                                        <img src="images/logo-dark.png" width="171" height="49" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wt-header-center"> 
-                             <!-- NAV Toggle Button -->
-                            <button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar icon-bar-first"></span>
-                                <span class="icon-bar icon-bar-two"></span>
-                                <span class="icon-bar icon-bar-three"></span>
-                            </button>                       
-                            <!-- MAIN Vav -->
-                            <div class="header-nav navbar-collapse collapse nav-dark">
-                                <ul class=" nav navbar-nav nav-line-animation">
-                                    <li class="active">
-                                    	<a href="javascript:;" >Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                            <li><a href="index-3.html">Home 3</a></li>
-                                            <li><a href="index-4.html">Home 4</a></li>                                            
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="about-1.html">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" >Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="news-grid.html">Grid</a></li>
-                                            <li><a href="news-listing.html">Listing</a></li>
-                                            <li><a href="news-masonry.html">Masonry</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" >Works</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="work-grid.html">Grid</a></li>
-                                            <li><a href="work-masonry.html">Masonry</a></li>
-                                            <li><a href="project-detail.html">Project Detail</a></li>                                        
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" >Blog detail</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="post-gallery.html">Gallery</a></li>
-                                            <li><a href="post-right-sidebar.html">Right Sidebar</a></li>                                        
-                                        </ul>                                    
-                                    </li>
-                                    <li>
-                                        <a href="contact-1.html">Contact us</a>
-                                    </li>                               
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wt-header-right ">
-                            <div class="site-bg-primary wt-header-right-child">
-                                <!-- ETRA Nav -->
-                                <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <a href="#search" class="site-search-btn"><i class="fa fa-search"></i></a>
-                                    </div>
-                                 </div>                                 
-                                <!-- ETRA Nav -->
-                                <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <div class="right-arrow-btn">
-                                            <button type="button" class="btn-open contact-slide-show text-white notification-animate"><i class="fa fa-angle-left"></i></button>
-                                        </div>                                         
-                                    </div>
-                                 </div>
-                             </div>                                 
-                       </div>  
-                        <!-- Contact Nav -->                            
-                        <div class="contact-slide-hide"> 
-                            <div class="contact-nav">
-                                 <a href="javascript:void(0)" class="contact_close">&times;</a>
-                                 <div class="contact-nav-form p-a30">
-                                    <form class="cons-contact-form" method="post" action="form-handler.php">
-                                        <div class="m-b30">
-                                            <!-- TITLE START -->
-                                            <div class="section-head text-left">
-                                                <h4 class="m-b5">Get In Touch</h4>
-                                            </div>
-                                            <!-- TITLE END --> 
-                                            <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input type="text" name="username"  id="name" required>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input type="email" name="email"   id="email" required>
-                                                <span class="spin"></span>
-                                            </div>                                            
-                                            <div class="input input-animate">
-                                                <label for="message">Textarea</label>
-                                                <textarea name="message"  id="message" required></textarea>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="text-right">
-                                                <button name="submit" type="submit" value="Submit" class="btn-half site-button m-b15">
-                                                      <span>Submit</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30">
-                                        <!-- TITLE START -->
-                                        <div class="section-head text-left">
-                                            <h4 class="m-b5">Contact Info</h4>
-                                        </div>
-                                        <!-- TITLE END --> 
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-smartphone  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Phone number</h5>
-                                                <p>(456) 789 10 12</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-email  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Email address</h5>
-                                                <p>demo@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-placeholder  icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Address info</h5>
-                                                <p>55/11 Land Street, Modern New Yourk City, USA</p>
-                                            </div>
-                                        </div>
-                                    </div>                                        
-                                 </div>
-                            </div> 
-                        </div>       
-                         <!-- Search popup -->
-                        <div id="search"> 
-                            <span class="close"></span>
-                            <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                                <div class="input-group">
-                                    <input value="" name="q" type="search" placeholder="Type to search"/>
-                                    <span class="input-group-btn"><button type="button" class="search-btn"><i class="fa fa-search"></i></button></span>
-                                </div>   
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- HEADER END -->
 
         <!-- CONTENT START -->
         <div class="page-content"> 
@@ -221,117 +14,143 @@
                 <!-- START REVOLUTION SLIDER 5.4.3.3 fullscreen mode -->
                 <div id="rev_slider_346_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.3.3">
                     <ul>	
-                    	<!-- SLIDE 1 -->
-                        <li data-index="rs-964" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="{&quot;revslider-weather-addon&quot; : { &quot;type&quot; : &quot;&quot; ,&quot;name&quot; : &quot;&quot; ,&quot;woeid&quot; : &quot;&quot; ,&quot;unit&quot; : &quot;&quot; }}" data-description="" data-beforeafter='{"moveto":"50%|50%|50%|50%","bgColor":"#e7e7e7","bgType":"image","bgImage":"images/main-slider/slider3/slide1.jpg","bgFit":"cover","bgPos":"center center","bgRepeat":"no-repeat","direction":"horizontal","easing":"Power2.easeInOut","delay":"500","time":"750","out":"fade","carousel":false}'>
+                        <li data-index="rs-905" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="media/images/video2.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    
                             <!-- MAIN IMAGE -->
-                            <img src="images/main-slider/slider3/slide1-b.jpg" data-beforeafter="after"  data-bgcolor=''  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                            <img src="media/images/video2.jpg"  alt=""  data-lazyload="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina="">
                             <!-- LAYERS -->
-                            
-                            <!-- LAYER NR. 1 text -->
-                            <div class="tp-caption   tp-resizeme rs-parallaxlevel-5" 
-                                id="slide-964-layer-1" 
+                    
+                            <!-- BACKGROUND VIDEO LAYER -->
+							<!-- LAYER NR. 1 -->
+							<div class="tp-caption tp-shape tp-shapewrapper " 
+                                id="rrzb_904-1" 
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','0']" 
-                                data-fontsize="['120','120','120','60']"
-                                data-lineheight="['120','120','120','60']"
-                                data-letterspacing="['50','50','50','30']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                                data-width="full"
+                                data-height="full"
+                                data-whitespace="nowrap"
+                                data-type="shape" 
+                                data-basealign="slide" 
+                                data-responsive_offset="off" 
+                                data-responsive="off"
+                                data-frames='[
+                                {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
+                                {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
+                                ]'
+                                data-textAlign="['left','left','left','left']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
                                 
+                                style="z-index: 4;background-color:rgba(0, 0, 0, 0.2);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
+                            </div> 
+                            
+                            <!-- LAYER NR. 2 [ for video ] -->
+                            <div class="rs-background-video-layer" 
+                            data-forcerewind="on" 
+                            data-volume="mute" 
+                            data-videowidth="100%" 
+                            data-videoheight="100%" 
+                            data-videomp4="media/video/video2.mp4" 
+                            data-videopreload="auto" 
+                            data-videoloop="loop" 
+                            data-aspectratio="16:9" 
+                            data-autoplay="true" 
+                            data-autoplayonlyfirsttime="false">
+                            </div> 
+                                                                                     
+                            <!-- LAYERS 1 border block-->
+							<div class="tp-caption rev-btn  tp-resizeme slider-block" 
+                                id="rrzb_904-2" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                                data-width="none"
                                 data-height="none"
-                                data-whitespace="normal"
-                            
-                                data-type="text" 
-                                data-beforeafter="before" 
+                                data-whitespace="nowrap"                     
+                                data-type="button" 
                                 data-responsive_offset="on" 
-                            
-                                data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
-                                {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+            
+                                data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},
+                                {"delay":"wait","speed":500,"to":"y:[-100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power1.easeIn"}]'
+                                
+                                data-textAlign="['center','center','center','center']"
+                                data-paddingtop="[200,200,200,200]"
+                                data-paddingright="[200,100,100,100]"
+                                data-paddingbottom="[200,200,200,200]"
+                                data-paddingleft="[200,100,100,100]"
+            
+                                style="z-index: 8;"><div class="rs-wave"  data-speed="1" data-angle="0" data-radius="2px"></div></div>                                 
+                                           
+                            <!-- LAYER 2 button -->
+                            <div class="tp-caption rev-btn  tp-resizeme" 
+                                id="rrzb_904-3" 
+                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                                data-y="['middle','middle','middle','middle']" data-voffset="['150','150','150','150']" 
+                                data-width="none"
+                                data-height="none"
+                                data-whitespace="nowrap"                     
+                                data-type="button" 
+                                data-responsive_offset="on" 
+            
+                                data-frames='[{"from":"opacity:0;","speed":500,"to":"o:1;","delay":500,"split":"chars","splitdelay":0.03,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                
                                 data-textAlign="['center','center','center','center']"
                                 data-paddingtop="[0,0,0,0]"
                                 data-paddingright="[0,0,0,0]"
                                 data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[50,50,50,50]"
-                            
-                                style="z-index: 16; white-space: nowrap; font-size: 120px; line-height: 120px; font-weight: 700; color: #000; letter-spacing: 50px;font-family: 'Martel', serif;text-transform:uppercase;">intoriza</div>
-                            <!-- LAYER NR. 2 text -->
-                            <div class="tp-caption   tp-resizeme rs-parallaxlevel-5" 
-                                id="slide-964-layer-2" 
+                                data-paddingleft="[0,0,0,0]"
+            
+                                style="z-index:9; line-height:30px;"><a href="<?php echo $path; ?>contact/index.php" class="site-button">Read More</a></div>
+
+                            <!-- LAYER 5 title-->
+                            <div class="tp-caption   tp-resizeme slider-tag-line2 text-white" 
+                                id="rrzb_904-4" 
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['300','300','300','100']" 
-                                data-width="['960','960','960','320']"
-                                data-height="none"
-                                data-whitespace="normal"
-                            
-                                data-type="text" 
-                                data-beforeafter="before" 
-                                data-responsive_offset="on" 
-                            
-                                data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
-                                {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                                data-textAlign="['center','center','center','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[5,5,5,5]"
-                            
-                                style="z-index: 11; min-width: 960px; max-width: 960px; white-space: normal; font-size: 13px; line-height: 20px; font-weight: 400; color: #000; letter-spacing: 5px;font-family:Montserrat;text-transform:uppercase;">Exceptional designing for exceptional Spaces.</div>
-                        
-                            <!-- SLIDE RIGHT PART START-->
-                            
-                            <!-- LAYER NR. 1  text-->
-                            <div class="tp-caption   tp-resizeme  tp-blackshadow rs-parallaxlevel-5" 
-                                id="slide-964-layer-4" 
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','200','200','0']" 
-                                data-fontsize="['120','120','120','60']"
-                                data-lineheight="['120','120','120','60']"
-                                data-letterspacing="['50','50','50','30']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-177','-177','-177','-157']" 
                                 data-width="none"
                                 data-height="none"
                                 data-whitespace="nowrap"
-                            
+                     
                                 data-type="text" 
-                                data-beforeafter="after" 
                                 data-responsive_offset="on" 
-                            
-                                data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
-                                {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+            
+                                data-frames='[{"delay":300,"speed":750,"sfxcolor":"#fff","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                {"delay":"wait","speed":500,"sfxcolor":"#ffffff","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
                                 data-textAlign="['center','center','center','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[50,50,50,50]"
-                            
-                            
-                                style="z-index: 16; white-space: nowrap; font-size: 120px; line-height: 120px; font-weight: 700; color: #ffffff; letter-spacing: 50px;font-family: 'Martel', serif;text-transform:uppercase;">intoriza</div>
-                            
-                            <!-- LAYER NR. 2 text -->
-                            <div class="tp-caption   tp-resizeme rs-parallaxlevel-5" 
-                                id="slide-964-layer-5" 
+                                data-paddingtop="[10,10,10,10]"
+                                data-paddingright="[20,20,20,20]"
+                                data-paddingbottom="[10,10,10,10]"
+                                data-paddingleft="[0,0,0,0]"
+            
+                                style="z-index: 10; white-space: nowrap; font-size: 18px; line-height: 20px; font-weight: 400;font-family: 'Poppins', sans-serif; text-transform:uppercase;"> Trust and recommed </div>
+            
+                            <!-- LAYER 6  tag line-->
+                            <div class="tp-caption   tp-resizeme" 
+                                id="rrzb_904-5" 
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['300','300','300','100']" 
-                                data-width="['960','960','960','320']"
+                                data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-20']" 
+                                data-fontsize="['60','45','60','40']"
+                                data-lineheight="['70','60','70','50']"
+                                data-width="['700','650','620','380']"
                                 data-height="none"
                                 data-whitespace="normal"
-                            
+                     
                                 data-type="text" 
-                                data-beforeafter="after" 
                                 data-responsive_offset="on" 
-                            
-                                data-frames='[{"delay":2100,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
-                                {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+            
+                                data-frames='[{"delay":200,"speed":750,"sfxcolor":"#fff","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                {"delay":"wait","speed":500,"sfxcolor":"#ffffff","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
                                 data-textAlign="['center','center','center','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[5,5,5,5]"
+                                data-paddingtop="[20,20,20,20]"
+                                data-paddingright="[20,20,20,20]"
+                                data-paddingbottom="[30,30,30,30]"
+                                data-paddingleft="[0,0,0,0]"
+            
+                                style="z-index: 10; white-space: normal;font-weight: 700; color: #ffffff;font-family: 'Martel', serif;">Giving your<br> home a new style every style</div>
                             
-                                style="z-index: 17; min-width: 960px; max-width: 960px; white-space: normal; font-size: 13px; line-height: 20px; font-weight: 400; color: #ffffff; letter-spacing: 5px;font-family:Montserrat;text-transform:uppercase;">Exceptional designing for exceptional Spaces.
-                            </div>
-                            
-                            <!-- LAYER NR. 3  button-->
-                    
-                        </li>
-                
+     
+                        </li>       
                     </ul>
                     <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	
                 </div>
@@ -409,7 +228,7 @@
                                                 <div class="mfp-gallery">
                                                     <div class="wt-box">
                                                         <div class="wt-thum-bx">
-                                                            <img src="images/gallery/portrait-2/pic1.jpg" alt="">
+                                                            <img src="<?php echo $path; ?>images/gallery/portrait-2/pic1.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -418,7 +237,7 @@
                                                 <div class="mfp-gallery">
                                                     <div class="wt-box">
                                                         <div class="wt-thum-bx">
-                                                            <img src="images/gallery/portrait-2/pic2.jpg" alt="">
+                                                            <img src="<?php echo $path; ?>images/gallery/portrait-2/pic2.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -427,7 +246,7 @@
                                                 <div class="mfp-gallery">
                                                     <div class="wt-box">
                                                         <div class="wt-thum-bx">
-                                                            <img src="images/gallery/portrait-2/pic3.jpg" alt="">
+                                                            <img src="<?php echo $path; ?>images/gallery/portrait-2/pic3.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -436,7 +255,7 @@
                                                 <div class="mfp-gallery">
                                                     <div class="wt-box">
                                                         <div class="wt-thum-bx">
-                                                            <img src="images/gallery/portrait-2/pic4.jpg" alt="">
+                                                            <img src="<?php echo $path; ?>images/gallery/portrait-2/pic4.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -445,7 +264,7 @@
                                                 <div class="mfp-gallery">
                                                     <div class="wt-box">
                                                         <div class="wt-thum-bx">
-                                                            <img src="images/gallery/portrait-2/pic5.jpg" alt="">
+                                                            <img src="<?php echo $path; ?>images/gallery/portrait-2/pic5.jpg" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -455,27 +274,27 @@
                                         <div id="sync2" class="owl-carousel owl-theme">
                                             <div class="item">
                                                 <div class="wt-media">
-                                                    <img src="images/gallery/thumb/pic1.jpg" alt="">
+                                                    <img src="<?php echo $path; ?>images/gallery/thumb/pic1.jpg" alt="">
                                                 </div>
                                             </div>
                                             <div class="item">
                                                 <div class="wt-media">
-                                                    <img src="images/gallery/thumb/pic2.jpg" alt="">
+                                                    <img src="<?php echo $path; ?>images/gallery/thumb/pic2.jpg" alt="">
                                                 </div>
                                             </div>
                                             <div class="item">
                                                 <div class="wt-media">
-                                                    <img src="images/gallery/thumb/pic3.jpg" alt="">
+                                                    <img src="<?php echo $path; ?>images/gallery/thumb/pic3.jpg" alt="">
                                                 </div>
                                             </div>
                                             <div class="item">
                                                 <div class="wt-media">
-                                                    <img src="images/gallery/thumb/pic4.jpg" alt="">
+                                                    <img src="<?php echo $path; ?>images/gallery/thumb/pic4.jpg" alt="">
                                                 </div>
                                             </div>
                                             <div class="item">
                                                 <div class="wt-media">
-                                                    <img src="images/gallery/thumb/pic5.jpg" alt="">
+                                                    <img src="<?php echo $path; ?>images/gallery/thumb/pic5.jpg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -486,7 +305,7 @@
                     </div>
                 </div>
             </div>   
-            <!-- WELCOME  SECTION END --> 
+            <!-- WELCOME  SECTION END -->  
             
             <!-- WHAT WE DO SECTION START -->
             <div class="section-full p-t80 p-b50 bg-gray">
@@ -507,7 +326,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic1.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic1.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-sketch"></i></span>
                                             </div>                                            
@@ -516,7 +335,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Planning</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -526,7 +345,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic2.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic2.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-window"></i></span>
                                             </div>                                            
@@ -535,7 +354,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Interior</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -545,7 +364,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic3.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic3.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-window-5"></i></span>
                                             </div>                                            
@@ -554,7 +373,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Exterior</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -564,7 +383,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic4.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic4.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-plant"></i></span>
                                             </div>                                            
@@ -573,7 +392,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Decoration</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -583,7 +402,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic5.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic5.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-sofa"></i></span>
                                             </div>                                            
@@ -592,7 +411,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Furniture</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -602,7 +421,7 @@
                             	<div class="hover-box-effect  v-icon-effect">
                                     <div class="wt-box">
                                         <div class="wt-thum-bx wt-img-effect fade-in">
-                                            <img src="images/gallery/pic6.jpg" alt="">
+                                            <img src="<?php echo $path; ?>images/gallery/pic6.jpg" alt="">
 											<div class="wt-icon-box-sm bg-white">
                                                 <span class="icon-cell site-text-primary"><i class="v-icon flaticon-review "></i></span>
                                             </div>                                            
@@ -611,7 +430,7 @@
                                             <div class="icon-content text-black">
                                                 <h4 class="wt-tilte m-b25">Exclusively</h4>
                                                 <p>Lorem ipsum dolor sit amet, iusto quando  vocibus te vim no mea.</p>
-                                                <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                                <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -642,12 +461,12 @@
                     <div class="owl-carousel owl-carousel-filter3  owl-btn-bottom-center">
                         <!-- COLUMNS 1 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/1.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/1.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25">intoriza Design, corporate and retail architecture</h4>
                                         <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                     
                             </div>
@@ -655,12 +474,12 @@
                         
                         <!-- COLUMNS 2 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/2.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/2.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25">Distinctive designs for distinctive interiors.</h4>
                                         <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                       
                             </div>
@@ -668,12 +487,12 @@
                         
                         <!-- COLUMNS 3 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/3.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/3.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25">A small efficient interior design team.</h4>
                                         <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                         
                             </div>
@@ -681,12 +500,12 @@
                         
                         <!-- COLUMNS 4 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/4.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/4.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25"> Interiors inspired by innovation.</h4>
                                        <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                        
                             </div>
@@ -694,12 +513,12 @@
                         
                         <!-- COLUMNS 5 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/5.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/5.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25">Bringing great design home.</h4>
                                         <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                       
                             </div>
@@ -707,12 +526,12 @@
                         
                         <!-- COLUMNS 6 --> 
                         <div class="item">
-                            <div class="line-filter-outer bg-cover" style="background-image:url(images/project/6.jpg);">
+                            <div class="line-filter-outer bg-cover" style="background-image:url(<?php echo $path; ?>images/project/6.jpg);">
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content">
                                         <h4 class="m-t0 m-b25">We design thoughtful, livable spaces.</h4>
                                         <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
-                                        <a href="project-detail.html" class="site-button-link" data-hover="Read More">Read More</a>
+                                        <a href="<?php echo $path; ?>extra/project-detail.php" class="site-button-link" data-hover="Read More">Read More</a>
                                     </div>
                                 </div>                                    
                             </div>
@@ -722,7 +541,7 @@
                 </div>                   	
 
             </div>   
-            <!-- PROJECT SECTION END -->
+            <!-- PROJECT SECTION END -->  
             
             <!-- OUR TEAM START -->
             <div class="section-full small-device p-t80 p-b50 bg-gray">
@@ -742,7 +561,7 @@
                         <div class="col-lg-4 col-md-6 m-b30">
                             <div class="wt-box">
                                 <div class="our-team-two">
-                                    <img src="images/our-team5/pic1.jpg" alt=""/>
+                                    <img src="<?php echo $path; ?>images/our-team5/pic1.jpg" alt=""/>
                                       <div class="work-hover-discription">
                                           <h4>Jack Semper</h4>
                                           <h5>Interior Designer</h5>
@@ -759,7 +578,7 @@
                         <div class="col-lg-4 col-md-6 m-b30">
                             <div class="wt-box">
                                 <div class="our-team-two">
-                                    <img src="images/our-team5/pic2.jpg" alt=""/>
+                                    <img src="<?php echo $path; ?>images/our-team5/pic2.jpg" alt=""/>
                                       <div class="work-hover-discription">
                                           <h4>Philip Wilson</h4>
                                           <h5>Interior Designer</h5>
@@ -777,7 +596,7 @@
                         <div class="col-lg-4 col-md-6 m-b30">
                             <div class="wt-box">
                                 <div class="our-team-two">
-                                    <img src="images/our-team5/pic3.jpg" alt=""/>
+                                    <img src="<?php echo $path; ?>images/our-team5/pic3.jpg" alt=""/>
                                       <div class="work-hover-discription">
                                           <h4>Amanda Rich</h4>
                                           <h5>Interior Designer</h5>
@@ -799,7 +618,7 @@
             <!-- OUR TEAM END -->
                                       
             <!-- VIDEO SECTION START -->
-            <div class="section-full p-tb80 bg-center bg-no-repeat bg-cover" style="background-image:url(images/background/bg-1.jpg);">
+            <div class="section-full p-tb80 bg-center bg-no-repeat bg-cover" style="background-image:url(<?php echo $path; ?>images/background/bg-1.jpg);">
                 <div class="container">
                     <div class="section-content">
                         <div class="video-section-full bg-white">
@@ -820,7 +639,7 @@
                     </div>
                 </div>  
             </div>   
-            <!-- VIDEO SECTION END -->               
+            <!-- VIDEO SECTION END -->             
             
             <!-- OUR BLOG START -->
             <div class="section-full small-device bg-gray p-t80 p-b50">
@@ -845,12 +664,12 @@
                                 <div class="item">
                                     <div class="blog-post latest-blog-1  date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic1.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>04 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusd veritatis quis quam laboriosam asperiores</p> 
@@ -859,14 +678,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                          
                                         </div>
@@ -876,12 +695,12 @@
                                 <div class="item">
                                     <div class="blog-post latest-blog-1 date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic2.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>06 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">Interior design firm specializing in eco friendly design.</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Interior design firm specializing in eco friendly design.</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Internet tend to repeat predefined chunks as necessary, laboriosam asperiores making this the first true genera tor on the Internet.</p> 
@@ -890,14 +709,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic2.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic2.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                               
                                         </div>
@@ -907,12 +726,12 @@
                                 <div class="item">
                                 	<div class="blog-post latest-blog-1  date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic3.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>04 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusd veritatis quis quam laboriosam asperiores</p> 
@@ -921,14 +740,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                          
                                         </div>
@@ -938,12 +757,12 @@
                                 <div class="item">
                                     <div class="blog-post latest-blog-1  date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic1.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>04 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusd veritatis quis quam laboriosam asperiores</p> 
@@ -952,14 +771,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                          
                                         </div>
@@ -969,12 +788,12 @@
                                 <div class="item">
                                     <div class="blog-post latest-blog-1 date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic2.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>06 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">Interior design firm specializing in eco friendly design.</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Interior design firm specializing in eco friendly design.</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Internet tend to repeat predefined chunks as necessary, laboriosam asperiores making this the first true genera tor on the Internet.</p> 
@@ -983,14 +802,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic2.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic2.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                               
                                         </div>
@@ -1000,12 +819,12 @@
                                 <div class="item">
                                 	<div class="blog-post latest-blog-1  date-style-1">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="post-right-sidebar.html"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
+                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/blog/latest-blog/pic3.jpg" alt=""></a>
                                         </div>
                                         <div class="wt-post-info">
                                             <div class="post-date"> <strong>04 Feb 2024 </strong></div>                                     
                                             <div class="wt-post-title">
-                                                <h4 class="post-title"><a href="post-right-sidebar.html">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
+                                                <h4 class="post-title"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">What a perfect and beautiful three day weekend in Brooklyn</a></h4>
                                             </div>
                                             <div class="wt-post-text">
                                                 <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusd veritatis quis quam laboriosam asperiores</p> 
@@ -1014,14 +833,14 @@
                                                 <ul class="clearfix">
                                                     <li class="post-author">
                                                         <div class="post-author-pic">
-                                                            <a href="post-right-sidebar.html">
-                                                                <span><img src="images/blog/latest-blog/user-pic.jpg" alt=""></span>
+                                                            <a href="<?php echo $path; ?>extra/post-right-sidebar.php">
+                                                                <span><img src="<?php echo $path; ?>images/blog/latest-blog/user-pic.jpg" alt=""></span>
                                                                 <span><strong> By</strong> Loretta Shelton</span>
                                                             </a>
                                                         </div> 
                                                     </li>
-                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="post-right-sidebar.html">5</a> </li>
-                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="post-right-sidebar.html">10</a> </li>                                                
+                                                    <li class="post-like"><i class="fa fa-heart-o"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">5</a> </li>
+                                                    <li class="post-comment"><i class="fa fa fa-comments"></i><a href="<?php echo $path; ?>extra/post-right-sidebar.php">10</a> </li>                                                
                                                 </ul>
                                             </div>                                                                                                                          
                                         </div>
@@ -1058,42 +877,42 @@
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w1.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w1.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w2.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w2.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w3.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w3.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w4.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w4.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w5.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w5.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="contact-1.html"><img src="images/client-logo/w6.png" alt=""></a></div>
+                                            <a href="<?php echo $path; ?>contact/index.php"><img src="<?php echo $path; ?>images/client-logo/w6.png" alt=""></a></div>
                                         </div>
                                     </div>
                                     
@@ -1142,10 +961,10 @@
                         <div class="masonry-item  cat-2 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-1.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-1.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Chair Furniture</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Chair Furniture</a></h4>
                                     <p class="m-b0">Muscat, Sultanate of Oman</p>      
                                 </div>                                    
                             </div>
@@ -1155,10 +974,10 @@
                         <div class="masonry-item  cat-2 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-2.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-2.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Furniture</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Furniture</a></h4>
                                     <p class="m-b0">North House</p>      
                                 </div>                                 
                             </div>
@@ -1168,10 +987,10 @@
                         <div class="masonry-item  cat-6 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-3.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-3.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Living room</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Living room</a></h4>
                                     <p class="m-b0">Aqaba, Jordan</p>      
                                 </div>                                 
                             </div>
@@ -1181,10 +1000,10 @@
                         <div class="masonry-item  cat-6 col-lg-4 col-md-6 m-b30">
                           <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-4.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-4.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Dream Workspace</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Dream Workspace</a></h4>
                                     <p class="m-b0">Perth, Australia </p>      
                                 </div>                                 
                             </div>
@@ -1194,10 +1013,10 @@
                         <div class="masonry-item  cat-3 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx  img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-5.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-5.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Decore</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Decore</a></h4>
                                     <p class="m-b0">Aqaba, Jordan</p>      
                                 </div>                                   
                             </div>
@@ -1207,10 +1026,10 @@
                         <div class="masonry-item  cat-3 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx  img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-6.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-6.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Modern Decoration</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Modern Decoration</a></h4>
                                     <p class="m-b0">Muscat, Sultanate of Oman</p>      
                                 </div>                                   
                             </div>
@@ -1220,10 +1039,10 @@
                         <div class="masonry-item  cat-1 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-7.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-7.jpg" alt=""></a>
                                 </div>
                                 <div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Bathroom</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Bathroom</a></h4>
                                     <p class="m-b0">North House</p>      
                                 </div>                                  
                             </div>
@@ -1233,10 +1052,10 @@
                         <div class="masonry-item  cat-5 col-lg-4 col-md-6 m-b30">
                             <div class="wt-box   work-hover-content">
                                 <div class="wt-thum-bx img-center-icon">
-                                    <a href="project-detail.html"><img src="images/our-work/s-8.jpg" alt=""></a>
+                                    <a href="<?php echo $path; ?>extra/post-right-sidebar.php"><img src="<?php echo $path; ?>images/our-work/s-8.jpg" alt=""></a>
                                 </div>
                             	<div class="wt-info  p-t20">
-                                    <h4 class="wt-tilte m-b10 m-t0"><a href="project-detail.html">Building house</a></h4>
+                                    <h4 class="wt-tilte m-b10 m-t0"><a href="<?php echo $path; ?>extra/post-right-sidebar.php">Building house</a></h4>
                                     <p class="m-b0">Ultanate of Oman </p>      
                                 </div>                                   
                             </div>
@@ -1249,7 +1068,7 @@
             <!-- OUR WORK CONTENT END  -->
                        
             <!-- TESTIMONIAL SECTION START -->
-            <div class="section-full small-device  p-t80 p-b50 bg-white bg-repeat" style="background-image:url(images/background/ptn-1.png)">
+            <div class="section-full small-device  p-t80 p-b50 bg-white bg-repeat" style="background-image:url(<?php echo $path; ?>images/background/ptn-1.png)">
 				<div class="container">
                     <div class="section-content">
                     	<div class="row">
@@ -1271,7 +1090,7 @@
                                                 </div>                                            
                                                 <div class="testimonial-pic-block"> 
                                                     <div class="testimonial-pic">
-                                                        <img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
+                                                        <img src="<?php echo $path; ?>images/testimonials/pic1.jpg" width="132" height="132" alt="">
                                                     </div>
                                                 </div>
                                             </div>                                            
@@ -1294,7 +1113,7 @@
                                                 </div>                                            
                                                 <div class="testimonial-pic-block"> 
                                                     <div class="testimonial-pic">
-                                                        <img src="images/testimonials/pic2.jpg" width="132" height="132" alt="">
+                                                        <img src="<?php echo $path; ?>images/testimonials/pic2.jpg" width="132" height="132" alt="">
                                                     </div>
                                                 </div>
                                             </div>                                            
@@ -1317,7 +1136,7 @@
                                                 </div>                                            
                                                 <div class="testimonial-pic-block"> 
                                                     <div class="testimonial-pic">
-                                                        <img src="images/testimonials/pic3.jpg" width="132" height="132" alt="">
+                                                        <img src="<?php echo $path; ?>images/testimonials/pic3.jpg" width="132" height="132" alt="">
                                                     </div>
                                                 </div>
                                             </div>                                            
@@ -1347,144 +1166,16 @@
                     </div>
                 </div>
             </div>   
-            <!-- TESTIMONIAL SECTION END -->                
+            <!-- TESTIMONIAL SECTION END -->               
                                  
 
         </div>
         <!-- CONTENT END -->
         
-        <!-- FOOTER START -->
-        <footer class="site-footer footer-large  footer-light	footer-wide">
-            
-            <!-- FOOTER BLOCKES START -->  
-            <div class="footer-top overlay-wraper">
-                <div class="overlay-main"></div>
-                <div class="container">
-                    <div class="text-center">
-                    	<div class="footer-link">
-                            <ul>
-                                <li><a href="about-1.html" data-hover="About">About</a></li>
-                                <li><a href="post-gallery.html" data-hover="Gallery">Gallery</a></li>
-                                <li><a href="news-grid.html" data-hover="Blog">Blog</a></li>
-                                <li><a href="work-masonry.html" data-hover="Portfolio">Portfolio</a></li>
-                                <li><a href="contact-1.html" data-hover="Contact Us">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- ABOUT COMPANY -->
-
-                        <div class="col-lg-4 col-md-4">  
-                            <div class="widget text-center getin-touch">
-                                <h4 class="widget-title">Get In Touch</h4>
-                                <div class="widget-section">
-                                	<ul>
-                                        <li>intoriza@gmail.com</li>
-                                        <li>(+291) 912-3456-073</li>
-                                    </ul>
-                                </div>
-                            </div>
-                     
-                        </div> 
-
-                        <!-- TAGS -->
-                        <div class="col-lg-4 col-md-4">
-                            <div class="widget text-center widget_address m-b20">
-                                <h4 class="widget-title">Address</h4>
-                                <div class="widget-section">
-                                    <ul>
-                                        <li>92 Princess Road, parkvenue,Greater London, NW18JR, United Kingdom</li>
-                                    </ul>
-                                </div>
-                                <div class="footer-social-icon">
-                           			<ul class="social-icons f-social-link">
-                                        <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                                                
-                        <!-- USEFUL LINKS -->
-                        <div class="col-lg-4 col-md-4">
-                            <div class="widget text-center">
-                                <h4 class="widget-title">Studio</h4>
-                                <div class="widget-section">
-                                    <ul>
-                                        <li><a href="about-1.html">Terms of Condition</a></li>
-                                        <li><a href="post-gallery.html">Privacy Policy</a></li>
-                                    </ul>
-                                </div>                                
-                            </div>                           
-                        </div>      
-
-                        <!-- NEWSLETTER -->
-
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- FOOTER COPYRIGHT -->
-            <div class="footer-bottom overlay-wraper">
-                <div class="overlay-main"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="wt-footer-bot-center">
-                            <span class="copyrights-text">© 2024 Your Company. Designed By Thewebmax</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- FOOTER END -->
-
-        <!-- BUTTON TOP START -->
-		<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
         
-     
-    </div>
-
-<!-- LOADING AREA START ===== -->
-<div class="loading-area">
-    <div class="loading-box"></div>
-    <div class="loading-pic">
-        <div class="cssload-box-loading"></div>
-    </div>
-</div>
-<!-- LOADING AREA  END ====== -->
-
-
-
-<!-- JAVASCRIPT  FILES ========================================= --> 
-<script  src="js/jquery-3.7.1.min.js"></script><!-- JQUERY.MIN JS -->
-<script  src="js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-<script  src="js/magnific-popup.min.js"></script><!-- MAGNIFIC-POPUP JS -->
-<script  src="js/waypoints.min.js"></script><!-- WAYPOINTS JS -->
-<script  src="js/counterup.min.js"></script><!-- COUNTERUP JS -->
-<script  src="js/waypoints-sticky.min.js"></script><!-- COUNTERUP JS -->
-<script  src="js/imagesloaded.pkgd.min.js"></script><!-- MASONRY  -->
-<script  src="js/isotope.pkgd.min.js"></script><!-- MASONRY  -->
-<script  src="js/owl.carousel.min.js"></script><!-- OWL  SLIDER  -->
-<script  src="js/jquery.owl-filter.js"></script>
-<script  src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-<script  src="js/shortcode.js"></script><!-- SHORTCODE FUCTIONS  -->
-
-
-<!-- REVOLUTION JS FILES -->
-
-<script  src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script  src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->	
-<script  src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
-<script  src='plugins/revolution/revolution-addons/beforeafter/js/revolution.addon.beforeafter.min.js'></script>
-
-<!-- REVOLUTION SLIDER SCRIPT FILES -->
-<script  src="js/rev-script-2.js"></script>
-
-
+<?php
+include($path . 'include/footer.php');
+?>
 <script>
 $(document).ready(function() {
 
@@ -1567,8 +1258,5 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
 </body>
-
 </html>
