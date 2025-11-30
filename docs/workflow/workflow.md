@@ -43,10 +43,36 @@ Since this is a static HTML website without a backend or build process that uses
 *   **To make a global change** (e.g., adding a menu item or changing the footer address), you must update the HTML in **every single page** of the website.
 *   Use "Find and Replace in Files" in your code editor to make this easier, but be careful to match the exact HTML structure.
 
+## Link Management
+
+Since the website uses a nested directory structure, managing relative links manually can be error-prone.
+
+### The `fix_links_smart.py` Script
+
+We have included a Python script `fix_links_smart.py` in the root directory to automate link updates.
+
+**How it works:**
+1.  It scans all `index.html` files in the `intoriza/` directory.
+2.  It calculates the depth of each file relative to the root.
+3.  It parses the HTML and updates:
+    *   **Navigation Links**: Converts old filenames (e.g., `about-1.html`) to new directory paths (e.g., `../about/`).
+    *   **Asset Links**: Ensures CSS, JS, and Image links have the correct `../` prefix.
+
+**When to run it:**
+*   After adding a new page.
+*   After moving a page to a different directory.
+*   If you notice broken links or missing styles.
+
+**Usage:**
+```bash
+python fix_links_smart.py
+```
+
 ## Git Workflow
 
 1.  **Pull Latest Changes:** `git pull origin main` (or your working branch).
 2.  **Make Changes:** Edit files as needed.
-3.  **Stage Changes:** `git add .`
-4.  **Commit:** `git commit -m "Description of changes"`
-5.  **Push:** `git push origin [branch-name]`
+3.  **Run Link Fixer:** `python fix_links_smart.py` (optional but recommended).
+4.  **Stage Changes:** `git add .`
+5.  **Commit:** `git commit -m "Description of changes"`
+6.  **Push:** `git push origin [branch-name]`
