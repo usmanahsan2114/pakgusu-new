@@ -2,68 +2,44 @@
 
 ## Overview
 
-All website pages follow a consistent section structure as defined in `../Page_by_Page_Section_Layout.md`. Each page type has specific sections that should be included.
+All website pages have been restructured to strictly follow the layout defined in `../Page_by_Page_Section_Layout.md`.
 
-## Section Markers
+## Current State
+- **Hero Sections**: Preserved from the original template (Slider or Banner).
+- **Other Sections**: Replaced with **Placeholder Sections**.
 
-Each section in the HTML is marked with HTML comments for easy identification:
-
+## Placeholder Sections
+Each required section is now a placeholder with the following structure:
 ```html
 <!-- Section: [Section Name] -->
-<div class="section-full p-t80 p-b50 bg-white">
-   <!-- Section content -->
+<div class="section-full p-t80 p-b50 bg-white placeholder-section" id="section-[slug]">
+    <div class="container">
+        <div class="section-head text-center">
+            <h2>[Section Name]</h2>
+            <div class="alert alert-warning">
+                <strong>Pending Design:</strong> This section requires implementation.
+            </div>
+        </div>
+    </div>
 </div>
 <!-- /Section: [Section Name] -->
 ```
 
+## Next Steps for Development
+1.  **Iterate through each page.**
+2.  **Replace the placeholder content** with actual design and content.
+3.  **Reuse components** from the original template (found in `extra/originals/`) where appropriate (e.g., using the "Services" grid for "Our Solutions").
+
 ## Page Structure Reference
 
 ### Home Page (/)
-1. Hero
-2. Who We Are
-3. Our Solutions
-4. Product Highlights
-5. Industries We Serve
-6. Why Choose PakGusu
-7. Latest from Resources
-8. Call-to-Action Banner
-9. Global Footer
+- Hero (Existing)
+- Who We Are (Placeholder)
+- Our Solutions (Placeholder)
+- Product Highlights (Placeholder)
+- Industries We Serve (Placeholder)
+- Why Choose PakGusu (Placeholder)
+- Latest from Resources (Placeholder)
+- Call-to-Action Banner (Placeholder)
 
-### About Page (/about)
-1. Hero
-2. Company Snapshot
-3. Our Story & Timeline
-4. Partnership with GUSU China
-5. Mission, Vision & Values
-6. Our Facility & Capabilities
-7. Quality & Compliance
-8. Leadership/Expertise
-9. CTA
-
-### Product Pages
-Each product detail page includes:
-1. Hero
-2. Overview
-3. Product-specific sections (types, options, etc.)
-4. Key Features & Benefits
-5. Technical Specs/Applications
-6. Gallery
-7. Related Solutions
-8. CTA
-
-## Managing Sections
-
-### Adding New Sections
-When adding a new section:
-1. Use the section marker comments
-2. Follow the Bootstrap grid system (container > row > col)
-3. Use consistent class names from the template
-4. Add `<!-- TODO: Design/Content needed -->` for incomplete sections
-
-### Section Styling
-Standard section classes:
-- `section-full` - Full-width section
-- `p-t80 p-b50` - Padding top 80px, bottom 50px
-- `bg-white`, `bg-gray` - Background colors
-
-See `Page_by_Page_Section_Layout.md` for complete section requirements per page.
+*(See `../Page_by_Page_Section_Layout.md` for the full list for all pages)*
