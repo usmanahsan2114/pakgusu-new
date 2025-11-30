@@ -1,5 +1,7 @@
 # Website Workflow Documentation
 
+**Note:** See [`page-structure.md`](./page-structure.md) for the complete website structure and page hierarchy.
+
 ## Directory Structure
 
 The website follows a structured directory layout where each page is its own directory containing an `index.html` file. This allows for clean URLs (e.g., `example.com/about/` instead of `example.com/about.html`).
