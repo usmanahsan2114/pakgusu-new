@@ -1,0 +1,30 @@
+
+# Full Website Page Structure
+
+## Top-Level Pages
+
+- Home (`/`)
+- About Us (`/about`)
+- Products (`/products`)
+  - Cleanroom Panels (`/products/cleanroom-panels`)
+  - Cleanroom Windows (`/products/cleanroom-windows`)
+  - Cleanroom Doors (`/products/cleanroom-doors`)
+  - Pass-Through Chambers (`/products/pass-through-chambers`)
+  - Aluminum Profiles (`/products/aluminum-profiles`)
+  - Cleanroom LED Lights (`/products/cleanroom-led-lights`)
+- Services – Turnkey Cleanroom Solutions (`/services`)
+- Industries (`/industries`)
+  - Pharmaceutical & Nutraceutical (`/industries/pharmaceutical-nutraceutical`)
+  - Healthcare & Hospitals (`/industries/healthcare-hospitals`)
+  - Food & Beverage (`/industries/food-beverage`)
+  - Electronics Manufacturing (`/industries/electronics-manufacturing`)
+  - Laboratories & R&D (`/industries/laboratories-rnd`)
+  - Medical & Surgical Devices (`/industries/medical-surgical-devices`)
+- Resources (`/resources`)
+  - Cleanroom Standards & Classifications (`/resources/cleanroom-standards-classifications`)
+  - Blog (`/resources/blog`)
+  - News & Events (`/resources/news-events`)
+  - FAQs (`/resources/faqs`)
+- Case Studies (`/case-studies`)
+- Careers (`/careers`)
+- Contact (`/contact`)
