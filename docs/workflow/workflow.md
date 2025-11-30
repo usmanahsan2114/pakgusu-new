@@ -53,19 +53,6 @@ Since the website uses a nested directory structure, managing relative links man
 ### The `fix_links_smart.py` Script
 
 We have included a Python script `fix_links_smart.py` in the root directory to automate link updates.
-
-**How it works:**
-1.  It scans all `index.html` files in the `intoriza/` directory.
-2.  It calculates the depth of each file relative to the root.
-3.  It parses the HTML and updates:
-    *   **Navigation Links**: Converts old filenames (e.g., `about-1.html`) to new directory paths (e.g., `../about/`).
-    *   **Asset Links**: Ensures CSS, JS, and Image links have the correct `../` prefix.
-
-**When to run it:**
-*   After adding a new page.
-*   After moving a page to a different directory.
-*   If you notice broken links or missing styles.
-
 **Usage:**
 ```bash
 python fix_links_smart.py
