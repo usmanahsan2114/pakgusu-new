@@ -1276,64 +1276,54 @@
 </div>
 <!-- LOADING AREA START ===== -->
 <div class="loading-area">
-<div class="loading-box"></div>
-		.owlCarousel({
-		items : slidesPerPage,
-		dots: false,
-		nav: false,
-		margin:5,
-		smartSpeed: 200,
-		slideSpeed : 500,
-		slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-		responsiveRefreshRate : 100
-	  }).on('changed.owl.carousel', syncPosition2);
+    <div class="loading-box"></div>
+    <div class="loading-pic">
+        <div class="cssload-box-loading"></div>
+    </div>
+</div>
+<!-- LOADING AREA  END ====== -->
+<!-- JAVASCRIPT FILES ========================================= -->
+<script src="./js/jquery-3.7.1.min.js"></script><!-- JQUERY.MIN JS -->
+<script src="./js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="./js/magnific-popup.min.js"></script><!-- MAGNIFIC-POPUP JS -->
+<script src="./js/waypoints.min.js"></script><!-- WAYPOINTS JS -->
+<script src="./js/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="./js/waypoints-sticky.min.js"></script><!-- COUNTERUP JS -->
+<script src="./js/imagesloaded.pkgd.min.js"></script><!-- IMAGESLOADED -->
+<script src="./js/isotope.pkgd.min.js"></script><!-- MASONRY  -->
+<script src="./js/owl.carousel.min.js"></script><!-- OWL  SLIDER  -->
+<script src="./js/jquery.owl-filter.js"></script>
+<script src="./js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
+<script src="./js/shortcode.js"></script><!-- SHORTCODE FUCTIONS  -->
+<!-- REVOLUTION JS FILES -->
+<script src="./plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="./plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+<script src="./plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
+<script src="./plugins/revolution/revolution-addons/beforeafter/js/revolution.addon.beforeafter.min.js"></script>
+<!-- REVOLUTION SLIDER SCRIPT FILES -->
+<script src="./js/rev-script-2.js"></script>
+<script>
+// UI/UX Overhaul: Scroll Animation Trigger
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-  function syncPosition(el) {
-    //if you set loop to false, you have to restore this next line
-    //var current = el.item.index;
-    
-    //if you disable loop you have to comment this block
-    var count = el.item.count-1;
-    var current = Math.round(el.item.index - (el.item.count/2) - .5);
-    
-    if(current < 0) {
-      current = count;
-    }
-    if(current > count) {
-      current = 0;
-    }
-    
-    //end block
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
 
-    sync2
-      .find(".owl-item")
-      .removeClass("current")
-      .eq(current)
-      .addClass("current");
-    var onscreen = sync2.find('.owl-item.active').length - 1;
-    var start = sync2.find('.owl-item.active').first().index();
-    var end = sync2.find('.owl-item.active').last().index();
-    
-    if (current > end) {
-      sync2.data('owl.carousel').to(current, 100, true);
-    }
-    if (current < start) {
-      sync2.data('owl.carousel').to(current - onscreen, 100, true);
-    }
-  }
-  
-  function syncPosition2(el) {
-    if(syncedSecondary) {
-      var number = el.item.index;
-      sync1.data('owl.carousel').to(number, 100, true);
-    }
-  }
-  
-  sync2.on("click", ".owl-item", function(e){
-    e.preventDefault();
-    var number = $(this).index();
-    sync1.data('owl.carousel').to(number, 300, true);
-  });
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+    });
 });
 </script>
 </body>
