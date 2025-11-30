@@ -4,12 +4,19 @@
 > Note: Replace any bracketed placeholders (e.g. [X years]) with real values when available.
 
 ---
+PakGusu Technology Pvt Ltd.
+8- Km, Sundar-Raiwand Road. Lahore
+Tel: 0092 321 8073738
+Email: info@pakgusu.com
+Email: pakgusu@gmail.com
 
 ## Home (`/`)
 
 # Turnkey Cleanroom Solutions in Pakistan
 
 PakGusu Technology (Pvt) Ltd is a leading **cleanroom manufacturer in Pakistan**, delivering turnkey **modular cleanroom solutions** for pharmaceutical, healthcare, electronics, food, and research industries. Backed by our strategic partnership with **GUSU Purification (China)**, we combine global cleanroom expertise with local manufacturing and on-ground support.
+
+
 
 ### Build World-Class Modular Cleanrooms Locally
 
@@ -436,6 +443,11 @@ Include:
 - Primary phone numbers (click-to-call on mobile)
 - Email addresses for sales and support
 - Simple contact form with a field for project details
+PakGusu Technology Pvt Ltd.
+8- Km, Sundar-Raiwand Road. Lahore
+Tel: 0092 321 8073738
+Email: info@pakgusu.com
+Email: pakgusu@gmail.com
 
 Meta description example:
 
