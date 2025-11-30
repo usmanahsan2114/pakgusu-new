@@ -4,13 +4,13 @@
 =====================*/
 
 ::selection {
- background: #50aab2;
+ background: #29afe3;
 }
 ::-moz-selection {
- background: #50aab2;
+ background: #29afe3;
 }
 ::-webkit-selection {
-  background: #50aab2;
+  background: #29afe3;
 }
 
 /* Premery bg Hex color*/
@@ -48,26 +48,26 @@ ol.comment-list li.comment .reply a::before,
 .cssload-box-loading::after,
 .is-fixed .header-center .navbar-toggle .icon-bar,
 .header-style-1 .navbar-toggler .icon-bar {
-	background-color:#50aab2;
+	background-color:#29afe3;
 }
 
 
 
 /* Premery hex buttons bg color*/
 .site-button {
-	background-color:#50aab2;
+	background-color:#29afe3;
 }
 .site-button:hover,
 .site-button:focus,
 .site-button:active{
-	background-color:#da4386;
+	background-color:#004685;
 }
 
 .site-button:hover,
 .site-button:focus,
 .site-button:active,
 .our-team-one:hover .team-bg, .our-team-one.hover .team-bg{
-	background-color:#1f3334;
+	background-color:#004685;
 }
 
 /*===================== 
@@ -119,13 +119,13 @@ ol.comment-list li.comment .reply a,
 .site-footer .widget-section > ul > li a:hover,
 .has-child .submenu-toogle,
 .nav-dark.header-nav .nav > li > a:hover, .nav-dark.header-nav .nav > li > a:active, .nav-dark.header-nav .nav > li > a:focus{
-	color:#50aab2;
+	color:#29afe3;
 }
 
 @media only screen and (max-width:991px) {
 .contact-slide-show.text-white,
 .site-bg-primary .site-search-btn {
-	color:#50aab2 !important;
+	color:#29afe3 !important;
 }
 }
 
@@ -138,7 +138,7 @@ ol.comment-list li.comment .reply a,
 .site-button:before,
 .tp-thumbs-inner-wrapper .tp-thumb.selected:after,
 ol.comment-list li.comment .comment-body{
-	border-color:#50aab2;
+	border-color:#29afe3;
 }
 
 
@@ -146,7 +146,7 @@ ol.comment-list li.comment .comment-body{
 .site-button.hover:before,
 .site-button:hover:after,
 .site-button.hover:after {
-	border-color:#1f3334;
+	border-color:#004685;
 }
 
 /*===================== 
@@ -157,33 +157,33 @@ ol.comment-list li.comment .comment-body{
 .site-button-secondry,
 .nav-dark.header-nav .nav > li .sub-menu,
 .nav-dark.header-nav .nav > li .mega-menu{
-	background-color:#1f3334;
+	background-color:#004685;
 }
 
 
 .site-button-secondry:hover,
 .site-button-secondry:focus,
 .site-button-secondry:active {
-	background-color:#247E86;
+	background-color:#29afe3;
 }
 
 .site-button-secondry:hover:before,
 .site-button-secondry.hover:before,
 .site-button-secondry:hover:after,
 .site-button-secondry.hover:after {
-  border-color: #247E86;
+  border-color: #29afe3;
 }
 
 
 
 a:active, a:hover, a:focus {
-    color: #1f3334;
+    color: #004685;
 }
 /* Secondery hex text color*/
 .text-secondry {
-	color:#1f3334;
+	color:#004685;
 }
 /* Secondery hex background color*/
 .bg-secondry {
-	background-color:#1f3334;
+	background-color:#004685;
 }
