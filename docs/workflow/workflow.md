@@ -1,6 +1,7 @@
 # Website Workflow Documentation
 
 **Note:** See [`page-structure.md`](./page-structure.md) for the complete website structure and page hierarchy.
+**Note:** See [`navigation-structure.md`](./navigation-structure.md) for navigation menu details and how to update it.
 
 ## Directory Structure
 
