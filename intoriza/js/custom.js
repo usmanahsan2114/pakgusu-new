@@ -778,42 +778,241 @@ All JavaScript fuctions Start
 					jQuery('.loading-area').hide();
 					if (data['success']) {
 						jQuery("<div class='alert alert-success'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
-						jQuery('.alert-success').delay(2000).fadeOut(500);
-					} else {
-						jQuery("<div class='alert alert-danger'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
+						sync2.on("click", ".owl-item", function (e) {
+							e.preventDefault();
+							var number = $(this).index();
+							sync1.data('owl.carousel').to(number, 300, true);
+						});
 					}
-				}
-			});
-			//jQuery('.cons-contact-form').trigger("reset");
-			return false;
-		});
 
-		// > Sync Slider function for About Section =================== //
-		sync_slider();
 
-	});
 
-	/*===========================
-		Window Load ALL FUNCTION START
-	===========================*/
-	jQuery(window).on('load', function () {
-		// > equal each box function by  = custom.js			
-		equalheight(".equal-wraper .equal-col");
-		// > masonry function function by = isotope.pkgd.min.js		
-		masonryBox();
-		// > page loader function by = custom.js		
-		page_loader();
-	});
+					// > Login Signup Form function by = custom.js ========== //			
+					function login_signup_form() {
+						$(".input input , .input textarea").focus(function () {
 
-})(window.jQuery);
+							$(this).parent(".input").each(function () {
+								$("label", this).css({
+									"line-height": "18px",
+									"font-size": "14px",
+									"font-weight": "600",
+									"top": "0px"
+								})
+								$(".spin", this).css({
+									"width": "100%"
+								})
+							});
+						}).blur(function () {
+							$(".spin").css({
+								"width": "0px"
+							})
+							if ($(this).val() == "") {
+								$(this).parent(".input").each(function () {
+									$("label", this).css({
+										"line-height": "60px",
+										"font-size": "14px",
+										"font-weight": "600",
+										"top": "10px"
+									})
+								});
 
-/* ======================================
-   WhatsApp Widget Injection
-   ====================================== */
-(function ($) {
-	'use strict';
-	$(document).ready(function () {
-		var widgetHTML = `
+							}
+						});
+					}
+					/*--------------------------------------------------------------------------------------------
+						Window on load ALL FUNCTION START
+					---------------------------------------------------------------------------------------------*/
+					// > equal each box function by  = custom.js =========================== //	 
+					function equalheight(container) {
+						var currentTallest = 0,
+							currentRowStart = 0,
+							rowDivs = new Array(),
+							$el, topPosition = 0,
+							currentDiv = 0;
+
+						jQuery(container).each(function () {
+							$el = jQuery(this);
+							jQuery($el).height('auto');
+							var topPostion = $el.position().top;
+							if (currentRowStart != topPostion) {
+								for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
+									rowDivs[currentDiv].height(currentTallest);
+								}
+								rowDivs.length = 0; // empty the array
+								currentRowStart = topPostion;
+								currentTallest = $el.height();
+								rowDivs.push($el);
+							} else {
+
+								rowDivs.push($el);
+								currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+							}
+
+							for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
+								rowDivs[currentDiv].height(currentTallest);
+							}
+						});
+					}
+
+					// > masonry function function by = isotope.pkgd.min.js ========================= //	
+
+					// > masonry function function by = isotope.pkgd.min.js ========================= //	
+					function masonryBox() {
+						if (jQuery().isotope) {
+							var $container = jQuery('.portfolio-wrap');
+							$container.isotope({
+								itemSelector: '.masonry-item',
+								transitionDuration: '1s',
+								originLeft: true,
+								stamp: '.stamp',
+							});
+
+							$container.imagesLoaded().progress(function () {
+								$container.isotope('layout');
+							});
+
+							jQuery('.masonry-filter li').on('click', function () {
+								var selector = jQuery(this).find("a").attr('data-filter');
+								jQuery('.masonry-filter li').removeClass('active');
+								jQuery(this).addClass('active');
+								$container.isotope({ filter: selector });
+								return false;
+							});
+						};
+					}
+
+
+					// > page loader function by = custom.js ========================= //		
+					function page_loader() {
+						$('.loading-area').fadeOut(1000)
+					};
+
+					/*--------------------------------------------------------------------------------------------
+						Window on scroll ALL FUNCTION START
+					---------------------------------------------------------------------------------------------*/
+
+					function color_fill_header() {
+						var scroll = $(window).scrollTop();
+						if (scroll >= 100) {
+							$(".is-fixed").addClass("color-fill");
+						} else {
+							$(".is-fixed").removeClass("color-fill");
+						}
+					};
+
+					/*--------------------------------------------------------------------------------------------
+						document.ready ALL FUNCTION START
+					---------------------------------------------------------------------------------------------*/
+					jQuery(document).ready(function () {
+						//social_slide(), 
+						// > Top Search bar Show Hide function by = custom.js  		
+						site_search(),
+							// > Login Signup Form function by = custom.js ========== //			
+							login_signup_form()
+						// > Top Social bar Show Hide function by = custom.js  		
+						data_tooltip(),
+							contact_slide()
+						// > Video responsive function by = custom.js 
+						video_responsive(),
+							// > magnificPopup function	by = magnific-popup.js
+							magnific_popup(),
+							// > magnificPopup for video function	by = magnific-popup.js
+							magnific_video(),
+							// > Vertically center Bootstrap modal popup function by = custom.js
+							popup_vertical_center();
+						// > Main menu sticky on top  when scroll down function by = custom.js		
+						sticky_header(),
+							// > page scroll top on button click function by = custom.js	
+							scroll_top(),
+							// > footer fixed on bottom function by = custom.js	
+							footer_fixed(),
+							// > accordion active calss function by = custom.js ========================= //			
+							accordion_active(),
+							// > Nav submenu on off function by = custome.js ===================//
+							mobile_nav(),
+							//___Mobile side drawer function by = custom.js________//
+							mobile_side_drawer(),
+							//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
+							home_projects_filter(),
+							//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
+							jQuery(window).on('scroll', function () {
+								// > Window on scroll header color fill 
+								color_fill_header()
+							});
+
+						/*===========================
+							Window Resize ALL FUNCTION START
+						===========================*/
+
+						jQuery(window).on('resize', function () {
+							// > footer fixed on bottom function by = custom.js		 
+							footer_fixed(),
+								equalheight(".equal-wraper .equal-col")
+						});
+
+						/*===========================
+							Document on  Submit FUNCTION START
+						===========================*/
+
+						// > Contact form function by = custom.js	
+						jQuery(document).on('submit', 'form.cons-contact-form', function (e) {
+							e.preventDefault();
+							var form = jQuery(this);
+							/* sending message */
+							jQuery.ajax({
+								url: 'https://thewebmax.com/intoriza/phpmailer/mail.php',
+								data: form.serialize() + "&action=contactform",
+								type: 'POST',
+								dataType: 'JSON',
+								beforeSend: function () {
+									jQuery('.loading-area').show();
+								},
+
+								success: function (data) {
+									jQuery('.loading-area').hide();
+									if (data['success']) {
+										jQuery("<div class='alert alert-success'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
+										jQuery('.alert-success').delay(2000).fadeOut(500);
+									} else {
+										jQuery("<div class='alert alert-danger'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
+									}
+								}
+							});
+							//jQuery('.cons-contact-form').trigger("reset");
+							return false;
+						});
+
+						// > Sync Slider function for About Section =================== //
+						sync_slider();
+
+					});
+
+					/*===========================
+						Window Load ALL FUNCTION START
+					===========================*/
+					jQuery(window).on('load', function () {
+						// > equal each box function by  = custom.js			
+						equalheight(".equal-wraper .equal-col");
+						// > masonry function function by = isotope.pkgd.min.js		
+						masonryBox();
+						// > page loader function by = custom.js		
+						page_loader();
+					});
+
+					// Fallback: Remove preloader after 3 seconds if window.load fails to fire
+					setTimeout(function () {
+						$('.loading-area').fadeOut(1000);
+					}, 3000);
+
+				})(window.jQuery);
+
+			/* ======================================
+			   WhatsApp Widget Injection
+			   ====================================== */
+			(function ($) {
+				'use strict';
+				$(document).ready(function () {
+					var widgetHTML = `
             <a href="https://wa.me/923218073738" class="whatsapp-widget" target="_blank">
                 <i class="fa fa-whatsapp"></i>
                 <div class="wa-text">
@@ -822,6 +1021,6 @@ All JavaScript fuctions Start
                 </div>
             </a>
         `;
-		$('body').append(widgetHTML);
-	});
-})(jQuery);
+					$('body').append(widgetHTML);
+				});
+			})(jQuery);
