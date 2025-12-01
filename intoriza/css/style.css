@@ -1,4 +1,4 @@
-/*
+﻿/*
 ==========================
 Template: intoriza - Interior & Architecture HTML Template 
 Author: thewebmax team
@@ -14536,7 +14536,7 @@ ol.commentlist li::after {
 	display: inline-block;
 	color: #50aab2;
 	font-size: 20px;
-	background-color: # fff;
+	background-color: #fff;
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
@@ -15255,7 +15255,7 @@ STEP NUMBER
 }
 
 .welcome-carousel-1 .home-carousel-1 {
-	-webkit-box-shadow: -30px 30px 60px 0 #rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -30px 30px 60px 0 rgba(0, 0, 0, 0.5);
 	box-shadow: -30px 30px 60px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -16403,403 +16403,6 @@ img,
 .testimonial-5,
 .wt-icon-box-wraper {}
 
-.header-style-1.mobile-sider-drawer-menu.active .icon-bar.icon-bar-two {
-	position: absolute;
-	right: 100px;
-	opacity: 0;
-}
-
-.header-style-1.mobile-sider-drawer-menu .is-fixed .header-nav .nav {
-	overflow: visible;
-	max-height: 100%;
-}
-
-.header-style-1.mobile-sider-drawer-menu .header-fixed .header-nav .nav {
-	overflow: visible;
-	max-height: 100%;
-}
-}
-
-
-
-
-@media only screen and (max-width:991px) {
-	.section-full.p-t80 {
-		padding-top: 40px;
-	}
-
-	.section-full.p-b50 {
-		padding-bottom: 10px;
-	}
-}
-
-
-.contact-info-section .wt-icon-box-wraper {
-	border: 1px solid #efefef;
-}
-
-
-.wt-mid-page {
-	position: relative;
-	max-width: 840px;
-	margin: 0px auto;
-}
-
-/* =============================================
-   UI/UX OVERHAUL: Global Animations & Utilities
-   ============================================= */
-
-/* Fade In Up Animation */
-.fade-in-up {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-up.visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* Hover Float Effect */
-.hover-float {
-	transition: transform 0.3s ease-in-out;
-}
-
-.hover-float:hover {
-	transform: translateY(-10px);
-}
-
-/* Hover Underline Effect for Nav */
-.hover-underline {
-	position: relative;
-	text-decoration: none;
-}
-
-.hover-underline::after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 2px;
-	bottom: -2px;
-	left: 0;
-	background-color: #29afe3;
-	transition: width 0.3s ease-in-out;
-}
-
-.hover-underline:hover::after {
-	width: 100%;
-}
-
-/* Card Zoom Effect */
-.hover-zoom-card {
-	overflow: hidden;
-	transition: box-shadow 0.3s ease;
-}
-
-.hover-zoom-card:hover {
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.hover-zoom-card img {
-	transition: transform 0.5s ease;
-}
-
-.hover-zoom-card:hover img {
-	transform: scale(1.05);
-}
-
-/* Input Focus Animation */
-.input-animate input:focus,
-.input-animate textarea:focus {
-	border-bottom: 2px solid #29afe3;
-	transition: border-bottom 0.3s ease;
-}
-
-/* Footer Wave Animation */
-.footer-wave {
-	position: absolute;
-	top: -50px;
-	left: 0;
-	width: 100%;
-	height: 50px;
-	background: url('../images/wave.svg') repeat-x;
-	animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-	transform: translate3d(0, 0, 0);
-}
-
-@keyframes wave {
-	0% {
-		margin-left: 0;
-	}
-
-	100% {
-		margin-left: -1600px;
-	}
-}
-
-
-/* ======================================
-   Global Border Radius (User Request)
-   ====================================== */
-:root {
-	--global-radius: 5px;
-}
-
-/* Buttons */
-.site-button,
-.btn,
-button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-.owl-prev,
-.owl-next {
-	border-radius: var(--global-radius) !important;
-}
-
-/* Images */
-img,
-.wt-media,
-.wt-thum-bx,
-.wt-img-effect,
-.ow-client-logo,
-.client-logo {
-	border-radius: var(--global-radius);
-}
-
-/* Cards & Boxes */
-.wt-box,
-.blog-post,
-.service-box,
-.pricingtable-wrapper,
-.testimonial-1,
-.testimonial-2,
-.testimonial-3,
-.testimonial-4,
-.testimonial-5,
-.wt-icon-box-wraper {
-	border-radius: var(--global-radius);
-	overflow: hidden;
-	/* Ensure child elements don't overflow rounded corners */
-}
-
-/* Form Elements */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-textarea,
-select,
-.form-control {
-	border-radius: var(--global-radius) !important;
-}
-
-/* Specific Overrides for Layouts */
-.wt-separator-outer,
-.header-style-1.mobile-sider-drawer-menu.active .icon-bar.icon-bar-two {
-	position: absolute;
-	right: 100px;
-	opacity: 0;
-}
-
-.header-style-1.mobile-sider-drawer-menu .is-fixed .header-nav .nav {
-	overflow: visible;
-	max-height: 100%;
-}
-
-.header-style-1.mobile-sider-drawer-menu .header-fixed .header-nav .nav {
-	overflow: visible;
-	max-height: 100%;
-}
-}
-
-
-
-
-@media only screen and (max-width:991px) {
-	.section-full.p-t80 {
-		padding-top: 40px;
-	}
-
-	.section-full.p-b50 {
-		padding-bottom: 10px;
-	}
-}
-
-
-.contact-info-section .wt-icon-box-wraper {
-	border: 1px solid #efefef;
-}
-
-
-.wt-mid-page {
-	position: relative;
-	max-width: 840px;
-	margin: 0px auto;
-}
-
-/* =============================================
-   UI/UX OVERHAUL: Global Animations & Utilities
-   ============================================= */
-
-/* Fade In Up Animation */
-.fade-in-up {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-up.visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* Hover Float Effect */
-.hover-float {
-	transition: transform 0.3s ease-in-out;
-}
-
-.hover-float:hover {
-	transform: translateY(-10px);
-}
-
-/* Hover Underline Effect for Nav */
-.hover-underline {
-	position: relative;
-	text-decoration: none;
-}
-
-.hover-underline::after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 2px;
-	bottom: -2px;
-	left: 0;
-	background-color: #29afe3;
-	transition: width 0.3s ease-in-out;
-}
-
-.hover-underline:hover::after {
-	width: 100%;
-}
-
-/* Card Zoom Effect */
-.hover-zoom-card {
-	overflow: hidden;
-	transition: box-shadow 0.3s ease;
-}
-
-.hover-zoom-card:hover {
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.hover-zoom-card img {
-	transition: transform 0.5s ease;
-}
-
-.hover-zoom-card:hover img {
-	transform: scale(1.05);
-}
-
-/* Input Focus Animation */
-.input-animate input:focus,
-.input-animate textarea:focus {
-	border-bottom: 2px solid #29afe3;
-	transition: border-bottom 0.3s ease;
-}
-
-/* Footer Wave Animation */
-.footer-wave {
-	position: absolute;
-	top: -50px;
-	left: 0;
-	width: 100%;
-	height: 50px;
-	background: url('../images/wave.svg') repeat-x;
-	animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-	transform: translate3d(0, 0, 0);
-}
-
-@keyframes wave {
-	0% {
-		margin-left: 0;
-	}
-
-	100% {
-		margin-left: -1600px;
-	}
-}
-
-
-/* ======================================
-   Global Border Radius (User Request)
-   ====================================== */
-:root {
-	var(--global-radius): 5px;
-}
-
-/* Buttons */
-.site-button,
-.btn,
-button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-.owl-prev,
-.owl-next {
-	border-radius: var(--global-radius) !important;
-}
-
-/* Images */
-img,
-.wt-media,
-.wt-thum-bx,
-.wt-img-effect,
-.ow-client-logo,
-.client-logo {
-	border-radius: var(--global-radius);
-}
-
-/* Cards & Boxes */
-.wt-box,
-.blog-post,
-.service-box,
-.pricingtable-wrapper,
-.testimonial-1,
-.testimonial-2,
-.testimonial-3,
-.testimonial-4,
-.testimonial-5,
-.wt-icon-box-wraper {
-	border-radius: var(--global-radius);
-	overflow: hidden;
-	/* Ensure child elements don't overflow rounded corners */
-}
-
-/* Form Elements */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-textarea,
-select,
-.form-control {
-	border-radius: var(--global-radius) !important;
-}
-
-/* Specific Overrides for Layouts */
-.wt-separator-outer,
-.wt-separator {
-	border-radius: var(--global-radius);
-}
-
-/* Exclude Revolution Slider Backgrounds */
-.rev-slidebg {
-	border-radius: 0 !important;
-}
-
 /* ======================================
    Global Header & Footer Polish
    ====================================== */
@@ -16859,39 +16462,39 @@ select,
 	padding-left: 5px;
 }
 
-/* Social Icons */
-.footer-social-icon .social-icons li a {
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 50%;
-	background: #fff;
-	color: #004685;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.wt-product-gallery .owl-carousel .item img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Sync 2 (Thumbnail) Styling */
+#sync2 {
+	margin-top: 10px;
+}
+
+#sync2 .item {
+	cursor: pointer;
+	opacity: 0.6;
 	transition: all 0.3s ease;
+	border: 2px solid transparent;
 }
 
-.footer-social-icon .social-icons li a:hover {
-	background: #29afe3;
-	color: #fff;
-	transform: translateY(-3px);
+#sync2 .item:hover,
+#sync2 .current .item {
+	opacity: 1;
+	border-color: #29afe3;
 }
 
-/* Copyright Section */
-.footer-bottom {
-	border-top: 1px solid rgba(0, 0, 0, 0.05);
+.wt-product-gallery .hover-zoom-card {
+	overflow: hidden;
+	border-radius: 4px;
 }
 
-.footer-bottom .copyrights-text {
-	color: #666;
-	font-weight: 500;
+.wt-product-gallery .hover-zoom-card img {
+	transition: transform 0.5s ease;
 }
 
-.footer-bottom a {
-	color: #004685;
-	font-weight: 600;
-}
-
-.footer-bottom a:hover {
-	color: #29afe3;
+.wt-product-gallery .hover-zoom-card:hover img {
+	transform: scale(1.05);
 }
