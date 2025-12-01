@@ -741,94 +741,87 @@ All JavaScript fuctions Start
 			//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
 			home_projects_filter(),
 			//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
-			home_projects_filter2(),
-			//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
-			home_projects_filter3(),
-			// Home page testimonial function by = owl.carousel.js ========================== //
-			testimonial_home(),
-			//  Client logo Carousel function by = owl.carousel.js ========================== //
-			home_client_carousel(),
-			//  Client logo Carousel function by = owl.carousel.js ========================== //
-			home_client_carousel_2(),
+			jQuery(window).on('scroll', function () {
+				// > Window on scroll header color fill 
+				color_fill_header()
+			});
 
-			//Home Carousel_1 Full Screen with no margin function by = owl.carousel.js ========================== //
-			home_carousel_1(),
+		/*===========================
+			Window Resize ALL FUNCTION START
+		===========================*/
 
-			aboutus_carousel(),
-			// Top cart list Show Hide function by = custom.js =================== //	
-			cart_block(),
-			// > Home Page Blog Full Screen with no margin function by = owl.carousel.js ========================== //
-			blog_carousel_3()
+		jQuery(window).on('resize', function () {
+			// > footer fixed on bottom function by = custom.js		 
+			footer_fixed(),
+				equalheight(".equal-wraper .equal-col")
+		});
+
+		/*===========================
+			Document on  Submit FUNCTION START
+		===========================*/
+
+		// > Contact form function by = custom.js	
+		jQuery(document).on('submit', 'form.cons-contact-form', function (e) {
+			e.preventDefault();
+			var form = jQuery(this);
+			/* sending message */
+			jQuery.ajax({
+				url: 'https://thewebmax.com/intoriza/phpmailer/mail.php',
+				data: form.serialize() + "&action=contactform",
+				type: 'POST',
+				dataType: 'JSON',
+				beforeSend: function () {
+					jQuery('.loading-area').show();
+				},
+
+				success: function (data) {
+					jQuery('.loading-area').hide();
+					if (data['success']) {
+						jQuery("<div class='alert alert-success'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
+						jQuery('.alert-success').delay(2000).fadeOut(500);
+					} else {
+						jQuery("<div class='alert alert-danger'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
+					}
+				}
+			});
+			//jQuery('.cons-contact-form').trigger("reset");
+			return false;
+		});
+
+		// > Sync Slider function for About Section =================== //
+		sync_slider();
+
 	});
 
-	/*--------------------------------------------------------------------------------------------
-		Window Load START
-	---------------------------------------------------------------------------------------------*/
+	/*===========================
+		Window Load ALL FUNCTION START
+	===========================*/
 	jQuery(window).on('load', function () {
 		// > equal each box function by  = custom.js			
-		equalheight(".equal-wraper .equal-col"),
-			// > masonry function function by = isotope.pkgd.min.js		
-			masonryBox(),
-			// > page loader function by = custom.js		
-			page_loader(),
-			// > work carousel  function by = owl.carousel.js
-			work_carousel()
+		equalheight(".equal-wraper .equal-col");
+		// > masonry function function by = isotope.pkgd.min.js		
+		masonryBox();
+		// > page loader function by = custom.js		
+		page_loader();
 	});
-
-	/*===========================
-	   Window Scroll ALL FUNCTION START
-   ===========================*/
-
-	jQuery(window).on('scroll', function () {
-		// > Window on scroll header color fill 
-		color_fill_header()
-	});
-
-	/*===========================
-		Window Resize ALL FUNCTION START
-	===========================*/
-
-	jQuery(window).on('resize', function () {
-		// > footer fixed on bottom function by = custom.js		 
-		footer_fixed(),
-			equalheight(".equal-wraper .equal-col")
-	});
-
-	/*===========================
-		Document on  Submit FUNCTION START
-	===========================*/
-
-	// > Contact form function by = custom.js	
-	jQuery(document).on('submit', 'form.cons-contact-form', function (e) {
-		e.preventDefault();
-		var form = jQuery(this);
-		/* sending message */
-		jQuery.ajax({
-			url: 'https://thewebmax.com/intoriza/phpmailer/mail.php',
-			data: form.serialize() + "&action=contactform",
-			type: 'POST',
-			dataType: 'JSON',
-			beforeSend: function () {
-				jQuery('.loading-area').show();
-			},
-
-			success: function (data) {
-				jQuery('.loading-area').hide();
-				if (data['success']) {
-					jQuery("<div class='alert alert-success'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
-					jQuery('.alert-success').delay(2000).fadeOut(500);
-				} else {
-					jQuery("<div class='alert alert-danger'>" + data['message'] + "</div>").insertBefore('form.cons-contact-form');
-				}
-			}
-		});
-		//jQuery('.cons-contact-form').trigger("reset");
-		return false;
-	});
-
-	/*===========================
-		Document on  Submit FUNCTION END
-	===========================*/
-
 
 })(window.jQuery);
+
+/* ======================================
+   WhatsApp Widget Injection
+   ====================================== */
+(function ($) {
+	'use strict';
+	$(document).ready(function () {
+		var widgetHTML = `
+            <a href="https://wa.me/923218073738" class="whatsapp-widget" target="_blank">
+                <i class="fa fa-whatsapp"></i>
+                <div class="wa-text">
+                    <span class="wa-title">Chat with us</span>
+                    <span class="wa-subtitle">Online now</span>
+                </div>
+            </a>
+        `;
+		$('body').append(widgetHTML);
+	});
+})(jQuery);

@@ -66,3 +66,10 @@ python fix_links_smart.py
 4.  **Stage Changes:** `git add .`
 5.  **Commit:** `git commit -m "Description of changes"`
 6.  **Push:** `git push origin [branch-name]`
+
+## UI/UX Standards
+
+### Global Features
+-   **Header Hover:** All navigation links have a 5px border radius on hover.
+-   **WhatsApp Widget:** A floating WhatsApp widget is automatically injected via `custom.js` to the bottom-right of every page.
+-   **SVG Waves:** Section transitions (White <-> Gray) are enhanced with SVG wave separators. Use `.wave-separator` with `.shape-fill.white` or `.shape-fill.gray` classes.

@@ -56,3 +56,6 @@ If you need to add or modify navigation items:
 4. Verify changes in your browser
 
 **Note:** Because this is a static HTML template, navigation changes must be applied to every page. The script handles this automatically.
+
+### Styling
+- **Hover Effect:** Navigation links have a 5px border radius on hover (`.nav-line-animation > li > a:before`, `.nav-line-animation > li > a:after`).

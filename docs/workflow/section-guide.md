@@ -67,3 +67,16 @@ Standard section classes:
 - `bg-white`, `bg-gray` - Background colors
 
 See `Page_by_Page_Section_Layout.md` for complete section requirements per page.
+
+### Section Transitions
+To create a smooth transition between sections with different background colors (e.g., White to Gray), insert an SVG wave separator at the bottom of the preceding section.
+
+```html
+<div class="wave-separator">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="..." class="shape-fill [white|gray]"></path>
+    </svg>
+</div>
+```
+- Use `.shape-fill.white` if the *next* section is white.
+- Use `.shape-fill.gray` if the *next* section is gray.

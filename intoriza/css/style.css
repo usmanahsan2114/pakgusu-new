@@ -16404,6 +16404,59 @@ img,
 .wt-icon-box-wraper {}
 
 /* ======================================
+   Preloader Styles
+   ====================================== */
+.loading-area {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999999;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading-pic {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* ======================================
+   Counter Section Styles
+   ====================================== */
+.counter-section-one {
+	background-image: url(../images/counter-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	height: 460px;
+}
+
+.counter-sec-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+}
+
+.counter-sec-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+}
+
+.counter-section-one .wt-icon-box-wraper {
+	background-color: #fff;
+	margin: 0;
+}
+
+/* ======================================
    Global Header & Footer Polish
    ====================================== */
 
@@ -16424,46 +16477,6 @@ img,
 	color: #004685;
 	font-weight: 700;
 	letter-spacing: 0.5px;
-	margin-bottom: 25px;
-	position: relative;
-	padding-bottom: 15px;
-}
-
-.site-footer .widget-title:after {
-	content: '';
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	width: 40px;
-	height: 2px;
-	background: #29afe3;
-	transform: translateX(-50%);
-}
-
-.site-footer .widget_address .widget-title:after,
-.site-footer .widget_services .widget-title:after {
-	left: 50%;
-	/* Keep centered for consistency */
-}
-
-/* Footer Links */
-.footer-link ul li a,
-.widget_services ul li a,
-.widget_address ul li,
-.widget.getin-touch ul li {
-	color: #555;
-	font-size: 15px;
-	transition: all 0.3s ease;
-}
-
-.footer-link ul li a:hover,
-.widget_services ul li a:hover {
-	color: #29afe3;
-	padding-left: 5px;
-}
-
-.wt-product-gallery .owl-carousel .item img {
-	width: 100%;
 	height: auto;
 	display: block;
 }
@@ -16497,4 +16510,295 @@ img,
 
 .wt-product-gallery .hover-zoom-card:hover img {
 	transform: scale(1.05);
+}
+
+/* ======================================
+   Modern UI/UX Enhancements
+   ====================================== */
+
+/* Header Navigation Hover Radius */
+.nav-line-animation>li>a:before,
+.nav-line-animation>li>a:after {
+	border-radius: 5px;
+}
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 99999;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: #25d366;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 50px;
+	box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.whatsapp-widget:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+	color: #fff;
+}
+
+.whatsapp-widget i {
+	font-size: 24px;
+}
+
+.whatsapp-widget .wa-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.2;
+}
+
+.whatsapp-widget .wa-title {
+	font-size: 14px;
+}
+
+.whatsapp-widget .wa-subtitle {
+	font-size: 10px;
+	opacity: 0.9;
+}
+
+/* SVG Wave Separators */
+.wave-separator {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Images */
+img,
+.wt-media,
+.wt-thum-bx,
+.wt-img-effect,
+.ow-client-logo,
+.client-logo {
+	border-radius: var(--global-radius);
+}
+
+/* Cards & Boxes */
+.wt-box,
+.blog-post,
+.service-box,
+.pricingtable-wrapper,
+.testimonial-1,
+.testimonial-2,
+.testimonial-3,
+.testimonial-4,
+.testimonial-5,
+.wt-icon-box-wraper {}
+
+/* ======================================
+   Preloader Styles
+   ====================================== */
+.loading-area {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999999;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading-pic {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* ======================================
+   Counter Section Styles
+   ====================================== */
+.counter-section-one {
+	background-image: url(../images/counter-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	height: 460px;
+}
+
+.counter-sec-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+}
+
+.counter-sec-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+}
+
+.counter-section-one .wt-icon-box-wraper {
+	background-color: #fff;
+	margin: 0;
+}
+
+/* ======================================
+   Global Header & Footer Polish
+   ====================================== */
+
+/* Header Shadow & Spacing */
+.site-header .main-bar {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Navigation Hover Effect */
+.header-nav .nav>li>a:hover,
+.header-nav .nav>li.active>a {
+	color: #29afe3 !important;
+}
+
+/* Footer Typography & Colors */
+.site-footer .widget-title {
+	color: #004685;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	height: auto;
+	display: block;
+}
+
+/* Sync 2 (Thumbnail) Styling */
+#sync2 {
+	margin-top: 10px;
+}
+
+#sync2 .item {
+	cursor: pointer;
+	opacity: 0.6;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+#sync2 .item:hover,
+#sync2 .current .item {
+	opacity: 1;
+	border-color: #29afe3;
+}
+
+.wt-product-gallery .hover-zoom-card {
+	overflow: hidden;
+	border-radius: 4px;
+}
+
+.wt-product-gallery .hover-zoom-card img {
+	transition: transform 0.5s ease;
+}
+
+.wt-product-gallery .hover-zoom-card:hover img {
+	transform: scale(1.05);
+}
+
+/* ======================================
+   Modern UI/UX Enhancements
+   ====================================== */
+
+/* Header Navigation Hover Radius */
+.nav-line-animation>li>a:before,
+.nav-line-animation>li>a:after {
+	border-radius: 5px;
+}
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 99999;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: #25d366;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 50px;
+	box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.whatsapp-widget:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+	color: #fff;
+}
+
+.whatsapp-widget i {
+	font-size: 24px;
+}
+
+.whatsapp-widget .wa-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.2;
+}
+
+.whatsapp-widget .wa-title {
+	font-size: 14px;
+}
+
+.whatsapp-widget .wa-subtitle {
+	font-size: 10px;
+	opacity: 0.9;
+}
+
+/* SVG Wave Separators */
+.wave-separator {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
+}
+
+.wave-separator svg {
+	position: relative;
+	display: block;
+	width: calc(100% + 1.3px);
+	height: 60px;
+}
+
+.wave-separator .shape-fill {
+	fill: #FFFFFF;
+}
+
+.wave-top {
+	top: 0;
+	bottom: auto;
+	transform: none;
+}
+
+.section-full {
+	position: relative;
+}
+
+.wave-separator .shape-fill.white {
+	fill: #FFFFFF;
+}
+
+.wave-separator .shape-fill.gray {
+	fill: #f5f5f5;
 }
