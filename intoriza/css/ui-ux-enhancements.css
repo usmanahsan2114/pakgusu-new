@@ -7,11 +7,159 @@
     --primary-color: #004685;
     --secondary-color: #29afe3;
     --text-color: #333333;
+    --heading-color: #000000;
     --bg-light: #f4f7fa;
     --white: #ffffff;
+    --body-bg: #ffffff;
+    --border-color: #eeeeee;
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Martel', serif;
 }
+
+[data-theme="dark"] {
+    --primary-color: #29afe3; /* Lighter blue for dark mode contrast */
+    --secondary-color: #004685; /* Darker blue for accents */
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --bg-light: #1a1a1a;
+    --white: #252525; /* Card backgrounds */
+    --body-bg: #121212;
+    --border-color: #333333;
+}
+
+body {
+    background-color: var(--body-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] .site-header .main-bar {
+    background: #1e1e1e !important;
+    border-bottom: 1px solid #333;
+}
+
+[data-theme="dark"] .logo-header img {
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Global Backgrounds */
+[data-theme="dark"] .bg-gray {
+    background-color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: #121212 !important;
+}
+
+/* Card & Box Overrides */
+[data-theme="dark"] .wt-box,
+[data-theme="dark"] .blog-post .wt-post-info,
+[data-theme="dark"] .wt-icon-box-wraper,
+[data-theme="dark"] .pricingtable-wrapper,
+[data-theme="dark"] .service-box-style-1,
+[data-theme="dark"] .about-section-two,
+[data-theme="dark"] .project-detail-containt .bg-white {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+/* Typography Overrides */
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+[data-theme="dark"] .wt-title,
+[data-theme="dark"] .counter,
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+    color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] p, 
+[data-theme="dark"] li, 
+[data-theme="dark"] span,
+[data-theme="dark"] .wt-small-separator {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .text-black {
+    color: var(--heading-color) !important;
+}
+
+/* Form Elements */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select,
+[data-theme="dark"] .form-control {
+    background-color: #252525 !important;
+    border-color: #444 !important;
+    color: #fff !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--primary-color) !important;
+}
+
+/* Tables */
+[data-theme="dark"] .table {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .table-bordered,
+[data-theme="dark"] .table-bordered td,
+[data-theme="dark"] .table-bordered th {
+    border-color: #333 !important;
+}
+
+[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255,255,255,0.05) !important;
+}
+
+/* Accordions & Tabs */
+[data-theme="dark"] .wt-accordion .panel {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+[data-theme="dark"] .wt-accordion .acod-head .acod-title a {
+    background-color: #252525;
+    color: #fff;
+}
+
+/* Footer & Dark Sections */
+[data-theme="dark"] .site-footer {
+    background-color: #0d0d0d !important; /* Very dark for footer */
+}
+
+[data-theme="dark"] .footer-bottom {
+    background-color: #000 !important;
+    border-top: 1px solid #222;
+}
+
+/* Separators */
+[data-theme="dark"] .wt-separator-outer .wt-separator {
+    border-color: #444;
+}
+
+/* Specific Component Fixes */
+[data-theme="dark"] .owl-prev, 
+[data-theme="dark"] .owl-next {
+    background: #333 !important;
+    color: #fff !important;
+}
+
+[data-theme="dark"] .pagination > li > a {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #fff;
+}
+
+[data-theme="dark"] .pagination > .active > a {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
 
 body {
     font-family: var(--font-primary);
@@ -183,8 +331,7 @@ a {
     z-index: 1;
 }
 
-.footer-link ul li a {
-}
+
 
 .widget-title::after {
     content: '';
@@ -789,4 +936,84 @@ html {
 .qc-item.phone:hover { background: #004685; color: #fff; }
 
 .qc-item.email { color: #EA4335; }
-.qc-item.email:hover { background: #EA4335; color: #fff; }
+
+/* ============================================
+   DARK MODE TOGGLE
+   ============================================ */
+.dark-mode-toggle-header {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.dark-mode-toggle-header:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.dark-mode-toggle-header i {
+    transition: transform 0.5s ease;
+}
+
+[data-theme="dark"] .dark-mode-toggle-header i {
+    transform: rotate(180deg);
+    content: '\f186'; /* Moon icon */
+}
+
+/* Override for specific elements in Dark Mode */
+[data-theme="dark"] .bg-gray {
+    background-color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: #1e1e1e !important;
+}
+
+[data-theme="dark"] .text-black {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .wt-separator .sep-line-one {
+    color: var(--primary-color);
+}
+
+
+/* ============================================
+   LIGHTBOX ZOOM BUTTON
+   ============================================ */
+.zoom-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 70, 133, 0.9);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.work-hover-grid:hover .zoom-btn {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.zoom-btn:hover {
+    background: var(--secondary-color);
+    color: #fff;
+}

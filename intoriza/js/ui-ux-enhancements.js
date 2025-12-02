@@ -158,3 +158,69 @@ jQuery(document).ready(function() {
         jQuery('.loading-area').fadeOut(1000);
     }, 3000);
 });
+
+/* ============================================
+   Dark Mode Toggle
+   ============================================ */
+
+function injectDarkModeToggle() {
+    // Check if already injected
+    if (document.querySelector('.dark-mode-toggle-header') || document.querySelector('.dark-mode-toggle')) return;
+
+    // Create Toggle Button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'dark-mode-toggle-header';
+    toggleBtn.setAttribute('aria-label', 'Toggle Dark Mode');
+    toggleBtn.innerHTML = '<i class="fa fa-moon-o"></i>';
+
+    // Inject into Header (Extra Nav)
+    const headerRight = document.querySelector('.wt-header-right-child');
+    if (headerRight) {
+        // Create a new extra-nav cell for the toggle
+        const newNav = document.createElement('div');
+        newNav.className = 'extra-nav';
+        const newCell = document.createElement('div');
+        newCell.className = 'extra-cell';
+        newCell.appendChild(toggleBtn);
+        newNav.appendChild(newCell);
+        
+        // Insert as the first item in header right
+        headerRight.insertBefore(newNav, headerRight.firstChild);
+    } else {
+        // Fallback: Fixed button if header structure not found
+        toggleBtn.className = 'dark-mode-toggle'; // Use fixed style
+        document.body.appendChild(toggleBtn);
+    }
+
+    // Theme Logic
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleBtn.querySelector('i').classList.remove('fa-moon-o');
+            toggleBtn.querySelector('i').classList.add('fa-sun-o');
+        }
+    }
+
+    // Toggle Event
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleBtn.querySelector('i').classList.remove('fa-sun-o');
+            toggleBtn.querySelector('i').classList.add('fa-moon-o');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleBtn.querySelector('i').classList.remove('fa-moon-o');
+            toggleBtn.querySelector('i').classList.add('fa-sun-o');
+        }
+    });
+}
+
+// Initialize Dark Mode
+jQuery(document).ready(function() {
+    injectDarkModeToggle();
+});
+
