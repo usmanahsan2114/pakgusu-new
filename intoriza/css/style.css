@@ -8697,7 +8697,7 @@ bottom: -25px;}
   display: inline-block;
   color: #50aab2;
   font-size: 20px;
-  background-color:# fff;
+  background-color:#fff;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -9301,7 +9301,7 @@ STEP NUMBER
 	margin-right: -230px;	
 }
 .welcome-carousel-1 .home-carousel-1 {
-	-webkit-box-shadow: -30px 30px 60px 0 #rgba(0,0,0,0.5);
+	-webkit-box-shadow: -30px 30px 60px 0 rgba(0,0,0,0.5);
 	box-shadow: -30px 30px 60px 0 rgba(0,0,0,0.5);
 }
 
@@ -10139,5 +10139,17 @@ STEP NUMBER
 @keyframes wave {
   0% { margin-left: 0; }
   100% { margin-left: -1600px; }
+}
+
+/* UI/UX Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
