@@ -6,10 +6,14 @@
     <!-- META -->
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="cleanroom manufacturer Pakistan, modular cleanroom, GMP cleanroom, pharmaceutical cleanroom, ISO cleanroom" name="keywords" />
+    <meta
+        content="cleanroom manufacturer Pakistan, modular cleanroom, GMP cleanroom, pharmaceutical cleanroom, ISO cleanroom"
+        name="keywords" />
     <meta content="PakGusu Technology" name="author" />
     <meta content="index, follow" name="robots" />
-    <meta content="PakGusu Technology is a leading cleanroom manufacturer in Pakistan, delivering turnkey modular cleanroom solutions for pharmaceutical, healthcare, electronics, and food industries." name="description" />
+    <meta
+        content="PakGusu Technology is a leading cleanroom manufacturer in Pakistan, delivering turnkey modular cleanroom solutions for pharmaceutical, healthcare, electronics, and food industries."
+        name="description" />
     <!-- FAVICONS ICON -->
     <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="./images/favicon.png" rel="shortcut icon" type="image/x-icon" />
@@ -36,6 +40,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900" rel="stylesheet" />
+    <!-- UI/UX Enhancements -->
+    <link href="./css/ui-ux-enhancements.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -300,6 +306,13 @@
                         </li>
                     </ul>
                     <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator"
+                        onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
+                        <span class="mouse">
+                            <span class="wheel"></span>
+                        </span>
+                    </div>
                 </div>
             </div><!-- /Section: Hero --><!-- Section: Who We Are -->
             <div class="section-full p-t80 p-b50 bg-white">
@@ -623,7 +636,7 @@
             <div class="section-full p-t80 p-b20 bg-white">
                 <div class="container">
                     <!-- TITLE START -->
-                    <div class="section-head text-center">
+                    <div class="section-head text-center fade-in-up">
                         <div class="wt-separator-outer separator-center">
                             <div class="wt-separator">
                                 <span class="site-text-primary text-uppercase sep-line-one">Industries We Serve</span>
@@ -1033,12 +1046,13 @@
                     <div class="section-content">
                         <div class="row">
                             <div class="col-lg-7 col-md-12 m-b30">
-                                <div class="owl-carousel testimonial-home owl-btn-top-right">
+                                <div class="owl-carousel testimonial-home owl-btn-top-right fade-in-up">
                                     <div class="item">
                                         <div class="testimonial-5">
                                             <div class="testimonial-text">
                                                 <div class="testimonial-paragraph">
-                                                    <span class="fa fa-quote-left site-text-primary"></span>
+                                                    <span
+                                                        class="fa fa-quote-left site-text-primary testimonial-quote-icon"></span>
                                                     <p>PakGusu provided an exceptional turnkey solution for our new
                                                         pharmaceutical facility. Their attention to detail and
                                                         compliance with ISO standards was impressive.</p>
@@ -1063,7 +1077,8 @@
                                         <div class="testimonial-5">
                                             <div class="testimonial-text">
                                                 <div class="testimonial-paragraph">
-                                                    <span class="fa fa-quote-left site-text-primary"></span>
+                                                    <span
+                                                        class="fa fa-quote-left site-text-primary testimonial-quote-icon"></span>
                                                     <p>The modular cleanroom panels were of high quality and the
                                                         installation team was professional and efficient. Highly
                                                         recommended for local manufacturing.</p>
@@ -1087,7 +1102,8 @@
                                         <div class="testimonial-5">
                                             <div class="testimonial-text">
                                                 <div class="testimonial-paragraph">
-                                                    <span class="fa fa-quote-left site-text-primary"></span>
+                                                    <span
+                                                        class="fa fa-quote-left site-text-primary testimonial-quote-icon"></span>
                                                     <p>We needed a quick deployment for our electronics assembly line.
                                                         PakGusu delivered on time and within budget, with excellent
                                                         after-sales support.</p>
@@ -1289,6 +1305,8 @@
             });
         });
     </script>
+    <script src="./js/ui-ux-enhancements.js"></script><!-- UI/UX ENHANCEMENTS -->
+
 </body>
 
 </html>
