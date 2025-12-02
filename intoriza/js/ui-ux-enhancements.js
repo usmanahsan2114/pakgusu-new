@@ -104,3 +104,57 @@ jQuery(window).on('scroll', function() {
 /* ============================================
    END TIER 1 GLOBAL ENHANCEMENTS JAVASCRIPT
    ============================================ */
+
+/* ============================================
+   Quick Contact Widget
+   ============================================ */
+
+function injectQuickContactWidget() {
+    if (document.querySelector('.quick-contact-widget')) return;
+
+    const widgetHTML = `
+        <div class="quick-contact-widget">
+            <button class="quick-contact-toggle" aria-label="Quick Contact">
+                <i class="fa fa-comments"></i>
+            </button>
+            <div class="quick-contact-menu">
+                <a href="https://wa.me/923218073738" target="_blank" class="qc-item whatsapp" title="WhatsApp">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="tel:+923218073738" class="qc-item phone" title="Call Us">
+                    <i class="fa fa-phone"></i>
+                </a>
+                <a href="mailto:info@pakgusu.com" class="qc-item email" title="Email Us">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', widgetHTML);
+
+    // Toggle logic
+    const toggleBtn = document.querySelector('.quick-contact-toggle');
+    const menu = document.querySelector('.quick-contact-menu');
+    const icon = toggleBtn.querySelector('i');
+    
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active')) {
+            icon.classList.remove('fa-comments');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-comments');
+        }
+    });
+}
+
+// Initialize on Document Ready
+jQuery(document).ready(function() {
+    injectQuickContactWidget();
+    
+    // Preloader Safety Timeout
+    setTimeout(function() {
+        jQuery('.loading-area').fadeOut(1000);
+    }, 3000);
+});
