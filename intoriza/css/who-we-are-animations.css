@@ -1,0 +1,281 @@
+/* Scoped Animations for 'Who We Are' Section */
+
+/* 1. Background Wave Animation */
+#who-we-are-section {
+    position: relative;
+    overflow: hidden; /* Contain the waves */
+    z-index: 1; /* Ensure content is above waves */
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Increased height for more visibility */
+    z-index: -1; /* Behind content */
+    opacity: 0.1; /* Subtle effect */
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Seamless Wave 1 (Dark Blue) */
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23004685" fill-opacity="1" d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,64L1200,75L1200,120L1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path></svg>');
+    background-size: 2400px 100%; /* Large width for long waves */
+    background-repeat: repeat-x;
+    animation: wave-move 60s linear infinite; /* Very slow and majestic */
+}
+
+.wave:nth-child(2) {
+    bottom: 5px;
+    opacity: 0.4;
+    /* Seamless Wave 2 (Light Blue) - Offset phase */
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path fill="%2329afe3" fill-opacity="1" d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,58.7C840,64,960,96,1080,101.3L1200,107L1200,120L1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path></svg>');
+    background-size: 2000px 100%; /* Different width for parallax effect */
+    background-repeat: repeat-x;
+    animation: wave-move-2 45s linear infinite;
+}
+
+@keyframes wave-move {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -2400px; } /* Must match background-size width */
+}
+
+@keyframes wave-move-2 {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 2000px; } /* Move opposite direction */
+}
+
+/* 2. Floating Particles Animation */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2; /* Behind everything */
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(41, 175, 227, 0.1); /* Light Blue, very transparent */
+    border-radius: 50%;
+    animation: float-up linear infinite;
+}
+
+/* Hexagon shape variant */
+.particle.hex {
+    border-radius: 0;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: rgba(0, 70, 133, 0.05); /* Dark Blue, extremely subtle */
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* 3. Accordion Hover Effects */
+#who-we-are-section .wt-accordion .panel {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#who-we-are-section .wt-accordion .panel:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 70, 133, 0.1);
+    z-index: 2;
+}
+
+#who-we-are-section .acod-head .acod-title a {
+    position: relative;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+#who-we-are-section .acod-head .acod-title a .indicator i {
+    transition: transform 0.5s ease;
+}
+
+#who-we-are-section .acod-head .acod-title a:hover .indicator i {
+    transform: rotate(180deg);
+    color: #29afe3;
+}
+
+/* 4. Gallery Hover Effects */
+#who-we-are-section .welcome-block-three {
+    perspective: 1000px;
+}
+
+#who-we-are-section .wt-box.hover-zoom-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 5px;
+}
+
+#who-we-are-section .wt-box.hover-zoom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+#who-we-are-section .wt-box.hover-zoom-card:hover::before {
+    left: 125%;
+    transition: left 0.7s ease;
+}
+
+/* 5. Responsive Adjustments */
+@media only screen and (max-width: 767px) {
+    .wave-container {
+        height: 80px;
+    }
+    
+    .wave {
+        animation-duration: 15s; /* Faster on mobile? Or keep slow. Let's keep it majestic. */
+    }
+
+    #who-we-are-section .wt-accordion .panel:hover {
+        transform: none;
+    }
+}
+/* 6. Master UI Polish (Scoped) */
+
+/* Background Texture (Noise) */
+#who-we-are-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* Typography Hierarchy - Responsive */
+#who-we-are-section .section-head h2 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #004685; /* Brand Dark Blue */
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Fluid typography */
+}
+
+#who-we-are-section .section-head h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #29afe3; /* Brand Light Blue */
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+#who-we-are-section p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    color: #444;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+#who-we-are-section p strong {
+    color: #004685;
+    font-weight: 700;
+}
+
+/* Glassmorphism Accordion */
+#who-we-are-section .wt-accordion .panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+#who-we-are-section .wt-accordion .panel:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(41, 175, 227, 0.3);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 70, 133, 0.08);
+}
+
+#who-we-are-section .acod-head .acod-title a {
+    font-weight: 600;
+    color: #333;
+    padding: 15px 20px;
+}
+
+#who-we-are-section .acod-head .acod-title a:hover {
+    color: #004685;
+}
+
+#who-we-are-section .acod-content {
+    color: #555;
+    padding: 0 20px 20px 20px;
+}
+
+/* Gallery Frame */
+#who-we-are-section .welcome-block-three {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile Specific Adjustments */
+@media only screen and (max-width: 767px) {
+    #who-we-are-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    #who-we-are-section .section-head {
+        margin-bottom: 30px;
+    }
+
+    #who-we-are-section .wt-accordion .panel {
+        margin-bottom: 10px;
+    }
+    
+    /* Ensure gallery stacks nicely */
+    #who-we-are-section .welcome-block-three {
+        margin-top: 30px;
+    }
+}

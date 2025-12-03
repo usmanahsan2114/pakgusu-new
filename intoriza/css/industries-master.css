@@ -1,0 +1,299 @@
+/* Master UI Polish for Industries We Serve Section */
+/* Scoped to #industries-we-serve-section only */
+/* NO GRADIENTS, NO IMAGE OVERLAYS as per user request */
+
+/* 1. Section Container with Animated Grid Background */
+#industries-we-serve-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Grid Background - Unique to this section */
+#industries-we-serve-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 70, 133, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 70, 133, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Floating Geometric Shapes */
+#industries-we-serve-section::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(41, 175, 227, 0.1);
+    border-radius: 50%;
+    animation: float-circle 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float-circle {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-50px, 50px) rotate(180deg); }
+}
+
+/* 2. Typography - Bold & Expressive */
+#industries-we-serve-section .section-head h2 {
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: #004685;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3. Carousel Item Cards - NO IMAGE OVERLAY */
+#industries-we-serve-section .line-filter-outer {
+    position: relative;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 2px solid rgba(0, 70, 133, 0.1);
+}
+
+#industries-we-serve-section .line-filter-outer:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 70, 133, 0.25);
+    border-color: #29afe3;
+}
+
+/* NO overlay on images - removed as per user request */
+
+/* Content Container with White Background */
+#industries-we-serve-section .hover-effect-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 3px solid #29afe3;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+#industries-we-serve-section .line-filter-outer:hover .hover-effect-content {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Typography Inside Cards - Dark Text for Readability */
+#industries-we-serve-section .hover-effect-content h4 {
+    font-weight: 700;
+    color: #004685;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 10px;
+}
+
+#industries-we-serve-section .hover-effect-content p {
+    color: #555;
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Read More Link - Enhanced */
+#industries-we-serve-section .site-button-link {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #29afe3;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(41, 175, 227, 0.3);
+}
+
+#industries-we-serve-section .site-button-link::after {
+    content: '→';
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+#industries-we-serve-section .site-button-link:hover {
+    background: #004685;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 70, 133, 0.4);
+}
+
+#industries-we-serve-section .site-button-link:hover::after {
+    transform: translateX(5px);
+}
+
+/* Carousel Navigation - Positioned on Sides */
+#industries-we-serve-section .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#industries-we-serve-section .owl-nav button {
+    pointer-events: all;
+    background: #004685 !important;
+    border: none !important;
+    color: #ffffff !important;
+    width: 90px;
+    height: 45px;
+    border-radius: 50% / 45%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 70, 133, 0.4);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    padding: 0;
+}
+
+#industries-we-serve-section .owl-nav button:hover {
+    background: #29afe3 !important;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(41, 175, 227, 0.5);
+    opacity: 1;
+}
+
+#industries-we-serve-section .owl-nav button span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Carousel Dots */
+#industries-we-serve-section .owl-dots {
+    margin-top: 30px;
+}
+
+#industries-we-serve-section .owl-dots .owl-dot span {
+    background: #004685 !important;
+    width: 12px;
+    height: 12px;
+    transition: all 0.3s ease;
+}
+
+#industries-we-serve-section .owl-dots .owl-dot.active span {
+    background: #29afe3 !important;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* 4. Mobile Responsiveness */
+@media only screen and (max-width: 767px) {
+    #industries-we-serve-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    #industries-we-serve-section .line-filter-outer {
+        height: 350px;
+    }
+
+    #industries-we-serve-section .line-filter-outer:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    #industries-we-serve-section .hover-effect-content {
+        padding: 20px;
+    }
+
+    #industries-we-serve-section .owl-nav {
+        padding: 0 10px;
+    }
+
+    #industries-we-serve-section .owl-nav button {
+        width: 50px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #industries-we-serve-section .owl-nav button span {
+        font-size: 18px;
+    }
+}
+
+/* 5. Dark Mode Support */
+[data-theme="dark"] #industries-we-serve-section {
+    background-color: #121212;
+}
+
+[data-theme="dark"] #industries-we-serve-section::before {
+    background-image: 
+        linear-gradient(rgba(41, 175, 227, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(41, 175, 227, 0.05) 1px, transparent 1px);
+}
+
+[data-theme="dark"] #industries-we-serve-section .section-head h2 {
+    color: #29afe3;
+}
+
+[data-theme="dark"] #industries-we-serve-section .line-filter-outer {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] #industries-we-serve-section .line-filter-outer:hover {
+    border-color: #29afe3;
+    box-shadow: 0 25px 50px rgba(41, 175, 227, 0.3);
+}
+
+[data-theme="dark"] #industries-we-serve-section .hover-effect-content {
+    background: rgba(30, 30, 30, 0.98);
+    border-top-color: #29afe3;
+}
+
+[data-theme="dark"] #industries-we-serve-section .line-filter-outer:hover .hover-effect-content {
+    background: rgba(30, 30, 30, 1);
+}
+
+[data-theme="dark"] #industries-we-serve-section .hover-effect-content h4 {
+    color: #29afe3;
+}
+
+[data-theme="dark"] #industries-we-serve-section .hover-effect-content p {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] #industries-we-serve-section .owl-nav button {
+    background: #29afe3 !important;
+    color: #000000 !important;
+}
+
+[data-theme="dark"] #industries-we-serve-section .owl-nav button:hover {
+    background: #004685 !important;
+    color: #ffffff !important;
+}
