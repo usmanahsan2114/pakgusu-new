@@ -1,14 +1,13 @@
 /* ============================================
    LATEST NEWS - MASTER UI DESIGN
    ============================================
-   Scoped styles for Latest News section only.
+   Scoped styles for Latest News section.
    Features:
-   - Bold, intentional typography (Playfair Display + Source Sans Pro)
-   - Unique "Snake-like Wave" background animation
-   - Clean blog card design without image overlays
-   - Dark mode support with CSS variables
-   - Fully responsive design
-   - WCAG AA accessible
+   - Snake-like SVG wave background animation (looping)
+   - Two-tone gradient wave (#004685 -> #29afe3)
+   - Bold typography (Playfair Display + Source Sans Pro)
+   - Clean card design with no image overlays
+   - Dark mode support
    ============================================ */
 
 /* ============================================
@@ -16,31 +15,27 @@
    ============================================ */
 #latest-news-section {
   /* Light Mode Colors */
-  --ln-bg-primary: #F9FAFB;
+  --ln-bg-primary: #FFFFFF;
   --ln-bg-card: #FFFFFF;
   --ln-text-primary: #1A1A1A;
   --ln-text-secondary: #525252;
-  --ln-text-meta: #737373;
-  --ln-accent: #2B6CB0;
-  --ln-accent-hover: #1E4D8B;
-  --ln-border: #E5E5E5;
-  --ln-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --ln-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --ln-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  
-  /* Wave Animation Colors */
-  --ln-wave-color: rgba(43, 108, 176, 0.03); /* Very subtle blue */
+  --ln-text-meta: #718096;
+  --ln-accent: #004685;
+  --ln-accent-gradient-start: #004685;
+  --ln-accent-gradient-end: #29afe3;
+  --ln-border: #E2E8F0;
+  --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
   
   /* Typography */
   --ln-font-display: 'Playfair Display', serif;
   --ln-font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   
   /* Spacing */
-  --ln-spacing-xs: 0.5rem;
   --ln-spacing-sm: 1rem;
   --ln-spacing-md: 1.5rem;
-  --ln-spacing-lg: 2rem;
-  --ln-spacing-xl: 4rem;
+  --ln-spacing-lg: 2.5rem;
+  --ln-spacing-xl: 5rem;
 }
 
 /* Dark Mode Variables */
@@ -48,16 +43,12 @@
   #latest-news-section {
     --ln-bg-primary: #121212;
     --ln-bg-card: #1E1E1E;
-    --ln-text-primary: #F5F5F5;
-    --ln-text-secondary: #D4D4D4;
-    --ln-text-meta: #A3A3A3;
-    --ln-accent: #60A5FA;
-    --ln-accent-hover: #3B82F6;
-    --ln-border: #2A2A2A;
-    --ln-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
-    --ln-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --ln-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    --ln-wave-color: rgba(96, 165, 250, 0.05);
+    --ln-text-primary: #F7FAFC;
+    --ln-text-secondary: #CBD5E0;
+    --ln-text-meta: #A0AEC0;
+    --ln-border: #2D3748;
+    --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -66,20 +57,16 @@ body.dark-mode #latest-news-section,
 html.dark-mode #latest-news-section {
   --ln-bg-primary: #121212;
   --ln-bg-card: #1E1E1E;
-  --ln-text-primary: #F5F5F5;
-  --ln-text-secondary: #D4D4D4;
-  --ln-text-meta: #A3A3A3;
-  --ln-accent: #60A5FA;
-  --ln-accent-hover: #3B82F6;
-  --ln-border: #2A2A2A;
-  --ln-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
-  --ln-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --ln-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  --ln-wave-color: rgba(96, 165, 250, 0.05);
+  --ln-text-primary: #F7FAFC;
+  --ln-text-secondary: #CBD5E0;
+  --ln-text-meta: #A0AEC0;
+  --ln-border: #2D3748;
+  --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================
-   SECTION BASE STYLES
+   SECTION LAYOUT & BACKGROUND
    ============================================ */
 #latest-news-section {
   position: relative;
@@ -89,37 +76,38 @@ html.dark-mode #latest-news-section {
   isolation: isolate;
 }
 
-/* ============================================
-   SNAKE-LIKE WAVE ANIMATION
-   ============================================ */
-#latest-news-section::before {
-  content: '';
+/* SVG Wave Container */
+#latest-news-section .wave-background {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
+  width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,400 C150,500 300,300 450,400 C600,500 750,300 900,400 C1050,500 1200,300 1350,400' stroke='%232B6CB0' stroke-width='2' fill='none' opacity='0.05'/%3E%3Cpath d='M0,200 C150,300 300,100 450,200 C600,300 750,100 900,200 C1050,300 1200,100 1350,200' stroke='%232B6CB0' stroke-width='2' fill='none' opacity='0.03'/%3E%3Cpath d='M0,600 C150,700 300,500 450,600 C600,700 750,500 900,600 C1050,700 1200,500 1350,600' stroke='%232B6CB0' stroke-width='2' fill='none' opacity='0.03'/%3E%3C/svg%3E");
-  background-size: 50% 100%;
-  background-repeat: repeat-x;
-  opacity: 1;
-  z-index: 0;
-  animation: ln-wave-move 60s linear infinite;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.08; /* Subtle background presence */
   pointer-events: none;
 }
 
-/* In dark mode, we need to update the SVG stroke color via filter or just rely on opacity blending */
-/* Since SVG is data URI, we can't easily change stroke color with var(). 
-   Instead, we'll use a filter to invert/adjust color in dark mode if needed, 
-   or just accept the blue tint which works for both. */
-
-@keyframes ln-wave-move {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Wave Animation */
+#latest-news-section .wave-svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%; /* Double width for looping */
+  height: 100%;
+  transform: translateY(-50%);
+  animation: ln-wave-flow 20s linear infinite;
 }
 
+@keyframes ln-wave-flow {
+  0% { transform: translate(0, -50%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  #latest-news-section::before {
+  #latest-news-section .wave-svg {
     animation: none;
   }
 }
@@ -127,54 +115,49 @@ html.dark-mode #latest-news-section {
 /* ============================================
    CONTENT STYLING
    ============================================ */
-#latest-news-section .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Section Header */
 #latest-news-section .section-head {
   margin-bottom: var(--ln-spacing-lg);
+  position: relative;
+  z-index: 2;
+}
+
+#latest-news-section .wt-separator-outer {
+  margin-bottom: var(--ln-spacing-sm);
 }
 
 #latest-news-section .sep-line-one {
   font-family: var(--ln-font-body);
-  font-size: 0.875rem;
   font-weight: 700;
   color: var(--ln-accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 0 10px;
+  letter-spacing: 2px;
+  font-size: 0.875rem;
 }
 
 #latest-news-section h2 {
   font-family: var(--ln-font-display);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
   color: var(--ln-text-primary);
-  margin-top: var(--ln-spacing-xs);
+  margin-top: 0;
+  font-weight: 700;
 }
 
 /* ============================================
-   BLOG CARD STYLING
+   BLOG CARDS
    ============================================ */
 #latest-news-section .blog-post {
   background-color: var(--ln-bg-card);
   border: 1px solid var(--ln-border);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 #latest-news-section .blog-post:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--ln-shadow-hover);
-  border-color: transparent;
 }
 
 /* Image Area */
@@ -191,14 +174,14 @@ html.dark-mode #latest-news-section {
   transition: transform 0.5s ease;
 }
 
-/* No color overlay on images */
+#latest-news-section .blog-post:hover .wt-post-media img {
+  transform: scale(1.05);
+}
+
+/* Remove any existing overlays */
 #latest-news-section .wt-post-media::before,
 #latest-news-section .wt-post-media::after {
   display: none !important;
-}
-
-#latest-news-section .blog-post:hover .wt-post-media img {
-  transform: scale(1.05);
 }
 
 /* Content Area */
@@ -207,22 +190,17 @@ html.dark-mode #latest-news-section {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: var(--ln-bg-card); /* Ensure bg covers */
 }
 
 /* Date */
 #latest-news-section .post-date {
   font-family: var(--ln-font-body);
   font-size: 0.875rem;
-  font-weight: 600;
   color: var(--ln-accent);
-  margin-bottom: var(--ln-spacing-xs);
+  font-weight: 700;
+  margin-bottom: var(--ln-spacing-sm);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-#latest-news-section .post-date strong {
-  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* Title */
@@ -244,20 +222,19 @@ html.dark-mode #latest-news-section {
 }
 
 /* Text */
-#latest-news-section .wt-post-text {
+#latest-news-section .wt-post-text p {
   font-family: var(--ln-font-body);
   color: var(--ln-text-secondary);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: var(--ln-spacing-md);
-  flex-grow: 1;
 }
 
-/* Meta / Footer */
+/* Meta */
 #latest-news-section .wt-post-meta {
-  border-top: 1px solid var(--ln-border);
-  padding-top: var(--ln-spacing-sm);
   margin-top: auto;
+  padding-top: var(--ln-spacing-sm);
+  border-top: 1px solid var(--ln-border);
 }
 
 #latest-news-section .wt-post-meta ul {
@@ -270,58 +247,38 @@ html.dark-mode #latest-news-section {
 }
 
 #latest-news-section .wt-post-meta li {
-  display: flex;
-  align-items: center;
   font-family: var(--ln-font-body);
   font-size: 0.875rem;
   color: var(--ln-text-meta);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-#latest-news-section .wt-post-meta li i {
-  margin-right: 6px;
-  color: var(--ln-accent);
-}
-
-#latest-news-section .wt-post-meta a {
-  color: var(--ln-text-meta);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-#latest-news-section .wt-post-meta a:hover {
+#latest-news-section .wt-post-meta i {
   color: var(--ln-accent);
 }
 
 #latest-news-section .post-author-pic img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  margin-right: 8px;
-  vertical-align: middle;
+  object-fit: cover;
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
    ============================================ */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #latest-news-section {
     padding: var(--ln-spacing-lg) 0;
-  }
-  
-  #latest-news-section .blog-post {
-    margin-bottom: var(--ln-spacing-md);
   }
   
   #latest-news-section h2 {
     font-size: 2rem;
   }
-}
-
-/* Owl Carousel Overrides within Scope */
-#latest-news-section .owl-carousel .owl-stage-outer {
-  overflow: visible; /* Allow shadows to show */
-}
-
-#latest-news-section .owl-carousel .owl-item {
-  padding: 10px; /* Space for shadows */
+  
+  #latest-news-section .post-title {
+    font-size: 1.25rem;
+  }
 }
