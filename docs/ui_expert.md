@@ -71,7 +71,7 @@ Design with conviction. Tell stories worth experiencing. Create interfaces that 
 </UI_aesthetics>
 
 IMPORTANT NOTE:
-To this section as best continuous new (which is not being used in any other section) background animation.
+To this section as best continuous minimalistic new (which is not being used in any other section) background animation.
 secreenshot of section is attached
 Dont use gradient in color
 Dont add colors on the images, for both hover and normal

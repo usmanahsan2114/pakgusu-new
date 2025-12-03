@@ -1,0 +1,397 @@
+/* ============================================
+   TURNKEY CLEANROOM SERVICES - MASTER UI DESIGN
+   ============================================
+   Scoped styles for Turnkey Cleanroom Services section only.
+   Features:
+   - Bold, intentional typography (Playfair Display + Source Sans Pro)
+   - Unique geometric background animation
+   - Dark mode support with CSS variables
+   - Fully responsive design
+   - No color overlays on images
+   - WCAG AA accessible
+   ============================================ */
+
+/* Import Fonts - Editorial & Human-Centric */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+#turnkey-services-section {
+  /* Light Mode Colors */
+  --tks-bg-primary: #FAFAFA;
+  --tks-bg-card: #FFFFFF;
+  --tks-text-primary: #1A1A1A;
+  --tks-text-secondary: #525252;
+  --tks-text-tertiary: #737373;
+  --tks-accent: #2B6CB0;
+  --tks-accent-hover: #1E4D8B;
+  --tks-border: #E5E5E5;
+  --tks-shadow-sm: rgba(0, 0, 0, 0.04);
+  --tks-shadow-md: rgba(0, 0, 0, 0.08);
+  --tks-shadow-lg: rgba(0, 0, 0, 0.12);
+  
+  /* Animation Properties */
+  --tks-animation-grid-color: rgba(0, 0, 0, 0.03);
+  --tks-animation-duration: 20s;
+  
+  /* Typography */
+  --tks-font-display: 'Playfair Display', serif;
+  --tks-font-body: 'Source Sans 3', sans-serif;
+  
+  /* Spacing */
+  --tks-spacing-xs: 0.5rem;
+  --tks-spacing-sm: 1rem;
+  --tks-spacing-md: 1.5rem;
+  --tks-spacing-lg: 2.5rem;
+  --tks-spacing-xl: 4rem;
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  #turnkey-services-section {
+    --tks-bg-primary: #0F0F0F;
+    --tks-bg-card: #1A1A1A;
+    --tks-text-primary: #F5F5F5;
+    --tks-text-secondary: #D4D4D4;
+    --tks-text-tertiary: #A3A3A3;
+    --tks-accent: #60A5FA;
+    --tks-accent-hover: #3B82F6;
+    --tks-border: #262626;
+    --tks-shadow-sm: rgba(0, 0, 0, 0.3);
+    --tks-shadow-md: rgba(0, 0, 0, 0.4);
+    --tks-shadow-lg: rgba(0, 0, 0, 0.5);
+    --tks-animation-grid-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+/* Manual Dark Mode Class Support */
+body.dark-mode #turnkey-services-section,
+html.dark-mode #turnkey-services-section {
+  --tks-bg-primary: #0F0F0F;
+  --tks-bg-card: #1A1A1A;
+  --tks-text-primary: #F5F5F5;
+  --tks-text-secondary: #D4D4D4;
+  --tks-text-tertiary: #A3A3A3;
+  --tks-accent: #60A5FA;
+  --tks-accent-hover: #3B82F6;
+  --tks-border: #262626;
+  --tks-shadow-sm: rgba(0, 0, 0, 0.3);
+  --tks-shadow-md: rgba(0, 0, 0, 0.4);
+  --tks-shadow-lg: rgba(0, 0, 0, 0.5);
+  --tks-animation-grid-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================
+   SECTION BASE STYLES
+   ============================================ */
+#turnkey-services-section {
+  position: relative;
+  background-color: var(--tks-bg-primary);
+  overflow: hidden;
+  padding: var(--tks-spacing-xl) 0;
+  isolation: isolate;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND - GEOMETRIC GRID
+   ============================================ */
+#turnkey-services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 1;
+  background-image: 
+    linear-gradient(var(--tks-animation-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tks-animation-grid-color) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: tks-grid-shift var(--tks-animation-duration) linear infinite;
+  pointer-events: none;
+}
+
+#turnkey-services-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0.6;
+  background-image: 
+    linear-gradient(45deg, var(--tks-animation-grid-color) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--tks-animation-grid-color) 1px, transparent 1px);
+  background-size: 120px 120px;
+  animation: tks-grid-morph calc(var(--tks-animation-duration) * 1.5) ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes tks-grid-shift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 80px 80px, 80px 80px;
+  }
+}
+
+@keyframes tks-grid-morph {
+  0%, 100% {
+    background-size: 120px 120px;
+    opacity: 0.6;
+  }
+  50% {
+    background-size: 100px 100px;
+    opacity: 0.4;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  #turnkey-services-section::before,
+  #turnkey-services-section::after {
+    animation: none;
+  }
+}
+
+/* ============================================
+   CONTENT CONTAINER
+   ============================================ */
+#turnkey-services-section .container,
+#turnkey-services-section .section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM
+   ============================================ */
+#turnkey-services-section .section-head h2 {
+  font-family: var(--tks-font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--tks-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--tks-spacing-md);
+}
+
+#turnkey-services-section .site-text-primary {
+  font-family: var(--tks-font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--tks-accent);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   SERVICE CARDS
+   ============================================ */
+#turnkey-services-section .wt-box {
+  position: relative;
+  background-color: var(--tks-bg-card);
+  border: 1px solid var(--tks-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px var(--tks-shadow-sm);
+  height: 100%;
+}
+
+#turnkey-services-section .wt-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--tks-shadow-md);
+  border-color: var(--tks-accent);
+}
+
+/* Image Container */
+#turnkey-services-section .our-team-two {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--tks-bg-card);
+}
+
+#turnkey-services-section .our-team-two img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* NO color overlays as requested */
+}
+
+#turnkey-services-section .our-team-two:hover img {
+  transform: scale(1.05);
+  /* NO color overlays on hover */
+}
+
+/* Overlay Content */
+#turnkey-services-section .work-hover-discription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--tks-spacing-md);
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.85) 0%,
+    rgba(26, 26, 26, 0.9) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#turnkey-services-section .our-team-two:hover .work-hover-discription {
+  opacity: 1;
+}
+
+/* Card Title */
+#turnkey-services-section .work-hover-discription h4 {
+  font-family: var(--tks-font-display);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 var(--tks-spacing-sm) 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Card Description */
+#turnkey-services-section .work-hover-discription h5 {
+  font-family: var(--tks-font-body);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 var(--tks-spacing-md) 0;
+  text-align: center;
+  line-height: 1.6;
+  background: none;
+  padding: 0;
+}
+
+/* Card Link Button */
+#turnkey-services-section .work-hover-discription .site-button-link {
+  font-family: var(--tks-font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: var(--tks-spacing-xs) var(--tks-spacing-md);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+#turnkey-services-section .work-hover-discription .site-button-link:hover {
+  background-color: var(--tks-accent);
+  border-color: var(--tks-accent);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile First - 320px+ */
+@media (max-width: 767px) {
+  #turnkey-services-section {
+    padding: var(--tks-spacing-lg) 0;
+  }
+  
+  #turnkey-services-section .section-head h2 {
+    font-size: 1.75rem;
+  }
+  
+  #turnkey-services-section .row > [class*='col-'] {
+    margin-bottom: var(--tks-spacing-md);
+  }
+  
+  #turnkey-services-section .work-hover-discription {
+    opacity: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.75) 0%,
+      rgba(26, 26, 26, 0.85) 100%
+    );
+  }
+  
+  #turnkey-services-section .work-hover-discription h4 {
+    font-size: 1.125rem;
+  }
+  
+  #turnkey-services-section .work-hover-discription h5 {
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet - 768px+ */
+@media (min-width: 768px) and (max-width: 991px) {
+  #turnkey-services-section .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Desktop - 992px+ */
+@media (min-width: 992px) {
+  #turnkey-services-section .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* Large Desktop - 1200px+ */
+@media (min-width: 1200px) {
+  #turnkey-services-section {
+    padding: var(--tks-spacing-xl) 0;
+  }
+  
+  #turnkey-services-section::before {
+    background-size: 100px 100px;
+  }
+  
+  #turnkey-services-section::after {
+    background-size: 140px 140px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+#turnkey-services-section .site-button-link:focus-visible {
+  outline: 3px solid var(--tks-accent);
+  outline-offset: 3px;
+}
+
+/* Improved contrast for WCAG AA compliance */
+#turnkey-services-section .wt-separator .sep-line-one {
+  color: var(--tks-accent);
+  font-weight: 600;
+}
+
+/* Ensure minimum touch target size on mobile */
+@media (max-width: 767px) {
+  #turnkey-services-section .site-button-link {
+    min-height: 44px;
+    min-width: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

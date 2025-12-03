@@ -1,0 +1,389 @@
+/* ============================================
+   WHY CHOOSE PAKGUSU - MASTER UI DESIGN
+   ============================================
+   Scoped styles for Why Choose PakGusu section only.
+   Features:
+   - Bold, intentional typography (Playfair Display + Source Sans Pro)
+   - Unique diagonal lines background animation
+   - Styled video player button
+   - Dark mode support with CSS variables
+   - Fully responsive design
+   - WCAG AA accessible
+   ============================================ */
+
+/* Uses fonts already imported in main document */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+#why-choose-pakgusu-section {
+  /* Light Mode Colors */
+  --wcp-bg-primary: #F8F9FA;
+  --wcp-bg-card: #FFFFFF;
+  --wcp-text-primary: #1A1A1A;
+  --wcp-text-secondary: #525252;
+  --wcp-accent: #2B6CB0;
+  --wcp-accent-hover: #1E4D8B;
+  --wcp-border: #E5E5E5;
+  --wcp-shadow-sm: rgba(0, 0, 0, 0.06);
+  --wcp-shadow-md: rgba(0, 0, 0, 0.1);
+  --wcp-shadow-lg: rgba(0, 0, 0, 0.15);
+  
+  /* Animation Properties */
+  --wcp-animation-line-color: rgba(0, 0, 0, 0.04);
+  --wcp-animation-duration: 25s;
+  
+  /* Typography */
+  --wcp-font-display: 'Playfair Display', serif;
+  --wcp-font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  
+  /* Spacing */
+  --wcp-spacing-xs: 0.5rem;
+  --wcp-spacing-sm: 1rem;
+  --wcp-spacing-md: 1.5rem;
+  --wcp-spacing-lg: 2.5rem;
+  --wcp-spacing-xl: 4rem;
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  #why-choose-pakgusu-section {
+    --wcp-bg-primary: #121212;
+    --wcp-bg-card: #1E1E1E;
+    --wcp-text-primary: #F5F5F5;
+    --wcp-text-secondary: #D4D4D4;
+    --wcp-accent: #60A5FA;
+    --wcp-accent-hover: #3B82F6;
+    --wcp-border: #2A2A2A;
+    --wcp-shadow-sm: rgba(0, 0, 0, 0.4);
+    --wcp-shadow-md: rgba(0, 0, 0, 0.5);
+    --wcp-shadow-lg: rgba(0, 0, 0, 0.6);
+    --wcp-animation-line-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Manual Dark Mode Class Support */
+body.dark-mode #why-choose-pakgusu-section,
+html.dark-mode #why-choose-pakgusu-section {
+  --wcp-bg-primary: #121212;
+  --wcp-bg-card: #1E1E1E;
+  --wcp-text-primary: #F5F5F5;
+  --wcp-text-secondary: #D4D4D4;
+  --wcp-accent: #60A5FA;
+  --wcp-accent-hover: #3B82F6;
+  --wcp-border: #2A2A2A;
+  --wcp-shadow-sm: rgba(0, 0, 0, 0.4);
+  --wcp-shadow-md: rgba(0, 0, 0, 0.5);
+  --wcp-shadow-lg: rgba(0, 0, 0, 0.6);
+  --wcp-animation-line-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   SECTION BASE STYLES
+   ============================================ */
+#why-choose-pakgusu-section {
+  position: relative;
+  background-color: var(--wcp-bg-primary);
+  overflow: hidden;
+  padding: var(--wcp-spacing-xl) 0;
+  isolation: isolate;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND - DIAGONAL LINES
+   ============================================ */
+#why-choose-pakgusu-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  z-index: 0;
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 60px,
+    var(--wcp-animation-line-color) 60px,
+    var(--wcp-animation-line-color) 61px
+  );
+  animation: wcp-diagonal-shift var(--wcp-animation-duration) linear infinite;
+  pointer-events: none;
+}
+
+#why-choose-pakgusu-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 80px,
+    var(--wcp-animation-line-color) 80px,
+    var(--wcp-animation-line-color) 81px
+  );
+  animation: wcp-diagonal-shift-reverse calc(var(--wcp-animation-duration) * 1.3) linear infinite;
+  pointer-events: none;
+}
+
+@keyframes wcp-diagonal-shift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(85px, 85px) rotate(0deg);
+  }
+}
+
+@keyframes wcp-diagonal-shift-reverse {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-110px, 110px) rotate(0deg);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  #why-choose-pakgusu-section::before,
+  #why-choose-pakgusu-section::after {
+    animation: none;
+  }
+}
+
+/* ============================================
+   CONTENT CONTAINER
+   ============================================ */
+#why-choose-pakgusu-section .container,
+#why-choose-pakgusu-section .section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   VIDEO CARD
+   ============================================ */
+#why-choose-pakgusu-section .video-section-full {
+  background-color: var(--wcp-bg-card);
+  border: 1px solid var(--wcp-border);
+  border-radius: 12px;
+  padding: var(--wcp-spacing-lg);
+  box-shadow: 0 4px 16px var(--wcp-shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+#why-choose-pakgusu-section .video-section-full:hover {
+  box-shadow: 0 8px 32px var(--wcp-shadow-md);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+#why-choose-pakgusu-section .font-18 {
+  font-family: var(--wcp-font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--wcp-accent);
+  text-transform: uppercase;
+  margin-bottom: var(--wcp-spacing-sm);
+  display: inline-block;
+}
+
+#why-choose-pakgusu-section .wt-tilte {
+  font-family: var(--wcp-font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--wcp-text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin: var(--wcp-spacing-md) 0;
+}
+
+/* ============================================
+   VIDEO PLAYER BUTTON
+   ============================================ */
+#why-choose-pakgusu-section .video-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--wcp-spacing-md);
+  margin-top: var(--wcp-spacing-lg);
+  flex-wrap: wrap;
+}
+
+#why-choose-pakgusu-section .video-section-left {
+  position: relative;
+}
+
+#why-choose-pakgusu-section .play-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--wcp-accent);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px var(--wcp-shadow-md);
+}
+
+#why-choose-pakgusu-section .play-now:hover {
+  background-color: var(--wcp-accent-hover);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--wcp-shadow-lg);
+}
+
+#why-choose-pakgusu-section .play-now .icon {
+  color: #FFFFFF;
+  font-size: 28px;
+  margin-left: 4px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Ripple Effect */
+#why-choose-pakgusu-section .play-now .ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--wcp-accent);
+  animation: wcp-ripple 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes wcp-ripple {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+  }
+}
+
+/* Stop ripple animation on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #why-choose-pakgusu-section .play-now .ripple {
+    animation: none;
+  }
+}
+
+/* ============================================
+   TEXT LINK
+   ============================================ */
+#why-choose-pakgusu-section .video-secion-right a {
+  font-family: var(--wcp-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--wcp-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+#why-choose-pakgusu-section .video-secion-right a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--wcp-accent-hover);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#why-choose-pakgusu-section .video-secion-right a:hover {
+  color: var(--wcp-accent-hover);
+}
+
+#why-choose-pakgusu-section .video-secion-right a:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile - 320px+ */
+@media (max-width: 767px) {
+  #why-choose-pakgusu-section {
+    padding: var(--wcp-spacing-lg) 0;
+  }
+  
+  #why-choose-pakgusu-section .video-section-full {
+    padding: var(--wcp-spacing-md);
+  }
+  
+  #why-choose-pakgusu-section .wt-tilte {
+    font-size: 1.5rem;
+  }
+  
+  #why-choose-pakgusu-section .play-now {
+    width: 64px;
+    height: 64px;
+  }
+  
+  #why-choose-pakgusu-section .play-now .icon {
+    font-size: 22px;
+  }
+  
+  #why-choose-pakgusu-section .video-section-content {
+    flex-direction: column;
+    gap: var(--wcp-spacing-sm);
+  }
+}
+
+/* Tablet - 768px+ */
+@media (min-width: 768px) and (max-width: 991px) {
+  #why-choose-pakgusu-section .video-section-full {
+    padding: var(--wcp-spacing-lg);
+  }
+}
+
+/* Desktop - 1200px+ */
+@media (min-width: 1200px) {
+  #why-choose-pakgusu-section {
+    padding: calc(var(--wcp-spacing-xl) * 1.25) 0;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+#why-choose-pakgusu-section .play-now:focus-visible,
+#why-choose-pakgusu-section .video-secion-right a:focus-visible {
+  outline: 3px solid var(--wcp-accent);
+  outline-offset: 4px;
+}
+
+/* Ensure minimum touch target size */
+@media (max-width: 767px) {
+  #why-choose-pakgusu-section .play-now,
+  #why-choose-pakgusu-section .video-secion-right a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
