@@ -1,0 +1,290 @@
+/* ===================================================================
+   Footer Main Section - Master UI Design System
+   Scoped to: #footer-main-section
+   Typography: Playfair Display (Headings), Source Sans Pro (Links), IBM Plex Mono (Data)
+   Animation: Subtle Spotlight (Slow drifting radial gradient)
+   =================================================================== */
+
+/* Import Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+/* ===================================================================
+   CSS Custom Properties
+   =================================================================== */
+
+#footer-main-section {
+    /* Colors */
+    --fm-bg-base: #151515;
+    --fm-bg-spotlight: rgba(41, 175, 227, 0.08); /* Light Blue accent */
+    --fm-text-primary: #ffffff;
+    --fm-text-secondary: #b0b0b0;
+    --fm-accent: #29afe3;
+    --fm-border: rgba(255, 255, 255, 0.1);
+    
+    /* Typography */
+    --fm-font-heading: 'Playfair Display', serif;
+    --fm-font-body: 'Source Sans Pro', sans-serif;
+    --fm-font-mono: 'IBM Plex Mono', monospace;
+    
+    /* Spacing */
+    --fm-spacing-unit: 1rem;
+}
+
+/* Dark Mode Adjustments (if needed, though footer is already dark) */
+@media (prefers-color-scheme: dark) {
+    #footer-main-section {
+        --fm-bg-base: #0a0a0a;
+        --fm-bg-spotlight: rgba(41, 175, 227, 0.05);
+    }
+}
+
+/* ===================================================================
+   Section Base Styling
+   =================================================================== */
+
+#footer-main-section {
+    position: relative;
+    background-color: var(--fm-bg-base) !important;
+    color: var(--fm-text-secondary);
+    padding: 5rem 0 3rem;
+    overflow: hidden;
+    font-family: var(--fm-font-body);
+}
+
+/* Remove default overlay */
+#footer-main-section .overlay-main {
+    display: none;
+}
+
+/* ===================================================================
+   Background Animation: Subtle Spotlight
+   =================================================================== */
+
+#footer-main-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        var(--fm-bg-spotlight) 0%,
+        transparent 50%
+    );
+    animation: spotlightDrift 20s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Noise Texture Overlay */
+#footer-main-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes spotlightDrift {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5%, 5%); }
+    50% { transform: translate(5%, -5%); }
+    75% { transform: translate(5%, 5%); }
+    100% { transform: translate(-5%, -5%); }
+}
+
+/* Content Z-Index */
+#footer-main-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================================================
+   Typography & Widgets
+   =================================================================== */
+
+#footer-main-section h4.widget-title {
+    font-family: var(--fm-font-heading);
+    color: var(--fm-text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+#footer-main-section h4.widget-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--fm-accent);
+    margin: 0.5rem auto 0;
+    transition: width 0.3s ease;
+}
+
+#footer-main-section .widget:hover h4.widget-title::after {
+    width: 60px;
+}
+
+/* ===================================================================
+   Navigation Links (Top Row)
+   =================================================================== */
+
+#footer-main-section .footer-link {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--fm-border);
+    padding-bottom: 2rem;
+}
+
+#footer-main-section .footer-link ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#footer-main-section .footer-link li {
+    display: inline-block;
+}
+
+#footer-main-section .footer-link a {
+    color: var(--fm-text-primary);
+    font-family: var(--fm-font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+#footer-main-section .footer-link a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--fm-accent);
+    transition: width 0.3s ease;
+}
+
+#footer-main-section .footer-link a:hover {
+    color: var(--fm-accent);
+}
+
+#footer-main-section .footer-link a:hover::before {
+    width: 100%;
+}
+
+/* ===================================================================
+   Contact Info & Address (IBM Plex Mono)
+   =================================================================== */
+
+#footer-main-section .widget-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-main-section .widget-section li {
+    font-family: var(--fm-font-mono);
+    font-size: 0.9rem;
+    color: var(--fm-text-secondary);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+#footer-main-section .widget-section li a {
+    color: var(--fm-text-secondary);
+    transition: color 0.3s ease;
+}
+
+#footer-main-section .widget-section li a:hover {
+    color: var(--fm-accent);
+    text-decoration: none;
+}
+
+/* ===================================================================
+   Social Icons
+   =================================================================== */
+
+#footer-main-section .footer-social-icon {
+    margin-top: 1.5rem;
+}
+
+#footer-main-section .social-icons {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#footer-main-section .social-icons li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--fm-border);
+    border-radius: 50%;
+    color: var(--fm-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+#footer-main-section .social-icons li a:hover {
+    background-color: var(--fm-accent);
+    border-color: var(--fm-accent);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ===================================================================
+   Responsive Design
+   =================================================================== */
+
+@media (max-width: 991px) {
+    #footer-main-section {
+        padding: 4rem 0 2rem;
+    }
+    
+    #footer-main-section .footer-link ul {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #footer-main-section {
+        padding: 3rem 0 2rem;
+    }
+
+    #footer-main-section .footer-link ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    #footer-main-section .col-md-4 {
+        margin-bottom: 2.5rem;
+    }
+    
+    #footer-main-section .widget-title {
+        margin-bottom: 1rem;
+    }
+}

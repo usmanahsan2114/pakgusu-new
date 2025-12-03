@@ -1,0 +1,257 @@
+/* ===================================================================
+   Footer Bottom Section - Master UI Design System
+   Scoped to: #footer-bottom-section
+   Typography: IBM Plex Mono (monospace)
+   Animation: Scanning Lines (continuous vertical scroll)
+   =================================================================== */
+
+/* Import Typography */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+/* ===================================================================
+   CSS Custom Properties
+   =================================================================== */
+
+#footer-bottom-section {
+    /* Light Mode Colors */
+    --footer-bg: #1a1a1a;
+    --footer-text: #e0e0e0;
+    --footer-text-secondary: #b0b0b0;
+    --footer-link: #ffffff;
+    --footer-link-hover: #29afe3;
+    --footer-line: rgba(255, 255, 255, 0.03);
+    --footer-line-bright: rgba(255, 255, 255, 0.05);
+    
+    /* Typography */
+    --footer-font: 'IBM Plex Mono', 'Courier New', monospace;
+    
+    /* Animation */
+    --footer-line-speed: 40s;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    #footer-bottom-section {
+        --footer-bg: #000000;
+        --footer-text: #cccccc;
+        --footer-text-secondary: #999999;
+        --footer-link: #f5f5f5;
+        --footer-link-hover: #5ac4f0;
+        --footer-line: rgba(255, 255, 255, 0.04);
+        --footer-line-bright: rgba(255, 255, 255, 0.06);
+    }
+}
+
+/* ===================================================================
+   Section Base Styling
+   =================================================================== */
+
+#footer-bottom-section {
+    position: relative;
+    background: var(--footer-bg) !important;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+/* Remove default overlay */
+#footer-bottom-section .overlay-main {
+    display: none;
+}
+
+/* ===================================================================
+   Animated Scanning Lines Background
+   =================================================================== */
+
+#footer-bottom-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        var(--footer-line) 39px,
+        var(--footer-line) 40px
+    );
+    animation: scanningLines var(--footer-line-speed) linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Secondary layer for depth */
+#footer-bottom-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        var(--footer-line-bright) 19px,
+        var(--footer-line-bright) 20px
+    );
+    animation: scanningLines calc(var(--footer-line-speed) * 1.5) linear infinite reverse;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes scanningLines {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+/* Content positioning */
+#footer-bottom-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================================================
+   Typography
+   =================================================================== */
+
+#footer-bottom-section .copyrights-text {
+    font-family: var(--footer-font);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--footer-text);
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
+/* Link Styling */
+#footer-bottom-section .copyrights-text a {
+    color: var(--footer-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#footer-bottom-section .copyrights-text a:hover {
+    color: var(--footer-link-hover);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+#footer-bottom-section .copyrights-text a:focus {
+    outline: 2px solid var(--footer-link-hover);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Pipe separator styling */
+#footer-bottom-section .copyrights-text {
+    display: inline-block;
+}
+
+/* ===================================================================
+   Layout
+   =================================================================== */
+
+#footer-bottom-section .row {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+}
+
+/* ===================================================================
+   Responsive Design
+   =================================================================== */
+
+@media screen and (max-width: 991px) {
+    #footer-bottom-section {
+        padding: 1.75rem 0;
+    }
+    
+    #footer-bottom-section .copyrights-text {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #footer-bottom-section {
+        padding: 1.5rem 0;
+    }
+    
+    #footer-bottom-section .row {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center !important;
+        min-height: auto;
+    }
+    
+    #footer-bottom-section .col-md-6 {
+        text-align: center !important;
+    }
+    
+    #footer-bottom-section .text-right {
+        text-align: center !important;
+    }
+    
+    #footer-bottom-section .copyrights-text {
+        font-size: 0.6875rem;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #footer-bottom-section .copyrights-text {
+        font-size: 0.625rem;
+        line-height: 1.5;
+    }
+    
+    #footer-bottom-section .copyrights-text a {
+        text-underline-offset: 2px;
+    }
+    
+    #footer-bottom-section .copyrights-text a:hover {
+        text-underline-offset: 3px;
+    }
+}
+
+/* ===================================================================
+   Reduced Motion Support
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #footer-bottom-section::before,
+    #footer-bottom-section::after {
+        animation: none;
+    }
+    
+    #footer-bottom-section .copyrights-text a {
+        transition: none;
+    }
+}
+
+/* ===================================================================
+   Print Styles
+   =================================================================== */
+
+@media print {
+    #footer-bottom-section::before,
+    #footer-bottom-section::after {
+        display: none;
+    }
+    
+    #footer-bottom-section {
+        background: white !important;
+    }
+    
+    #footer-bottom-section .copyrights-text,
+    #footer-bottom-section .copyrights-text a {
+        color: black !important;
+    }
+}

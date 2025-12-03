@@ -1,0 +1,465 @@
+/* ===================================================================
+   Testimonials Section - Master UI Design System
+   Scoped to: #testimonials-section
+   Typography: Crimson Pro (serif) + Nunito Sans (humanist sans)
+   =================================================================== */
+
+/* Import Typography */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+
+/* ===================================================================
+   CSS Custom Properties
+   =================================================================== */
+
+#testimonials-section {
+    /* Light Mode Colors */
+    --test-bg-base: #fafaf8;
+    --test-bg-pattern: rgba(0, 70, 133, 0.03);
+    --test-card-bg: #ffffff;
+    --test-card-shadow: rgba(0, 70, 133, 0.08);
+    --test-card-shadow-hover: rgba(0, 70, 133, 0.15);
+    --test-text-primary: #1a1a1a;
+    --test-text-secondary: #4a4a4a;
+    --test-text-meta: #7a7a7a;
+    --test-accent: #004685;
+    --test-accent-light: #29afe3;
+    --test-quote-mark: rgba(0, 70, 133, 0.12);
+    --test-border: rgba(0, 70, 133, 0.1);
+    
+    /* Typography Scale */
+    --test-font-quote: 'Crimson Pro', serif;
+    --test-font-body: 'Nunito Sans', sans-serif;
+    
+    /* Spacing & Sizing */
+    --test-card-radius: 12px;
+    --test-spacing-base: 1.5rem;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    #testimonials-section {
+        --test-bg-base: #0f1620;
+        --test-bg-pattern: rgba(41, 175, 227, 0.04);
+        --test-card-bg: #1a2332;
+        --test-card-shadow: rgba(0, 0, 0, 0.3);
+        --test-card-shadow-hover: rgba(0, 0, 0, 0.5);
+        --test-text-primary: #f5f5f5;
+        --test-text-secondary: #d0d0d0;
+        --test-text-meta: #a0a0a0;
+        --test-accent: #29afe3;
+        --test-accent-light: #5ac4f0;
+        --test-quote-mark: rgba(41, 175, 227, 0.15);
+        --test-border: rgba(41, 175, 227, 0.15);
+    }
+}
+
+/* ===================================================================
+   Section Base Styling
+   =================================================================== */
+
+#testimonials-section {
+    position: relative;
+    background: var(--test-bg-base) !important;
+    overflow: hidden;
+}
+
+/* Remove inline background image */
+#testimonials-section[style*="background-image"] {
+    background-image: none !important;
+}
+
+/* Layered Background Architecture */
+#testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        /* Noise texture for depth */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+        /* Geometric dot pattern */
+        radial-gradient(circle at 20px 20px, var(--test-bg-pattern) 1px, transparent 1px);
+    background-size: 
+        100% 100%,
+        40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Content positioning */
+#testimonials-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================================================
+   Typography
+   =================================================================== */
+
+#testimonials-section .testimonial-paragraph p {
+    font-family: var(--test-font-quote);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--test-text-primary);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+#testimonials-section .testimonial-name {
+    font-family: var(--test-font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--test-text-primary) !important;
+    letter-spacing: -0.02em;
+}
+
+#testimonials-section .testimonial-position {
+    font-family: var(--test-font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--test-text-meta);
+    letter-spacing: 0;
+}
+
+/* Statistic Numbers */
+#testimonials-section .counter {
+    font-family: var(--test-font-quote);
+    font-size: 4rem !important;
+    font-weight: 700;
+    color: var(--test-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+#testimonials-section .counter-section-one h4 {
+    font-family: var(--test-font-body);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--test-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.75rem;
+}
+
+/* ===================================================================
+   Testimonial Cards
+   =================================================================== */
+
+#testimonials-section .testimonial-5 {
+    background: var(--test-card-bg);
+    border-radius: var(--test-card-radius);
+    padding: 2.5rem;
+    box-shadow: 
+        0 2px 8px var(--test-card-shadow),
+        0 0 0 1px var(--test-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 100%;
+    min-height: 280px;
+}
+
+#testimonials-section .testimonial-5:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 24px var(--test-card-shadow-hover),
+        0 0 0 1px var(--test-border);
+}
+
+/* Quote Mark Styling */
+#testimonials-section .testimonial-quote-icon {
+    font-size: 4rem !important;
+    color: var(--test-quote-mark) !important;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    line-height: 1;
+    z-index: 0;
+}
+
+#testimonials-section .testimonial-text {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+#testimonials-section .testimonial-paragraph {
+    padding-left: 3rem;
+    margin-top: 1rem;
+}
+
+/* Avatar Styling */
+#testimonials-section .testimonial-pic {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--test-border);
+    transition: border-color 0.3s ease;
+}
+
+#testimonials-section .testimonial-5:hover .testimonial-pic {
+    border-color: var(--test-accent-light);
+}
+
+#testimonials-section .testimonial-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Testimonial Detail Layout */
+#testimonials-section .testimonial-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+#testimonials-section .clearfix {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* ===================================================================
+   Statistics Cards
+   =================================================================== */
+
+#testimonials-section .counter-section-one {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+#testimonials-section .counter-sec-top,
+#testimonials-section .counter-sec-bottom {
+    flex: 1;
+    background: var(--test-card-bg);
+    border-radius: var(--test-card-radius);
+    box-shadow: 
+        0 2px 8px var(--test-card-shadow),
+        0 0 0 1px var(--test-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials-section .counter-sec-top:hover,
+#testimonials-section .counter-sec-bottom:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 24px var(--test-card-shadow-hover),
+        0 0 0 1px var(--test-border);
+}
+
+/* Geometric Accent */
+#testimonials-section .counter-sec-top::before,
+#testimonials-section .counter-sec-bottom::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 100px;
+    height: 100px;
+    background: var(--test-accent);
+    opacity: 0.05;
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+#testimonials-section .counter-sec-top:hover::before,
+#testimonials-section .counter-sec-bottom:hover::before {
+    opacity: 0.08;
+}
+
+#testimonials-section .wt-icon-box-wraper {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem 2rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 180px;
+}
+
+/* ===================================================================
+   Carousel Controls
+   =================================================================== */
+
+#testimonials-section .owl-carousel .owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#testimonials-section .owl-carousel .owl-nav button {
+    width: 44px;
+    height: 44px;
+    background: var(--test-card-bg) !important;
+    border: 1px solid var(--test-border) !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--test-text-secondary) !important;
+    font-size: 1.25rem;
+}
+
+#testimonials-section .owl-carousel .owl-nav button:hover {
+    background: var(--test-accent) !important;
+    color: white !important;
+    border-color: var(--test-accent) !important;
+    transform: scale(1.05);
+}
+
+#testimonials-section .owl-carousel .owl-nav button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#testimonials-section .owl-carousel .owl-nav button.disabled:hover {
+    background: var(--test-card-bg) !important;
+    color: var(--test-text-secondary) !important;
+    border-color: var(--test-border) !important;
+    transform: none;
+}
+
+/* ===================================================================
+   Responsive Design
+   =================================================================== */
+
+@media screen and (max-width: 1024px) {
+    #testimonials-section .testimonial-paragraph p {
+        font-size: 1.0625rem;
+    }
+    
+    #testimonials-section .counter {
+        font-size: 3.5rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #testimonials-section .testimonial-5 {
+        padding: 2rem;
+        min-height: 260px;
+    }
+    
+    #testimonials-section .testimonial-quote-icon {
+        font-size: 3rem !important;
+        top: 1.25rem;
+        left: 1.25rem;
+    }
+    
+    #testimonials-section .testimonial-paragraph {
+        padding-left: 2.5rem;
+    }
+    
+    #testimonials-section .testimonial-paragraph p {
+        font-size: 1rem;
+    }
+    
+    #testimonials-section .counter {
+        font-size: 3rem !important;
+    }
+    
+    #testimonials-section .counter-section-one {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    #testimonials-section .wt-icon-box-wraper {
+        padding: 2rem 1.5rem !important;
+        min-height: 160px;
+    }
+    
+    #testimonials-section .owl-carousel .owl-nav {
+        position: static;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #testimonials-section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    #testimonials-section .testimonial-5 {
+        padding: 1.75rem;
+        min-height: 240px;
+    }
+    
+    #testimonials-section .testimonial-quote-icon {
+        font-size: 2.5rem !important;
+    }
+    
+    #testimonials-section .testimonial-paragraph {
+        padding-left: 2rem;
+    }
+    
+    #testimonials-section .testimonial-paragraph p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+    
+    #testimonials-section .clearfix {
+        gap: 1rem;
+    }
+    
+    #testimonials-section .testimonial-pic {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+    
+    #testimonials-section .testimonial-name {
+        font-size: 0.9375rem;
+    }
+    
+    #testimonials-section .testimonial-position {
+        font-size: 0.8125rem;
+    }
+    
+    #testimonials-section .counter {
+        font-size: 2.75rem !important;
+    }
+    
+    #testimonials-section .counter-section-one h4 {
+        font-size: 1rem;
+    }
+    
+    #testimonials-section .wt-icon-box-wraper {
+        padding: 1.75rem 1.25rem !important;
+        min-height: 140px;
+    }
+}
+
+/* ===================================================================
+   Reduced Motion Support
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #testimonials-section .testimonial-5,
+    #testimonials-section .counter-sec-top,
+    #testimonials-section .counter-sec-bottom,
+    #testimonials-section .owl-carousel .owl-nav button,
+    #testimonials-section .testimonial-pic {
+        transition: none;
+    }
+    
+    #testimonials-section .testimonial-5:hover,
+    #testimonials-section .counter-sec-top:hover,
+    #testimonials-section .counter-sec-bottom:hover {
+        transform: none;
+    }
+}
