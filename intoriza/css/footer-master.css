@@ -13,14 +13,12 @@
    =================================================================== */
 
 #footer-bottom-section {
-    /* Light Mode Colors */
-    --footer-bg: #1a1a1a;
-    --footer-text: #e0e0e0;
-    --footer-text-secondary: #b0b0b0;
+    /* Light Mode Colors - Dark Blue theme */
+    --footer-bg: #004685;
+    --footer-text: #ffffff;
+    --footer-text-secondary: #e0e0e0;
     --footer-link: #ffffff;
     --footer-link-hover: #29afe3;
-    --footer-line: rgba(255, 255, 255, 0.03);
-    --footer-line-bright: rgba(255, 255, 255, 0.05);
     
     /* Typography */
     --footer-font: 'IBM Plex Mono', 'Courier New', monospace;
@@ -32,13 +30,9 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     #footer-bottom-section {
-        --footer-bg: #000000;
-        --footer-text: #cccccc;
-        --footer-text-secondary: #999999;
-        --footer-link: #f5f5f5;
-        --footer-link-hover: #5ac4f0;
-        --footer-line: rgba(255, 255, 255, 0.04);
-        --footer-line-bright: rgba(255, 255, 255, 0.06);
+        --footer-bg: #003366;
+        --footer-text: #ffffff;
+        --footer-text-secondary: #e0e0e0;
     }
 }
 
@@ -56,58 +50,6 @@
 /* Remove default overlay */
 #footer-bottom-section .overlay-main {
     display: none;
-}
-
-/* ===================================================================
-   Animated Scanning Lines Background
-   =================================================================== */
-
-#footer-bottom-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        var(--footer-line) 39px,
-        var(--footer-line) 40px
-    );
-    animation: scanningLines var(--footer-line-speed) linear infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Secondary layer for depth */
-#footer-bottom-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 19px,
-        var(--footer-line-bright) 19px,
-        var(--footer-line-bright) 20px
-    );
-    animation: scanningLines calc(var(--footer-line-speed) * 1.5) linear infinite reverse;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes scanningLines {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(40px);
-    }
 }
 
 /* Content positioning */
