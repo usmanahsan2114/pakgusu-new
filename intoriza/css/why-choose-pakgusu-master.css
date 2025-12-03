@@ -1,93 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
 /* ============================================
    WHY CHOOSE PAKGUSU - MASTER UI DESIGN
    ============================================
-   Scoped styles for Why Choose PakGusu section only.
+   Scoped styles for Why Choose PakGusu section.
    Features:
-   - Bold, intentional typography (Playfair Display + Source Sans Pro)
-   - Floating Particles & Morphing Blobs Background Animation
-   - Styled video player button
-   - Dark mode support with CSS variables
-   - Fully responsive design
-   - WCAG AA accessible
+   - Base Background: Dark Blue (#004685)
+   - Animation: Drifting Gradient Blobs (Floating/Light particle-like soft shapes)
+   - Colors: Light Blue (#29afe3) variants for overlay
+   - Layering: Behind content, above base
+   - Responsive: Full width/fluid
+   - Customization: See variables below
    ============================================ */
-
-/* Uses fonts already imported in main document */
 
 /* ============================================
-   CSS CUSTOM PROPERTIES
+   CUSTOMIZATION & VARIABLES
    ============================================ */
 #why-choose-pakgusu-section {
-  /* Light Mode Colors */
-  --wcp-bg-primary: #F8F9FA;
-  --wcp-bg-card: #FFFFFF;
-  --wcp-text-primary: #1A1A1A;
-  --wcp-text-secondary: #525252;
-  --wcp-accent: #004685; /* Brand Dark Blue */
-  --wcp-accent-light: #29afe3; /* Brand Light Blue */
-  --wcp-accent-hover: #003366;
-  --wcp-border: #E5E5E5;
-  --wcp-shadow-sm: rgba(0, 0, 0, 0.06);
-  --wcp-shadow-md: rgba(0, 0, 0, 0.1);
-  --wcp-shadow-lg: rgba(0, 0, 0, 0.15);
+  /* Base Colors */
+  --wcp-bg-base: #004685; /* Dark Blue */
+  --wcp-blob-color-1: #29afe3; /* Light Blue */
+  --wcp-blob-color-2: #4fc3f7; /* Lighter Blue */
+  --wcp-blob-color-3: #0277bd; /* Medium Blue */
   
-  /* Typography */
-  --wcp-font-display: 'Playfair Display', serif;
-  --wcp-font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  /* Animation Settings */
+  --wcp-anim-speed-slow: 25s;
+  --wcp-anim-speed-med: 20s;
+  --wcp-anim-speed-fast: 15s;
+  --wcp-blob-opacity: 0.4; /* Subtle overlay */
+  --wcp-blob-blur: 80px; /* Soft edges */
   
-  /* Spacing */
-  --wcp-spacing-xs: 0.5rem;
-  --wcp-spacing-sm: 1rem;
-  --wcp-spacing-md: 1.5rem;
-  --wcp-spacing-lg: 2.5rem;
-  --wcp-spacing-xl: 4rem;
+  /* Content Colors (Ensure readability on dark background) */
+  --wcp-text-primary: #FFFFFF;
+  --wcp-text-secondary: #E1F5FE;
+  --wcp-accent: #29afe3;
+  --wcp-card-bg: rgba(255, 255, 255, 0.95); /* Light card to stand out */
+  --wcp-card-text: #1A1A1A;
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Adjustments (if needed, though base is already dark) */
 @media (prefers-color-scheme: dark) {
   #why-choose-pakgusu-section {
-    --wcp-bg-primary: #121212;
-    --wcp-bg-card: #1E1E1E;
-    --wcp-text-primary: #F5F5F5;
-    --wcp-text-secondary: #D4D4D4;
-    --wcp-accent: #29afe3; /* Light blue pops more in dark mode */
-    --wcp-accent-light: #004685;
-    --wcp-accent-hover: #60A5FA;
-    --wcp-border: #2A2A2A;
-    --wcp-shadow-sm: rgba(0, 0, 0, 0.4);
-    --wcp-shadow-md: rgba(0, 0, 0, 0.5);
-    --wcp-shadow-lg: rgba(0, 0, 0, 0.6);
+    --wcp-bg-base: #002f5b; /* Slightly darker base */
+    --wcp-blob-opacity: 0.3;
   }
 }
 
-/* Manual Dark Mode Class Support */
-body.dark-mode #why-choose-pakgusu-section,
-html.dark-mode #why-choose-pakgusu-section {
-  --wcp-bg-primary: #121212;
-  --wcp-bg-card: #1E1E1E;
-  --wcp-text-primary: #F5F5F5;
-  --wcp-text-secondary: #D4D4D4;
-  --wcp-accent: #29afe3;
-  --wcp-accent-light: #004685;
-  --wcp-accent-hover: #60A5FA;
-  --wcp-border: #2A2A2A;
-  --wcp-shadow-sm: rgba(0, 0, 0, 0.4);
-  --wcp-shadow-md: rgba(0, 0, 0, 0.5);
-  --wcp-shadow-lg: rgba(0, 0, 0, 0.6);
-}
-
 /* ============================================
-   SECTION BASE STYLES
+   SECTION LAYOUT
    ============================================ */
 #why-choose-pakgusu-section {
   position: relative;
-  background-color: var(--wcp-bg-primary);
+  background-color: var(--wcp-bg-base);
+  padding: 80px 0;
   overflow: hidden;
-  padding: var(--wcp-spacing-xl) 0;
-  isolation: isolate;
+  isolation: isolate; /* Create stacking context */
+  color: var(--wcp-text-primary);
 }
 
 /* ============================================
-   ANIMATED BACKGROUND - FLOATING BLOBS
+   BACKGROUND ANIMATION CONTAINER
    ============================================ */
 #why-choose-pakgusu-section .wcp-background {
   position: absolute;
@@ -95,70 +67,61 @@ html.dark-mode #why-choose-pakgusu-section {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* Behind content */
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(248,249,250,1) 0%, rgba(255,255,255,1) 100%);
+  pointer-events: none;
 }
 
-/* Dark mode background base */
-@media (prefers-color-scheme: dark) {
-  #why-choose-pakgusu-section .wcp-background {
-    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-  }
-}
-body.dark-mode #why-choose-pakgusu-section .wcp-background,
-html.dark-mode #why-choose-pakgusu-section .wcp-background {
-  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-}
-
-/* Blobs */
+/* ============================================
+   DRIFTING BLOBS
+   ============================================ */
 #why-choose-pakgusu-section .wcp-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.15;
-  animation: wcp-float 20s infinite ease-in-out alternate;
+  filter: blur(var(--wcp-blob-blur));
+  opacity: var(--wcp-blob-opacity);
+  animation: wcp-float infinite ease-in-out alternate;
 }
 
-/* Blob 1 - Dark Blue */
+/* Blob 1: Large, top-left drifting */
 #why-choose-pakgusu-section .wcp-blob-1 {
-  width: 400px;
-  height: 400px;
-  background: var(--wcp-accent); /* #004685 */
-  top: -100px;
-  left: -100px;
-  animation-duration: 25s;
-}
-
-/* Blob 2 - Light Blue */
-#why-choose-pakgusu-section .wcp-blob-2 {
   width: 500px;
   height: 500px;
-  background: var(--wcp-accent-light); /* #29afe3 */
-  bottom: -150px;
-  right: -100px;
-  animation-duration: 30s;
+  background: var(--wcp-blob-color-1);
+  top: -100px;
+  left: -100px;
+  animation-duration: var(--wcp-anim-speed-slow);
+}
+
+/* Blob 2: Medium, bottom-right drifting */
+#why-choose-pakgusu-section .wcp-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--wcp-blob-color-2);
+  bottom: -50px;
+  right: -50px;
+  animation-duration: var(--wcp-anim-speed-med);
   animation-delay: -5s;
 }
 
-/* Blob 3 - Mixed/Accent */
+/* Blob 3: Small, center-ish drifting */
 #why-choose-pakgusu-section .wcp-blob-3 {
   width: 300px;
   height: 300px;
-  background: var(--wcp-accent);
+  background: var(--wcp-blob-color-3);
   top: 40%;
   left: 60%;
-  opacity: 0.1;
-  animation-duration: 22s;
+  animation-duration: var(--wcp-anim-speed-fast);
   animation-delay: -10s;
 }
 
+/* Animation Keyframes */
 @keyframes wcp-float {
   0% {
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(30px, 50px) scale(1.1);
+    transform: translate(30px, -50px) scale(1.1);
   }
   66% {
     transform: translate(-20px, 20px) scale(0.9);
@@ -168,123 +131,64 @@ html.dark-mode #why-choose-pakgusu-section .wcp-background {
   }
 }
 
-/* Reduce motion */
+/* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
   #why-choose-pakgusu-section .wcp-blob {
     animation: none;
-    filter: blur(80px); /* Softer blur for static */
+    opacity: 0.2; /* Static subtle background */
   }
 }
 
 /* ============================================
-   CONTENT CONTAINER
-   ============================================ */
-#why-choose-pakgusu-section .container,
-#why-choose-pakgusu-section .section-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* ============================================
-   VIDEO CARD
+   CONTENT STYLING (Ensure readability)
    ============================================ */
 #why-choose-pakgusu-section .video-section-full {
-  background-color: var(--wcp-bg-card);
-  border: 1px solid var(--wcp-border);
+  background-color: var(--wcp-card-bg);
   border-radius: 12px;
-  padding: var(--wcp-spacing-lg);
-  box-shadow: 0 4px 16px var(--wcp-shadow-sm);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
-  /* Backdrop filter for glassmorphism effect over blobs */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+  color: var(--wcp-card-text); /* Override white text for card content */
 }
 
-@media (prefers-color-scheme: dark) {
-  #why-choose-pakgusu-section .video-section-full {
-    background-color: rgba(30, 30, 30, 0.8);
-  }
-}
-body.dark-mode #why-choose-pakgusu-section .video-section-full,
-html.dark-mode #why-choose-pakgusu-section .video-section-full {
-  background-color: rgba(30, 30, 30, 0.8);
-}
-
-#why-choose-pakgusu-section .video-section-full:hover {
-  box-shadow: 0 8px 32px var(--wcp-shadow-md);
-  transform: translateY(-4px);
-}
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-#why-choose-pakgusu-section .font-18 {
-  font-family: var(--wcp-font-body);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--wcp-accent);
-  text-transform: uppercase;
-  margin-bottom: var(--wcp-spacing-sm);
-  display: inline-block;
+#why-choose-pakgusu-section .site-text-primary {
+  color: var(--wcp-bg-base) !important; /* Use dark blue for accent text in card */
 }
 
 #why-choose-pakgusu-section .wt-tilte {
-  font-family: var(--wcp-font-display);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  color: var(--wcp-card-text);
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  color: var(--wcp-text-primary);
+  font-size: 2.5rem;
   line-height: 1.3;
-  letter-spacing: -0.02em;
-  margin: var(--wcp-spacing-md) 0;
+  letter-spacing: -0.5px;
 }
 
-/* ============================================
-   VIDEO PLAYER BUTTON
-   ============================================ */
-#why-choose-pakgusu-section .video-section-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--wcp-spacing-md);
-  margin-top: var(--wcp-spacing-lg);
-  flex-wrap: wrap;
-}
-
-#why-choose-pakgusu-section .video-section-left {
-  position: relative;
-}
-
+/* Video Button Styling (Re-applying from previous design) */
 #why-choose-pakgusu-section .play-now {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
-  background-color: var(--wcp-accent);
+  background-color: var(--wcp-bg-base); /* Dark blue button */
   border-radius: 50%;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px var(--wcp-shadow-md);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 #why-choose-pakgusu-section .play-now:hover {
-  background-color: var(--wcp-accent-hover);
   transform: scale(1.1);
-  box-shadow: 0 6px 20px var(--wcp-shadow-lg);
+  background-color: var(--wcp-blob-color-1); /* Light blue on hover */
 }
 
 #why-choose-pakgusu-section .play-now .icon {
-  color: #FFFFFF;
-  font-size: 28px;
-  margin-left: 4px;
-  z-index: 2;
-  position: relative;
+  color: #fff;
+  font-size: 24px;
 }
 
-/* Ripple Effect */
 #why-choose-pakgusu-section .play-now .ripple {
   position: absolute;
   top: 50%;
@@ -293,129 +197,33 @@ html.dark-mode #why-choose-pakgusu-section .video-section-full {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid var(--wcp-accent);
-  animation: wcp-ripple 2s ease-out infinite;
+  border: 2px solid var(--wcp-bg-base);
+  animation: wcp-ripple 2s infinite;
   opacity: 0;
 }
 
 @keyframes wcp-ripple {
-  0% {
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-  }
-  100% {
-    width: 150%;
-    height: 150%;
-    opacity: 0;
-  }
+  0% { width: 100%; height: 100%; opacity: 0.6; }
+  100% { width: 150%; height: 150%; opacity: 0; }
 }
 
-/* Stop ripple animation on reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  #why-choose-pakgusu-section .play-now .ripple {
-    animation: none;
-  }
-}
-
-/* ============================================
-   TEXT LINK
-   ============================================ */
 #why-choose-pakgusu-section .video-secion-right a {
-  font-family: var(--wcp-font-body);
-  font-size: 1rem;
+  color: var(--wcp-bg-base);
   font-weight: 700;
-  color: var(--wcp-accent);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
-}
-
-#why-choose-pakgusu-section .video-secion-right a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--wcp-accent-hover);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #why-choose-pakgusu-section .video-secion-right a:hover {
-  color: var(--wcp-accent-hover);
+  color: var(--wcp-blob-color-1);
 }
 
-#why-choose-pakgusu-section .video-secion-right a:hover::after {
-  width: 100%;
-}
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Mobile - 320px+ */
-@media (max-width: 767px) {
-  #why-choose-pakgusu-section {
-    padding: var(--wcp-spacing-lg) 0;
-  }
-  
-  #why-choose-pakgusu-section .video-section-full {
-    padding: var(--wcp-spacing-md);
-  }
-  
+/* Responsive */
+@media (max-width: 768px) {
   #why-choose-pakgusu-section .wt-tilte {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
-  
-  #why-choose-pakgusu-section .play-now {
-    width: 64px;
-    height: 64px;
-  }
-  
-  #why-choose-pakgusu-section .play-now .icon {
-    font-size: 22px;
-  }
-  
-  #why-choose-pakgusu-section .video-section-content {
-    flex-direction: column;
-    gap: var(--wcp-spacing-sm);
-  }
-}
-
-/* Tablet - 768px+ */
-@media (min-width: 768px) and (max-width: 991px) {
   #why-choose-pakgusu-section .video-section-full {
-    padding: var(--wcp-spacing-lg);
-  }
-}
-
-/* Desktop - 1200px+ */
-@media (min-width: 1200px) {
-  #why-choose-pakgusu-section {
-    padding: calc(var(--wcp-spacing-xl) * 1.25) 0;
-  }
-}
-
-/* ============================================
-   ACCESSIBILITY ENHANCEMENTS
-   ============================================ */
-
-/* Focus visible for keyboard navigation */
-#why-choose-pakgusu-section .play-now:focus-visible,
-#why-choose-pakgusu-section .video-secion-right a:focus-visible {
-  outline: 3px solid var(--wcp-accent);
-  outline-offset: 4px;
-}
-
-/* Ensure minimum touch target size */
-@media (max-width: 767px) {
-  #why-choose-pakgusu-section .play-now,
-  #why-choose-pakgusu-section .video-secion-right a {
-    min-height: 44px;
-    min-width: 44px;
+    padding: 20px;
   }
 }
