@@ -1,0 +1,194 @@
+/* ============================================
+   MODERN ANIMATIONS - SCOPED TO HOMEPAGE
+   ============================================ */
+
+/* 1. Global Interactive Elements */
+
+/* Button Shine Effect */
+.site-button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.site-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.6s;
+    z-index: -1;
+}
+
+.site-button:hover::before {
+    left: 100%;
+}
+
+/* Magnetic Link Underline */
+.site-button-link.hover-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.site-button-link.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: var(--secondary-color, #29afe3);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.site-button-link.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* 2. Hero Section */
+
+/* Scroll Indicator Bounce */
+.scroll-indicator {
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Text Blur-in Effect (Applied to existing fade-in elements if needed) */
+.fade-in-blur {
+    animation: blurIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes blurIn {
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. About & Gallery Section */
+
+/* Gallery Image Hover - Zoom & Rotate */
+.wt-thum-bx {
+    overflow: hidden;
+    border-radius: 5px; /* Ensure border radius matches global */
+}
+
+.wt-thum-bx img {
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom-card:hover .wt-thum-bx img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+/* Accordion Animation */
+.wt-accordion .panel {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.wt-accordion .panel:hover,
+.wt-accordion .panel.active {
+    border-left-color: var(--primary-color, #004685);
+    background-color: #f9f9f9;
+}
+
+/* 4. Cleanroom Products Section */
+
+/* Product Card Levitate & Shadow */
+.wt-box {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+}
+
+.hover-box-effect:hover .wt-box {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15) !important;
+    z-index: 2;
+}
+
+/* Icon Wobble Animation */
+.v-icon {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.hover-box-effect:hover .v-icon {
+    animation: wobble 1s ease-in-out;
+    color: var(--secondary-color, #29afe3);
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0%); transform-origin: 50% 50%; }
+    15% { transform: translateX(-6px) rotate(-6deg); }
+    30% { transform: translateX(3px) rotate(6deg); }
+    45% { transform: translateX(-3px) rotate(-3.6deg); }
+    60% { transform: translateX(2px) rotate(2.4deg); }
+    75% { transform: translateX(-1px) rotate(-1.2deg); }
+}
+
+/* 5. Clients & Testimonials */
+
+/* Client Logos - Grayscale to Color & Pop */
+.client-logo-box {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.client-logo-box:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Testimonial Card Float */
+.testimonial-box {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 6. General Utility Animations */
+
+/* Pulse Effect for Call to Actions */
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(41, 175, 227, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(41, 175, 227, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(41, 175, 227, 0);
+    }
+}

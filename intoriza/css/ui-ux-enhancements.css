@@ -1075,3 +1075,151 @@ html {
     background: var(--secondary-color);
     color: #fff;
 }
+
+/* 1.4 Global Border Radius & Brand Colors */
+:root {
+    --border-radius-base: 5px;
+}
+
+/* Global Border Radius Enforcement */
+.site-button,
+.btn,
+.form-control,
+.wt-box,
+.wt-icon-box-wraper,
+.service-box-style-1,
+.pricingtable-wrapper,
+.blog-post,
+.ow-img-entry img,
+.wt-media img,
+.wt-thum-bx img,
+.img-responsive,
+.modal-content,
+.panel,
+.alert {
+    border-radius: var(--border-radius-base) !important;
+}
+
+/* Button Color Enforcements */
+.site-button {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.site-button:hover,
+.site-button:active,
+.site-button:focus {
+    background-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.site-button.white {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.site-button.white:hover {
+    background-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.site-button.outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.site-button.outline:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Text Selection Color */
+::selection {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+/* Scroll to Top Button */
+button.scroltop {
+    background-color: var(--primary-color) !important;
+    border-radius: var(--border-radius-base) !important;
+}
+
+button.scroltop:hover {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Pagination */
+.pagination > li > a {
+    border-radius: var(--border-radius-base) !important;
+    color: var(--primary-color);
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Owl Carousel Dots */
+.owl-theme .owl-dots .owl-dot span {
+    background: var(--primary-color) !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--secondary-color) !important;
+}
+
+/* Icon Box Hover */
+.wt-icon-box-wraper:hover {
+    border-color: var(--secondary-color) !important;
+}
+
+.wt-icon-box-wraper:hover .icon-content .wt-tilte {
+    color: var(--primary-color);
+}
+
+/* Link Hover Colors */
+a:hover,
+a:focus,
+a:active {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.site-text-primary {
+    color: var(--primary-color) !important;
+}
+
+.site-bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.site-text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.site-bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
