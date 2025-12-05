@@ -1,0 +1,645 @@
+<!-- Our Solutions Overview – Redesigned Section -->
+<section id="solutions-overview" class="solutions-section">
+    <!-- Unique Background Animation: Two Converging Streams -->
+    <div class="solutions-bg-anim" aria-hidden="true">
+        <div class="solution-stream stream-left"></div>
+        <div class="solution-stream stream-right"></div>
+        <div class="solution-particles"></div>
+    </div>
+
+    <div class="container solutions-container">
+        <!-- Section Header -->
+        <header class="solutions-header fade-in-up">
+            <span class="solutions-eyebrow">OUR SOLUTIONS OVERVIEW</span>
+            <h2 class="solutions-title">Two Paths, One Integrated Cleanroom Solution</h2>
+            <p class="solutions-desc"
+                data-default-text="Choose between modular cleanroom components or turnkey engineering services to find the starting point that best matches your project needs.">
+                Choose between modular cleanroom components or turnkey engineering services to find the
+                starting point that best matches your project needs.
+            </p>
+        </header>
+
+        <!-- Cards Grid -->
+        <div class="solutions-grid">
+
+            <!-- Card 1: Components (Left Path) -->
+            <article class="solution-card card-components fade-in-left" tabindex="0"
+                data-summary="Explore modular cleanroom components engineered for fast deployment, scalability, and easy integration into your facility.">
+                <div class="card-deco-line"></div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="solution-chip chip-components">COMPONENTS</span>
+                        <h3 class="card-title">Modular Cleanroom Components</h3>
+                    </div>
+                    <p class="card-body">
+                        Wall and ceiling panels, doors, windows, and pass-through chambers designed for
+                        ISO-compliant cleanroom environments.
+                    </p>
+                    <ul class="solution-list">
+                        <li><i class="fa fa-cubes"></i> Scalable modular architecture</li>
+                        <li><i class="fa fa-plug"></i> Compatible with existing facilities</li>
+                        <li><i class="fa fa-clock-o"></i> Shorter lead times and installation</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="./products/" class="solution-btn btn-components"
+                            aria-label="Go to Products catalog for modular cleanroom components">
+                            Explore Products <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Hover Glow -->
+                <div class="card-glow"></div>
+            </article>
+
+            <!-- Card 2: Turnkey (Right Path) -->
+            <article class="solution-card card-turnkey fade-in-right" tabindex="0"
+                data-summary="Discover turnkey design-and-build services covering concept, engineering, validation, and lifecycle support.">
+                <div class="card-deco-line"></div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="solution-chip chip-turnkey">TURNKEY</span>
+                        <h3 class="card-title">End-to-End Engineering Services</h3>
+                    </div>
+                    <p class="card-body">
+                        From concept and regulatory consulting to commissioning and validation of
+                        production-ready cleanroom facilities.
+                    </p>
+                    <ul class="solution-list">
+                        <li><i class="fa fa-pencil-square-o"></i> Front-end design &amp; compliance review</li>
+                        <li><i class="fa fa-tasks"></i> Project management &amp; site execution</li>
+                        <li><i class="fa fa-certificate"></i> Qualification, training &amp; after-sales support</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="./services/" class="solution-btn btn-turnkey"
+                            aria-label="Go to Services overview for turnkey engineering solutions">
+                            Explore Services <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Hover Glow -->
+                <div class="card-glow"></div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* =========================================
+   SOLUTIONS SECTION STYLES (Scoped)
+   ========================================= */
+
+    #solutions-overview {
+        position: relative;
+        padding: 100px 0;
+        overflow: hidden;
+        background-color: var(--dm-bg-secondary, #f8f9fa);
+        /* Fallback */
+        z-index: 1;
+    }
+
+    /* Dark Mode Background Override */
+    html[data-theme="dark"] #solutions-overview,
+    body.dark-mode #solutions-overview {
+        background-color: var(--dm-bg-surface, #0f2240);
+    }
+
+    /* --- 1. Unique Background Animation (Two Streams) --- */
+    .solutions-bg-anim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .solution-stream {
+        position: absolute;
+        width: 150%;
+        height: 60%;
+        opacity: 0.08;
+        filter: blur(60px);
+        border-radius: 50%;
+        animation: streamFlow 20s infinite alternate ease-in-out;
+    }
+
+    /* Stream 1 (Left - Blue/Cyan for Components) */
+    .stream-left {
+        top: -20%;
+        left: -20%;
+        background: linear-gradient(135deg, #29afe3, transparent);
+        transform: rotate(-15deg);
+    }
+
+    /* Stream 2 (Right - Dark Blue/Teal for Turnkey) */
+    .stream-right {
+        bottom: -20%;
+        right: -20%;
+        background: linear-gradient(135deg, transparent, #004685);
+        transform: rotate(15deg);
+        animation-delay: -10s;
+    }
+
+    /* Cleanroom Particles (Subtle dots) */
+    .solution-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            radial-gradient(circle, #29afe3 1px, transparent 1px),
+            radial-gradient(circle, #004685 1px, transparent 1px);
+        background-size: 80px 80px;
+        background-position: 0 0, 40px 40px;
+        opacity: 0.1;
+        animation: particleFloat 60s linear infinite;
+    }
+
+    @keyframes streamFlow {
+        0% {
+            transform: rotate(-15deg) translate(0, 0) scale(1);
+            opacity: 0.06;
+        }
+
+        100% {
+            transform: rotate(-10deg) translate(50px, 30px) scale(1.1);
+            opacity: 0.1;
+        }
+    }
+
+    @keyframes particleFloat {
+        0% {
+            background-position: 0 0, 40px 40px;
+        }
+
+        100% {
+            background-position: 80px 80px, 120px 120px;
+        }
+    }
+
+    /* Dark Mode Adjustments for Animation */
+    html[data-theme="dark"] .solution-stream {
+        opacity: 0.15;
+    }
+
+    html[data-theme="dark"] .solution-particles {
+        opacity: 0.15;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+
+        .solution-stream,
+        .solution-particles {
+            animation: none;
+        }
+    }
+
+    /* --- 2. Typography & Layout --- */
+    .solutions-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .solutions-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+    }
+
+    .solutions-eyebrow {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #29afe3;
+        display: block;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .solutions-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #004685;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .solutions-desc {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+        min-height: 3.2em;
+        /* Reserve space for text swap */
+        transition: opacity 0.3s ease;
+    }
+
+    /* Dark Mode Text */
+    html[data-theme="dark"] .solutions-title {
+        color: var(--dm-text-primary, #fff);
+    }
+
+    html[data-theme="dark"] .solutions-desc {
+        color: var(--dm-text-secondary, #a0b3c6);
+    }
+
+    /* --- 3. Grid & Cards --- */
+    .solutions-grid {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .solution-card {
+        flex: 1;
+        background: #fff;
+        border-radius: 12px;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Dark Mode Card */
+    html[data-theme="dark"] .solution-card {
+        background: var(--dm-bg-secondary, #0d1d33);
+        border-color: var(--dm-border, #1e3a5f);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Card Hover State */
+    .solution-card:hover,
+    .solution-card:focus-visible,
+    .solution-card.active-state {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        border-color: rgba(41, 175, 227, 0.3);
+    }
+
+    html[data-theme="dark"] .solution-card:hover,
+    html[data-theme="dark"] .solution-card:focus-visible,
+    html[data-theme="dark"] .solution-card.active-state {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        border-color: #29afe3;
+    }
+
+    /* Distinct Top Line */
+    .card-deco-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #e5e5e5;
+        transition: all 0.4s ease;
+    }
+
+    .card-components .card-deco-line {
+        background: #29afe3;
+    }
+
+    .card-turnkey .card-deco-line {
+        background: #004685;
+    }
+
+    /* Content Layout */
+    .card-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-header {
+        margin-bottom: 20px;
+    }
+
+    .solution-chip {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+    }
+
+    /* Chip Styles */
+    .chip-components {
+        background: rgba(41, 175, 227, 0.1);
+        color: #29afe3;
+        border: 1px solid rgba(41, 175, 227, 0.2);
+    }
+
+    .chip-turnkey {
+        background: rgba(0, 70, 133, 0.1);
+        color: #004685;
+        border: 1px solid rgba(0, 70, 133, 0.2);
+    }
+
+    /* Chip Hover Action */
+    .solution-card:hover .chip-components,
+    .solution-card.active-state .chip-components {
+        background: #29afe3;
+        color: #fff;
+    }
+
+    .solution-card:hover .chip-turnkey,
+    .solution-card.active-state .chip-turnkey {
+        background: #004685;
+        color: #fff;
+    }
+
+    /* Dark Mode Chip Tweaks */
+    html[data-theme="dark"] .chip-turnkey {
+        color: #8abaf3;
+        border-color: #8abaf3;
+    }
+
+    html[data-theme="dark"] .solution-card:hover .chip-turnkey {
+        color: #fff;
+        border-color: #004685;
+    }
+
+
+    .card-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+        margin: 0;
+    }
+
+    html[data-theme="dark"] .card-title {
+        color: #fff;
+    }
+
+    .card-body {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 25px;
+        flex-grow: 1;
+        /* Pushes list down */
+    }
+
+    html[data-theme="dark"] .card-body {
+        color: #a0b3c6;
+    }
+
+    /* List Styles */
+    .solution-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+
+    .solution-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 15px;
+        color: #444;
+    }
+
+    html[data-theme="dark"] .solution-list li {
+        color: #ccc;
+    }
+
+    .solution-list li i {
+        width: 24px;
+        color: #29afe3;
+        margin-right: 10px;
+    }
+
+    .card-turnkey .solution-list li i {
+        color: #004685;
+    }
+
+    html[data-theme="dark"] .card-turnkey .solution-list li i {
+        color: #29afe3;
+    }
+
+    /* Unified accent in dark mode */
+
+    /* --- 4. CTAs --- */
+    .card-footer {
+        margin-top: auto;
+    }
+
+    .solution-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+    }
+
+    .solution-btn i {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .solution-btn:hover i {
+        transform: translateX(5px);
+    }
+
+    .btn-components {
+        background-color: #29afe3;
+    }
+
+    .btn-components:hover {
+        background-color: #1a96c7;
+    }
+
+    .btn-turnkey {
+        background-color: #004685;
+    }
+
+    .btn-turnkey:hover {
+        background-color: #003366;
+    }
+
+    /* Dark Mode Buttons */
+    html[data-theme="dark"] .btn-turnkey {
+        background-color: #2c5985;
+    }
+
+    html[data-theme="dark"] .btn-turnkey:hover {
+        background-color: #29afe3;
+    }
+
+
+    /* --- 5. Responsive --- */
+    @media (max-width: 991px) {
+        .solutions-grid {
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .solution-card {
+            margin-bottom: 20px;
+        }
+
+        .solutions-title {
+            font-size: 28px;
+        }
+    }
+
+    /* --- 6. Entrance Animations (CSS Only) --- */
+    .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .fade-in-left {
+        animation: fadeInLeft 0.8s ease-out forwards;
+        opacity: 0;
+        animation-delay: 0.2s;
+    }
+
+    .fade-in-right {
+        animation: fadeInRight 0.8s ease-out forwards;
+        opacity: 0;
+        animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Disable entrance on reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+
+        .fade-in-up,
+        .fade-in-left,
+        .fade-in-right {
+            animation: none;
+            opacity: 1;
+        }
+    }
+
+    /* Validated State Dimming */
+    .solutions-grid.has-active .solution-card:not(.active-state):not(:hover) {
+        opacity: 0.6;
+        transform: scale(0.98);
+        filter: grayscale(0.5);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const section = document.getElementById('solutions-overview');
+        if (!section) return;
+
+        const cards = section.querySelectorAll('.solution-card');
+        const grid = section.querySelectorAll('.solutions-grid')[0];
+        const summaryEl = section.querySelector('.solutions-desc');
+        const defaultSummary = summaryEl ? summaryEl.getAttribute('data-default-text') : '';
+
+        // Entrance Animation trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elements = entry.target.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+                    elements.forEach(el => el.style.animationPlayState = 'running');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        const elements = section.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+        elements.forEach(el => el.style.animationPlayState = 'paused');
+        observer.observe(section);
+
+        // Card Interaction Logic (Hover/Focus -> Active State)
+        function activateCard(card) {
+            // Remove active from others
+            cards.forEach(c => c.classList.remove('active-state'));
+
+            if (card) {
+                card.classList.add('active-state');
+                grid.classList.add('has-active');
+
+                // Text swap
+                const newText = card.getAttribute('data-summary');
+                if (summaryEl && newText) {
+                    summaryEl.style.opacity = '0';
+                    setTimeout(() => {
+                        summaryEl.textContent = newText;
+                        summaryEl.style.opacity = '1';
+                    }, 150);
+                }
+            } else {
+                grid.classList.remove('has-active');
+                // Revert text
+                if (summaryEl && defaultSummary) {
+                    summaryEl.style.opacity = '0';
+                    setTimeout(() => {
+                        summaryEl.textContent = defaultSummary;
+                        summaryEl.style.opacity = '1';
+                    }, 150);
+                }
+            }
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => activateCard(card));
+            card.addEventListener('mouseleave', () => activateCard(null));
+            card.addEventListener('focus', () => activateCard(card));
+            card.addEventListener('blur', () => activateCard(null));
+        });
+    });
+</script>

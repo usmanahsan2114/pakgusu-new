@@ -1,0 +1,211 @@
+/* ============================================
+   ABOUT PAGE - HERO / WHO WE ARE SECTION
+   ============================================ */
+
+/* -------------------------------------------
+   1. Scoped Variables & Root
+   ------------------------------------------- */
+.about-hero-section {
+    --ah-bg-light: #f8f9fa;
+    --ah-bg-dark: #0d1d33;
+    --ah-text-primary: #1a1a1a;
+    --ah-text-primary-dark: #f0f4f8;
+    --ah-text-secondary: #525252;
+    --ah-text-secondary-dark: #a0b3c6;
+    --ah-accent: #29afe3;
+    --ah-separator: #e5e5e5;
+    --ah-shadow: rgba(0, 0, 0, 0.1);
+
+    position: relative;
+    overflow: hidden;
+    background-color: var(--ah-bg-light);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+/* Dark Mode Override */
+html[data-theme="dark"] .about-hero-section,
+body.dark-mode .about-hero-section {
+    background-color: var(--ah-bg-dark);
+}
+
+/* -------------------------------------------
+   2. Background Animation (Subtle Tech Grid)
+   ------------------------------------------- */
+.about-hero-bg-anim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Creating a moving grid pattern */
+.about-hero-bg-anim::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(41, 175, 227, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(41, 175, 227, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(20deg);
+    animation: gridMove 60s linear infinite;
+}
+
+/* Floating "Particles" or Cleanroom specks */
+.about-hero-bg-anim::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(41, 175, 227, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(41, 175, 227, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    animation: speckFloat 30s linear infinite alternate;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(20deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(20deg) translateY(-50px);
+    }
+}
+
+@keyframes speckFloat {
+    0% {
+        background-position: 0 0, 30px 30px;
+    }
+
+    100% {
+        background-position: 20px 20px, 10px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-hero-bg-anim::before,
+    .about-hero-bg-anim::after {
+        animation: none;
+    }
+}
+
+/* -------------------------------------------
+   3. Content Layout
+   ------------------------------------------- */
+.about-hero-right {
+    padding-left: 20px;
+}
+
+/* Typography Overrides for Dark Mode */
+html[data-theme="dark"] .about-hero-section h2,
+body.dark-mode .about-hero-section h2 {
+    color: var(--ah-text-primary-dark);
+}
+
+html[data-theme="dark"] .about-hero-section p,
+body.dark-mode .about-hero-section p,
+html[data-theme="dark"] .about-hero-section .wt-separator-outer h4 {
+    color: var(--ah-text-secondary-dark);
+}
+
+/* Separator Line */
+.about-hero-right .wt-separator-outer {
+    margin-bottom: 20px;
+}
+
+/* CTA Button Spacing */
+.about-hero-cta {
+    margin-top: 30px;
+}
+
+/* -------------------------------------------
+   4. Image Stack / Carousel Styling
+   ------------------------------------------- */
+.about-hero-left {
+    position: relative;
+    padding-right: 20px;
+}
+
+/* Styling the generic owl-carousel if used here */
+.about-hero-left .owl-carousel .owl-item img {
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect on desktop */
+@media (min-width: 992px) {
+    .about-hero-left .owl-carousel .owl-item img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Prev/Next Navigation - Custom Styling if needed */
+.about-hero-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.about-hero-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.about-hero-nav-btn:hover {
+    background: var(--ah-accent);
+    color: #fff;
+    border-color: var(--ah-accent);
+}
+
+/* Dark Mode Nav */
+html[data-theme="dark"] .about-hero-nav-btn,
+body.dark-mode .about-hero-nav-btn {
+    background: var(--ah-bg-secondary);
+    border-color: var(--ah-text-secondary-dark);
+    color: var(--ah-text-primary-dark);
+}
+
+html[data-theme="dark"] .about-hero-nav-btn:hover {
+    background: var(--ah-accent);
+    border-color: var(--ah-accent);
+    color: #fff;
+}
+
+/* -------------------------------------------
+   5. Responsive Adjustments
+   ------------------------------------------- */
+@media (max-width: 991px) {
+    .about-hero-right {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+
+    .about-hero-left {
+        padding-right: 0;
+    }
+}
