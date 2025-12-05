@@ -39,11 +39,7 @@
 }
 
 /* Dark Mode Adjustments (if needed, though base is already dark) */
-@media (prefers-color-scheme: dark) {
-  #why-choose-pakgusu-section {
-    --wcp-bg-base: #002f5b; /* Slightly darker base */
-    --wcp-blob-opacity: 0.3;
-  }
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
 }
 
 /* ============================================

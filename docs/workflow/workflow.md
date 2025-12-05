@@ -2,6 +2,7 @@
 
 **Note:** See [`page-structure.md`](./page-structure.md) for the complete website structure and page hierarchy.
 **Note:** See [`navigation-structure.md`](./navigation-structure.md) for navigation menu details and how to update it.
+**Note:** See [`dark-mode.md`](./dark-mode.md) for the dark mode toggle feature (user-activated, defaults to Light Mode).
 
 ## Directory Structure
 
@@ -66,3 +67,8 @@ python fix_links_smart.py
 4.  **Stage Changes:** `git add .`
 5.  **Commit:** `git commit -m "Description of changes"`
 6.  **Push:** `git push origin [branch-name]`
+
+## Page Design Documentation
+
+For detailed, section-by-section design breakdowns of each page, refer to the [Page Design Documentation Hub](./pages/index.md).
+

@@ -36,21 +36,7 @@
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    #testimonials-section {
-        --test-bg-base: #0f1620;
-        --test-bg-pattern: rgba(41, 175, 227, 0.04);
-        --test-card-bg: #1a2332;
-        --test-card-shadow: rgba(0, 0, 0, 0.3);
-        --test-card-shadow-hover: rgba(0, 0, 0, 0.5);
-        --test-text-primary: #f5f5f5;
-        --test-text-secondary: #d0d0d0;
-        --test-text-meta: #a0a0a0;
-        --test-accent: #29afe3;
-        --test-accent-light: #5ac4f0;
-        --test-quote-mark: rgba(41, 175, 227, 0.15);
-        --test-border: rgba(41, 175, 227, 0.15);
-    }
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
 }
 
 /* ===================================================================

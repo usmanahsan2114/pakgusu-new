@@ -20,22 +20,18 @@
     --fm-text-secondary: #e0e0e0;
     --fm-accent: #29afe3;
     --fm-border: rgba(255, 255, 255, 0.15);
-    
+
     /* Typography */
     --fm-font-heading: 'Playfair Display', serif;
     --fm-font-body: 'Source Sans Pro', sans-serif;
     --fm-font-mono: 'IBM Plex Mono', monospace;
-    
+
     /* Spacing */
     --fm-spacing-unit: 1rem;
 }
 
 /* Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-    #footer-main-section {
-        --fm-bg-base: #003366;
-        --fm-text-secondary: #cccccc;
-    }
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
 }
 
 /* ===================================================================
@@ -221,7 +217,7 @@
     #footer-main-section {
         padding: 4rem 0 2rem;
     }
-    
+
     #footer-main-section .footer-link ul {
         gap: 1.5rem;
     }
@@ -237,11 +233,11 @@
         gap: 1rem;
         align-items: center;
     }
-    
+
     #footer-main-section .col-md-4 {
         margin-bottom: 2.5rem;
     }
-    
+
     #footer-main-section .widget-title {
         margin-bottom: 1rem;
     }

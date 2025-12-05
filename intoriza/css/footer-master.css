@@ -19,22 +19,17 @@
     --footer-text-secondary: #e0e0e0;
     --footer-link: #ffffff;
     --footer-link-hover: #29afe3;
-    
+
     /* Typography */
     --footer-font: 'IBM Plex Mono', 'Courier New', monospace;
-    
+
     /* Animation */
     --footer-line-speed: 40s;
 }
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    #footer-bottom-section {
-        --footer-bg: #003366;
-        --footer-text: #ffffff;
-        --footer-text-secondary: #e0e0e0;
-    }
-}
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
+
 
 /* ===================================================================
    Section Base Styling
@@ -116,7 +111,7 @@
     #footer-bottom-section {
         padding: 1.75rem 0;
     }
-    
+
     #footer-bottom-section .copyrights-text {
         font-size: 0.75rem;
     }
@@ -126,22 +121,22 @@
     #footer-bottom-section {
         padding: 1.5rem 0;
     }
-    
+
     #footer-bottom-section .row {
         flex-direction: column;
         gap: 0.75rem;
         text-align: center !important;
         min-height: auto;
     }
-    
+
     #footer-bottom-section .col-md-6 {
         text-align: center !important;
     }
-    
+
     #footer-bottom-section .text-right {
         text-align: center !important;
     }
-    
+
     #footer-bottom-section .copyrights-text {
         font-size: 0.6875rem;
         display: block;
@@ -153,11 +148,11 @@
         font-size: 0.625rem;
         line-height: 1.5;
     }
-    
+
     #footer-bottom-section .copyrights-text a {
         text-underline-offset: 2px;
     }
-    
+
     #footer-bottom-section .copyrights-text a:hover {
         text-underline-offset: 3px;
     }
@@ -168,11 +163,12 @@
    =================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     #footer-bottom-section::before,
     #footer-bottom-section::after {
         animation: none;
     }
-    
+
     #footer-bottom-section .copyrights-text a {
         transition: none;
     }
@@ -183,15 +179,16 @@
    =================================================================== */
 
 @media print {
+
     #footer-bottom-section::before,
     #footer-bottom-section::after {
         display: none;
     }
-    
+
     #footer-bottom-section {
         background: white !important;
     }
-    
+
     #footer-bottom-section .copyrights-text,
     #footer-bottom-section .copyrights-text a {
         color: black !important;

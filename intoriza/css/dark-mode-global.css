@@ -1,0 +1,655 @@
+/* ============================================
+   GLOBAL DARK MODE DESIGN SYSTEM
+   ============================================
+   Applies when: html[data-theme="dark"] or body.dark-mode
+   
+   Color Palette:
+   - Background: #0a1628 (Very dark blue, almost black)
+   - Surface: #0d1d33 (Slightly lighter for cards)
+   - Border: #1e3a5f (Visible borders)
+   - Text Primary: #f0f4f8 (Near white)
+   - Text Secondary: #a0b3c6 (Muted text)
+   - Accent: #29afe3 (Light blue)
+   - Header BG: #004685 (Dark blue - FIXED for both modes)
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+    /* Light Mode (Default) */
+    --dm-bg-primary: #ffffff;
+    --dm-bg-secondary: #f8f9fa;
+    --dm-bg-surface: #ffffff;
+    --dm-text-primary: #1a1a1a;
+    --dm-text-secondary: #525252;
+    --dm-text-muted: #737373;
+    --dm-border: #e5e5e5;
+    --dm-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Header Colors (Fixed for both modes) */
+    --header-bg: #004685;
+    --header-accent: #29afe3;
+    --header-text: #ffffff;
+}
+
+/* Dark Mode Variables */
+html[data-theme="dark"],
+body.dark-mode {
+    --dm-bg-primary: #0a1628;
+    --dm-bg-secondary: #0d1d33;
+    --dm-bg-surface: #0f2240;
+    --dm-text-primary: #f0f4f8;
+    --dm-text-secondary: #a0b3c6;
+    --dm-text-muted: #6b8299;
+    --dm-border: #1e3a5f;
+    --dm-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   GLOBAL BODY STYLES
+   ============================================ */
+html[data-theme="dark"] body,
+body.dark-mode {
+    background-color: var(--dm-bg-primary) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+/* ============================================
+   HEADER (FIXED FOR BOTH MODES)
+   ============================================ */
+/* Header background - Dark Blue always */
+.header-style-1,
+.sticky-header,
+.site-header,
+.header-nav-bar,
+.main-bar,
+.header-middle {
+    background-color: var(--header-bg) !important;
+}
+
+/* Header text - White always */
+.header-style-1,
+.header-style-1 *:not(.sub-menu):not(.sub-menu *),
+.main-bar,
+.header-nav-btn,
+.header-nav-btn-link {
+    color: var(--header-text) !important;
+}
+
+/* Navigation links */
+.header-nav .nav>li>a,
+.header-style-1 .nav>li>a {
+    color: var(--header-text) !important;
+}
+
+.header-nav .nav>li>a:hover,
+.header-nav .nav>li.active>a,
+.header-style-1 .nav>li>a:hover {
+    color: var(--header-accent) !important;
+}
+
+/* Logo text */
+.wt-logo,
+.logo-header .logo-header-inner,
+.logo-header a {
+    color: var(--header-text) !important;
+}
+
+/* Header accent elements */
+.site-button,
+.extra-nav .extra-cell .site-button {
+    background-color: var(--header-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Dark mode toggle button styling */
+.dark-mode-toggle-header {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--header-text) !important;
+}
+
+.dark-mode-toggle-header:hover {
+    background: var(--header-accent) !important;
+    border-color: var(--header-accent) !important;
+}
+
+/* Dropdown menus */
+.header-nav .nav>li .sub-menu {
+    background-color: var(--dm-bg-surface);
+    border: 1px solid var(--dm-border);
+}
+
+html[data-theme="dark"] .header-nav .nav>li .sub-menu,
+body.dark-mode .header-nav .nav>li .sub-menu {
+    background-color: var(--dm-bg-secondary);
+    border-color: var(--dm-border);
+}
+
+.header-nav .nav>li .sub-menu>li>a {
+    color: var(--dm-text-primary);
+}
+
+html[data-theme="dark"] .header-nav .nav>li .sub-menu>li>a:hover,
+body.dark-mode .header-nav .nav>li .sub-menu>li>a:hover {
+    background-color: var(--dm-bg-primary);
+    color: var(--header-accent);
+}
+
+/* Mobile nav */
+html[data-theme="dark"] .mobile-sider-drawer-menu,
+body.dark-mode .mobile-sider-drawer-menu {
+    background-color: var(--dm-bg-secondary);
+}
+
+/* ============================================
+   SECTIONS & CONTAINERS
+   ============================================ */
+html[data-theme="dark"] section,
+body.dark-mode section,
+html[data-theme="dark"] .section-full,
+body.dark-mode .section-full,
+html[data-theme="dark"] .p-t80,
+body.dark-mode .p-t80,
+html[data-theme="dark"] .p-t100,
+body.dark-mode .p-t100,
+html[data-theme="dark"] .p-b80,
+body.dark-mode .p-b80 {
+    background-color: var(--dm-bg-primary);
+}
+
+html[data-theme="dark"] .bg-white,
+body.dark-mode .bg-white,
+html[data-theme="dark"] .bg-gray,
+body.dark-mode .bg-gray,
+html[data-theme="dark"] .bg-gray-light,
+body.dark-mode .bg-gray-light {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] h1 a,
+html[data-theme="dark"] h2 a,
+html[data-theme="dark"] h3 a,
+html[data-theme="dark"] h4 a,
+html[data-theme="dark"] h5 a,
+html[data-theme="dark"] h6 a,
+body.dark-mode h1 a,
+body.dark-mode h2 a,
+body.dark-mode h3 a,
+body.dark-mode h4 a,
+body.dark-mode h5 a,
+body.dark-mode h6 a {
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] li,
+html[data-theme="dark"] td,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode td {
+    color: var(--dm-text-secondary);
+}
+
+html[data-theme="dark"] a,
+body.dark-mode a {
+    color: var(--header-accent);
+}
+
+html[data-theme="dark"] a:hover,
+body.dark-mode a:hover {
+    color: #5cc4ed;
+}
+
+/* ============================================
+   CARDS & BOXES
+   ============================================ */
+html[data-theme="dark"] .wt-box,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .blog-post,
+html[data-theme="dark"] .testimonial-5,
+html[data-theme="dark"] .pricing-table,
+html[data-theme="dark"] .service-box,
+body.dark-mode .wt-box,
+body.dark-mode .card,
+body.dark-mode .blog-post,
+body.dark-mode .testimonial-5,
+body.dark-mode .pricing-table,
+body.dark-mode .service-box {
+    background-color: var(--dm-bg-surface) !important;
+    border-color: var(--dm-border) !important;
+    box-shadow: 0 4px 20px var(--dm-shadow);
+}
+
+html[data-theme="dark"] .wt-box:hover,
+body.dark-mode .wt-box:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon boxes */
+html[data-theme="dark"] .wt-icon-box-wraper,
+body.dark-mode .wt-icon-box-wraper {
+    background-color: var(--dm-bg-surface);
+}
+
+/* ============================================
+   INNER PAGE BANNER
+   ============================================ */
+html[data-theme="dark"] .wt-bnr-inr,
+body.dark-mode .wt-bnr-inr {
+    background-color: var(--dm-bg-secondary);
+}
+
+html[data-theme="dark"] .wt-bnr-inr .wt-bnr-inr-entry h1,
+body.dark-mode .wt-bnr-inr .wt-bnr-inr-entry h1 {
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] .wt-bnr-inr .breadcrumb>li,
+html[data-theme="dark"] .wt-bnr-inr .breadcrumb>li a,
+body.dark-mode .wt-bnr-inr .breadcrumb>li,
+body.dark-mode .wt-bnr-inr .breadcrumb>li a {
+    color: var(--dm-text-secondary) !important;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .form-control,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .form-control {
+    background-color: var(--dm-bg-secondary) !important;
+    border-color: var(--dm-border) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder,
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: var(--dm-text-muted) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+html[data-theme="dark"] .site-button-secondry,
+body.dark-mode .site-button-secondry {
+    background-color: var(--dm-bg-surface) !important;
+    border-color: var(--dm-border) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] .site-button-link,
+body.dark-mode .site-button-link {
+    color: var(--header-accent) !important;
+}
+
+/* ============================================
+   SEPARATORS & BORDERS
+   ============================================ */
+html[data-theme="dark"] hr,
+html[data-theme="dark"] .wt-divider,
+body.dark-mode hr,
+body.dark-mode .wt-divider {
+    border-color: var(--dm-border) !important;
+}
+
+html[data-theme="dark"] .wt-separator-outer .wt-separator,
+body.dark-mode .wt-separator-outer .wt-separator {
+    border-color: var(--dm-border);
+}
+
+/* ============================================
+   ACCORDIONS
+   ============================================ */
+html[data-theme="dark"] .wt-accordion .acod-head a,
+html[data-theme="dark"] .panel-heading,
+body.dark-mode .wt-accordion .acod-head a,
+body.dark-mode .panel-heading {
+    background-color: var(--dm-bg-surface) !important;
+    color: var(--dm-text-primary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+html[data-theme="dark"] .wt-accordion .acod-body,
+html[data-theme="dark"] .panel-body,
+body.dark-mode .wt-accordion .acod-body,
+body.dark-mode .panel-body {
+    background-color: var(--dm-bg-secondary);
+    color: var(--dm-text-secondary);
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+html[data-theme="dark"] table,
+body.dark-mode table {
+    background-color: var(--dm-bg-surface);
+}
+
+html[data-theme="dark"] table thead th,
+body.dark-mode table thead th {
+    background-color: var(--header-bg) !important;
+    color: var(--header-text) !important;
+}
+
+html[data-theme="dark"] table td,
+html[data-theme="dark"] table th,
+body.dark-mode table td,
+body.dark-mode table th {
+    border-color: var(--dm-border) !important;
+    color: var(--dm-text-secondary);
+}
+
+/* ============================================
+   FOOTER (FIXED FOR BOTH MODES - Like Header)
+   ============================================ */
+/* Footer Variables */
+:root {
+    --footer-bg: #004685;
+    --footer-accent: #29afe3;
+    --footer-text: #ffffff;
+    --footer-text-secondary: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer Main Background - Dark Blue Always */
+.footer-dark,
+footer,
+#footer-main-section,
+#footer-bottom-section,
+.site-footer {
+    background-color: var(--footer-bg) !important;
+}
+
+/* Footer Headings - White */
+.footer-dark h1,
+.footer-dark h2,
+.footer-dark h3,
+.footer-dark h4,
+.footer-dark h5,
+.footer-dark h6,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+#footer-main-section h1,
+#footer-main-section h2,
+#footer-main-section h3,
+#footer-main-section h4,
+#footer-main-section h5,
+#footer-main-section h6,
+.widget-title {
+    color: var(--footer-text) !important;
+}
+
+/* Footer Text - White/Light */
+.footer-dark p,
+.footer-dark li,
+.footer-dark span,
+footer p,
+footer li,
+footer span,
+#footer-main-section p,
+#footer-main-section li,
+.copyrights-text {
+    color: var(--footer-text-secondary) !important;
+}
+
+/* Footer Links - White, Hover Light Blue */
+.footer-dark a,
+footer a,
+#footer-main-section a,
+.footer-link a {
+    color: var(--footer-text) !important;
+    transition: color 0.3s ease;
+}
+
+.footer-dark a:hover,
+footer a:hover,
+#footer-main-section a:hover,
+.footer-link a:hover {
+    color: var(--footer-accent) !important;
+}
+
+/* Footer Widget Title Underline */
+#footer-main-section h4.widget-title::after,
+.footer-dark .widget-title::after {
+    background-color: var(--footer-accent) !important;
+}
+
+/* Footer Social Icons */
+.footer-dark .social-icons li a,
+footer .social-icons li a,
+#footer-main-section .social-icons li a {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: var(--footer-text) !important;
+    background: transparent !important;
+}
+
+.footer-dark .social-icons li a:hover,
+footer .social-icons li a:hover,
+#footer-main-section .social-icons li a:hover {
+    background-color: var(--footer-accent) !important;
+    border-color: var(--footer-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Footer Bottom / Copyright Section */
+#footer-bottom-section,
+.footer-bottom {
+    background-color: #003366 !important;
+    /* Slightly darker for distinction */
+}
+
+#footer-bottom-section p,
+#footer-bottom-section a,
+.footer-bottom p,
+.footer-bottom a {
+    color: var(--footer-text-secondary) !important;
+}
+
+#footer-bottom-section a:hover,
+.footer-bottom a:hover {
+    color: var(--footer-accent) !important;
+}
+
+/* Footer Form Inputs */
+footer input,
+footer textarea,
+.footer-dark input,
+.footer-dark textarea {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--footer-text) !important;
+}
+
+footer input::placeholder,
+footer textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Newsletter Button */
+footer .site-button,
+.footer-dark .site-button {
+    background-color: var(--footer-accent) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+footer .site-button:hover,
+.footer-dark .site-button:hover {
+    background-color: #1a9fd4 !important;
+}
+
+/* ============================================
+   WIDGETS
+   ============================================ */
+html[data-theme="dark"] .widget,
+body.dark-mode .widget {
+    background-color: var(--dm-bg-surface);
+    border-color: var(--dm-border);
+}
+
+html[data-theme="dark"] .widget-title,
+body.dark-mode .widget-title {
+    color: var(--dm-text-primary) !important;
+}
+
+/* ============================================
+   CONTACT SLIDE PANEL
+   ============================================ */
+html[data-theme="dark"] .contact-slide-hide,
+body.dark-mode .contact-slide-hide {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+html[data-theme="dark"] .contact-slide-hide h4,
+html[data-theme="dark"] .contact-slide-hide p,
+body.dark-mode .contact-slide-hide h4,
+body.dark-mode .contact-slide-hide p {
+    color: var(--dm-text-primary) !important;
+}
+
+/* ============================================
+   QUICK CONTACT WIDGET
+   ============================================ */
+html[data-theme="dark"] .quick-contact-widget .quick-contact-toggle,
+body.dark-mode .quick-contact-widget .quick-contact-toggle {
+    background-color: var(--header-bg);
+}
+
+html[data-theme="dark"] .quick-contact-menu,
+body.dark-mode .quick-contact-menu {
+    background-color: var(--dm-bg-surface);
+    border-color: var(--dm-border);
+}
+
+/* ============================================
+   SCROLL TO TOP
+   ============================================ */
+html[data-theme="dark"] .scroltop,
+body.dark-mode .scroltop {
+    background-color: var(--header-accent);
+    color: #ffffff;
+}
+
+/* ============================================
+   PRELOADER
+   ============================================ */
+html[data-theme="dark"] .loading-area,
+body.dark-mode .loading-area {
+    background-color: var(--dm-bg-primary);
+}
+
+/* ============================================
+   OWL CAROUSEL
+   ============================================ */
+html[data-theme="dark"] .owl-carousel .owl-nav button,
+body.dark-mode .owl-carousel .owl-nav button {
+    background-color: var(--dm-bg-surface) !important;
+    border-color: var(--dm-border) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] .owl-carousel .owl-nav button:hover,
+body.dark-mode .owl-carousel .owl-nav button:hover {
+    background-color: var(--header-accent) !important;
+    color: #ffffff !important;
+}
+
+/* ============================================
+   IMAGES & OVERLAYS
+   ============================================ */
+html[data-theme="dark"] .overlay-main,
+body.dark-mode .overlay-main {
+    background-color: rgba(10, 22, 40, 0.85);
+}
+
+/* ============================================
+   SECTION-SPECIFIC OVERRIDES
+   ============================================ */
+
+/* Who We Are Section */
+html[data-theme="dark"] #who-we-are-section,
+body.dark-mode #who-we-are-section {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+/* Industries Section */
+html[data-theme="dark"] #industries-we-serve-section,
+body.dark-mode #industries-we-serve-section {
+    background-color: var(--dm-bg-primary) !important;
+}
+
+/* Turnkey Services - Already has custom dark styles */
+html[data-theme="dark"] #turnkey-services-section,
+body.dark-mode #turnkey-services-section {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+/* Why Choose PakGusu - Already dark, keep as is */
+
+/* Latest News Section */
+html[data-theme="dark"] #latest-news-section,
+body.dark-mode #latest-news-section {
+    background-color: var(--dm-bg-primary) !important;
+}
+
+/* Testimonials */
+html[data-theme="dark"] #testimonials-section,
+body.dark-mode #testimonials-section {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+/* Cleanroom Products */
+html[data-theme="dark"] #cleanroom-products-section,
+body.dark-mode #cleanroom-products-section {
+    background-color: var(--dm-bg-primary) !important;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+html[data-theme="dark"] .text-dark,
+body.dark-mode .text-dark {
+    color: var(--dm-text-primary) !important;
+}
+
+html[data-theme="dark"] .bg-dark,
+body.dark-mode .bg-dark {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+html[data-theme="dark"] .border,
+body.dark-mode .border {
+    border-color: var(--dm-border) !important;
+}

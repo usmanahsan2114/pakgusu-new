@@ -26,11 +26,11 @@
   --ln-border: #E2E8F0;
   --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
   --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
-  
+
   /* Typography */
   --ln-font-display: 'Playfair Display', serif;
   --ln-font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
-  
+
   /* Spacing */
   --ln-spacing-sm: 1rem;
   --ln-spacing-md: 1.5rem;
@@ -38,19 +38,9 @@
   --ln-spacing-xl: 5rem;
 }
 
-/* Dark Mode Variables */
-@media (prefers-color-scheme: dark) {
-  #latest-news-section {
-    --ln-bg-primary: #121212;
-    --ln-bg-card: #1E1E1E;
-    --ln-text-primary: #F7FAFC;
-    --ln-text-secondary: #CBD5E0;
-    --ln-text-meta: #A0AEC0;
-    --ln-border: #2D3748;
-    --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
-  }
-}
+/* Dark Mode Variables - User-activated only (NOT system-level)
+   NOTE: Dark mode is applied via body.dark-mode or html[data-theme="dark"] class,
+   NOT via @media (prefers-color-scheme: dark) to ensure light mode is default. */
 
 /* Manual Dark Mode Class Support */
 body.dark-mode #latest-news-section,
@@ -85,7 +75,8 @@ html.dark-mode #latest-news-section {
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  opacity: 0.08; /* Subtle background presence */
+  opacity: 0.08;
+  /* Subtle background presence */
   pointer-events: none;
 }
 
@@ -94,15 +85,21 @@ html.dark-mode #latest-news-section {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 200%; /* Double width for looping */
+  width: 200%;
+  /* Double width for looping */
   height: 100%;
   transform: translateY(-50%);
   animation: ln-wave-flow 20s linear infinite;
 }
 
 @keyframes ln-wave-flow {
-  0% { transform: translate(0, -50%); }
-  100% { transform: translate(-50%, -50%); }
+  0% {
+    transform: translate(0, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Reduce motion */
@@ -273,11 +270,11 @@ html.dark-mode #latest-news-section {
   #latest-news-section {
     padding: var(--ln-spacing-lg) 0;
   }
-  
+
   #latest-news-section h2 {
     font-size: 2rem;
   }
-  
+
   #latest-news-section .post-title {
     font-size: 1.25rem;
   }

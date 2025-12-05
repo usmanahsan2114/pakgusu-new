@@ -223,10 +223,7 @@
 /* ============================================
    DARK MODE
    ============================================ */
-@media (prefers-color-scheme: dark) {
-  #cleanroom-products-section {
-    background-color: var(--cp-bg-dark);
-  }
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
   
   #cleanroom-products-section .section-head h2 {
     color: #ffffff;

@@ -48,21 +48,7 @@
 }
 
 /* Dark Mode Variables */
-@media (prefers-color-scheme: dark) {
-  #turnkey-services-section {
-    --tks-bg-primary: #0F0F0F;
-    --tks-bg-card: #1A1A1A;
-    --tks-text-primary: #F5F5F5;
-    --tks-text-secondary: #D4D4D4;
-    --tks-text-tertiary: #A3A3A3;
-    --tks-accent: #60A5FA;
-    --tks-accent-hover: #3B82F6;
-    --tks-border: #262626;
-    --tks-shadow-sm: rgba(0, 0, 0, 0.3);
-    --tks-shadow-md: rgba(0, 0, 0, 0.4);
-    --tks-shadow-lg: rgba(0, 0, 0, 0.5);
-    --tks-animation-grid-color: rgba(255, 255, 255, 0.04);
-  }
+/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
 }
 
 /* Manual Dark Mode Class Support */
