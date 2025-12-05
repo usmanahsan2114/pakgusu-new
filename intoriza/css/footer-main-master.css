@@ -2,7 +2,6 @@
    Footer Main Section - Master UI Design System
    Scoped to: #footer-main-section
    Typography: Playfair Display (Headings), Source Sans Pro (Links), IBM Plex Mono (Data)
-   Animation: Subtle Spotlight (Slow drifting radial gradient)
    =================================================================== */
 
 /* Import Typography */
@@ -13,9 +12,8 @@
    =================================================================== */
 
 #footer-main-section {
-    /* Colors - Dark Blue and Light Blue theme */
+    /* Colors - Dark Blue theme base */
     --fm-bg-base: #004685;
-    --fm-bg-spotlight: transparent;
     --fm-text-primary: #ffffff;
     --fm-text-secondary: #e0e0e0;
     --fm-accent: #29afe3;
@@ -25,13 +23,13 @@
     --fm-font-heading: 'Playfair Display', serif;
     --fm-font-body: 'Source Sans Pro', sans-serif;
     --fm-font-mono: 'IBM Plex Mono', monospace;
-
-    /* Spacing */
-    --fm-spacing-unit: 1rem;
 }
 
-/* Dark Mode Adjustments */
-/* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
+[data-theme="dark"] #footer-main-section {
+    --fm-bg-base: #0d1117;
+    --fm-text-secondary: #b0b0b0;
+    --fm-border: rgba(255, 255, 255, 0.1);
+}
 
 /* ===================================================================
    Section Base Styling
@@ -41,8 +39,7 @@
     position: relative;
     background-color: var(--fm-bg-base) !important;
     color: var(--fm-text-secondary);
-    padding: 5rem 0 3rem;
-    overflow: hidden;
+    padding: 60px 0 30px;
     font-family: var(--fm-font-body);
 }
 
@@ -51,99 +48,70 @@
     display: none;
 }
 
-/* Content Z-Index */
 #footer-main-section .container {
     position: relative;
     z-index: 1;
 }
 
 /* ===================================================================
-   Typography & Widgets
+   Widgets & Typography
    =================================================================== */
 
 #footer-main-section h4.widget-title {
     font-family: var(--fm-font-heading);
-    color: var(--fm-text-primary);
-    font-size: 1.5rem;
+    color: var(--fm-text-primary) !important;
+    background: transparent !important;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
+    margin-bottom: 20px;
     letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-#footer-main-section h4.widget-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background-color: var(--fm-accent);
-    margin: 0.5rem auto 0;
-    transition: width 0.3s ease;
-}
-
-#footer-main-section .widget:hover h4.widget-title::after {
-    width: 60px;
+/* Clean up widget backgrounds */
+#footer-main-section .widget,
+#footer-main-section .widget-section {
+    background: transparent !important;
+    margin-bottom: 20px;
 }
 
 /* ===================================================================
-   Navigation Links (Top Row)
+   Nav Row (Top)
    =================================================================== */
 
 #footer-main-section .footer-link {
-    margin-bottom: 3rem;
     border-bottom: 1px solid var(--fm-border);
-    padding-bottom: 2rem;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 #footer-main-section .footer-link ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 30px;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-#footer-main-section .footer-link li {
-    display: inline-block;
-}
-
 #footer-main-section .footer-link a {
-    color: var(--fm-text-primary);
-    font-family: var(--fm-font-body);
+    color: var(--fm-text-primary) !important;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
     position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
-}
-
-#footer-main-section .footer-link a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--fm-accent);
-    transition: width 0.3s ease;
+    transition: color 0.3s;
 }
 
 #footer-main-section .footer-link a:hover {
-    color: var(--fm-accent);
-}
-
-#footer-main-section .footer-link a:hover::before {
-    width: 100%;
+    color: var(--fm-accent) !important;
 }
 
 /* ===================================================================
-   Contact Info & Address (IBM Plex Mono)
+   Main Content Columns (Middle)
    =================================================================== */
 
 #footer-main-section .widget-section ul {
@@ -155,171 +123,125 @@
 #footer-main-section .widget-section li {
     font-family: var(--fm-font-mono);
     font-size: 0.9rem;
-    color: var(--fm-text-secondary);
-    margin-bottom: 0.75rem;
-    display: block;
+    color: var(--fm-text-secondary) !important;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 #footer-main-section .widget-section li a {
-    color: var(--fm-text-secondary);
-    transition: color 0.3s ease;
+    color: var(--fm-text-secondary) !important;
+    transition: color 0.2s;
 }
 
 #footer-main-section .widget-section li a:hover {
-    color: var(--fm-accent);
-    text-decoration: none;
+    color: var(--fm-accent) !important;
 }
 
 /* ===================================================================
-   Social Icons - FIXED VISIBILITY
+   Social Icons Row (Bottom)
    =================================================================== */
 
-#footer-main-section .footer-social-icon {
-    margin-top: 1.5rem;
+#footer-main-section .new-footer-social-icon {
+    margin-top: 20px;
+    /* Center align if in full width row, or standard behavior */
+    text-align: center;
 }
 
-#footer-main-section .social-icons {
+#footer-main-section .new-footer-social-icon ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     padding: 0;
     margin: 0;
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
 }
 
-#footer-main-section .social-icons li a {
+#footer-main-section .new-footer-social-icon li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    color: #ffffff;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Font Awesome Icon Content - Makes icons visible */
-#footer-main-section .social-icons li a.fa-facebook::before {
-    content: '\f09a';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-twitter::before {
-    content: '\f099';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-linkedin::before {
-    content: '\f0e1';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-instagram::before {
-    content: '\f16d';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-youtube-play::before {
-    content: '\f16a';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-at::before {
-    content: '\f1fa';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-youtube::before {
-    content: '\f167';
-    font-family: 'FontAwesome';
-}
-
-#footer-main-section .social-icons li a.fa-whatsapp::before {
-    content: '\f232';
-    font-family: 'FontAwesome';
+#footer-main-section .new-footer-social-icon li a i {
+    color: #fff;
 }
 
 /* Hover Effects */
-#footer-main-section .social-icons li a:hover {
-    background-color: var(--fm-accent);
+#footer-main-section .new-footer-social-icon li a:hover {
+    background: var(--fm-accent);
     border-color: var(--fm-accent);
-    color: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(41, 175, 227, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 175, 227, 0.3);
 }
 
-/* Platform-specific hover colors */
-#footer-main-section .social-icons li a.fa-facebook:hover {
-    background-color: #1877f2;
-    border-color: #1877f2;
-}
-
-#footer-main-section .social-icons li a.fa-linkedin:hover {
-    background-color: #0077b5;
+/* Platform Specific Hovers */
+#footer-main-section .new-footer-social-icon li a:has(.fa-linkedin):hover {
+    background: #0077b5;
     border-color: #0077b5;
 }
 
-#footer-main-section .social-icons li a.fa-instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border-color: #dc2743;
-}
-
-#footer-main-section .social-icons li a.fa-youtube:hover {
-    background-color: #ff0000;
+#footer-main-section .new-footer-social-icon li a:has(.fa-youtube-play):hover {
+    background: #ff0000;
     border-color: #ff0000;
 }
 
-#footer-main-section .social-icons li a.fa-whatsapp:hover {
-    background-color: #25d366;
-    border-color: #25d366;
+#footer-main-section .new-footer-social-icon li a:has(.fa-twitter):hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
 }
 
+#footer-main-section .new-footer-social-icon li a:has(.fa-facebook):hover {
+    background: #1877f2;
+    border-color: #1877f2;
+}
+
+#footer-main-section .new-footer-social-icon li a:has(.fa-instagram):hover {
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    border-color: #dc2743;
+}
+
+#footer-main-section .new-footer-social-icon li a:has(.fa-at):hover {
+    background: #000;
+    border-color: #000;
+}
+
+
 /* ===================================================================
-   Responsive Design
+   Responsive
    =================================================================== */
 
 @media (max-width: 991px) {
     #footer-main-section {
-        padding: 4rem 0 2rem;
-    }
-
-    #footer-main-section .footer-link ul {
-        gap: 1.5rem;
+        padding: 50px 0 20px;
     }
 }
 
 @media (max-width: 767px) {
     #footer-main-section {
-        padding: 3rem 0 2rem;
+        text-align: center;
     }
 
     #footer-main-section .footer-link ul {
         flex-direction: column;
-        gap: 1rem;
-        align-items: center;
+        gap: 15px;
     }
 
     #footer-main-section .col-md-4 {
-        margin-bottom: 2.5rem;
-    }
-
-    #footer-main-section .widget-title {
-        margin-bottom: 1rem;
-    }
-
-    #footer-main-section .social-icons li a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        margin-bottom: 40px;
     }
 }
 
+
 /* ===================================================================
-   GLOBAL OVERRIDES (INJECTED HERE DUE TO LOAD ORDER)
+   GLOBAL OVERRIDES (PRESERVED)
    Fix for Header Dropdown & Contact Panel Text Visibility (Light Mode)
    =================================================================== */
 

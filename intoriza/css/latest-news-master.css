@@ -1,281 +1,321 @@
-/* ============================================
-   LATEST NEWS - MASTER UI DESIGN
-   ============================================
-   Scoped styles for Latest News section.
-   Features:
-   - Snake-like SVG wave background animation (looping)
-   - Two-tone gradient wave (#004685 -> #29afe3)
-   - Bold typography (Playfair Display + Source Sans Pro)
-   - Clean card design with no image overlays
-   - Dark mode support
-   ============================================ */
+/* ==========================================================================
+   Latest News Redesign - The "News Hub" Layout
+   Desktop: 1 Featured (Left) + 2 Stacked (Right) CSS Grid
+   Mobile: Horizontal Scroll Snap Carousel (No JS)
+   ========================================================================== */
 
-/* ============================================
-   CSS CUSTOM PROPERTIES
-   ============================================ */
 #latest-news-section {
-  /* Light Mode Colors */
-  --ln-bg-primary: #FFFFFF;
-  --ln-bg-card: #FFFFFF;
-  --ln-text-primary: #1A1A1A;
-  --ln-text-secondary: #525252;
-  --ln-text-meta: #718096;
-  --ln-accent: #004685;
-  --ln-accent-gradient-start: #004685;
-  --ln-accent-gradient-end: #29afe3;
-  --ln-border: #E2E8F0;
-  --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --ln-card-bg: #fff;
+  --ln-card-border: rgba(0, 0, 0, 0.06);
+  --ln-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --ln-text-main: #1f2937;
+  --ln-text-muted: #6b7280;
+  --ln-primary: #004685;
+  --ln-accent: #29afe3;
+  --ln-date-badge: #29afe3;
+  --ln-date-text: #fff;
 
-  /* Typography */
-  --ln-font-display: 'Playfair Display', serif;
-  --ln-font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
-
-  /* Spacing */
-  --ln-spacing-sm: 1rem;
-  --ln-spacing-md: 1.5rem;
-  --ln-spacing-lg: 2.5rem;
-  --ln-spacing-xl: 5rem;
-}
-
-/* Dark Mode Variables - User-activated only (NOT system-level)
-   NOTE: Dark mode is applied via body.dark-mode or html[data-theme="dark"] class,
-   NOT via @media (prefers-color-scheme: dark) to ensure light mode is default. */
-
-/* Manual Dark Mode Class Support */
-body.dark-mode #latest-news-section,
-html.dark-mode #latest-news-section {
-  --ln-bg-primary: #121212;
-  --ln-bg-card: #1E1E1E;
-  --ln-text-primary: #F7FAFC;
-  --ln-text-secondary: #CBD5E0;
-  --ln-text-meta: #A0AEC0;
-  --ln-border: #2D3748;
-  --ln-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --ln-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-/* ============================================
-   SECTION LAYOUT & BACKGROUND
-   ============================================ */
-#latest-news-section {
   position: relative;
-  background-color: var(--ln-bg-primary);
-  padding: var(--ln-spacing-xl) 0;
   overflow: hidden;
-  isolation: isolate;
+  background: #f9fafb;
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
 
-/* SVG Wave Container */
+[data-theme="dark"] #latest-news-section {
+  background: #0d1117;
+  --ln-card-bg: #161b22;
+  --ln-card-border: rgba(255, 255, 255, 0.08);
+  --ln-text-main: #e6edf3;
+  --ln-text-muted: #8b949e;
+  --ln-primary: #58a6ff;
+  --ln-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Wave */
 #latest-news-section .wave-background {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  opacity: 0.08;
-  /* Subtle background presence */
+  z-index: 0;
+  opacity: 0.1;
   pointer-events: none;
 }
 
-/* Wave Animation */
-#latest-news-section .wave-svg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 200%;
-  /* Double width for looping */
-  height: 100%;
-  transform: translateY(-50%);
-  animation: ln-wave-flow 20s linear infinite;
-}
-
-@keyframes ln-wave-flow {
-  0% {
-    transform: translate(0, -50%);
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  #latest-news-section .wave-svg {
-    animation: none;
-  }
-}
-
-/* ============================================
-   CONTENT STYLING
-   ============================================ */
-#latest-news-section .section-head {
-  margin-bottom: var(--ln-spacing-lg);
+/* 2. Grid Layout Structure */
+.news-hub-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
   position: relative;
   z-index: 2;
+  margin-top: 40px;
 }
 
-#latest-news-section .wt-separator-outer {
-  margin-bottom: var(--ln-spacing-sm);
+.news-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-#latest-news-section .sep-line-one {
-  font-family: var(--ln-font-body);
-  font-weight: 700;
-  color: var(--ln-accent);
-  letter-spacing: 2px;
-  font-size: 0.875rem;
-}
-
-#latest-news-section h2 {
-  font-family: var(--ln-font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--ln-text-primary);
-  margin-top: 0;
-  font-weight: 700;
-}
-
-/* ============================================
-   BLOG CARDS
-   ============================================ */
-#latest-news-section .blog-post {
-  background-color: var(--ln-bg-card);
-  border: 1px solid var(--ln-border);
-  border-radius: 12px;
+/* 3. Card Base Styling */
+.news-card {
+  background: var(--ln-card-bg);
+  border: 1px solid var(--ln-card-border);
+  border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
 }
 
-#latest-news-section .blog-post:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--ln-shadow-hover);
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ln-card-shadow);
+  border-color: var(--ln-accent);
 }
 
-/* Image Area */
-#latest-news-section .wt-post-media {
+/* Media Area */
+.news-media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  width: 100%;
 }
 
-#latest-news-section .wt-post-media img {
+.featured-card .news-media {
+  height: 380px;
+  /* Taller for featured */
+}
+
+.standard-card .news-media {
+  height: 200px;
+}
+
+.news-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
-#latest-news-section .blog-post:hover .wt-post-media img {
+.news-card:hover .news-media img {
   transform: scale(1.05);
 }
 
-/* Remove any existing overlays */
-#latest-news-section .wt-post-media::before,
-#latest-news-section .wt-post-media::after {
-  display: none !important;
+/* Date Badge */
+.date-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--ln-date-badge);
+  color: var(--ln-date-text);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  line-height: 1.1;
+}
+
+.date-badge .day {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.date-badge .month {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.date-badge.small {
+  padding: 6px 12px;
+}
+
+.date-badge.small .day {
+  font-size: 1rem;
+}
+
+.date-badge.small .month {
+  font-size: 0.7rem;
 }
 
 /* Content Area */
-#latest-news-section .wt-post-info {
-  padding: var(--ln-spacing-md);
-  flex-grow: 1;
+.news-content {
+  padding: 30px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-/* Date */
-#latest-news-section .post-date {
-  font-family: var(--ln-font-body);
-  font-size: 0.875rem;
+.standard-card .news-content {
+  padding: 25px;
+  /* Slightly less padding */
+}
+
+/* Meta Tags (Featured) */
+.news-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
   color: var(--ln-accent);
-  font-weight: 700;
-  margin-bottom: var(--ln-spacing-sm);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-/* Title */
-#latest-news-section .post-title {
-  font-family: var(--ln-font-display);
-  font-size: 1.5rem;
+.meta-tag {
+  background: rgba(41, 175, 227, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* Titles */
+.news-title {
+  font-family: 'Martel', serif;
+  font-weight: 700;
+  color: var(--ln-text-main);
   line-height: 1.3;
-  margin-bottom: var(--ln-spacing-sm);
+  margin-bottom: 15px;
 }
 
-#latest-news-section .post-title a {
-  color: var(--ln-text-primary);
+.featured-card .news-title {
+  font-size: 1.8rem;
+}
+
+.standard-card .news-title {
+  font-size: 1.3rem;
+}
+
+.news-title a {
+  color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s;
+  background-image: linear-gradient(var(--ln-accent), var(--ln-accent));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding-bottom: 2px;
 }
 
-#latest-news-section .post-title a:hover {
-  color: var(--ln-accent);
+.news-card:hover .news-title a {
+  color: var(--ln-primary);
+  background-size: 100% 2px;
 }
 
-/* Text */
-#latest-news-section .wt-post-text p {
-  font-family: var(--ln-font-body);
-  color: var(--ln-text-secondary);
-  font-size: 1rem;
+.news-excerpt {
+  color: var(--ln-text-muted);
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: var(--ln-spacing-md);
+  margin-bottom: 25px;
+  flex-grow: 1;
 }
 
-/* Meta */
-#latest-news-section .wt-post-meta {
-  margin-top: auto;
-  padding-top: var(--ln-spacing-sm);
-  border-top: 1px solid var(--ln-border);
+/* Footer */
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--ln-card-border);
+  font-size: 0.9rem;
+  color: var(--ln-text-muted);
 }
 
-#latest-news-section .wt-post-meta ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.author-info {
   display: flex;
   align-items: center;
-  gap: var(--ln-spacing-md);
+  gap: 10px;
 }
 
-#latest-news-section .wt-post-meta li {
-  font-family: var(--ln-font-body);
-  font-size: 0.875rem;
-  color: var(--ln-text-meta);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-#latest-news-section .wt-post-meta i {
-  color: var(--ln-accent);
-}
-
-#latest-news-section .post-author-pic img {
-  width: 32px;
-  height: 32px;
+.author-info img {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 768px) {
-  #latest-news-section {
-    padding: var(--ln-spacing-lg) 0;
+.interaction-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.interaction-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.interaction-stats .stat:hover {
+  color: var(--ln-accent);
+}
+
+/* 4. Mobile Layout (Horizontal Scroll Snap) */
+.mobile-scroll-hint {
+  display: none;
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--ln-text-muted);
+  margin-bottom: 10px;
+  animation: fadePulse 2s infinite;
+}
+
+@keyframes fadePulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
   }
 
-  #latest-news-section h2 {
-    font-size: 2rem;
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .news-hub-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 30px;
+    /* Space for shadow */
+    -webkit-overflow-scrolling: touch;
+    margin-right: -15px;
+    /* Bleed off screen */
+    padding-right: 30px;
   }
 
-  #latest-news-section .post-title {
-    font-size: 1.25rem;
+  .mobile-scroll-hint {
+    display: block;
+    /* Show hint on mobile */
+  }
+
+  .news-stack {
+    display: contents;
+    /* Ungroup stack so items flow in horizontal flex */
+  }
+
+  .news-card {
+    flex: 0 0 85vw;
+    /* Card width */
+    scroll-snap-align: center;
+    height: auto;
+  }
+
+  .featured-card .news-media,
+  .standard-card .news-media {
+    height: 220px;
+    /* Equalize heights for mobile consistency */
+  }
+
+  .featured-card .news-title {
+    font-size: 1.4rem;
   }
 }

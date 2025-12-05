@@ -1,0 +1,278 @@
+/* ==========================================================================
+   Intro Hero Section - "Cleanroom Manufacturer" Hero Layout
+   Asymmetric Split: Content (Left) / Visual Frame (Right)
+   Premium Glassmorphism & Depth
+   ========================================================================== */
+
+#intro-hero-section {
+    --hero-primary: #004685;
+    --hero-accent: #29afe3;
+    --hero-bg-light: #f8fbfe;
+    --hero-text-main: #1f2937;
+    --hero-text-muted: #6b7280;
+    --hero-glass: rgba(255, 255, 255, 0.9);
+    --hero-border: rgba(41, 175, 227, 0.2);
+    --hero-shadow: 0 20px 40px rgba(0, 70, 133, 0.1);
+
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+    padding: 100px 0;
+}
+
+[data-theme="dark"] #intro-hero-section {
+    --hero-bg-light: #0f172a;
+    --hero-text-main: #f3f4f6;
+    --hero-text-muted: #9ca3af;
+    --hero-glass: rgba(30, 41, 59, 0.85);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --hero-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 1. Background Decoration */
+.hero-accent-shape {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(180deg, rgba(41, 175, 227, 0.05), rgba(0, 70, 133, 0.05));
+    transform: skewX(-12deg);
+    border-left: 1px solid rgba(41, 175, 227, 0.1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 2. Left Column: Content Panel */
+.hero-content-panel {
+    position: relative;
+    z-index: 5;
+    padding-right: 30px;
+}
+
+#intro-hero-section .section-head {
+    margin-bottom: 30px;
+}
+
+#intro-hero-section .section-head h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--hero-primary), var(--hero-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] #intro-hero-section .section-head h2 {
+    background: linear-gradient(90deg, #fff, var(--hero-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--hero-text-muted);
+    margin-bottom: 40px;
+}
+
+.hero-desc strong {
+    color: var(--hero-text-main);
+    font-weight: 600;
+}
+
+/* 3. Modern Accordion Styling */
+.hero-accordion .panel {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+.hero-accordion .acod-head {
+    background: var(--hero-glass);
+    border: 1px solid var(--hero-border);
+    border-radius: 12px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-accordion .acod-head:hover,
+.hero-accordion .acod-head.acc-actives {
+    background: #fff;
+    box-shadow: var(--hero-shadow);
+    border-color: var(--hero-accent);
+    transform: translateX(10px);
+}
+
+[data-theme="dark"] .hero-accordion .acod-head:hover,
+[data-theme="dark"] .hero-accordion .acod-head.acc-actives {
+    background: var(--hero-glass);
+}
+
+.hero-accordion .acod-title a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--hero-text-main);
+    text-decoration: none;
+}
+
+.hero-accordion .indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(41, 175, 227, 0.1);
+    color: var(--hero-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.hero-accordion .acod-head.acc-actives .indicator {
+    background: var(--hero-accent);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.hero-accordion .acod-body {
+    border: none;
+    padding: 0 20px;
+}
+
+.hero-accordion .acod-content {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: var(--hero-text-muted);
+    line-height: 1.6;
+}
+
+/* 4. Right Column: Visual Frame */
+.hero-visual-frame {
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
+}
+
+.hero-main-slider-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--hero-shadow);
+    background: #000;
+    margin-bottom: 20px;
+    aspect-ratio: 4/3;
+}
+
+.hero-main-slider-wrap .owl-stage-outer,
+.hero-main-slider-wrap .owl-stage,
+.hero-main-slider-wrap .owl-item,
+.hero-main-slider-wrap .item,
+.hero-main-slider-wrap .wt-box,
+.hero-main-slider-wrap .wt-thum-bx,
+.hero-main-slider-wrap img {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-main-slider-wrap img {
+    object-fit: cover;
+}
+
+/* Custom Navigation Overlays */
+#sync1 .owl-nav {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    margin: 0 !important;
+}
+
+#sync1 .owl-prev,
+#sync1 .owl-next {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+    border-radius: 50% !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-size: 16px !important;
+    margin: 0 !important;
+}
+
+#sync1 .owl-prev:hover,
+#sync1 .owl-next:hover {
+    background: var(--hero-accent) !important;
+    transform: scale(1.1);
+}
+
+/* Thumbnails */
+#sync2 {
+    margin-top: 10px;
+}
+
+#sync2 .item {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0.6;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+#sync2 .item img {
+    border-radius: 10px;
+    height: 80px;
+    /* Fixed height for consistent thumbs */
+    object-fit: cover;
+}
+
+#sync2 .current .item {
+    opacity: 1;
+    border-color: var(--hero-accent);
+    transform: translateY(-5px);
+}
+
+/* 5. Responsive */
+@media (max-width: 991px) {
+    #intro-hero-section {
+        padding: 60px 0;
+    }
+
+    /* Reverse order on mobile: visual first, then text? 
+       Or standard top-down. Let's stick to content first for intro logic, 
+       but ensure visual isn't buried too deep. 
+       Actually, standard stacking (Text then Image) is fine, 
+       but let's reduce margins. */
+
+    .hero-content-panel {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    #intro-hero-section .section-head h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-visual-frame {
+        padding-left: 0;
+    }
+
+    .hero-accent-shape {
+        width: 100%;
+        top: 0;
+        right: 0;
+        transform: none;
+    }
+}

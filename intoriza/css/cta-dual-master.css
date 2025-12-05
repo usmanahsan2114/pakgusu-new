@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Dual CTA Section - Contact & Video Cards
+   Premium Split-Card Layout with Custom Animations
+   ========================================================================== */
+
+#cta-dual-section {
+    --cta-primary: #004685;
+    --cta-accent: #29afe3;
+    --cta-bg-light: #f4f9ff;
+    --cta-card-bg: #ffffff;
+    --cta-text-main: #1f2937;
+    --cta-text-muted: #6b7280;
+    --cta-border: rgba(41, 175, 227, 0.2);
+    --cta-shadow: 0 20px 40px rgba(0, 70, 133, 0.1);
+
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] #cta-dual-section {
+    --cta-bg-light: #161b22;
+    --cta-card-bg: #0d1117;
+    --cta-text-main: #f3f4f6;
+    --cta-text-muted: #9ca3af;
+    --cta-border: rgba(255, 255, 255, 0.1);
+    --cta-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: #0d1117;
+}
+
+/* ===========================================
+   Shared Card Styles
+   =========================================== */
+.cta-card {
+    border-radius: 20px;
+    /* Modern rounded corners */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    border: 1px solid var(--cta-border);
+    background: var(--cta-card-bg);
+}
+
+.cta-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cta-shadow);
+    border-color: var(--cta-accent);
+}
+
+/* Content Wrapper */
+.cta-content {
+    padding: 50px 40px;
+    z-index: 2;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Eyebrow Text */
+.cta-eyebrow {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cta-accent);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Heading */
+.cta-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--cta-text-main);
+    margin-bottom: 20px;
+}
+
+/* Paragraph */
+.cta-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--cta-text-muted);
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+/* ===========================================
+   Type 1: Contact Card (Left)
+   =========================================== */
+.cta-contact-card {
+    background: linear-gradient(135deg, var(--cta-card-bg) 0%, var(--cta-bg-light) 100%);
+}
+
+.cta-btn-primary {
+    background: var(--cta-primary);
+    color: #fff !important;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    /* Prepare for border transition */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-btn-primary:hover {
+    background: var(--cta-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(41, 175, 227, 0.3);
+}
+
+/* ===========================================
+   Type 2: Video Card (Right)
+   =========================================== */
+.cta-video-card {
+    background: var(--cta-card-bg);
+    /* Fallback */
+    position: relative;
+}
+
+/* Gradient Overlay for visual dept */
+.cta-video-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(41, 175, 227, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Custom Play Button */
+.cta-play-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.cta-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--cta-border);
+}
+
+.cta-play-btn i {
+    font-size: 24px;
+    color: var(--cta-primary);
+    margin-left: 4px;
+    /* Optical adjustment */
+    transition: color 0.3s;
+}
+
+/* Pulse Animation Ring */
+.cta-play-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--cta-accent);
+    opacity: 0;
+    animation: cta-pulse 2s infinite;
+}
+
+@keyframes cta-pulse {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+
+    100% {
+        width: 160%;
+        height: 160%;
+        opacity: 0;
+    }
+}
+
+.cta-play-wrapper:hover .cta-play-btn {
+    transform: scale(1.1);
+    background: var(--cta-primary);
+    border-color: var(--cta-primary);
+}
+
+.cta-play-wrapper:hover .cta-play-btn i {
+    color: #fff;
+}
+
+.cta-play-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cta-text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.cta-play-wrapper:hover .cta-play-label {
+    color: var(--cta-primary);
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+@media (max-width: 991px) {
+    #cta-dual-section {
+        padding: 60px 0;
+    }
+
+    .cta-heading {
+        font-size: 1.8rem;
+    }
+
+    .cta-content {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-card {
+        margin-bottom: 20px;
+    }
+
+    /* Stack Order: Contact first usually better for conversion, 
+       but design asked for Contact Left / Video Right which stacks naturally. */
+
+    .cta-content {
+        padding: 30px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cta-play-wrapper {
+        justify-content: center;
+    }
+}
