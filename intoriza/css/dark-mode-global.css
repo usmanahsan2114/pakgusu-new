@@ -371,21 +371,35 @@ html:not([data-theme="dark"]) .about-section h2 {
 }
 
 /* Dropdown menus - Light mode (default) */
-.header-nav .nav>li .sub-menu {
+.header-nav .nav>li .sub-menu,
+.nav-dark.header-nav .nav>li .sub-menu,
+.nav-dark .nav>li .sub-menu {
     background-color: #004685 !important;
     /* Dark blue dropdown */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
-.header-nav .nav>li .sub-menu>li>a {
+.header-nav .nav>li .sub-menu>li>a,
+.nav-dark.header-nav .nav>li .sub-menu>li>a,
+.nav-dark .nav>li .sub-menu>li>a,
+.nav-dark.header-nav .nav>li .sub-menu li a {
     color: #ffffff !important;
     /* White text in dropdown */
+    background-color: transparent !important;
 }
 
-.header-nav .nav>li .sub-menu>li>a:hover {
+.header-nav .nav>li .sub-menu>li>a:hover,
+.nav-dark.header-nav .nav>li .sub-menu>li>a:hover,
+.nav-dark .nav>li .sub-menu>li>a:hover,
+.nav-dark.header-nav .nav>li .sub-menu li a:hover {
     background-color: #29afe3 !important;
     color: #ffffff !important;
+}
+
+/* Nav-dark submenu item borders */
+.nav-dark.header-nav .nav>li .sub-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Dark mode dropdown overrides */
@@ -419,7 +433,9 @@ body.dark-mode .header-nav .nav>li .sub-menu>li>a:hover {
 
 .contact-nav h4,
 .contact-nav h5,
-.contact-nav .section-head h4 {
+.contact-nav .section-head h4,
+.contact-nav-form h4,
+.contact-nav-form .section-head h4 {
     color: #1a1a2e !important;
 }
 
@@ -428,23 +444,38 @@ body.dark-mode .header-nav .nav>li .sub-menu>li>a:hover {
     color: #333333 !important;
 }
 
+/* Form labels - MUST be visible dark text */
 .contact-nav label,
-.contact-nav-form label {
+.contact-nav-form label,
+.contact-nav .input-animate label,
+.contact-nav-form .input-animate label,
+.input-animate label {
     color: #333333 !important;
+    font-weight: 500 !important;
 }
 
+/* Form inputs - Light background with dark text */
 .contact-nav input,
 .contact-nav textarea,
 .contact-nav-form input,
-.contact-nav-form textarea {
-    background-color: #f8f9fa !important;
+.contact-nav-form textarea,
+.contact-nav .input-animate input,
+.contact-nav .input-animate textarea {
+    background-color: #ffffff !important;
     color: #1a1a2e !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #ccc !important;
+    border-bottom: 2px solid #29afe3 !important;
+}
+
+.contact-nav input:focus,
+.contact-nav textarea:focus {
+    border-color: #29afe3 !important;
+    box-shadow: 0 0 0 2px rgba(41, 175, 227, 0.2) !important;
 }
 
 .contact-nav input::placeholder,
 .contact-nav textarea::placeholder {
-    color: #666666 !important;
+    color: #888888 !important;
 }
 
 .contact_close {

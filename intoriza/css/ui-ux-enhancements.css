@@ -17,12 +17,15 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #29afe3; /* Lighter blue for dark mode contrast */
-    --secondary-color: #004685; /* Darker blue for accents */
+    --primary-color: #29afe3;
+    /* Lighter blue for dark mode contrast */
+    --secondary-color: #004685;
+    /* Darker blue for accents */
     --text-color: #e0e0e0;
     --heading-color: #ffffff;
     --bg-light: #1a1a1a;
-    --white: #252525; /* Card backgrounds */
+    --white: #252525;
+    /* Card backgrounds */
     --body-bg: #121212;
     --border-color: #333333;
 }
@@ -40,7 +43,8 @@ body {
 }
 
 [data-theme="dark"] .logo-header img {
-    filter: brightness(0) invert(1); /* Make logo white */
+    filter: brightness(0) invert(1);
+    /* Make logo white */
 }
 
 /* Global Backgrounds */
@@ -65,8 +69,12 @@ body {
 }
 
 /* Typography Overrides */
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
-[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
 [data-theme="dark"] .wt-title,
 [data-theme="dark"] .counter,
 [data-theme="dark"] strong,
@@ -74,8 +82,8 @@ body {
     color: var(--heading-color) !important;
 }
 
-[data-theme="dark"] p, 
-[data-theme="dark"] li, 
+[data-theme="dark"] p,
+[data-theme="dark"] li,
 [data-theme="dark"] span,
 [data-theme="dark"] .wt-small-separator {
     color: var(--text-color);
@@ -112,7 +120,7 @@ body {
 }
 
 [data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(255,255,255,0.05) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Accordions & Tabs */
@@ -128,7 +136,8 @@ body {
 
 /* Footer & Dark Sections */
 [data-theme="dark"] .site-footer {
-    background-color: #0d0d0d !important; /* Very dark for footer */
+    background-color: #0d0d0d !important;
+    /* Very dark for footer */
 }
 
 [data-theme="dark"] .footer-bottom {
@@ -142,19 +151,19 @@ body {
 }
 
 /* Specific Component Fixes */
-[data-theme="dark"] .owl-prev, 
+[data-theme="dark"] .owl-prev,
 [data-theme="dark"] .owl-next {
     background: #333 !important;
     color: #fff !important;
 }
 
-[data-theme="dark"] .pagination > li > a {
+[data-theme="dark"] .pagination>li>a {
     background-color: #1e1e1e;
     border-color: #333;
     color: #fff;
 }
 
-[data-theme="dark"] .pagination > .active > a {
+[data-theme="dark"] .pagination>.active>a {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
@@ -193,12 +202,12 @@ body {
 }
 
 /* Nav Hover Underline Animation */
-.header-nav .nav > li > a {
+.header-nav .nav>li>a {
     position: relative;
     transition: color 0.3s ease-in-out;
 }
 
-.header-nav .nav > li > a::after {
+.header-nav .nav>li>a::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -210,8 +219,8 @@ body {
     transform: translateX(-50%);
 }
 
-.header-nav .nav > li > a:hover::after,
-.header-nav .nav > li.active > a::after {
+.header-nav .nav>li>a:hover::after,
+.header-nav .nav>li.active>a::after {
     width: 100%;
 }
 
@@ -224,7 +233,7 @@ body {
     border-top: 3px solid var(--secondary-color);
 }
 
-.header-nav .nav > li:hover .sub-menu {
+.header-nav .nav>li:hover .sub-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -245,11 +254,11 @@ body {
         overflow-y: auto;
         z-index: 1000;
     }
-    
+
     .header-nav.show {
         right: 0;
     }
-    
+
     .mobile-menu-overlay {
         position: fixed;
         top: 0;
@@ -262,7 +271,7 @@ body {
         transition: all 0.3s ease-in-out;
         z-index: 999;
     }
-    
+
     .mobile-menu-overlay.show {
         opacity: 1;
         visibility: visible;
@@ -289,14 +298,14 @@ body {
         bottom: 15px;
         left: 15px;
     }
-    
+
     .site-footer .widget {
         margin-bottom: 30px;
     }
 }
 
 /* Dark Mode Footer Specifics */
-    [data-theme="dark"] .site-footer .widget-title {
+[data-theme="dark"] .site-footer .widget-title {
     color: #ffffff !important;
 }
 
@@ -305,6 +314,7 @@ body {
    ============================================ */
 
 @media (max-width: 767px) {
+
     /* Global Mobile Padding */
     .section-full {
         padding-top: 40px !important;
@@ -350,7 +360,7 @@ body {
         margin-bottom: 30px;
     }
 
-    .footer-top .row > div {
+    .footer-top .row>div {
         margin-bottom: 20px;
     }
 
@@ -362,8 +372,11 @@ body {
 }
 
 @media (max-width: 575px) {
+
     /* Smaller Mobile Adjustments */
-    .wt-header-left, .wt-header-center, .wt-header-right {
+    .wt-header-left,
+    .wt-header-center,
+    .wt-header-right {
         display: block;
         width: 100%;
         text-align: center;
@@ -389,7 +402,7 @@ body {
     color: var(--primary-color) !important;
 }
 
-[data-theme="dark"] .site-footer p, 
+[data-theme="dark"] .site-footer p,
 [data-theme="dark"] .site-footer li {
     color: #aaaaaa !important;
 }
@@ -402,7 +415,7 @@ body {
     background-color: #1e1e1e;
 }
 
-[data-theme="dark"] .header-nav .nav > li > a {
+[data-theme="dark"] .header-nav .nav>li>a {
     color: #e0e0e0;
 }
 
@@ -461,8 +474,13 @@ a {
 }
 
 @keyframes waveMove {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1000px; }
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
 }
 
 .site-footer .container {
@@ -558,8 +576,15 @@ html {
 }
 
 @keyframes scrollWheel {
-    0% { top: 10px; opacity: 1; }
-    100% { top: 30px; opacity: 0; }
+    0% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 30px;
+        opacity: 0;
+    }
 }
 
 /* 2.1.2 Fade In Up Animation */
@@ -582,7 +607,7 @@ html {
 
 .hover-zoom-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hover-zoom-card img {
@@ -599,9 +624,17 @@ html {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* 2.1.6 Blog Card Hover */
@@ -661,7 +694,7 @@ html {
 
 .wt-icon-box-wraper:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .wt-icon-box-wraper:hover .icon-cell {
@@ -669,29 +702,46 @@ html {
 }
 
 @keyframes floatIcon {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Tab Content Animation */
 .tab-content .tab-pane {
-    display: none; /* Default hidden */
+    display: none;
+    /* Default hidden */
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .tab-content .tab-pane.active {
-    display: block; /* Bootstrap handles this, but we ensure animation works */
+    display: block;
+    /* Bootstrap handles this, but we ensure animation works */
     opacity: 1;
     transform: translateY(0);
     animation: fadeInTab 0.5s ease-out forwards;
 }
 
 @keyframes fadeInTab {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Tab Nav Item Hover */
@@ -742,10 +792,10 @@ html {
     color: #999;
 }
 
-.input-animate input:focus + label,
-.input-animate textarea:focus + label,
-.input-animate input:valid + label,
-.input-animate textarea:valid + label {
+.input-animate input:focus+label,
+.input-animate textarea:focus+label,
+.input-animate input:valid+label,
+.input-animate textarea:valid+label {
     transform: translateY(-25px);
     font-size: 12px;
     color: var(--primary-color);
@@ -772,8 +822,15 @@ html {
 }
 
 @keyframes mapPulse {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-    100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+    }
 }
 
 /* Contact Info Box Hover */
@@ -785,7 +842,7 @@ html {
 .contact-info-section .wt-icon-box-wraper:hover {
     border-color: var(--secondary-color);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -803,7 +860,7 @@ html {
 }
 
 .wt-accordion .panel:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
     border-color: var(--secondary-color);
 }
@@ -885,7 +942,8 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 70, 133, 0.8); /* Primary color overlay */
+    background: rgba(0, 70, 133, 0.8);
+    /* Primary color overlay */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -929,7 +987,7 @@ html {
 
 .resource-card-hover:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--secondary-color);
 }
 
@@ -1026,7 +1084,7 @@ html {
     background: #fff;
     color: var(--primary-color);
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1049,7 +1107,7 @@ html {
     left: 60px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -1068,13 +1126,27 @@ html {
 }
 
 /* Specific Colors */
-.qc-item.whatsapp { color: #25D366; }
-.qc-item.whatsapp:hover { background: #25D366; color: #fff; }
+.qc-item.whatsapp {
+    color: #25D366;
+}
 
-.qc-item.phone { color: #004685; }
-.qc-item.phone:hover { background: #004685; color: #fff; }
+.qc-item.whatsapp:hover {
+    background: #25D366;
+    color: #fff;
+}
 
-.qc-item.email { color: #EA4335; }
+.qc-item.phone {
+    color: #004685;
+}
+
+.qc-item.phone:hover {
+    background: #004685;
+    color: #fff;
+}
+
+.qc-item.email {
+    color: #EA4335;
+}
 
 /* ============================================
    DARK MODE TOGGLE
@@ -1090,11 +1162,11 @@ html {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode-toggle-header:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 
@@ -1104,7 +1176,8 @@ html {
 
 [data-theme="dark"] .dark-mode-toggle-header i {
     transform: rotate(180deg);
-    content: '\f186'; /* Moon icon */
+    content: '\f186';
+    /* Moon icon */
 }
 
 /* Override for specific elements in Dark Mode */
@@ -1238,25 +1311,25 @@ button.scroltop:hover {
 }
 
 /* Pagination */
-.pagination > li > a {
+.pagination>li>a {
     border-radius: var(--border-radius-base) !important;
     color: var(--primary-color);
 }
 
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>a:focus,
+.pagination>li>span:focus {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: #fff;
@@ -1303,4 +1376,92 @@ a:active {
 
 .site-bg-secondary {
     background-color: var(--secondary-color) !important;
+}
+
+/* ============================================
+   URGENT OVERRIDES: LIGHT MODE HEADER & CONTACT
+   ============================================ */
+
+/* 1. Header Dropdown - Light Mode */
+.header-nav .nav>li .sub-menu,
+.nav-dark.header-nav .nav>li .sub-menu,
+.nav-dark .nav>li .sub-menu {
+    background-color: #004685 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.header-nav .nav>li .sub-menu>li>a,
+.nav-dark.header-nav .nav>li .sub-menu>li>a,
+.nav-dark .nav>li .sub-menu>li>a,
+.nav-dark.header-nav .nav>li .sub-menu li a {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+/* Hover state */
+.header-nav .nav>li .sub-menu>li>a:hover,
+.nav-dark.header-nav .nav>li .sub-menu>li>a:hover,
+.nav-dark .nav>li .sub-menu>li>a:hover,
+.nav-dark.header-nav .nav>li .sub-menu li a:hover {
+    background-color: #29afe3 !important;
+    color: #ffffff !important;
+}
+
+/* 2. Contact Slide-out Panel - Light Mode */
+.contact-slide-hide,
+.contact-nav,
+.contact-nav-form {
+    background-color: #ffffff !important;
+}
+
+.contact-nav h4,
+.contact-nav h5,
+.contact-nav .section-head h4,
+.contact-nav-form h4 {
+    color: #1a1a2e !important;
+}
+
+/* Labels must be dark vs white bg */
+.contact-nav label,
+.contact-nav-form label,
+.contact-nav .input-animate label,
+.input-animate label {
+    color: #333333 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+.contact-nav p,
+.contact-nav .icon-content p {
+    color: #333333 !important;
+}
+
+/* Input fields */
+.contact-nav input,
+.contact-nav textarea,
+.contact-nav-form input,
+.contact-nav-form textarea,
+.input-animate input,
+.input-animate textarea {
+    background-color: #ffffff !important;
+    color: #1a1a2e !important;
+    border-bottom: 2px solid #29afe3 !important;
+}
+
+.contact_close {
+    color: #1a1a2e !important;
+}
+
+/* Ensure these don't break dark mode */
+[data-theme="dark"] .contact-nav label,
+[data-theme="dark"] .contact-nav-form label,
+[data-theme="dark"] .input-animate label {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .contact-nav input,
+[data-theme="dark"] .contact-nav textarea {
+    background-color: #252525 !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
 }

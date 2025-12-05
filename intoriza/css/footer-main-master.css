@@ -317,3 +317,86 @@
         font-size: 16px;
     }
 }
+
+/* ===================================================================
+   GLOBAL OVERRIDES (INJECTED HERE DUE TO LOAD ORDER)
+   Fix for Header Dropdown & Contact Panel Text Visibility (Light Mode)
+   =================================================================== */
+
+/* 1. Header Dropdown (Light Mode) */
+html body .header-nav .nav>li .sub-menu,
+html body .nav-dark.header-nav .nav>li .sub-menu {
+    background-color: #004685 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+html body .header-nav .nav>li .sub-menu li a,
+html body .nav-dark.header-nav .nav>li .sub-menu li a {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+html body .header-nav .nav>li .sub-menu li a:hover,
+html body .nav-dark.header-nav .nav>li .sub-menu li a:hover {
+    background-color: #29afe3 !important;
+    color: #ffffff !important;
+}
+
+/* 2. Contact Slide-out Panel (Light Mode) */
+html body .contact-slide-hide,
+html body .contact-nav,
+html body .contact-nav-form {
+    background-color: #ffffff !important;
+}
+
+html body .contact-nav h4,
+html body .contact-nav h5,
+html body .contact-nav .section-head h4,
+html body .contact-nav-form h4,
+html body .contact-slide-hide h4 {
+    color: #1a1a2e !important;
+}
+
+html body .contact-nav p,
+html body .contact-nav .icon-content p {
+    color: #333333 !important;
+}
+
+/* Text Inputs & Labels */
+html body .contact-nav label,
+html body .contact-nav-form label,
+html body .contact-nav .input-animate label,
+html body .input-animate label {
+    color: #333333 !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body .contact-nav input,
+html body .contact-nav textarea,
+html body .input-animate input,
+html body .input-animate textarea {
+    background-color: #ffffff !important;
+    color: #1a1a2e !important;
+    border-bottom: 2px solid #29afe3 !important;
+}
+
+html body .contact_close {
+    color: #1a1a2e !important;
+}
+
+/* 3. Dark Mode Restoration (Must override the overrides) */
+html[data-theme="dark"] body .contact-nav label,
+html[data-theme="dark"] body .input-animate label {
+    color: #e0e0e0 !important;
+}
+
+html[data-theme="dark"] body .contact-nav input,
+html[data-theme="dark"] body .contact-nav textarea {
+    background-color: #252525 !important;
+    color: #ffffff !important;
+}
