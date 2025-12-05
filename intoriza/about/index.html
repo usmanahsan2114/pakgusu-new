@@ -2551,39 +2551,442 @@
                 </div>
             </div>
             <!-- /Section: Our Story & Timeline -->
-            <!-- Section: Partnership with GUSU China -->
-            <div class="section-full p-t80 p-b50 bg-white">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-6 col-md-12 m-b30">
-                                <div class="section-head text-left">
-                                    <div class="wt-separator-outer separator-left">
-                                        <div class="wt-separator">
-                                            <span class="site-text-primary text-uppercase sep-line-one">Global
-                                                Expertise</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="text-uppercase">Partnership with GUSU China</h2>
-                                </div>
-                                <p>PakGusu is proud to partner with GUSU China, a world leader in cleanroom technology.
-                                    This strategic alliance brings cutting-edge manufacturing capabilities and
-                                    international standards to our local operations.<br /><br />Together, we deliver
-                                    world-class cleanroom solutions that meet the most stringent regulatory
-                                    requirements.</p>
-                                <p>Together, we deliver world-class cleanroom solutions that meet the most stringent
-                                    regulatory requirements.</p>
+            <!-- PARTNERSHIP SECTION - REDESIGN -->
+            <section id="global-partnership" class="partner-section">
+                <!-- Global Connection Background Animation -->
+                <div class="partner-bg-anim">
+                    <div class="partner-globe"></div>
+                    <div class="partner-arc arc-1"></div>
+                    <div class="partner-arc arc-2"></div>
+                </div>
+
+                <div class="partner-container">
+                    <div class="partner-grid">
+                        <!-- Left Column: Narrative & Alliance Info -->
+                        <div class="partner-col-left">
+                            <header class="partner-header">
+                                <span class="partner-eyebrow">GLOBAL EXPERTISE</span>
+                                <h2 class="partner-title">PARTNERSHIP WITH <span class="text-light-blue">GUSU
+                                        CHINA</span></h2>
+                            </header>
+
+                            <div class="partner-body">
+                                <p class="partner-lead">PakGusu is proud to partner with GUSU China, a world leader in
+                                    cleanroom
+                                    technology.</p>
+                                <p>This strategic alliance brings cutting-edge manufacturing capabilities and
+                                    international
+                                    standards to our local operations. Together, we deliver world-class cleanroom
+                                    solutions that
+                                    meet the most stringent regulatory requirements.</p>
                             </div>
-                            <div class="col-lg-6 col-md-12 m-b30">
-                                <div class="wt-media">
-                                    <img alt="Partnership with GUSU China" class="img-responsive"
-                                        src="../images/gallery/pic1.jpg" />
+
+                            <!-- Partnership Strip -->
+                            <div class="partner-strip">
+                                <div class="partner-logos">
+                                    <span class="partner-logo-text">PakGusu</span>
+                                    <span class="partner-x">Ã—</span>
+                                    <span class="partner-logo-text">GUSU China</span>
+                                </div>
+                            </div>
+
+                            <!-- Highlights & CTA -->
+                            <div class="partner-actions">
+                                <div class="partner-badges">
+                                    <span class="partner-badge"><i class="fa fa-check-circle"></i> Joint R&D</span>
+                                    <span class="partner-badge"><i class="fa fa-refresh"></i> Tech Transfer</span>
+                                </div>
+                                <a href="#" class="partner-btn">Explore the Partnership <i
+                                        class="fa fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Hero Visual -->
+                        <div class="partner-col-right">
+                            <div class="partner-visual-card">
+                                <img src="../images/gallery/pic1.jpg"
+                                    alt="Cleanroom facility showing PakGusu and GUSU China partnership capabilities"
+                                    class="partner-img">
+                                <div class="partner-overlay">
+                                    <div class="partner-stat">
+                                        <span class="partner-stat-num">20+</span>
+                                        <span class="partner-stat-label">Joint Projects Delivered</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- /Section: Partnership with GUSU China -->
+            </section>
+
+            <style>
+                /* --- SCOPED VARIABLES --- */
+                #global-partnership {
+                    --part-dark: #004685;
+                    --part-light: #29AFE3;
+                    --part-bg: #f5f9fc;
+                    --part-text: #334e68;
+                    --part-white: #ffffff;
+                    --part-border: #e2e8f0;
+                }
+
+                /* --- SECTION LAYOUT --- */
+                .partner-section {
+                    position: relative;
+                    padding: 6rem 1rem;
+                    background-color: var(--part-bg);
+                    overflow: hidden;
+                    color: var(--part-text);
+                    font-family: 'Poppins', sans-serif;
+                }
+
+                .partner-container {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 1140px;
+                    margin: 0 auto;
+                }
+
+                .partner-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4rem;
+                    align-items: center;
+                }
+
+                /* --- BACKGROUND ANIMATION (Global Arcs) --- */
+                .partner-bg-anim {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    overflow: hidden;
+                    pointer-events: none;
+                    opacity: 0.4;
+                }
+
+                /* Abstract Globe Circle */
+                .partner-globe {
+                    position: absolute;
+                    right: -10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 600px;
+                    height: 600px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(0, 70, 133, 0.05);
+                    background: radial-gradient(circle, rgba(41, 175, 227, 0.02) 0%, transparent 70%);
+                }
+
+                /* Rotating Arcs */
+                .partner-arc {
+                    position: absolute;
+                    border-radius: 50%;
+                    border: 1px dashed rgba(41, 175, 227, 0.2);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .arc-1 {
+                    width: 700px;
+                    height: 700px;
+                    border-color: rgba(0, 70, 133, 0.1);
+                    animation: spinArc 60s linear infinite;
+                }
+
+                .arc-2 {
+                    width: 500px;
+                    height: 500px;
+                    border-top-color: var(--part-light);
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                    animation: spinArc 30s linear infinite reverse;
+                }
+
+                @keyframes spinArc {
+                    from {
+                        transform: translate(-50%, -50%) rotate(0deg);
+                    }
+
+                    to {
+                        transform: translate(-50%, -50%) rotate(360deg);
+                    }
+                }
+
+                /* --- LEFT COLUMN --- */
+                .partner-header {
+                    border-left: 4px solid var(--part-dark);
+                    padding-left: 1.5rem;
+                    margin-bottom: 2rem;
+                }
+
+                .partner-eyebrow {
+                    display: block;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    color: var(--part-light);
+                    margin-bottom: 0.5rem;
+                    text-transform: uppercase;
+                }
+
+                .partner-title {
+                    font-size: 2.25rem;
+                    font-weight: 700;
+                    color: var(--part-dark);
+                    margin: 0;
+                    line-height: 1.2;
+                }
+
+                .text-light-blue {
+                    color: var(--part-light);
+                }
+
+                .partner-body p {
+                    font-size: 1.05rem;
+                    line-height: 1.7;
+                    margin-bottom: 1.25rem;
+                    color: #4a5b6c;
+                }
+
+                .partner-lead {
+                    font-weight: 600;
+                    color: var(--part-dark);
+                }
+
+                /* Partnership Strip */
+                .partner-strip {
+                    margin: 2rem 0;
+                    padding: 1.5rem 0;
+                    border-top: 1px solid var(--part-border);
+                    border-bottom: 1px solid var(--part-border);
+                }
+
+                .partner-logos {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    font-family: 'Poppins', sans-serif;
+                    /* Ensure font */
+                }
+
+                .partner-logo-text {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: var(--part-dark);
+                    letter-spacing: -0.5px;
+                }
+
+                .partner-x {
+                    font-size: 1.5rem;
+                    color: var(--part-light);
+                    font-weight: 300;
+                }
+
+                /* Actions & Badges */
+                .partner-actions {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    align-items: flex-start;
+                }
+
+                .partner-badges {
+                    display: flex;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+
+                .partner-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    background: var(--part-white);
+                    padding: 0.5rem 1rem;
+                    border-radius: 50px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: var(--part-dark);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    border: 1px solid rgba(0, 70, 133, 0.1);
+                }
+
+                .partner-badge i {
+                    color: var(--part-light);
+                }
+
+                .partner-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    background: var(--part-dark);
+                    color: var(--part-white);
+                    padding: 0.85rem 2rem;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 0.9rem;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                }
+
+                .partner-btn:hover {
+                    background: var(--part-light);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(41, 175, 227, 0.3);
+                    color: #fff;
+                }
+
+                .partner-btn i {
+                    transition: transform 0.3s;
+                }
+
+                .partner-btn:hover i {
+                    transform: translateX(4px);
+                }
+
+                /* --- RIGHT COLUMN (Visual) --- */
+                .partner-visual-card {
+                    position: relative;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 40px rgba(0, 70, 133, 0.15);
+                    transform: perspective(1000px) rotateY(-5deg);
+                    transition: transform 0.5s ease;
+                }
+
+                .partner-visual-card:hover {
+                    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+                }
+
+                .partner-img {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                }
+
+                .partner-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(to top, rgba(0, 38, 72, 0.9), transparent);
+                    padding: 4rem 1.5rem 1.5rem;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .partner-stat {
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(5px);
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    text-align: right;
+                }
+
+                .partner-stat-num {
+                    display: block;
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: var(--part-white);
+                    line-height: 1;
+                    margin-bottom: 0.25rem;
+                }
+
+                .partner-stat-label {
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.8);
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                /* --- DARK MODE --- */
+                html[data-theme="dark"] #global-partnership {
+                    --part-bg: #0b1a2b;
+                    --part-white: #112233;
+                    --part-text: #a0b3c6;
+                    --part-border: #1e3a5f;
+                }
+
+                html[data-theme="dark"] .partner-title,
+                html[data-theme="dark"] .partner-lead,
+                html[data-theme="dark"] .partner-logo-text {
+                    color: #fff;
+                }
+
+                html[data-theme="dark"] .partner-body p {
+                    color: #9aa8b9;
+                }
+
+                html[data-theme="dark"] .partner-badge {
+                    background: #1a2d42;
+                    color: #fff;
+                    border-color: #2d4a6d;
+                }
+
+                html[data-theme="dark"] .partner-globe {
+                    border-color: rgba(255, 255, 255, 0.05);
+                }
+
+                /* --- RESPONSIVE --- */
+                @media (max-width: 991px) {
+                    .partner-grid {
+                        grid-template-columns: 1fr;
+                        gap: 3rem;
+                    }
+
+                    .partner-visual-card {
+                        transform: none;
+                    }
+
+                    .partner-visual-card:hover {
+                        transform: none;
+                    }
+
+                    .partner-header {
+                        border-left: none;
+                        padding-left: 0;
+                        border-bottom: 3px solid var(--part-dark);
+                        padding-bottom: 1rem;
+                        text-align: left;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .partner-title {
+                        font-size: 1.75rem;
+                    }
+
+                    .partner-actions {
+                        align-items: stretch;
+                    }
+
+                    .partner-btn {
+                        justify-content: center;
+                    }
+
+                    .partner-logos {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+
+                    .partner-arc,
+                    .partner-visual-card,
+                    .partner-btn {
+                        animation: none;
+                        transform: none;
+                        transition: none;
+                    }
+                }
+            </style>
             <!-- Section: Mission, Vision & Values -->
             <div class="section-full p-t80 p-b50 bg-gray">
                 <div class="container">
