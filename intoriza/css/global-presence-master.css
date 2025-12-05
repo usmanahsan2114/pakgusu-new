@@ -1,0 +1,652 @@
+/* ===================================================================
+   Global Presence Section - Master UI Design System
+   Scoped to: #global-presence-section
+   Animation: Aurora Borealis (Drifting Gradients)
+   =================================================================== */
+
+/* ===================================================================
+   variables
+   =================================================================== */
+#global-presence-section {
+    /* Colors - Derived from Brand */
+    --gp-bg-light: #f4f7fa;
+    --gp-bg-dark: #0b1117;
+
+    --gp-surface-light: #ffffff;
+    --gp-surface-dark: #161b22;
+
+    --gp-text-main-light: #0f2034;
+    --gp-text-main-dark: #f0f6fc;
+
+    --gp-text-muted-light: #64738a;
+    --gp-text-muted-dark: #8b949e;
+
+    --gp-border-light: rgba(15, 30, 55, 0.08);
+    --gp-border-dark: rgba(240, 246, 252, 0.1);
+
+    --gp-primary: #007bc7;
+    --gp-accent: #29afe3;
+
+    /* Animation Colors (Aurora) */
+    --gp-aurora-1: rgba(0, 123, 199, 0.08);
+    --gp-aurora-2: rgba(41, 175, 227, 0.08);
+    --gp-aurora-3: rgba(100, 255, 218, 0.05);
+
+    /* Spacing & Radius */
+    --gp-radius-card: 16px;
+    --gp-radius-marker: 50%;
+
+    /* Shadows */
+    --gp-shadow-card: 0 12px 30px rgba(0, 0, 0, 0.06);
+    --gp-shadow-hover: 0 15px 35px rgba(0, 123, 199, 0.12);
+}
+
+[data-theme="dark"] #global-presence-section {
+    --gp-bg-light: var(--gp-bg-dark);
+    --gp-surface-light: var(--gp-surface-dark);
+    --gp-text-main-light: var(--gp-text-main-dark);
+    --gp-text-muted-light: var(--gp-text-muted-dark);
+    --gp-border-light: var(--gp-border-dark);
+
+    --gp-aurora-1: rgba(0, 123, 199, 0.15);
+    --gp-aurora-2: rgba(41, 175, 227, 0.12);
+    --gp-aurora-3: rgba(100, 255, 218, 0.08);
+
+    --gp-shadow-card: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================================================
+   Base Section Structure
+   =================================================================== */
+#global-presence-section {
+    position: relative;
+    background: var(--gp-bg-light);
+    padding: 80px 0;
+    overflow: hidden;
+    font-family: inherit;
+    color: var(--gp-text-main-light);
+}
+
+/* Aurora Backdrop Animation */
+#global-presence-section::before,
+#global-presence-section::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 1;
+    animation: gp-aurora-drift 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#global-presence-section::before {
+    background: var(--gp-aurora-1);
+    top: -10%;
+    left: -10%;
+}
+
+#global-presence-section::after {
+    background: var(--gp-aurora-2);
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -10s;
+}
+
+@keyframes gp-aurora-drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 10%) scale(1.1);
+    }
+}
+
+#global-presence-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================================================
+   Header
+   =================================================================== */
+.gp-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gp-eyebrow {
+    display: inline-block;
+    color: var(--gp-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.gp-eyebrow::before,
+.gp-eyebrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: var(--gp-primary);
+    opacity: 0.5;
+}
+
+.gp-eyebrow::before {
+    left: 0;
+}
+
+.gp-eyebrow::after {
+    right: 0;
+}
+
+.gp-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--gp-text-main-light), var(--gp-text-muted-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gp-subtitle {
+    font-size: 1.1rem;
+    color: var(--gp-text-muted-light);
+    line-height: 1.6;
+}
+
+/* ===================================================================
+   Layout Grid
+   =================================================================== */
+.gp-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* ===================================================================
+   Map Panel (Left)
+   =================================================================== */
+.gp-map-card {
+    background: var(--gp-surface-light);
+    border: 1px solid var(--gp-border-light);
+    border-radius: var(--gp-radius-card);
+    padding: 20px;
+    box-shadow: var(--gp-shadow-card);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.gp-map-viewport {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+    /* Aspect Ratio */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.02));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gp-map-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1024px-World_map_-_low_resolution.svg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    filter: grayscale(1) contrast(1.1) brightness(1.1);
+    transition: filter 0.3s;
+}
+
+[data-theme="dark"] .gp-map-bg {
+    filter: grayscale(1) invert(1) contrast(0.9) brightness(0.8);
+    opacity: 0.4;
+}
+
+/* Markers */
+.gp-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--gp-primary);
+    border: 3px solid var(--gp-surface-light);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gp-marker::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: inherit;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: gp-pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes gp-pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.gp-marker:hover,
+.gp-marker.active {
+    transform: translate(-50%, -50%) scale(1.3);
+    z-index: 20;
+    border-color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Marker Colors */
+.gp-marker[data-type="manufacturing"] {
+    background: #00b894;
+    --pulse-col: #00b894;
+}
+
+.gp-marker[data-type="sales"] {
+    background: #0984e3;
+    --pulse-col: #0984e3;
+}
+
+.gp-marker[data-type="partner"] {
+    background: #fdcb6e;
+    --pulse-col: #fdcb6e;
+}
+
+/* Legend */
+.gp-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.gp-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gp-text-muted-light);
+}
+
+.gp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.gp-dot.manufacturing {
+    background: #00b894;
+}
+
+.gp-dot.sales {
+    background: #0984e3;
+}
+
+.gp-dot.partner {
+    background: #fdcb6e;
+}
+
+/* Map Tooltip */
+.gp-tooltip {
+    position: absolute;
+    background: var(--gp-surface-light);
+    color: var(--gp-text-main-light);
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    z-index: 100;
+    min-width: 200px;
+    border: 1px solid var(--gp-border-light);
+}
+
+.gp-tooltip.visible {
+    opacity: 1;
+    transform: translateY(-50px);
+    /* Adjusted by JS dynamic positioning usually */
+}
+
+.gp-tooltip h5 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+    color: var(--gp-text-main-light);
+}
+
+.gp-tooltip p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--gp-text-muted-light);
+}
+
+/* ===================================================================
+   List Panel (Right)
+   =================================================================== */
+.gp-list-panel {
+    background: var(--gp-surface-light);
+    border: 1px solid var(--gp-border-light);
+    border-radius: var(--gp-radius-card);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    min-height: 500px;
+    box-shadow: var(--gp-shadow-card);
+}
+
+/* Controls */
+.gp-controls {
+    padding: 20px;
+    border-bottom: 1px solid var(--gp-border-light);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Tabs */
+.gp-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+}
+
+.gp-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.gp-tab {
+    background: transparent;
+    border: 1px solid var(--gp-border-light);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gp-text-muted-light);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.gp-tab:hover {
+    border-color: var(--gp-primary);
+    color: var(--gp-primary);
+}
+
+.gp-tab.active {
+    background: var(--gp-primary);
+    border-color: var(--gp-primary);
+    color: #fff;
+}
+
+/* Search */
+.gp-search-wrapper {
+    position: relative;
+}
+
+.gp-search-input {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border-radius: 8px;
+    border: 1px solid var(--gp-border-light);
+    background: var(--gp-bg-light);
+    color: var(--gp-text-main-light);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.gp-search-input:focus {
+    border-color: var(--gp-primary);
+    box-shadow: 0 0 0 3px var(--gp-aurora-1);
+}
+
+.gp-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gp-text-muted-light);
+    font-size: 0.9rem;
+}
+
+/* List */
+.gp-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    list-style: none;
+    margin: 0;
+}
+
+.gp-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.gp-list::-webkit-scrollbar-thumb {
+    background: var(--gp-border-light);
+    border-radius: 3px;
+}
+
+.gp-item {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.gp-item:hover {
+    background: var(--gp-bg-light);
+    transform: translateX(5px);
+}
+
+.gp-item.active {
+    background: var(--gp-bg-light);
+    border-color: var(--gp-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.gp-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.gp-city {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--gp-text-main-light);
+}
+
+.gp-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.gp-badge.manufacturing {
+    background: rgba(0, 184, 148, 0.1);
+    color: #00b894;
+}
+
+.gp-badge.sales {
+    background: rgba(9, 132, 227, 0.1);
+    color: #0984e3;
+}
+
+.gp-badge.partner {
+    background: rgba(253, 203, 110, 0.1);
+    color: #e1b12c;
+}
+
+.gp-country {
+    font-size: 0.85rem;
+    color: var(--gp-text-muted-light);
+    margin-bottom: 8px;
+}
+
+.gp-desc {
+    font-size: 0.8rem;
+    color: var(--gp-text-muted-light);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    display: none;
+    /* Hidden by default, shown on active */
+}
+
+.gp-item.active .gp-desc {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.gp-link {
+    font-size: 0.8rem;
+    color: var(--gp-primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s;
+    height: 0;
+    overflow: hidden;
+}
+
+.gp-item.active .gp-link {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-top: 8px;
+}
+
+.gp-link:hover {
+    text-decoration: underline;
+}
+
+/* ===================================================================
+   Responsive
+   =================================================================== */
+@media (max-width: 991px) {
+    .gp-title {
+        font-size: 2rem;
+    }
+
+    .gp-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .gp-map-viewport {
+        padding-bottom: 50%;
+    }
+
+    .gp-list-panel {
+        min-height: 400px;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .gp-header {
+        text-align: left;
+        padding: 0 15px;
+    }
+
+    .gp-eyebrow {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .gp-eyebrow::before {
+        display: none;
+    }
+
+    .gp-map-viewport {
+        padding-bottom: 75%;
+    }
+
+    .gp-tabs {
+        padding-bottom: 10px;
+    }
+
+    #global-presence-section {
+        padding: 50px 0;
+    }
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #global-presence-section::before,
+    #global-presence-section::after {
+        animation: none;
+    }
+
+    .gp-marker::after {
+        animation: none;
+    }
+
+    .gp-marker {
+        transition: none;
+    }
+}
