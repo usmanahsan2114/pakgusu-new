@@ -6,7 +6,7 @@
 ---
 PakGusu Technology Pvt Ltd.
 8- Km, Sundar-Raiwand Road. Lahore
-Tel: 0092 321 8073738
+Tel: 92 321 8073738
 Email: info@pakgusu.com
 Email: pakgusu@gmail.com
 
@@ -445,7 +445,7 @@ Include:
 - Simple contact form with a field for project details
 PakGusu Technology Pvt Ltd.
 8- Km, Sundar-Raiwand Road. Lahore
-Tel: 0092 321 8073738
+Tel: 92 321 8073738
 Email: info@pakgusu.com
 Email: pakgusu@gmail.com
 

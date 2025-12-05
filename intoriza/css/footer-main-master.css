@@ -32,7 +32,6 @@
 
 /* Dark Mode Adjustments */
 /* REMOVED: @media (prefers-color-scheme: dark) - Dark mode is now user-activated only via body.dark-mode or html[data-theme="dark"] class. See docs/workflow/dark-mode.md */
-}
 
 /* ===================================================================
    Section Base Styling
@@ -172,7 +171,7 @@
 }
 
 /* ===================================================================
-   Social Icons
+   Social Icons - FIXED VISIBILITY
    =================================================================== */
 
 #footer-main-section .footer-social-icon {
@@ -185,28 +184,98 @@
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 12px;
 }
 
 #footer-main-section .social-icons li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--fm-border);
+    width: 44px;
+    height: 44px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    color: var(--fm-text-primary);
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 18px;
     transition: all 0.3s ease;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
 }
 
+/* Font Awesome Icon Content - Makes icons visible */
+#footer-main-section .social-icons li a.fa-facebook::before {
+    content: '\f09a';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-twitter::before {
+    content: '\f099';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-linkedin::before {
+    content: '\f0e1';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-instagram::before {
+    content: '\f16d';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-youtube-play::before {
+    content: '\f16a';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-at::before {
+    content: '\f1fa';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-youtube::before {
+    content: '\f167';
+    font-family: 'FontAwesome';
+}
+
+#footer-main-section .social-icons li a.fa-whatsapp::before {
+    content: '\f232';
+    font-family: 'FontAwesome';
+}
+
+/* Hover Effects */
 #footer-main-section .social-icons li a:hover {
     background-color: var(--fm-accent);
     border-color: var(--fm-accent);
     color: #fff;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(41, 175, 227, 0.4);
+}
+
+/* Platform-specific hover colors */
+#footer-main-section .social-icons li a.fa-facebook:hover {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+#footer-main-section .social-icons li a.fa-linkedin:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+}
+
+#footer-main-section .social-icons li a.fa-instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-color: #dc2743;
+}
+
+#footer-main-section .social-icons li a.fa-youtube:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+#footer-main-section .social-icons li a.fa-whatsapp:hover {
+    background-color: #25d366;
+    border-color: #25d366;
 }
 
 /* ===================================================================
@@ -240,5 +309,11 @@
 
     #footer-main-section .widget-title {
         margin-bottom: 1rem;
+    }
+
+    #footer-main-section .social-icons li a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }

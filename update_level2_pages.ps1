@@ -14,11 +14,11 @@ foreach ($file in $files) {
         $content = Get-Content -Path $file -Raw
         
         # Update Contact Info
-        $content = $content -replace '\(456\) 789 10 12', '0092 321 8073738'
+        $content = $content -replace '\(456\) 789 10 12', '92 321 8073738'
         $content = $content -replace 'demo@gmail\.com', 'info@pakgusu.com'
         $content = $content -replace '55/11 Land Street, Modern New Yourk City, USA', '8-Km, Sundar-Raiwand Road, Lahore, Pakistan'
         $content = $content -replace 'intoriza@gmail\.com', 'info@pakgusu.com'
-        $content = $content -replace '\(\+291\) 912-3456-073', '0092 321 8073738'
+        $content = $content -replace '\(\+291\) 912-3456-073', '92 321 8073738'
         $content = $content -replace '92 Princess Road, parkvenue,Greater London, NW18JR, United Kingdom', '8-Km, Sundar-Raiwand Road, Lahore, Pakistan'
         
         # Update Meta Author

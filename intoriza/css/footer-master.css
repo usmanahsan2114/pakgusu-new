@@ -14,7 +14,7 @@
 
 #footer-bottom-section {
     /* Light Mode Colors - Dark Blue theme */
-    --footer-bg: #004685;
+    --footer-bg: #001528;
     --footer-text: #ffffff;
     --footer-text-secondary: #e0e0e0;
     --footer-link: #ffffff;
@@ -193,4 +193,157 @@
     #footer-bottom-section .copyrights-text a {
         color: black !important;
     }
+}
+
+/* ===================================================================
+   NEW FOOTER SOCIAL ICONS
+   =================================================================== */
+
+.new-footer-social-icon {
+    margin-top: 20px;
+}
+
+.new-footer-social-icon ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.new-footer-social-icon ul li {
+    display: inline-block;
+}
+
+.new-footer-social-icon ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.new-footer-social-icon ul li a i {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.new-footer-social-icon ul li a:hover {
+    background: #29afe3;
+    border-color: #29afe3;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(41, 175, 227, 0.5);
+}
+
+.new-footer-social-icon ul li a:hover i {
+    color: #ffffff;
+}
+
+/* Platform-specific hover colors */
+.new-footer-social-icon ul li a:hover .fa-linkedin {
+    color: #ffffff;
+}
+
+.new-footer-social-icon ul li a:has(.fa-facebook):hover {
+    background: #1877f2;
+    border-color: #1877f2;
+}
+
+.new-footer-social-icon ul li a:has(.fa-twitter):hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.new-footer-social-icon ul li a:has(.fa-youtube-play):hover {
+    background: #ff0000;
+    border-color: #ff0000;
+}
+
+.new-footer-social-icon ul li a:has(.fa-instagram):hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-color: #dc2743;
+}
+
+.new-footer-social-icon ul li a:has(.fa-linkedin):hover {
+    background: #0077b5;
+    border-color: #0077b5;
+}
+
+.new-footer-social-icon ul li a:has(.fa-at):hover {
+    background: #000000;
+    border-color: #000000;
+}
+
+/* ===================================================================
+   FOOTER WIDGET FIX - Remove white backgrounds
+   =================================================================== */
+
+#footer-main-section .widget,
+#footer-main-section .widget.getin-touch,
+#footer-main-section .widget.widget_address,
+#footer-main-section .widget-section {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+#footer-main-section .widget h4.widget-title {
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+#footer-main-section .widget-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-main-section .widget-section ul li {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 5px 0;
+}
+
+#footer-main-section .widget-section ul li a {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#footer-main-section .widget-section ul li a:hover {
+    color: #29afe3 !important;
+}
+
+/* Footer link row at top */
+#footer-main-section .footer-link {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+#footer-main-section .footer-link ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-main-section .footer-link ul li a {
+    color: #ffffff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+#footer-main-section .footer-link ul li a:hover {
+    color: #29afe3 !important;
 }

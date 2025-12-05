@@ -47,12 +47,267 @@ body.dark-mode {
 }
 
 /* ============================================
+   COMPACT HEADER & FOOTER LAYOUT (75% Width)
+   ============================================ */
+
+/* Header Compact Layout */
+.header-style-1 .container,
+.main-bar .container,
+.sticky-header .container,
+.site-header .container,
+.header-nav .container {
+    max-width: 75% !important;
+    margin: 0 auto !important;
+}
+
+/* Footer Compact Layout */
+#footer-main-section .container,
+#footer-bottom-section .container,
+.footer-top .container,
+.footer-bottom .container,
+footer .container {
+    max-width: 75% !important;
+    margin: 0 auto !important;
+}
+
+/* Tablet - 90% width */
+@media (max-width: 1400px) {
+
+    .header-style-1 .container,
+    .main-bar .container,
+    .sticky-header .container,
+    .site-header .container,
+    .header-nav .container,
+    #footer-main-section .container,
+    #footer-bottom-section .container,
+    .footer-top .container,
+    .footer-bottom .container,
+    footer .container {
+        max-width: 90% !important;
+    }
+}
+
+/* Mobile - Full width */
+@media (max-width: 991px) {
+
+    .header-style-1 .container,
+    .main-bar .container,
+    .sticky-header .container,
+    .site-header .container,
+    .header-nav .container,
+    #footer-main-section .container,
+    #footer-bottom-section .container,
+    .footer-top .container,
+    .footer-bottom .container,
+    footer .container {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* ============================================
    GLOBAL BODY STYLES
    ============================================ */
 html[data-theme="dark"] body,
 body.dark-mode {
     background-color: var(--dm-bg-primary) !important;
     color: var(--dm-text-primary) !important;
+}
+
+/* ============================================
+   LIGHT MODE TEXT COLORS (Default)
+   Ensures text is readable on light backgrounds
+   ============================================ */
+
+/* Main content text - Dark on light */
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6,
+html:not([data-theme="dark"]) h1,
+html:not([data-theme="dark"]) h2,
+html:not([data-theme="dark"]) h3,
+html:not([data-theme="dark"]) h4,
+html:not([data-theme="dark"]) h5,
+html:not([data-theme="dark"]) h6 {
+    color: #1a1a2e !important;
+}
+
+body:not(.dark-mode) p,
+body:not(.dark-mode) span:not(.fa):not([class*="icon"]),
+body:not(.dark-mode) li,
+body:not(.dark-mode) td,
+html:not([data-theme="dark"]) p,
+html:not([data-theme="dark"]) span:not(.fa):not([class*="icon"]),
+html:not([data-theme="dark"]) li,
+html:not([data-theme="dark"]) td {
+    color: #333333 !important;
+}
+
+/* Section titles in light mode */
+body:not(.dark-mode) .section-head h2,
+body:not(.dark-mode) .section-head .wt-title,
+body:not(.dark-mode) .wt-tilte,
+body:not(.dark-mode) .section-title,
+html:not([data-theme="dark"]) .section-head h2,
+html:not([data-theme="dark"]) .section-head .wt-title,
+html:not([data-theme="dark"]) .wt-tilte,
+html:not([data-theme="dark"]) .section-title {
+    color: #1a1a2e !important;
+}
+
+/* Cards and boxes in light mode */
+body:not(.dark-mode) .wt-box,
+body:not(.dark-mode) .card,
+body:not(.dark-mode) .widget,
+body:not(.dark-mode) .service-box,
+html:not([data-theme="dark"]) .wt-box,
+html:not([data-theme="dark"]) .card,
+html:not([data-theme="dark"]) .widget,
+html:not([data-theme="dark"]) .service-box {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+body:not(.dark-mode) .wt-box h3,
+body:not(.dark-mode) .wt-box h4,
+body:not(.dark-mode) .card h3,
+body:not(.dark-mode) .card h4,
+html:not([data-theme="dark"]) .wt-box h3,
+html:not([data-theme="dark"]) .wt-box h4,
+html:not([data-theme="dark"]) .card h3,
+html:not([data-theme="dark"]) .card h4 {
+    color: #1a1a2e !important;
+}
+
+body:not(.dark-mode) .wt-box p,
+body:not(.dark-mode) .card p,
+html:not([data-theme="dark"]) .wt-box p,
+html:not([data-theme="dark"]) .card p {
+    color: #555555 !important;
+}
+
+/* Links in light mode */
+body:not(.dark-mode) a:not(.nav>li>a):not(.site-button):not(.fa),
+html:not([data-theme="dark"]) a:not(.nav>li>a):not(.site-button):not(.fa) {
+    color: #004685 !important;
+}
+
+body:not(.dark-mode) a:hover:not(.nav>li>a):not(.site-button),
+html:not([data-theme="dark"]) a:hover:not(.nav>li>a):not(.site-button) {
+    color: #29afe3 !important;
+}
+
+/* Hero/Banner sections - Keep white text */
+body:not(.dark-mode) .wt-bnr-inr h1,
+body:not(.dark-mode) .wt-bnr-inr h2,
+body:not(.dark-mode) .wt-bnr-inr p,
+body:not(.dark-mode) .wt-bnr-inr .breadcrumb li,
+body:not(.dark-mode) .wt-bnr-inr .breadcrumb a,
+body:not(.dark-mode) .hero-section h1,
+body:not(.dark-mode) .hero-section p,
+html:not([data-theme="dark"]) .wt-bnr-inr h1,
+html:not([data-theme="dark"]) .wt-bnr-inr h2,
+html:not([data-theme="dark"]) .wt-bnr-inr p,
+html:not([data-theme="dark"]) .wt-bnr-inr .breadcrumb li,
+html:not([data-theme="dark"]) .wt-bnr-inr .breadcrumb a,
+html:not([data-theme="dark"]) .hero-section h1,
+html:not([data-theme="dark"]) .hero-section p {
+    color: #ffffff !important;
+}
+
+/* Testimonials */
+body:not(.dark-mode) .testimonial-5 .testimonial-text,
+body:not(.dark-mode) .testimonial-5 .testimonial-name,
+html:not([data-theme="dark"]) .testimonial-5 .testimonial-text,
+html:not([data-theme="dark"]) .testimonial-5 .testimonial-name {
+    color: #333333 !important;
+}
+
+/* Why Choose / Features sections */
+body:not(.dark-mode) .wt-icon-box h4,
+body:not(.dark-mode) .wt-icon-box p,
+body:not(.dark-mode) .icon-content h4,
+body:not(.dark-mode) .icon-content p,
+html:not([data-theme="dark"]) .wt-icon-box h4,
+html:not([data-theme="dark"]) .wt-icon-box p,
+html:not([data-theme="dark"]) .icon-content h4,
+html:not([data-theme="dark"]) .icon-content p {
+    color: #333333 !important;
+}
+
+/* Products section */
+body:not(.dark-mode) .product-box h3,
+body:not(.dark-mode) .product-box p,
+body:not(.dark-mode) .cleanroom-product-item h4,
+body:not(.dark-mode) .cleanroom-product-item p,
+html:not([data-theme="dark"]) .product-box h3,
+html:not([data-theme="dark"]) .product-box p,
+html:not([data-theme="dark"]) .cleanroom-product-item h4,
+html:not([data-theme="dark"]) .cleanroom-product-item p {
+    color: #1a1a2e !important;
+}
+
+/* Industries section */
+body:not(.dark-mode) .industry-item h4,
+body:not(.dark-mode) .industry-item p,
+html:not([data-theme="dark"]) .industry-item h4,
+html:not([data-theme="dark"]) .industry-item p {
+    color: #333333 !important;
+}
+
+/* Blog/News */
+body:not(.dark-mode) .blog-post h3,
+body:not(.dark-mode) .blog-post p,
+body:not(.dark-mode) .news-item h4,
+body:not(.dark-mode) .news-item p,
+html:not([data-theme="dark"]) .blog-post h3,
+html:not([data-theme="dark"]) .blog-post p,
+html:not([data-theme="dark"]) .news-item h4,
+html:not([data-theme="dark"]) .news-item p {
+    color: #333333 !important;
+}
+
+/* Contact forms */
+body:not(.dark-mode) .contact-form label,
+body:not(.dark-mode) .wt-form-group label,
+html:not([data-theme="dark"]) .contact-form label,
+html:not([data-theme="dark"]) .wt-form-group label {
+    color: #333333 !important;
+}
+
+/* Services section */
+body:not(.dark-mode) .service-box h4,
+body:not(.dark-mode) .service-box p,
+body:not(.dark-mode) .turnkey-item h4,
+body:not(.dark-mode) .turnkey-item p,
+html:not([data-theme="dark"]) .service-box h4,
+html:not([data-theme="dark"]) .service-box p,
+html:not([data-theme="dark"]) .turnkey-item h4,
+html:not([data-theme="dark"]) .turnkey-item p {
+    color: #333333 !important;
+}
+
+/* Welcome/About section */
+body:not(.dark-mode) .welcome-block h2,
+body:not(.dark-mode) .welcome-block p,
+body:not(.dark-mode) .about-section h2,
+body:not(.dark-mode) .about-section p,
+html:not([data-theme="dark"]) .welcome-block h2,
+html:not([data-theme="dark"]) .welcome-block p,
+html:not([data-theme="dark"]) .about-section h2,
+html:not([data-theme="dark"]) .about-section p {
+    color: #333333 !important;
+}
+
+body:not(.dark-mode) .welcome-block h2,
+body:not(.dark-mode) .about-section h2,
+html:not([data-theme="dark"]) .welcome-block h2,
+html:not([data-theme="dark"]) .about-section h2 {
+    color: #1a1a2e !important;
 }
 
 /* ============================================
@@ -144,8 +399,11 @@ body.dark-mode .mobile-sider-drawer-menu {
 }
 
 /* ============================================
-   SECTIONS & CONTAINERS
+   SECTIONS & CONTAINERS - ALTERNATING COLORS
+   Creates visual separation between content sections
    ============================================ */
+
+/* Base dark mode background */
 html[data-theme="dark"] section,
 body.dark-mode section,
 html[data-theme="dark"] .section-full,
@@ -159,13 +417,153 @@ body.dark-mode .p-b80 {
     background-color: var(--dm-bg-primary);
 }
 
+/* Alternating section colors for visual hierarchy */
+/* Primary sections (odd) - Darker background */
 html[data-theme="dark"] .bg-white,
-body.dark-mode .bg-white,
+body.dark-mode .bg-white {
+    background-color: #0a1628 !important;
+    /* Darkest blue */
+}
+
+/* Secondary sections (even) - Slightly lighter */
 html[data-theme="dark"] .bg-gray,
 body.dark-mode .bg-gray,
 html[data-theme="dark"] .bg-gray-light,
 body.dark-mode .bg-gray-light {
-    background-color: var(--dm-bg-secondary) !important;
+    background-color: #0d1d33 !important;
+    /* Dark blue surface */
+}
+
+/* Tertiary accent sections - Subtle blue tint */
+html[data-theme="dark"] .section-full.bg-gray,
+body.dark-mode .section-full.bg-gray {
+    background-color: #0f2240 !important;
+    /* Richer dark blue */
+    border-top: 1px solid rgba(41, 175, 227, 0.1);
+    border-bottom: 1px solid rgba(41, 175, 227, 0.1);
+}
+
+/* Hero/Banner sections - Keep overlay effect */
+html[data-theme="dark"] .wt-bnr-inr,
+body.dark-mode .wt-bnr-inr {
+    background-color: #001528 !important;
+}
+
+html[data-theme="dark"] .wt-bnr-inr .overlay-main,
+body.dark-mode .wt-bnr-inr .overlay-main {
+    background: linear-gradient(135deg, rgba(0, 21, 40, 0.9) 0%, rgba(0, 70, 133, 0.7) 100%) !important;
+}
+
+/* CTA/Call-to-action sections - Accent gradient background */
+html[data-theme="dark"] .video-section-full,
+body.dark-mode .video-section-full {
+    background: linear-gradient(135deg, #0d1d33 0%, #0f2240 100%) !important;
+    border: 1px solid var(--dm-border) !important;
+}
+
+/* Timeline sections */
+html[data-theme="dark"] .timeline-section,
+body.dark-mode .timeline-section {
+    background-color: #0d1d33 !important;
+}
+
+html[data-theme="dark"] .timeline-content,
+body.dark-mode .timeline-content {
+    background-color: #0f2240 !important;
+    border-left: 3px solid var(--header-accent) !important;
+}
+
+/* Page content wrapper */
+html[data-theme="dark"] .page-content,
+body.dark-mode .page-content {
+    background-color: var(--dm-bg-primary);
+}
+
+/* Testimonial sections */
+html[data-theme="dark"] .testimonial-section,
+body.dark-mode .testimonial-section {
+    background-color: #0d1d33 !important;
+}
+
+/* Products/Services sections */
+html[data-theme="dark"] .products-section,
+html[data-theme="dark"] .cleanroom-products-section,
+body.dark-mode .products-section,
+body.dark-mode .cleanroom-products-section {
+    background-color: #0f2240 !important;
+}
+
+/* Industries section */
+html[data-theme="dark"] .industries-section,
+body.dark-mode .industries-section {
+    background-color: #0a1628 !important;
+}
+
+/* Contact/Form sections */
+html[data-theme="dark"] .contact-section,
+body.dark-mode .contact-section {
+    background-color: #0d1d33 !important;
+}
+
+/* Welcome/About section */
+html[data-theme="dark"] .welcome-section,
+html[data-theme="dark"] .about-section,
+body.dark-mode .welcome-section,
+body.dark-mode .about-section {
+    background-color: #0a1628 !important;
+}
+
+/* Icon box wrappers - Lighter surface for contrast */
+html[data-theme="dark"] .wt-icon-box-wraper,
+body.dark-mode .wt-icon-box-wraper {
+    background-color: #0f2240 !important;
+    border: 1px solid rgba(41, 175, 227, 0.15) !important;
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .wt-icon-box-wraper:hover,
+body.dark-mode .wt-icon-box-wraper:hover {
+    border-color: rgba(41, 175, 227, 0.4) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Tables in dark mode */
+html[data-theme="dark"] .table,
+body.dark-mode .table {
+    background-color: #0f2240 !important;
+}
+
+html[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd),
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #0d1d33 !important;
+}
+
+html[data-theme="dark"] .table-striped tbody tr:nth-of-type(even),
+body.dark-mode .table-striped tbody tr:nth-of-type(even) {
+    background-color: #0a1628 !important;
+}
+
+/* Tab content */
+html[data-theme="dark"] .tab-content,
+html[data-theme="dark"] .tab-pane,
+body.dark-mode .tab-content,
+body.dark-mode .tab-pane {
+    background-color: #0f2240 !important;
+}
+
+html[data-theme="dark"] .nav-tabs li a,
+body.dark-mode .nav-tabs li a {
+    background-color: #0d1d33 !important;
+    color: var(--dm-text-secondary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+html[data-theme="dark"] .nav-tabs li.active a,
+html[data-theme="dark"] .nav-tabs li a:hover,
+body.dark-mode .nav-tabs li.active a,
+body.dark-mode .nav-tabs li a:hover {
+    background-color: var(--header-accent) !important;
+    color: #ffffff !important;
 }
 
 /* ============================================
@@ -373,7 +771,7 @@ body.dark-mode table th {
    ============================================ */
 /* Footer Variables */
 :root {
-    --footer-bg: #004685;
+    --footer-bg: #001528;
     --footer-accent: #29afe3;
     --footer-text: #ffffff;
     --footer-text-secondary: rgba(255, 255, 255, 0.8);
