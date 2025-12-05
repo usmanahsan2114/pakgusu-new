@@ -2987,60 +2987,495 @@
                     }
                 }
             </style>
-            <!-- Section: Mission, Vision & Values -->
-            <div class="section-full p-t80 p-b50 bg-gray">
-                <div class="container">
-                    <div class="section-head text-center">
-                        <div class="wt-separator-outer separator-center">
-                            <div class="wt-separator">
-                                <span class="site-text-primary text-uppercase sep-line-one">Our Core Values</span>
-                            </div>
-                        </div>
-                        <h2>Mission, Vision &amp; Values</h2>
+<!-- MISSION, VISION, VALUES - REDESIGN -->
+<section id="mission-vision-values" class="mvv-section">
+    <!-- Subtle Background Animation -->
+    <div class="mvv-bg-anim">
+        <div class="mvv-beam beam-1"></div>
+        <div class="mvv-beam beam-2"></div>
+        <div class="mvv-beam beam-3"></div>
+    </div>
+
+    <div class="mvv-container">
+        <header class="mvv-header-section">
+            <span class="mvv-eyebrow">OUR CORE VALUES</span>
+            <h2 class="mvv-title">Mission, Vision & Values</h2>
+        </header>
+
+        <div class="mvv-layout">
+            <!-- Left Column: Pillar Selector -->
+            <div class="mvv-selector" role="tablist" aria-label="Our Identity">
+                <button role="tab" aria-selected="true" aria-controls="panel-mission" id="tab-mission"
+                    class="mvv-tab active" onclick="switchMvvTab('mission')">
+                    <span class="mvv-tab-icon"><i class="flaticon-sketch"></i></span>
+                    <div class="mvv-tab-text">
+                        <span class="mvv-tab-title">Our Mission</span>
                     </div>
-                    <div class="row">
-                        <!-- Mission -->
-                        <div class="col-md-4 col-sm-6 m-b30">
-                            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white">
-                                <div class="icon-lg site-text-primary m-b20">
-                                    <span class="icon-cell"><i class="flaticon-sketch"></i></span>
-                                </div>
-                                <div class="icon-content">
-                                    <h4 class="wt-tilte m-b25">Our Mission</h4>
-                                    <p>To provide superior cleanroom solutions that enhance safety, quality, and
-                                        efficiency for industries worldwide.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Vision -->
-                        <div class="col-md-4 col-sm-6 m-b30">
-                            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white">
-                                <div class="icon-lg site-text-primary m-b20">
-                                    <span class="icon-cell"><i class="flaticon-window"></i></span>
-                                </div>
-                                <div class="icon-content">
-                                    <h4 class="wt-tilte m-b25">Our Vision</h4>
-                                    <p>To be the global leader in cleanroom technology, recognized for innovation,
-                                        reliability, and excellence.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Values -->
-                        <div class="col-md-4 col-sm-6 m-b30">
-                            <div class="wt-icon-box-wraper center p-lr30 p-b50 p-t50 bg-white">
-                                <div class="icon-lg site-text-primary m-b20">
-                                    <span class="icon-cell"><i class="flaticon-plant"></i></span>
-                                </div>
-                                <div class="icon-content">
-                                    <h4 class="wt-tilte m-b25">Our Values</h4>
-                                    <p>Integrity, Innovation, Quality, and Customer Satisfaction are at the heart of
-                                        everything we do.</p>
-                                </div>
-                            </div>
-                        </div>
+                </button>
+                <button role="tab" aria-selected="false" aria-controls="panel-vision" id="tab-vision" class="mvv-tab"
+                    onclick="switchMvvTab('vision')">
+                    <span class="mvv-tab-icon"><i class="flaticon-window"></i></span>
+                    <div class="mvv-tab-text">
+                        <span class="mvv-tab-title">Our Vision</span>
+                    </div>
+                </button>
+                <button role="tab" aria-selected="false" aria-controls="panel-values" id="tab-values" class="mvv-tab"
+                    onclick="switchMvvTab('values')">
+                    <span class="mvv-tab-icon"><i class="flaticon-plant"></i></span>
+                    <div class="mvv-tab-text">
+                        <span class="mvv-tab-title">Our Values</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Right Column: Detail Panel -->
+            <div class="mvv-content-area">
+                <!-- Mission Panel -->
+                <div id="panel-mission" role="tabpanel" aria-labelledby="tab-mission" class="mvv-panel active">
+                    <div class="mvv-panel-header">
+                        <i class="flaticon-sketch mvv-big-icon"></i>
+                        <h3 class="mvv-panel-title">Our Mission</h3>
+                    </div>
+                    <p class="mvv-panel-desc">To provide superior cleanroom solutions that enhance safety, quality, and
+                        efficiency for industries worldwide.</p>
+                    <div class="mvv-tags">
+                        <span class="mvv-tag">Safety First</span>
+                        <span class="mvv-tag">Global Efficiency</span>
+                        <span class="mvv-tag">Quality Solutions</span>
                     </div>
                 </div>
-            </div><!-- /Section: Mission, Vision & Values -->
+
+                <!-- Vision Panel -->
+                <div id="panel-vision" role="tabpanel" aria-labelledby="tab-vision" class="mvv-panel">
+                    <div class="mvv-panel-header">
+                        <i class="flaticon-window mvv-big-icon"></i>
+                        <h3 class="mvv-panel-title">Our Vision</h3>
+                    </div>
+                    <p class="mvv-panel-desc">To be the global leader in cleanroom technology, recognized for
+                        innovation, reliability, and excellence.</p>
+                    <div class="mvv-tags">
+                        <span class="mvv-tag">Innovation</span>
+                        <span class="mvv-tag">Reliability</span>
+                        <span class="mvv-tag">Global Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Values Panel -->
+                <div id="panel-values" role="tabpanel" aria-labelledby="tab-values" class="mvv-panel">
+                    <div class="mvv-panel-header">
+                        <i class="flaticon-plant mvv-big-icon"></i>
+                        <h3 class="mvv-panel-title">Our Values</h3>
+                    </div>
+                    <p class="mvv-panel-desc">Integrity, Innovation, Quality, and Customer Satisfaction are at the heart
+                        of everything we do.</p>
+                    <div class="mvv-tags">
+                        <span class="mvv-tag">Integrity</span>
+                        <span class="mvv-tag">Customer Satisfaction</span>
+                        <span class="mvv-tag">Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* --- SCOPED VARIABLES --- */
+    #mission-vision-values {
+        --mvv-dark: #004685;
+        --mvv-light: #29AFE3;
+        --mvv-bg: #f8faff;
+        --mvv-white: #ffffff;
+        --mvv-text: #334e68;
+        --mvv-border: #e2e8f0;
+    }
+
+    /* --- SECTION LAYOUT --- */
+    .mvv-section {
+        position: relative;
+        padding: 6rem 1rem;
+        background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+        overflow: hidden;
+        color: var(--mvv-text);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .mvv-container {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* --- BACKGROUND ANIMATION (Subtle Beams) --- */
+    .mvv-bg-anim {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .mvv-beam {
+        position: absolute;
+        width: 100px;
+        height: 120%;
+        background: linear-gradient(to bottom, rgba(41, 175, 227, 0.05), transparent);
+        transform: rotate(15deg);
+        top: -10%;
+    }
+
+    .beam-1 {
+        left: 10%;
+        animation: floatBeam 8s infinite alternate ease-in-out;
+    }
+
+    .beam-2 {
+        left: 50%;
+        animation: floatBeam 12s infinite alternate ease-in-out;
+        animation-delay: 2s;
+    }
+
+    .beam-3 {
+        left: 85%;
+        animation: floatBeam 10s infinite alternate ease-in-out;
+        animation-delay: 1s;
+    }
+
+    @keyframes floatBeam {
+        0% {
+            transform: translateY(0) rotate(15deg);
+            opacity: 0.4;
+        }
+
+        100% {
+            transform: translateY(-30px) rotate(15deg);
+            opacity: 0.8;
+        }
+    }
+
+    /* --- HEADER --- */
+    .mvv-header-section {
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    .mvv-eyebrow {
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--mvv-dark);
+        opacity: 0.7;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .mvv-title {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: var(--mvv-dark);
+        margin: 0;
+    }
+
+    /* --- MAIN LAYOUT (CULTURE PANEL) --- */
+    .mvv-layout {
+        display: flex;
+        background: var(--mvv-white);
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 70, 133, 0.08);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Left Column: Selector */
+    .mvv-selector {
+        flex: 0 0 35%;
+        background: linear-gradient(180deg, #fcfdff 0%, #f4f8fb 100%);
+        border-right: 1px solid var(--mvv-border);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mvv-tab {
+        width: 100%;
+        border: none;
+        background: transparent;
+        text-align: left;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+        color: var(--mvv-text);
+        outline: none;
+    }
+
+    .mvv-tab:hover {
+        background: rgba(41, 175, 227, 0.05);
+    }
+
+    .mvv-tab:focus-visible {
+        background: rgba(41, 175, 227, 0.1);
+        z-index: 2;
+    }
+
+    .mvv-tab.active {
+        background: var(--mvv-white);
+        border-left-color: var(--mvv-dark);
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .mvv-tab-icon {
+        font-size: 1.5rem;
+        color: var(--mvv-light);
+        transition: transform 0.3s;
+    }
+
+    .mvv-tab.active .mvv-tab-icon {
+        color: var(--mvv-dark);
+        transform: scale(1.1);
+    }
+
+    .mvv-tab-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        display: block;
+    }
+
+    /* Right Column: Content */
+    .mvv-content-area {
+        flex: 1;
+        padding: 3rem;
+        position: relative;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+    }
+
+    .mvv-panel {
+        display: none;
+        width: 100%;
+        animation: fadeInPanel 0.4s ease-out;
+    }
+
+    .mvv-panel.active {
+        display: block;
+    }
+
+    @keyframes fadeInPanel {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .mvv-panel-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mvv-big-icon {
+        font-size: 2.5rem;
+        color: var(--mvv-dark);
+    }
+
+    .mvv-panel-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--mvv-dark);
+        margin: 0;
+    }
+
+    .mvv-panel-desc {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: #55606e;
+    }
+
+    /* Tags */
+    .mvv-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .mvv-tag {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: rgba(41, 175, 227, 0.1);
+        color: var(--mvv-dark);
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: transform 0.2s;
+        border: 1px solid rgba(41, 175, 227, 0.2);
+    }
+
+    .mvv-tag:hover {
+        transform: translateY(-2px);
+        background: rgba(41, 175, 227, 0.15);
+    }
+
+    /* --- DARK MODE --- */
+    html[data-theme="dark"] #mission-vision-values {
+        --mvv-bg: #0e1e2d;
+        --mvv-white: #112233;
+        --mvv-text: #a0b3c6;
+        --mvv-border: #1e3a5f;
+    }
+
+    html[data-theme="dark"] .mvv-section {
+        background: #0b1a2b;
+    }
+
+    html[data-theme="dark"] .mvv-title,
+    html[data-theme="dark"] .mvv-eyebrow,
+    html[data-theme="dark"] .mvv-panel-title {
+        color: #fff;
+    }
+
+    html[data-theme="dark"] .mvv-selector {
+        background: #0e2035;
+    }
+
+    html[data-theme="dark"] .mvv-tab.active {
+        background: #112233;
+        border-left-color: #29AFE3;
+    }
+
+    html[data-theme="dark"] .mvv-tab-title {
+        color: #fff;
+    }
+
+    html[data-theme="dark"] .mvv-panel-desc {
+        color: #a0b3c6;
+    }
+
+    html[data-theme="dark"] .mvv-tag {
+        background: #1a3a5a;
+        color: #fff;
+        border-color: #2b4c6F;
+    }
+
+    html[data-theme="dark"] .mvv-big-icon {
+        color: #29AFE3;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 991px) {
+        .mvv-layout {
+            flex-direction: column;
+        }
+
+        .mvv-selector {
+            flex-direction: row;
+            border-right: none;
+            border-bottom: 1px solid var(--mvv-border);
+        }
+
+        .mvv-tab {
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem;
+            border-left: none;
+            border-bottom: 3px solid transparent;
+            gap: 0.5rem;
+        }
+
+        .mvv-tab.active {
+            border-left: none;
+            border-bottom-color: var(--mvv-dark);
+        }
+
+        .mvv-tab-text {
+            font-size: 0.9rem;
+        }
+
+        .mvv-content-area {
+            min-height: auto;
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mvv-selector {
+            flex-direction: column;
+        }
+
+        .mvv-tab {
+            flex-direction: row;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--mvv-border);
+            border-left: 4px solid transparent;
+        }
+
+        .mvv-tab.active {
+            border-bottom: 1px solid var(--mvv-border);
+            border-left-color: var(--mvv-dark);
+        }
+
+        .mvv-big-icon {
+            display: none;
+        }
+
+        /* simplify detail header on mobile */
+        .mvv-panel-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .mvv-beam,
+        .mvv-panel,
+        .mvv-tab,
+        .mvv-tag {
+            animation: none;
+            transition: none;
+            transform: none;
+        }
+    }
+</style>
+
+<script>
+    function switchMvvTab(tabId) {
+        // 1. Deactivate all tabs
+        document.querySelectorAll('.mvv-tab').forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+        });
+
+        // 2. Hide all panels
+        document.querySelectorAll('.mvv-panel').forEach(p => {
+            p.classList.remove('active');
+        });
+
+        // 3. Activate selected tab & panel
+        const selectedTab = document.getElementById('tab-' + tabId);
+        const selectedPanel = document.getElementById('panel-' + tabId);
+
+        if (selectedTab && selectedPanel) {
+            selectedTab.classList.add('active');
+            selectedTab.setAttribute('aria-selected', 'true');
+            selectedPanel.classList.add('active');
+        }
+    }
+</script>
             <!-- Section: Our Facility & Capabilities -->
             <div class="section-full p-t80 p-b50 bg-white">
                 <div class="container">
