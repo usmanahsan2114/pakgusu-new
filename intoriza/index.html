@@ -807,6 +807,1009 @@
     </div><!-- /Section: Turnkey Cleanroom Services -->
 
     <!-- Section: global-presence -->
+    <!-- Global Presence Section -->
+    <section id="new-global-presence" class="new-global-presence">
+        <div class="new-gp-container">
+            <header class="new-gp-header">
+                <p class="new-gp-eyebrow">GLOBAL PRESENCE</p>
+                <h2 class="new-gp-title">Our Cleanroom Solutions Across the World</h2>
+                <p class="new-gp-subtitle">
+                    Strong manufacturing roots in Pakistan, strategic partnership in China, and growing
+                    representation across the Middle East, Europe, and North America.
+                </p>
+            </header>
+
+            <div class="new-gp-body">
+                <!-- Map Panel -->
+                <div class="new-gp-map-panel">
+                    <div class="new-gp-map-viewport">
+                        <div id="new-map" class="new-gp-map"></div>
+
+                        <!-- Tooltip -->
+                        <div id="new-map-tooltip" class="new-gp-tooltip" hidden>
+                            <button type="button" class="new-gp-tooltip-close" aria-label="Close location details">
+                                &times;
+                            </button>
+                            <div class="new-gp-tooltip-city"></div>
+                            <div class="new-gp-tooltip-type"></div>
+                            <p class="new-gp-tooltip-description"></p>
+                        </div>
+                    </div>
+
+                    <div class="new-gp-legend">
+                        <span class="new-gp-legend-item new-gp-legend-manufacturing">
+                            <span class="new-gp-legend-dot new-gp-legend-dot-manufacturing"></span>
+                            Manufacturing / HQ
+                        </span>
+                        <span class="new-gp-legend-item new-gp-legend-sales">
+                            <span class="new-gp-legend-dot new-gp-legend-dot-sales"></span>
+                            Sales &amp; Support
+                        </span>
+                        <span class="new-gp-legend-item new-gp-legend-partner">
+                            <span class="new-gp-legend-dot new-gp-legend-dot-partner"></span>
+                            Partner / Representative
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Side Panel -->
+                <aside class="new-gp-side-panel">
+                    <div class="new-gp-controls">
+                        <div class="new-gp-filters" role="tablist" aria-label="Filter locations by type">
+                            <button type="button" class="new-gp-filter new-gp-filter-active" data-new-filter="all">
+                                All
+                            </button>
+                            <button type="button" class="new-gp-filter" data-new-filter="manufacturing">
+                                Manufacturing
+                            </button>
+                            <button type="button" class="new-gp-filter" data-new-filter="sales">
+                                Sales &amp; Support
+                            </button>
+                            <button type="button" class="new-gp-filter" data-new-filter="partner">
+                                Partner
+                            </button>
+                        </div>
+
+                        <div class="new-gp-search">
+                            <input type="search" class="new-gp-search-input" placeholder="Search by city or country..."
+                                aria-label="Search locations by city or country" />
+                        </div>
+                    </div>
+
+                    <div class="new-gp-list-wrapper">
+                        <ul id="new-location-list" class="new-gp-location-list" aria-label="Global locations">
+                            <!-- Filled by JS -->
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ===== Global Presence Section (all selectors prefixed with new-) ===== */
+        .new-global-presence {
+            --new-gp-bg: #f5f8fc;
+            --new-gp-bg-dark: #0b1724;
+            --new-gp-surface: #ffffff;
+            --new-gp-border: rgba(15, 30, 55, 0.08);
+            --new-gp-primary: #007bc7;
+            --new-gp-primary-soft: rgba(0, 123, 199, 0.14);
+            --new-gp-text-main: #0f2034;
+            --new-gp-text-muted: #64738a;
+            --new-gp-shadow-soft: 0 20px 40px rgba(12, 32, 70, 0.12);
+            --new-gp-radius-lg: 18px;
+            --new-gp-radius-full: 999px;
+            --new-gp-transition-fast: 0.18s ease-out;
+            --new-gp-transition-med: 0.26s ease-out;
+            background: var(--new-gp-bg);
+            padding: 4rem 1.5rem 4.5rem;
+            color: var(--new-gp-text-main);
+            font-family: inherit;
+        }
+
+        /* Optional: adapt when wrapped inside a dark section */
+        .new-global-presence.new-global-presence--dark,
+        body[class*='dark'] .new-global-presence {
+            --new-gp-bg: var(--new-gp-bg-dark);
+            --new-gp-surface: #101b2a;
+            --new-gp-border: rgba(255, 255, 255, 0.06);
+            --new-gp-text-main: #f7f9fc;
+            --new-gp-text-muted: #a9b4c5;
+            --new-gp-shadow-soft: 0 22px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .new-gp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .new-gp-header {
+            text-align: center;
+            margin-bottom: 2.75rem;
+        }
+
+        .new-gp-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--new-gp-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .new-gp-eyebrow::before,
+        .new-gp-eyebrow::after {
+            content: '';
+            flex: 1 1 40px;
+            max-width: 60px;
+            height: 1px;
+            background: linear-gradient(to right,
+                    transparent,
+                    var(--new-gp-primary),
+                    transparent);
+        }
+
+        .new-gp-title {
+            font-size: clamp(1.9rem, 2.35vw, 2.3rem);
+            line-height: 1.25;
+            margin: 0 0 0.75rem;
+        }
+
+        .new-gp-subtitle {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            color: var(--new-gp-text-muted);
+        }
+
+        .new-gp-body {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        /* Map Panel */
+        .new-gp-map-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .new-gp-map-viewport {
+            position: relative;
+            background: radial-gradient(circle at top left, #ffffff, var(--new-gp-bg));
+            border-radius: var(--new-gp-radius-lg);
+            box-shadow: var(--new-gp-shadow-soft);
+            padding: 0.75rem;
+            overflow: hidden;
+        }
+
+        .new-gp-map {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56%;
+            /* 16:9 aspect */
+            border-radius: calc(var(--new-gp-radius-lg) - 6px);
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1024px-World_map_-_low_resolution.svg.png');
+            background-size: cover;
+            background-position: center;
+            filter: saturate(0.9) contrast(1.02);
+        }
+
+        .new-gp-marker {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: var(--new-gp-radius-full);
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(0, 123, 199, 0.35);
+            background: var(--new-gp-primary);
+            transform: translate(-50%, -50%);
+            transition:
+                box-shadow var(--new-gp-transition-med),
+                transform var(--new-gp-transition-med),
+                background var(--new-gp-transition-fast),
+                opacity var(--new-gp-transition-fast);
+            opacity: 0.93;
+        }
+
+        .new-gp-marker::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: inherit;
+            border: 1px solid rgba(0, 123, 199, 0.4);
+            opacity: 0.7;
+        }
+
+        .new-gp-marker.new-gp-marker--manufacturing {
+            background: #24b36b;
+            box-shadow: 0 0 0 0 rgba(36, 179, 107, 0.4);
+        }
+
+        .new-gp-marker.new-gp-marker--sales {
+            background: #ffb020;
+            box-shadow: 0 0 0 0 rgba(255, 176, 32, 0.4);
+        }
+
+        .new-gp-marker.new-gp-marker--partner {
+            background: var(--new-gp-primary);
+        }
+
+        @keyframes new-gp-marker-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 199, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(0, 123, 199, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 199, 0);
+            }
+        }
+
+        .new-gp-marker {
+            animation: new-gp-marker-pulse 1.8s ease-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .new-gp-marker {
+                animation: none;
+            }
+        }
+
+        .new-gp-marker:hover,
+        .new-gp-marker.new-gp-marker-active {
+            transform: translate(-50%, -50%) scale(1.25);
+            opacity: 1;
+        }
+
+        .new-gp-tooltip {
+            position: absolute;
+            min-width: 210px;
+            max-width: 260px;
+            padding: 0.8rem 0.95rem;
+            border-radius: 14px;
+            background: var(--new-gp-surface);
+            box-shadow: var(--new-gp-shadow-soft);
+            border: 1px solid var(--new-gp-border);
+            transform: translate(-50%, -110%);
+            z-index: 5;
+        }
+
+        .new-gp-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 7px 7px 0 7px;
+            border-style: solid;
+            border-color: var(--new-gp-surface) transparent transparent transparent;
+        }
+
+        .new-gp-tooltip-close {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            border: none;
+            background: transparent;
+            color: var(--new-gp-text-muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .new-gp-tooltip-city {
+            font-weight: 600;
+            font-size: 0.98rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .new-gp-tooltip-type {
+            font-size: 0.75rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--new-gp-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .new-gp-tooltip-description {
+            font-size: 0.8rem;
+            margin: 0;
+            color: var(--new-gp-text-muted);
+        }
+
+        .new-gp-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            font-size: 0.78rem;
+            color: var(--new-gp-text-muted);
+            padding: 0 0.35rem;
+        }
+
+        .new-gp-legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .new-gp-legend-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: var(--new-gp-radius-full);
+        }
+
+        .new-gp-legend-dot-manufacturing {
+            background: #24b36b;
+        }
+
+        .new-gp-legend-dot-sales {
+            background: #ffb020;
+        }
+
+        .new-gp-legend-dot-partner {
+            background: var(--new-gp-primary);
+        }
+
+        /* Side Panel */
+        .new-gp-side-panel {
+            background: var(--new-gp-surface);
+            border-radius: var(--new-gp-radius-lg);
+            box-shadow: var(--new-gp-shadow-soft);
+            padding: 1rem 1rem 0.8rem;
+            border: 1px solid var(--new-gp-border);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .new-gp-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .new-gp-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .new-gp-filter {
+            border-radius: var(--new-gp-radius-full);
+            border: 1px solid var(--new-gp-border);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.3rem 0.85rem;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            cursor: pointer;
+            color: var(--new-gp-text-muted);
+            transition:
+                background var(--new-gp-transition-fast),
+                color var(--new-gp-transition-fast),
+                border-color var(--new-gp-transition-fast),
+                box-shadow var(--new-gp-transition-fast);
+        }
+
+        .new-gp-filter:hover {
+            border-color: var(--new-gp-primary-soft);
+            box-shadow: 0 0 0 1px rgba(0, 123, 199, 0.08);
+        }
+
+        .new-gp-filter.new-gp-filter-active {
+            background: var(--new-gp-primary-soft);
+            color: var(--new-gp-primary);
+            border-color: transparent;
+        }
+
+        .new-gp-search {
+            position: relative;
+        }
+
+        .new-gp-search-input {
+            width: 100%;
+            border-radius: 999px;
+            border: 1px solid var(--new-gp-border);
+            padding: 0.45rem 0.9rem 0.45rem 2.1rem;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--new-gp-text-main);
+        }
+
+        .new-gp-search-input::placeholder {
+            color: var(--new-gp-text-muted);
+        }
+
+        .new-gp-search::before {
+            content: '🔍';
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .new-gp-list-wrapper {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            padding-right: 0.2rem;
+            margin-top: 0.25rem;
+        }
+
+        .new-gp-location-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .new-gp-location-item {
+            padding: 0.55rem 0.5rem;
+            border-radius: 12px;
+            margin-bottom: 0.25rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition:
+                background var(--new-gp-transition-fast),
+                border-color var(--new-gp-transition-fast),
+                transform var(--new-gp-transition-fast);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 0.25rem 0.5rem;
+            align-items: center;
+        }
+
+        .new-gp-location-item:hover {
+            background: rgba(15, 30, 55, 0.02);
+        }
+
+        .new-gp-location-item.new-gp-location-item-active {
+            background: var(--new-gp-primary-soft);
+            border-color: rgba(0, 123, 199, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .new-gp-location-main {
+            font-size: 0.86rem;
+        }
+
+        .new-gp-location-city {
+            font-weight: 600;
+        }
+
+        .new-gp-location-country {
+            font-size: 0.78rem;
+            color: var(--new-gp-text-muted);
+        }
+
+        .new-gp-location-description {
+            font-size: 0.76rem;
+            color: var(--new-gp-text-muted);
+            margin-top: 0.12rem;
+        }
+
+        .new-gp-location-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.2rem;
+        }
+
+        .new-gp-badge {
+            border-radius: var(--new-gp-radius-full);
+            padding: 0.15rem 0.65rem;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .new-gp-badge--manufacturing {
+            background: rgba(36, 179, 107, 0.08);
+            color: #158454;
+            border-color: rgba(36, 179, 107, 0.3);
+        }
+
+        .new-gp-badge--sales {
+            background: rgba(255, 176, 32, 0.08);
+            color: #b87800;
+            border-color: rgba(255, 176, 32, 0.35);
+        }
+
+        .new-gp-badge--partner {
+            background: rgba(0, 123, 199, 0.06);
+            color: var(--new-gp-primary);
+            border-color: rgba(0, 123, 199, 0.3);
+        }
+
+        .new-gp-location-link {
+            font-size: 0.7rem;
+            color: var(--new-gp-primary);
+            text-decoration: none;
+        }
+
+        .new-gp-location-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Scrollbar styling (optional) */
+        .new-gp-list-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .new-gp-list-wrapper::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .new-gp-list-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(15, 30, 55, 0.12);
+            border-radius: 999px;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .new-gp-body {
+                grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .new-global-presence {
+                padding: 3rem 1.25rem 3.5rem;
+            }
+
+            .new-gp-body {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .new-gp-map-panel {
+                order: 1;
+            }
+
+            .new-gp-side-panel {
+                order: 2;
+                margin-top: 0.75rem;
+            }
+
+            .new-gp-map-viewport {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .new-gp-header {
+                text-align: left;
+            }
+
+            .new-gp-subtitle {
+                text-align: left;
+            }
+
+            .new-gp-eyebrow {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            const newLocations = [
+                /* ---------- Pakistan ---------- */
+                {
+                    newId: 'new-pk-lahore',
+                    newCity: 'Lahore',
+                    newCountry: 'Pakistan',
+                    newRegion: 'Pakistan',
+                    newType: 'manufacturing',
+                    newLat: 31.5204,
+                    newLng: 74.3587,
+                    newDescription:
+                        'Headquarters and primary manufacturing facility supporting turnkey cleanroom projects worldwide.',
+                    newLinkText: 'Contact Lahore HQ',
+                    newLinkHref: '#contact-lahore'
+                },
+                {
+                    newId: 'new-pk-karachi',
+                    newCity: 'Karachi',
+                    newCountry: 'Pakistan',
+                    newRegion: 'Pakistan',
+                    newType: 'sales',
+                    newLat: 24.8607,
+                    newLng: 67.0011,
+                    newDescription: 'Regional sales and service office for southern Pakistan and seaport projects.',
+                    newLinkText: 'Contact Karachi office',
+                    newLinkHref: '#contact-karachi'
+                },
+                {
+                    newId: 'new-pk-islamabad',
+                    newCity: 'Islamabad',
+                    newCountry: 'Pakistan',
+                    newRegion: 'Pakistan',
+                    newType: 'sales',
+                    newLat: 33.6844,
+                    newLng: 73.0479,
+                    newDescription:
+                        'Key liaison office for government, defense, and research-sector cleanroom projects.',
+                    newLinkText: 'Contact Islamabad office',
+                    newLinkHref: '#contact-islamabad'
+                },
+                {
+                    newId: 'new-pk-faisalabad',
+                    newCity: 'Faisalabad',
+                    newCountry: 'Pakistan',
+                    newRegion: 'Pakistan',
+                    newType: 'sales',
+                    newLat: 31.418,
+                    newLng: 73.079,
+                    newDescription: 'Supporting textile and industrial cleanroom applications in central Pakistan.',
+                    newLinkText: 'Learn more',
+                    newLinkHref: '#faisalabad'
+                },
+                {
+                    newId: 'new-pk-peshawar',
+                    newCity: 'Peshawar',
+                    newCountry: 'Pakistan',
+                    newRegion: 'Pakistan',
+                    newType: 'support',
+                    newLat: 34.0151,
+                    newLng: 71.5249,
+                    newDescription:
+                        'Project support hub for healthcare, pharmaceutical, and research installations in the north-west.',
+                    newLinkText: 'Learn more',
+                    newLinkHref: '#peshawar'
+                },
+
+                /* ---------- China ---------- */
+                {
+                    newId: 'new-cn-suzhou',
+                    newCity: 'Suzhou',
+                    newCountry: 'China',
+                    newRegion: 'China',
+                    newType: 'manufacturing',
+                    newLat: 31.2989,
+                    newLng: 120.5853,
+                    newDescription:
+                        'Strategic manufacturing partner facility with GUSU Purification for modular cleanroom components.',
+                    newLinkText: 'About GUSU partnership',
+                    newLinkHref: '#suzhou'
+                },
+                {
+                    newId: 'new-cn-shanghai',
+                    newCity: 'Shanghai',
+                    newCountry: 'China',
+                    newRegion: 'China',
+                    newType: 'sales',
+                    newLat: 31.2304,
+                    newLng: 121.4737,
+                    newDescription: 'Engineering and sales support for large-scale regional projects in East Asia.',
+                    newLinkText: 'Contact Shanghai team',
+                    newLinkHref: '#shanghai'
+                },
+                {
+                    newId: 'new-cn-beijing',
+                    newCity: 'Beijing',
+                    newCountry: 'China',
+                    newRegion: 'China',
+                    newType: 'partner',
+                    newLat: 39.9042,
+                    newLng: 116.4074,
+                    newDescription:
+                        'Key client and regulatory liaison point for complex classified and R&amp;D cleanrooms.',
+                    newLinkText: 'View reference projects',
+                    newLinkHref: '#beijing'
+                },
+                {
+                    newId: 'new-cn-shenzhen',
+                    newCity: 'Shenzhen',
+                    newCountry: 'China',
+                    newRegion: 'China',
+                    newType: 'support',
+                    newLat: 22.5431,
+                    newLng: 114.0579,
+                    newDescription: 'Technology sourcing and component integration for advanced electronics facilities.',
+                    newLinkText: 'Learn more',
+                    newLinkHref: '#shenzhen'
+                },
+                {
+                    newId: 'new-cn-guangzhou',
+                    newCity: 'Guangzhou',
+                    newCountry: 'China',
+                    newRegion: 'China',
+                    newType: 'sales',
+                    newLat: 23.1291,
+                    newLng: 113.2644,
+                    newDescription:
+                        'Logistics hub supporting outbound projects across the Asia–Pacific corridor.',
+                    newLinkText: 'Learn more',
+                    newLinkHref: '#guangzhou'
+                },
+
+                /* ---------- Middle East / Others ---------- */
+                {
+                    newId: 'new-ae-dubai',
+                    newCity: 'Dubai',
+                    newCountry: 'United Arab Emirates',
+                    newRegion: 'Middle East',
+                    newType: 'partner',
+                    newLat: 25.2048,
+                    newLng: 55.2708,
+                    newDescription:
+                        'Regional sales and demo center for aviation, pharma, and high-tech cleanroom solutions.',
+                    newLinkText: 'Meet us in Dubai',
+                    newLinkHref: '#dubai'
+                },
+                {
+                    newId: 'new-sa-riyadh',
+                    newCity: 'Riyadh',
+                    newCountry: 'Saudi Arabia',
+                    newRegion: 'Middle East',
+                    newType: 'partner',
+                    newLat: 24.7136,
+                    newLng: 46.6753,
+                    newDescription:
+                        'Strategic partners under Vision 2030 for healthcare and defense-related cleanrooms.',
+                    newLinkText: 'Saudi collaboration',
+                    newLinkHref: '#riyadh'
+                },
+                {
+                    newId: 'new-tr-istanbul',
+                    newCity: 'Istanbul',
+                    newCountry: 'Türkiye',
+                    newRegion: 'Europe',
+                    newType: 'partner',
+                    newLat: 41.0082,
+                    newLng: 28.9784,
+                    newDescription: 'Regional integrators supporting turnkey cleanroom rollouts across Europe.',
+                    newLinkText: 'Istanbul partners',
+                    newLinkHref: '#istanbul'
+                },
+                {
+                    newId: 'new-de-frankfurt',
+                    newCity: 'Frankfurt',
+                    newCountry: 'Germany',
+                    newRegion: 'Europe',
+                    newType: 'sales',
+                    newLat: 50.1109,
+                    newLng: 8.6821,
+                    newDescription:
+                        'EU distribution and after-sales support for cleanroom components and modular systems.',
+                    newLinkText: 'Contact EU office',
+                    newLinkHref: '#frankfurt'
+                },
+                {
+                    newId: 'new-us-houston',
+                    newCity: 'Houston',
+                    newCountry: 'United States',
+                    newRegion: 'North America',
+                    newType: 'partner',
+                    newLat: 29.7604,
+                    newLng: -95.3698,
+                    newDescription: 'Representative office for North American life science and energy-sector projects.',
+                    newLinkText: 'North America enquiries',
+                    newLinkHref: '#houston'
+                }
+            ];
+
+            const newMapElement = document.getElementById('new-map');
+            const newListElement = document.getElementById('new-location-list');
+            const newTooltip = document.getElementById('new-map-tooltip');
+            const newTooltipCity = newTooltip.querySelector('.new-gp-tooltip-city');
+            const newTooltipType = newTooltip.querySelector('.new-gp-tooltip-type');
+            const newTooltipDescription = newTooltip.querySelector('.new-gp-tooltip-description');
+            const newTooltipClose = newTooltip.querySelector('.new-gp-tooltip-close');
+            const newFilters = document.querySelectorAll('.new-gp-filter');
+            const newSearchInput = document.querySelector('.new-gp-search-input');
+
+            const newLocationIndex = {};
+            let newCurrentFilter = 'all';
+            let newCurrentSearch = '';
+            let newActiveId = null;
+
+            function newProjectLatLngToPercent(lat, lng) {
+                // Simple equirectangular projection → percentage
+                const x = ((lng + 180) / 360) * 100;
+                const y = ((90 - lat) / 180) * 100;
+                return { x, y };
+            }
+
+            function newCreateMarker(location) {
+                const marker = document.createElement('button');
+                marker.type = 'button';
+                marker.className =
+                    'new-gp-marker ' + 'new-gp-marker--' + (location.newType === 'support' ? 'sales' : location.newType);
+                const pos = newProjectLatLngToPercent(location.newLat, location.newLng);
+                marker.style.left = pos.x + '%';
+                marker.style.top = pos.y + '%';
+                marker.dataset.newId = location.newId;
+                marker.dataset.newType = location.newType;
+                marker.title = location.newCity + ', ' + location.newCountry;
+                marker.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    newActivateLocation(location.newId, marker);
+                });
+                return marker;
+            }
+
+            function newCreateListItem(location) {
+                const li = document.createElement('li');
+                li.className = 'new-gp-location-item';
+                li.dataset.newId = location.newId;
+                li.dataset.newType = location.newType;
+                li.dataset.newRegion = location.newRegion;
+
+                const badgeClass =
+                    location.newType === 'manufacturing'
+                        ? 'new-gp-badge--manufacturing'
+                        : location.newType === 'sales' || location.newType === 'support'
+                            ? 'new-gp-badge--sales'
+                            : 'new-gp-badge--partner';
+
+                li.innerHTML = `
+        <div class="new-gp-location-main">
+          <div class="new-gp-location-city">${location.newCity}</div>
+          <div class="new-gp-location-country">${location.newCountry} · ${location.newRegion}</div>
+          <div class="new-gp-location-description">${location.newDescription}</div>
+        </div>
+        <div class="new-gp-location-meta">
+          <span class="new-gp-badge ${badgeClass}">
+            ${location.newType === 'manufacturing' ? 'Manufacturing' : location.newType === 'sales' || location.newType === 'support' ? 'Sales &amp; Support' : 'Partner'}
+          </span>
+          ${location.newLinkHref
+                        ? `<a href="${location.newLinkHref}" class="new-gp-location-link">${location.newLinkText}</a>`
+                        : ''
+                    }
+        </div>
+      `;
+
+                li.addEventListener('click', function () {
+                    const marker = newLocationIndex[location.newId].marker;
+                    newActivateLocation(location.newId, marker);
+                    li.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                });
+
+                return li;
+            }
+
+            function newBuildUI() {
+                newLocations.forEach((loc) => {
+                    const marker = newCreateMarker(loc);
+                    const li = newCreateListItem(loc);
+                    newMapElement.appendChild(marker);
+                    newListElement.appendChild(li);
+                    newLocationIndex[loc.newId] = {
+                        data: loc,
+                        marker,
+                        item: li
+                    };
+                });
+            }
+
+            function newClearActive() {
+                if (!newActiveId) return;
+                const prev = newLocationIndex[newActiveId];
+                if (prev) {
+                    prev.marker.classList.remove('new-gp-marker-active');
+                    prev.item.classList.remove('new-gp-location-item-active');
+                }
+                newActiveId = null;
+            }
+
+            function newActivateLocation(id, markerEl) {
+                const entry = newLocationIndex[id];
+                if (!entry) return;
+                newClearActive();
+                newActiveId = id;
+                entry.marker.classList.add('new-gp-marker-active');
+                entry.item.classList.add('new-gp-location-item-active');
+                newShowTooltip(entry.data, markerEl || entry.marker);
+            }
+
+            function newShowTooltip(location, markerEl) {
+                const viewportRect = newMapElement.getBoundingClientRect();
+                const markerRect = markerEl.getBoundingClientRect();
+
+                const relativeX = markerRect.left + markerRect.width / 2 - viewportRect.left;
+                const relativeY = markerRect.top - viewportRect.top;
+
+                newTooltipCity.textContent = location.newCity + ', ' + location.newCountry;
+                newTooltipType.textContent =
+                    location.newType === 'manufacturing'
+                        ? 'Manufacturing / HQ'
+                        : location.newType === 'sales' || location.newType === 'support'
+                            ? 'Sales & Support'
+                            : 'Partner / Representative';
+                newTooltipDescription.innerHTML = location.newDescription;
+
+                newTooltip.style.left = relativeX + 'px';
+                newTooltip.style.top = relativeY + 'px';
+                newTooltip.hidden = false;
+            }
+
+            function newHideTooltip() {
+                newTooltip.hidden = true;
+            }
+
+            function newApplyFilterAndSearch() {
+                const term = newCurrentSearch.toLowerCase();
+                newLocations.forEach((loc) => {
+                    const { marker, item } = newLocationIndex[loc.newId];
+                    const matchesType =
+                        newCurrentFilter === 'all' ||
+                        loc.newType === newCurrentFilter ||
+                        (newCurrentFilter === 'sales' && loc.newType === 'support'); // treat support as sales & support
+
+                    const searchTarget = (loc.newCity + ' ' + loc.newCountry + ' ' + loc.newRegion).toLowerCase();
+                    const matchesSearch = !term || searchTarget.includes(term);
+
+                    const visible = matchesType && matchesSearch;
+
+                    marker.style.display = visible ? '' : 'none';
+                    item.style.display = visible ? 'grid' : 'none';
+                });
+            }
+
+            function newWireEvents() {
+                newFilters.forEach((btn) => {
+                    btn.addEventListener('click', function () {
+                        newFilters.forEach((b) => b.classList.remove('new-gp-filter-active'));
+                        btn.classList.add('new-gp-filter-active');
+                        newCurrentFilter = btn.dataset.newFilter;
+                        newApplyFilterAndSearch();
+                    });
+                });
+
+                newSearchInput.addEventListener('input', function () {
+                    newCurrentSearch = this.value || '';
+                    newApplyFilterAndSearch();
+                });
+
+                newTooltipClose.addEventListener('click', function () {
+                    newHideTooltip();
+                });
+
+                // Hide tooltip when clicking empty map area
+                newMapElement.addEventListener('click', function (event) {
+                    if (event.target === newMapElement) {
+                        newHideTooltip();
+                        newClearActive();
+                    }
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!newTooltip.hidden && !newTooltip.contains(event.target) && !newMapElement.contains(event.target)) {
+                        newHideTooltip();
+                        newClearActive();
+                    }
+                });
+            }
+
+            function newInitGlobalPresenceSection() {
+                if (!newMapElement || !newListElement) return;
+                newBuildUI();
+                newWireEvents();
+                newApplyFilterAndSearch();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', newInitGlobalPresenceSection);
+            } else {
+                newInitGlobalPresenceSection();
+            }
+        })();
+    </script>
 
     <!-- /Section: global-presence -->
     <!-- Section: Latest from Resources (Redesigned: News Hub) -->
