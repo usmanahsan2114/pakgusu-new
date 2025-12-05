@@ -8,7 +8,7 @@
 function stickyHeaderShrink() {
     var header = jQuery('.sticky-header');
     var scrollTop = jQuery(window).scrollTop();
-    
+
     if (scrollTop > 100) {
         header.addClass('is-fixed');
     } else {
@@ -21,7 +21,7 @@ function scrollProgress() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
-    
+
     var progressBar = document.querySelector('.scroll-progress');
     if (progressBar) {
         progressBar.style.width = scrolled + "%";
@@ -30,13 +30,13 @@ function scrollProgress() {
 
 // Mobile Menu Toggle
 function mobileMenuToggle() {
-    jQuery('#mobile-side-drawer').on('click', function() {
+    jQuery('#mobile-side-drawer').on('click', function () {
         jQuery('.header-nav').toggleClass('show');
         jQuery('.mobile-menu-overlay').toggleClass('show');
         jQuery('body').toggleClass('menu-open');
     });
-    
-    jQuery('.mobile-menu-overlay').on('click', function() {
+
+    jQuery('.mobile-menu-overlay').on('click', function () {
         jQuery('.header-nav').removeClass('show');
         jQuery(this).removeClass('show');
         jQuery('body').removeClass('menu-open');
@@ -46,31 +46,31 @@ function mobileMenuToggle() {
 // Scroll to Top Button
 function scrollToTop() {
     var btn = jQuery('.scroltop');
-    
-    jQuery(window).on('scroll', function() {
+
+    jQuery(window).on('scroll', function () {
         if (jQuery(this).scrollTop() > 300) {
             btn.fadeIn();
         } else {
             btn.fadeOut();
         }
     });
-    
-    btn.on('click', function(e) {
+
+    btn.on('click', function (e) {
         e.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, 600);
+        jQuery('html, body').animate({ scrollTop: 0 }, 600);
     });
 }
 
 // Fade In on Scroll for Elements with .fade-in-up class
 function fadeInOnScroll() {
     var fadeElements = jQuery('.fade-in-up');
-    
-    fadeElements.each(function() {
+
+    fadeElements.each(function () {
         var elementTop = jQuery(this).offset().top;
         var elementBottom = elementTop + jQuery(this).outerHeight();
         var viewportTop = jQuery(window).scrollTop();
         var viewportBottom = viewportTop + jQuery(window).height();
-        
+
         if (elementBottom > viewportTop && elementTop < viewportBottom) {
             jQuery(this).addClass('visible');
         }
@@ -78,24 +78,24 @@ function fadeInOnScroll() {
 }
 
 // Initialize Functions on Document Ready
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     // Add scroll progress bar to body
     if (!jQuery('.scroll-progress').length) {
         jQuery('body').prepend('<div class="scroll-progress"></div>');
     }
-    
+
     // Add mobile menu overlay
     if (!jQuery('.mobile-menu-overlay').length) {
         jQuery('body').append('<div class="mobile-menu-overlay"></div>');
     }
-    
+
     mobileMenuToggle();
     scrollToTop();
     fadeInOnScroll();
 });
 
 // Initialize Functions on Window Scroll
-jQuery(window).on('scroll', function() {
+jQuery(window).on('scroll', function () {
     stickyHeaderShrink();
     scrollProgress();
     fadeInOnScroll();
@@ -136,7 +136,7 @@ function injectQuickContactWidget() {
     const toggleBtn = document.querySelector('.quick-contact-toggle');
     const menu = document.querySelector('.quick-contact-menu');
     const icon = toggleBtn.querySelector('i');
-    
+
     toggleBtn.addEventListener('click', () => {
         menu.classList.toggle('active');
         if (menu.classList.contains('active')) {
@@ -150,77 +150,14 @@ function injectQuickContactWidget() {
 }
 
 // Initialize on Document Ready
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     injectQuickContactWidget();
-    
+
     // Preloader Safety Timeout
-    setTimeout(function() {
+    setTimeout(function () {
         jQuery('.loading-area').fadeOut(1000);
     }, 3000);
 });
 
-/* ============================================
-   Dark Mode Toggle
-   ============================================ */
 
-function injectDarkModeToggle() {
-    // Check if already injected
-    if (document.querySelector('.dark-mode-toggle-header') || document.querySelector('.dark-mode-toggle')) return;
-
-    // Create Toggle Button
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'dark-mode-toggle-header';
-    toggleBtn.setAttribute('aria-label', 'Toggle Dark Mode');
-    toggleBtn.innerHTML = '<i class="fa fa-moon-o"></i>';
-
-    // Inject into Header (Extra Nav)
-    const headerRight = document.querySelector('.wt-header-right-child');
-    if (headerRight) {
-        // Create a new extra-nav cell for the toggle
-        const newNav = document.createElement('div');
-        newNav.className = 'extra-nav';
-        const newCell = document.createElement('div');
-        newCell.className = 'extra-cell';
-        newCell.appendChild(toggleBtn);
-        newNav.appendChild(newCell);
-        
-        // Insert as the first item in header right
-        headerRight.insertBefore(newNav, headerRight.firstChild);
-    } else {
-        // Fallback: Fixed button if header structure not found
-        toggleBtn.className = 'dark-mode-toggle'; // Use fixed style
-        document.body.appendChild(toggleBtn);
-    }
-
-    // Theme Logic
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        if (currentTheme === 'dark') {
-            toggleBtn.querySelector('i').classList.remove('fa-moon-o');
-            toggleBtn.querySelector('i').classList.add('fa-sun-o');
-        }
-    }
-
-    // Toggle Event
-    toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            toggleBtn.querySelector('i').classList.remove('fa-sun-o');
-            toggleBtn.querySelector('i').classList.add('fa-moon-o');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            toggleBtn.querySelector('i').classList.remove('fa-moon-o');
-            toggleBtn.querySelector('i').classList.add('fa-sun-o');
-        }
-    });
-}
-
-// Initialize Dark Mode
-jQuery(document).ready(function() {
-    injectDarkModeToggle();
-});
 

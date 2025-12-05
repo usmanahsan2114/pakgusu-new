@@ -73,730 +73,561 @@
     <link href="./css/turnkey-redesign.css" rel="stylesheet" />
     <link href="css/products-redesign.css" rel="stylesheet" /> <!-- TURNKEY REDESIGN -->
     <link href="./css/industries-master.css" rel="stylesheet" /> <!-- INDUSTRIES REDESIGN -->
+    <!-- NEW Header Master UI -->
+    <link href="./css/header-master.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="page-wraper">
         <!-- HEADER START -->
-        <header class="site-header header-style-1 nav-wide mobile-sider-drawer-menu">
-            <div class="sticky-header main-bar-wraper">
-                <div class="main-bar bg-white">
-                    <div class="container header-center">
-                        <div class="wt-header-left">
-                            <div class="logo-header">
-                                <div class="logo-header-inner logo-header-one">
-                                    <a href="./">
-                                        <img alt="" height="49" src="./images/logo-dark.png" width="171" />
-                                    </a>
+        <!-- HEADER START -->
+        <header class="gh-site-header">
+            <div class="gh-bg-anim"></div>
+            <div class="gh-container">
+                <!-- Mobile Toggle -->
+                <button class="gh-mobile-toggle" aria-label="Toggle Menu">
+                    <div class="gh-bar"></div>
+                    <div class="gh-bar"></div>
+                    <div class="gh-bar"></div>
+                </button>
+
+                <!-- Logo -->
+                <div class="gh-logo">
+                    <a href="./">
+                        <img src="./images/logo-dark.png" alt="PakGusu Intoriza">
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="gh-nav-desktop">
+                    <ul class="gh-nav-list">
+                        <li class="gh-nav-item"><a href="./" class="gh-nav-link">Home</a></li>
+                        <li class="gh-nav-item"><a href="./about/" class="gh-nav-link">About Us</a></li>
+                        <li class="gh-nav-item">
+                            <a href="javascript:;" class="gh-nav-link">Products <i
+                                    class="fa fa-angle-down m-l5"></i></a>
+                            <div class="gh-dropdown">
+                                <a href="./products/cleanroom-panels/" class="gh-dropdown-link">Cleanroom Panels</a>
+                                <a href="./products/cleanroom-windows/" class="gh-dropdown-link">Cleanroom Windows</a>
+                                <a href="./products/cleanroom-doors/" class="gh-dropdown-link">Cleanroom Doors</a>
+                                <a href="./products/pass-through-chambers/" class="gh-dropdown-link">Pass-Through
+                                    Chambers</a>
+                                <a href="./products/aluminum-profiles/" class="gh-dropdown-link">Aluminum Profiles</a>
+                                <a href="./products/cleanroom-led-lights/" class="gh-dropdown-link">Cleanroom LED
+                                    Lights</a>
+                            </div>
+                        </li>
+                        <li class="gh-nav-item"><a href="./services/" class="gh-nav-link">Services</a></li>
+                        <li class="gh-nav-item">
+                            <a href="javascript:;" class="gh-nav-link">Industries <i
+                                    class="fa fa-angle-down m-l5"></i></a>
+                            <div class="gh-dropdown">
+                                <a href="./industries/pharmaceutical-nutraceutical/"
+                                    class="gh-dropdown-link">Pharmaceutical & Nutraceutical</a>
+                                <a href="./industries/healthcare-hospitals/" class="gh-dropdown-link">Healthcare &
+                                    Hospitals</a>
+                                <a href="./industries/food-beverage/" class="gh-dropdown-link">Food & Beverage</a>
+                                <a href="./industries/electronics-manufacturing/" class="gh-dropdown-link">Electronics
+                                    Manufacturing</a>
+                                <a href="./industries/laboratories-rnd/" class="gh-dropdown-link">Laboratories & R&D</a>
+                                <a href="./industries/medical-surgical-devices/" class="gh-dropdown-link">Medical &
+                                    Surgical Devices</a>
+                            </div>
+                        </li>
+                        <li class="gh-nav-item">
+                            <a href="javascript:;" class="gh-nav-link">Resources <i
+                                    class="fa fa-angle-down m-l5"></i></a>
+                            <div class="gh-dropdown">
+                                <a href="./resources/cleanroom-standards-classifications/"
+                                    class="gh-dropdown-link">Cleanroom Standards</a>
+                                <a href="./resources/blog/" class="gh-dropdown-link">Blog</a>
+                                <a href="./resources/news-events/" class="gh-dropdown-link">News & Events</a>
+                                <a href="./resources/faqs/" class="gh-dropdown-link">FAQs</a>
+                            </div>
+                        </li>
+                        <li class="gh-nav-item"><a href="./contact/" class="gh-nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="gh-actions">
+                    <!-- Dark Mode Toggle -->
+                    <button class="gh-action-btn" data-action="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fa fa-moon-o"></i>
+                    </button>
+                    <!-- Existing Contact Arrow Func -->
+                    <button class="gh-action-btn contact-slide-show" aria-label="Open Contact Panel">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Panel -->
+            <div class="gh-mobile-menu">
+                <ul class="gh-mobile-list">
+                    <li class="gh-mobile-item"><a href="./" class="gh-mobile-link">Home</a></li>
+                    <li class="gh-mobile-item"><a href="./about/" class="gh-mobile-link">About Us</a></li>
+                    <li class="gh-mobile-item">
+                        <div class="gh-mobile-link-wrapper"
+                            style="display:flex; justify-content:space-between; align-items:center;">
+                            <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Products</a>
+                            <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                        </div>
+                        <div class="gh-mobile-submenu">
+                            <a href="./products/cleanroom-panels/" class="gh-mobile-submenu-link">Cleanroom Panels</a>
+                            <a href="./products/cleanroom-windows/" class="gh-mobile-submenu-link">Cleanroom Windows</a>
+                            <a href="./products/cleanroom-doors/" class="gh-mobile-submenu-link">Cleanroom Doors</a>
+                            <a href="./products/pass-through-chambers/" class="gh-mobile-submenu-link">Pass-Through
+                                Chambers</a>
+                            <a href="./products/aluminum-profiles/" class="gh-mobile-submenu-link">Aluminum Profiles</a>
+                            <a href="./products/cleanroom-led-lights/" class="gh-mobile-submenu-link">Cleanroom LED
+                                Lights</a>
+                        </div>
+                    </li>
+                    <li class="gh-mobile-item"><a href="./services/" class="gh-mobile-link">Services</a></li>
+                    <li class="gh-mobile-item">
+                        <div class="gh-mobile-link-wrapper"
+                            style="display:flex; justify-content:space-between; align-items:center;">
+                            <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Industries</a>
+                            <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                        </div>
+                        <div class="gh-mobile-submenu">
+                            <a href="./industries/pharmaceutical-nutraceutical/"
+                                class="gh-mobile-submenu-link">Pharmaceutical & Nutraceutical</a>
+                            <a href="./industries/healthcare-hospitals/" class="gh-mobile-submenu-link">Healthcare &
+                                Hospitals</a>
+                            <a href="./industries/food-beverage/" class="gh-mobile-submenu-link">Food & Beverage</a>
+                            <a href="./industries/electronics-manufacturing/" class="gh-mobile-submenu-link">Electronics
+                                Manufacturing</a>
+                            <a href="./industries/laboratories-rnd/" class="gh-mobile-submenu-link">Laboratories &
+                                R&D</a>
+                            <a href="./industries/medical-surgical-devices/" class="gh-mobile-submenu-link">Medical &
+                                Surgical Devices</a>
+                        </div>
+                    </li>
+                    <li class="gh-mobile-item">
+                        <div class="gh-mobile-link-wrapper"
+                            style="display:flex; justify-content:space-between; align-items:center;">
+                            <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Resources</a>
+                            <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                        </div>
+                        <div class="gh-mobile-submenu">
+                            <a href="./resources/cleanroom-standards-classifications/"
+                                class="gh-mobile-submenu-link">Standards</a>
+                            <a href="./resources/blog/" class="gh-mobile-submenu-link">Blog</a>
+                            <a href="./resources/news-events/" class="gh-mobile-submenu-link">News & Events</a>
+                            <a href="./resources/faqs/" class="gh-mobile-submenu-link">FAQs</a>
+                        </div>
+                    </li>
+                    <li class="gh-mobile-item"><a href="./contact/" class="gh-mobile-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Overlay -->
+            <div class="gh-overlay"></div>
+
+            <!-- KEEP EXISTING CONTACT SLIDE DRAWER UNCHANGED - IT IS TRIGGERED BY .contact-slide-show -->
+            <!-- Contact Nav -->
+            <div class="contact-slide-hide">
+                <div class="contact-nav">
+                    <a class="contact_close" href="javascript:void(0)">×</a>
+                    <div class="contact-nav-form p-a30">
+                        <form action="form-handler.php" class="cons-contact-form" method="post">
+                            <div class="m-b30">
+                                <!-- TITLE START -->
+                                <div class="section-head text-left">
+                                    <h4 class="m-b5">Get In Touch</h4>
+                                </div>
+                                <!-- TITLE END -->
+                                <div class="input input-animate">
+                                    <label for="name">Name</label>
+                                    <input id="name" name="username" required="" type="text" />
+                                    <span class="spin"></span>
+                                </div>
+                                <div class="input input-animate">
+                                    <label for="email">Email</label>
+                                    <input id="email" name="email" required="" type="email" />
+                                    <span class="spin"></span>
+                                </div>
+                                <div class="input input-animate">
+                                    <label for="message">Textarea</label>
+                                    <textarea id="message" name="message" required=""></textarea>
+                                    <span class="spin"></span>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn-half site-button m-b15" name="submit" type="submit"
+                                        value="Submit">
+                                        <span>Submit</span>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="wt-header-center">
-                            <!-- NAV Toggle Button -->
-                            <button class="navbar-toggler collapsed" data-target=".header-nav" data-toggle="collapse"
-                                id="mobile-side-drawer" type="button">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar icon-bar-first"></span>
-                                <span class="icon-bar icon-bar-two"></span>
-                                <span class="icon-bar icon-bar-three"></span>
-                            </button>
-                            <!-- MAIN Vav -->
-                            <div class="header-nav navbar-collapse collapse nav-dark">
-                                <ul class="nav navbar-nav nav-line-animation">
-                                    <li>
-                                        <a href="./">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="./about/">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Products</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="./products/cleanroom-panels/">Cleanroom Panels</a></li>
-                                            <li><a href="./products/cleanroom-windows/">Cleanroom Windows</a></li>
-                                            <li><a href="./products/cleanroom-doors/">Cleanroom Doors</a></li>
-                                            <li><a href="./products/pass-through-chambers/">Pass-Through Chambers</a>
-                                            </li>
-                                            <li><a href="./products/aluminum-profiles/">Aluminum Profiles</a></li>
-                                            <li><a href="./products/cleanroom-led-lights/">Cleanroom LED Lights</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="./services/">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Industries</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="./industries/pharmaceutical-nutraceutical/">Pharmaceutical
-                                                    &amp; Nutraceutical</a></li>
-                                            <li><a href="./industries/healthcare-hospitals/">Healthcare &amp;
-                                                    Hospitals</a></li>
-                                            <li><a href="./industries/food-beverage/">Food &amp; Beverage</a></li>
-                                            <li><a href="./industries/electronics-manufacturing/">Electronics
-                                                    Manufacturing</a></li>
-                                            <li><a href="./industries/laboratories-rnd/">Laboratories &amp; R&amp;D</a>
-                                            </li>
-                                            <li><a href="./industries/medical-surgical-devices/">Medical &amp; Surgical
-                                                    Devices</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Resources</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="./resources/cleanroom-standards-classifications/">Cleanroom
-                                                    Standards &amp; Classifications</a></li>
-                                            <li><a href="./resources/blog/">Blog</a></li>
-                                            <li><a href="./resources/news-events/">News &amp; Events</a></li>
-                                            <li><a href="./resources/faqs/">FAQs</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="./contact/">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wt-header-right">
-                            <div class="site-bg-primary wt-header-right-child">
-                                <!-- ETRA Nav -->
-                                <div class="extra-nav">
-                                    <div class="extra-cell">
-                                        <div class="right-arrow-btn">
-                                            <button class="btn-open contact-slide-show text-white notification-animate"
-                                                type="button"><i class="fa fa-angle-left"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Contact Nav -->
-                        <div class="contact-slide-hide">
-                            <div class="contact-nav">
-                                <a class="contact_close" href="javascript:void(0)">?</a>
-                                <div class="contact-nav-form p-a30">
-                                    <form action="form-handler.php" class="cons-contact-form" method="post">
-                                        <div class="m-b30">
-                                            <!-- TITLE START -->
-                                            <div class="section-head text-left">
-                                                <h4 class="m-b5">Get In Touch</h4>
-                                            </div>
-                                            <!-- TITLE END -->
-                                            <div class="input input-animate">
-                                                <label for="name">Name</label>
-                                                <input id="name" name="username" required="" type="text" />
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="input input-animate">
-                                                <label for="email">Email</label>
-                                                <input id="email" name="email" required="" type="email" />
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="input input-animate">
-                                                <label for="message">Textarea</label>
-                                                <textarea id="message" name="message" required=""></textarea>
-                                                <span class="spin"></span>
-                                            </div>
-                                            <div class="text-right">
-                                                <button class="btn-half site-button m-b15" name="submit" type="submit"
-                                                    value="Submit">
-                                                    <span>Submit</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="contact-info text-black m-b30">
-                                        <!-- TITLE START -->
-                                        <div class="section-head text-left">
-                                            <h4 class="m-b5">Contact Info</h4>
-                                        </div>
-                                        <!-- TITLE END -->
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-smartphone icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Phone number</h5>
-                                                <p>92 321 8073738</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-email icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Email address</h5>
-                                                <p>info@pakgusu.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="wt-icon-box-wraper left icon-shake-outer">
-                                            <div class="icon-xs"><i class="flaticon-placeholder icon-shake"></i></div>
-                                            <div class="icon-content">
-                                                <h5 class="m-t0 font-weight-500">Address info</h5>
-                                                <p>8-Km, Sundar-Raiwand Road, Lahore, Pakistan</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         </form>
+                        <div class="contact-info text-black m-b30">
+                            <!-- TITLE START -->
+                            <div class="section-head text-left">
+                                <h4 class="m-b5">Contact Info</h4>
+                            </div>
+                            <!-- TITLE END -->
+                            <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                <div class="icon-xs"><i class="flaticon-smartphone icon-shake"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Phone number</h5>
+                                    <p>92 321 8073738</p>
+                                </div>
+                            </div>
+                            <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                <div class="icon-xs"><i class="flaticon-email icon-shake"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Email address</h5>
+                                    <p>info@pakgusu.com</p>
+                                </div>
+                            </div>
+                            <div class="wt-icon-box-wraper left icon-shake-outer">
+                                <div class="icon-xs"><i class="flaticon-placeholder icon-shake"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Address info</h5>
+                                    <p>8-Km, Sundar-Raiwand Road, Lahore, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </header>
-    <!-- HEADER END -->
-    <!-- CONTENT START -->
-    <div class="rev_slider_wrapper fullscreen-container" data-alias="beforeafterslider1" data-source="gallery"
-        id="rev_slider_346_1_wrapper" style="background:#252525;padding:0px;">
-        <!-- START REVOLUTION SLIDER 5.4.3.3 fullscreen mode -->
-        <div class="rev_slider fullscreenbanner" data-version="5.4.3.3" id="rev_slider_346_1" style="display:none;">
-            <ul>
-                <!-- SLIDE 1 -->
-                <li data-beforeafter='{"moveto":"50%|50%|50%|50%","bgColor":"#e7e7e7","bgType":"image","bgImage":"images/main-slider/slider3/slide1.jpg","bgFit":"cover","bgPos":"center center","bgRepeat":"no-repeat","direction":"horizontal","easing":"Power2.easeInOut","delay":"500","time":"750","out":"fade","carousel":false}'
-                    data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0"
-                    data-hideslideonmobile="off" data-index="rs-964" data-masterspeed="default" data-param1=""
-                    data-param10='{"revslider-weather-addon" : { "type" : "" ,"name" : "" ,"woeid" : "" ,"unit" : "" }}'
-                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
-                    data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default"
-                    data-thumb="" data-title="Slide" data-transition="fade">
-                    <!-- MAIN IMAGE -->
-                    <img alt="" class="rev-slidebg" data-beforeafter="after" data-bgcolor="" data-bgfit="cover"
-                        data-bgparallax="off" data-bgposition="center center" data-bgrepeat="no-repeat"
-                        data-no-retina="" src="./images/main-slider/slider3/slide1-b.jpg" />
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 1 text -->
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="before"
-                        data-fontsize="['80','80','60','40']"
-                        data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
+        </header>
+        <!-- HEADER END -->
+        <!-- HEADER END -->
+        <!-- CONTENT START -->
+        <div class="rev_slider_wrapper fullscreen-container" data-alias="beforeafterslider1" data-source="gallery"
+            id="rev_slider_346_1_wrapper" style="background:#252525;padding:0px;">
+            <!-- START REVOLUTION SLIDER 5.4.3.3 fullscreen mode -->
+            <div class="rev_slider fullscreenbanner" data-version="5.4.3.3" id="rev_slider_346_1" style="display:none;">
+                <ul>
+                    <!-- SLIDE 1 -->
+                    <li data-beforeafter='{"moveto":"50%|50%|50%|50%","bgColor":"#e7e7e7","bgType":"image","bgImage":"images/main-slider/slider3/slide1.jpg","bgFit":"cover","bgPos":"center center","bgRepeat":"no-repeat","direction":"horizontal","easing":"Power2.easeInOut","delay":"500","time":"750","out":"fade","carousel":false}'
+                        data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0"
+                        data-hideslideonmobile="off" data-index="rs-964" data-masterspeed="default" data-param1=""
+                        data-param10='{"revslider-weather-addon" : { "type" : "" ,"name" : "" ,"woeid" : "" ,"unit" : "" }}'
+                        data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                        data-param8="" data-param9="" data-rotate="0" data-saveperformance="off"
+                        data-slotamount="default" data-thumb="" data-title="Slide" data-transition="fade">
+                        <!-- MAIN IMAGE -->
+                        <img alt="" class="rev-slidebg" data-beforeafter="after" data-bgcolor="" data-bgfit="cover"
+                            data-bgparallax="off" data-bgposition="center center" data-bgrepeat="no-repeat"
+                            data-no-retina="" src="./images/main-slider/slider3/slide1-b.jpg" />
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 text -->
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="before"
+                            data-fontsize="['80','80','60','40']"
+                            data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-height="none"
-                        data-hoffset="['0','0','0','0']" data-letterspacing="['2','2','2','1']"
-                        data-lineheight="['90','90','70','50']" data-paddingbottom="[0,0,0,0]"
-                        data-paddingleft="[50,50,50,50]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                        data-responsive_offset="on" data-textalign="['center','center','center','center']"
-                        data-type="text" data-voffset="['200','200','200','0']" data-whitespace="normal"
-                        data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']"
-                        id="slide-964-layer-1"
-                        style="z-index: 16; white-space: normal; font-size: 80px; line-height: 90px; font-weight: 700; color: #000; letter-spacing: 2px;font-family: 'Martel', serif;text-transform:uppercase;">
-                        Turnkey Cleanroom Solutions</div>
-                    <!-- LAYER NR. 2 text -->
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="before"
-                        data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
+                            data-hoffset="['0','0','0','0']" data-letterspacing="['2','2','2','1']"
+                            data-lineheight="['90','90','70','50']" data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[50,50,50,50]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
+                            data-responsive_offset="on" data-textalign="['center','center','center','center']"
+                            data-type="text" data-voffset="['200','200','200','0']" data-whitespace="normal"
+                            data-x="['center','center','center','center']"
+                            data-y="['middle','middle','middle','middle']" id="slide-964-layer-1"
+                            style="z-index: 16; white-space: normal; font-size: 80px; line-height: 90px; font-weight: 700; color: #000; letter-spacing: 2px;font-family: 'Martel', serif;text-transform:uppercase;">
+                            Turnkey Cleanroom Solutions</div>
+                        <!-- LAYER NR. 2 text -->
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="before"
+                            data-frames='[{"delay":600,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','0']"
-                        data-paddingbottom="[0,0,0,0]" data-paddingleft="[5,5,5,5]" data-paddingright="[0,0,0,0]"
-                        data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                        data-textalign="['center','center','center','center']" data-type="text"
-                        data-voffset="['300','300','300','100']" data-whitespace="normal"
-                        data-width="['960','960','960','320']" data-x="['center','center','center','center']"
-                        data-y="['middle','middle','middle','middle']" id="slide-964-layer-2"
-                        style="z-index: 11; min-width: 960px; max-width: 960px; white-space: normal; font-size: 18px; line-height: 28px; font-weight: 400; color: #000; letter-spacing: 2px;font-family:Montserrat;text-transform:uppercase;">
-                        Build World-Class Modular Cleanrooms Locally in Pakistan.</div>
-                    <!-- SLIDE RIGHT PART START-->
-                    <!-- LAYER NR. 1  text-->
-                    <div class="tp-caption tp-resizeme tp-blackshadow rs-parallaxlevel-5" data-beforeafter="after"
-                        data-fontsize="['80','80','60','40']"
-                        data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
+                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[5,5,5,5]" data-paddingright="[0,0,0,0]"
+                            data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
+                            data-textalign="['center','center','center','center']" data-type="text"
+                            data-voffset="['300','300','300','100']" data-whitespace="normal"
+                            data-width="['960','960','960','320']" data-x="['center','center','center','center']"
+                            data-y="['middle','middle','middle','middle']" id="slide-964-layer-2"
+                            style="z-index: 11; min-width: 960px; max-width: 960px; white-space: normal; font-size: 18px; line-height: 28px; font-weight: 400; color: #000; letter-spacing: 2px;font-family:Montserrat;text-transform:uppercase;">
+                            Build World-Class Modular Cleanrooms Locally in Pakistan.</div>
+                        <!-- SLIDE RIGHT PART START-->
+                        <!-- LAYER NR. 1  text-->
+                        <div class="tp-caption tp-resizeme tp-blackshadow rs-parallaxlevel-5" data-beforeafter="after"
+                            data-fontsize="['80','80','60','40']"
+                            data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-height="none"
-                        data-hoffset="['0','0','0','0']" data-letterspacing="['2','2','2','1']"
-                        data-lineheight="['90','90','70','50']" data-paddingbottom="[0,0,0,0]"
-                        data-paddingleft="[50,50,50,50]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                        data-responsive_offset="on" data-textalign="['center','center','center','center']"
-                        data-type="text" data-voffset="['200','200','200','0']" data-whitespace="normal"
-                        data-width="none" data-x="['center','center','center','center']"
-                        data-y="['middle','middle','middle','middle']" id="slide-964-layer-4"
-                        style="z-index: 16; white-space: normal; font-size: 80px; line-height: 90px; font-weight: 700; color: #ffffff; letter-spacing: 2px;font-family: 'Martel', serif;text-transform:uppercase;">
-                        Turnkey Cleanroom Solutions</div>
-                    <!-- LAYER NR. 2 text -->
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="after"
-                        data-frames='[{"delay":2100,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
+                            data-hoffset="['0','0','0','0']" data-letterspacing="['2','2','2','1']"
+                            data-lineheight="['90','90','70','50']" data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[50,50,50,50]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
+                            data-responsive_offset="on" data-textalign="['center','center','center','center']"
+                            data-type="text" data-voffset="['200','200','200','0']" data-whitespace="normal"
+                            data-width="none" data-x="['center','center','center','center']"
+                            data-y="['middle','middle','middle','middle']" id="slide-964-layer-4"
+                            style="z-index: 16; white-space: normal; font-size: 80px; line-height: 90px; font-weight: 700; color: #ffffff; letter-spacing: 2px;font-family: 'Martel', serif;text-transform:uppercase;">
+                            Turnkey Cleanroom Solutions</div>
+                        <!-- LAYER NR. 2 text -->
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-5" data-beforeafter="after"
+                            data-frames='[{"delay":2100,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},
                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-height="none" data-hoffset="['0','0','0','0']"
-                        data-paddingbottom="[0,0,0,0]" data-paddingleft="[5,5,5,5]" data-paddingright="[0,0,0,0]"
-                        data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                        data-textalign="['center','center','center','center']" data-type="text"
-                        data-voffset="['300','300','300','100']" data-whitespace="normal"
-                        data-width="['960','960','960','320']" data-x="['center','center','center','center']"
-                        data-y="['middle','middle','middle','middle']" id="slide-964-layer-5"
-                        style="z-index: 17; min-width: 960px; max-width: 960px; white-space: normal; font-size: 18px; line-height: 28px; font-weight: 400; color: #ffffff; letter-spacing: 2px;font-family:Montserrat;text-transform:uppercase;">
-                        Build World-Class Modular Cleanrooms Locally in Pakistan.
-                    </div>
-                    <!-- LAYER NR. 3  button-->
-                </li>
-            </ul>
-            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
-                <span class="mouse">
-                    <span class="wheel"></span>
-                </span>
+                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[5,5,5,5]" data-paddingright="[0,0,0,0]"
+                            data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
+                            data-textalign="['center','center','center','center']" data-type="text"
+                            data-voffset="['300','300','300','100']" data-whitespace="normal"
+                            data-width="['960','960','960','320']" data-x="['center','center','center','center']"
+                            data-y="['middle','middle','middle','middle']" id="slide-964-layer-5"
+                            style="z-index: 17; min-width: 960px; max-width: 960px; white-space: normal; font-size: 18px; line-height: 28px; font-weight: 400; color: #ffffff; letter-spacing: 2px;font-family:Montserrat;text-transform:uppercase;">
+                            Build World-Class Modular Cleanrooms Locally in Pakistan.
+                        </div>
+                        <!-- LAYER NR. 3  button-->
+                    </li>
+                </ul>
+                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'});">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                </div>
             </div>
-        </div>
-    </div><!-- /Section: Hero -->
-    <!-- Section: Intro Hero (Redesigned: Cleanroom Manufacturer) -->
-    <div id="intro-hero-section">
-        <!-- Background Accent -->
-        <div class="hero-accent-shape"></div>
+        </div><!-- /Section: Hero -->
+        <!-- Section: Intro Hero (Redesigned: Cleanroom Manufacturer) -->
+        <div id="intro-hero-section">
+            <!-- Background Accent -->
+            <div class="hero-accent-shape"></div>
 
-        <div class="container">
-            <div class="row align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
 
-                <!-- Left Column: Content Panel -->
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero-content-panel fade-in-up">
+                    <!-- Left Column: Content Panel -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content-panel fade-in-up">
 
-                        <!-- Premium Heading -->
-                        <div class="section-head text-left">
-                            <div class="wt-separator-outer separator-left">
-                                <div class="wt-separator">
-                                    <span class="site-text-primary text-uppercase sep-line-one">About PakGusu</span>
+                            <!-- Premium Heading -->
+                            <div class="section-head text-left">
+                                <div class="wt-separator-outer separator-left">
+                                    <div class="wt-separator">
+                                        <span class="site-text-primary text-uppercase sep-line-one">About PakGusu</span>
+                                    </div>
                                 </div>
+                                <h2>Cleanroom Manufacturer in Pakistan</h2>
                             </div>
-                            <h2>Cleanroom Manufacturer in Pakistan</h2>
-                        </div>
 
-                        <!-- Intro Text -->
-                        <div class="hero-desc">
-                            <p>PakGusu Technology (Pvt) Ltd is a leading <strong>cleanroom manufacturer in
-                                    Pakistan</strong>, delivering turnkey <strong>modular cleanroom solutions</strong>
-                                for pharmaceutical, healthcare, electronics, food, and research industries. Backed by
-                                our strategic partnership with <strong>GUSU Purification (China)</strong>, we combine
-                                global cleanroom expertise with local manufacturing and on-ground support.</p>
-                        </div>
+                            <!-- Intro Text -->
+                            <div class="hero-desc">
+                                <p>PakGusu Technology (Pvt) Ltd is a leading <strong>cleanroom manufacturer in
+                                        Pakistan</strong>, delivering turnkey <strong>modular cleanroom
+                                        solutions</strong>
+                                    for pharmaceutical, healthcare, electronics, food, and research industries. Backed
+                                    by
+                                    our strategic partnership with <strong>GUSU Purification (China)</strong>, we
+                                    combine
+                                    global cleanroom expertise with local manufacturing and on-ground support.</p>
+                            </div>
 
-                        <!-- Modern Accordion -->
-                        <div class="wt-accordion hero-accordion" id="accordion5">
-                            <!-- Item 1 -->
-                            <div class="panel">
-                                <div class="acod-head acc-actives">
-                                    <h6 class="acod-title">
-                                        <a data-bs-toggle="collapse" href="#collapseOne5">
-                                            Turnkey Design & Build
-                                            <span class="indicator"><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </h6>
+                            <!-- Modern Accordion -->
+                            <div class="wt-accordion hero-accordion" id="accordion5">
+                                <!-- Item 1 -->
+                                <div class="panel">
+                                    <div class="acod-head acc-actives">
+                                        <h6 class="acod-title">
+                                            <a data-bs-toggle="collapse" href="#collapseOne5">
+                                                Turnkey Design & Build
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="acod-body collapse show" data-bs-parent="#accordion5" id="collapseOne5">
+                                        <div class="acod-content">We offer end-to-end solutions including design,
+                                            manufacturing, installation, and validation of cleanroom systems tailored to
+                                            your specific needs.</div>
+                                    </div>
                                 </div>
-                                <div class="acod-body collapse show" data-bs-parent="#accordion5" id="collapseOne5">
-                                    <div class="acod-content">We offer end-to-end solutions including design,
-                                        manufacturing, installation, and validation of cleanroom systems tailored to
-                                        your specific needs.</div>
+                                <!-- Item 2 -->
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo5">
+                                                ISO-Classified Environments
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="acod-body collapse" data-bs-parent="#accordion5" id="collapseTwo5">
+                                        <div class="acod-content">Our solutions are engineered to meet ISO 14644-1
+                                            cleanroom
+                                            classes (ISO 5–8) and GMP guidelines, ensuring regulatory compliance.</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="panel">
-                                <div class="acod-head">
-                                    <h6 class="acod-title">
-                                        <a class="collapsed" data-bs-toggle="collapse" href="#collapseTwo5">
-                                            ISO-Classified Environments
-                                            <span class="indicator"><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </h6>
-                                </div>
-                                <div class="acod-body collapse" data-bs-parent="#accordion5" id="collapseTwo5">
-                                    <div class="acod-content">Our solutions are engineered to meet ISO 14644-1 cleanroom
-                                        classes (ISO 5–8) and GMP guidelines, ensuring regulatory compliance.</div>
-                                </div>
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="panel">
-                                <div class="acod-head">
-                                    <h6 class="acod-title">
-                                        <a class="collapsed" data-bs-toggle="collapse" href="#collapseThree5">
-                                            Local Manufacturing Support
-                                            <span class="indicator"><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </h6>
-                                </div>
-                                <div class="acod-body collapse" data-bs-parent="#accordion5" id="collapseThree5">
-                                    <div class="acod-content">Benefit from local production for faster lead times, cost
-                                        efficiency, and dedicated after-sales support for maintenance and upgrades.
+                                <!-- Item 3 -->
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a class="collapsed" data-bs-toggle="collapse" href="#collapseThree5">
+                                                Local Manufacturing Support
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div class="acod-body collapse" data-bs-parent="#accordion5" id="collapseThree5">
+                                        <div class="acod-content">Benefit from local production for faster lead times,
+                                            cost
+                                            efficiency, and dedicated after-sales support for maintenance and upgrades.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-                <!-- Right Column: Visual Frame -->
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero-visual-frame fade-in-up" style="animation-delay: 0.2s;">
+                    <!-- Right Column: Visual Frame -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-visual-frame fade-in-up" style="animation-delay: 0.2s;">
 
-                        <!-- Main Slider (Sync 1) -->
-                        <div class="hero-main-slider-wrap">
-                            <div class="owl-carousel owl-theme" id="sync1">
-                                <div class="item">
-                                    <div class="wt-box"><img src="./images/gallery/portrait-2/pic1.jpg"
-                                            alt="Cleanroom 1"></div>
-                                </div>
-                                <div class="item">
-                                    <div class="wt-box"><img src="./images/gallery/portrait-2/pic2.jpg"
-                                            alt="Cleanroom 2"></div>
-                                </div>
-                                <div class="item">
-                                    <div class="wt-box"><img src="./images/gallery/portrait-2/pic3.jpg"
-                                            alt="Cleanroom 3"></div>
-                                </div>
-                                <div class="item">
-                                    <div class="wt-box"><img src="./images/gallery/portrait-2/pic4.jpg"
-                                            alt="Cleanroom 4"></div>
-                                </div>
-                                <div class="item">
-                                    <div class="wt-box"><img src="./images/gallery/portrait-2/pic5.jpg"
-                                            alt="Cleanroom 5"></div>
+                            <!-- Main Slider (Sync 1) -->
+                            <div class="hero-main-slider-wrap">
+                                <div class="owl-carousel owl-theme" id="sync1">
+                                    <div class="item">
+                                        <div class="wt-box"><img src="./images/gallery/portrait-2/pic1.jpg"
+                                                alt="Cleanroom 1"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="wt-box"><img src="./images/gallery/portrait-2/pic2.jpg"
+                                                alt="Cleanroom 2"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="wt-box"><img src="./images/gallery/portrait-2/pic3.jpg"
+                                                alt="Cleanroom 3"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="wt-box"><img src="./images/gallery/portrait-2/pic4.jpg"
+                                                alt="Cleanroom 4"></div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="wt-box"><img src="./images/gallery/portrait-2/pic5.jpg"
+                                                alt="Cleanroom 5"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Thumbnails (Sync 2) -->
-                        <div class="hero-thumbs-wrap">
-                            <div class="owl-carousel owl-theme" id="sync2">
-                                <div class="item"><img src="./images/gallery/thumb/pic1.jpg" alt="Thumb 1"></div>
-                                <div class="item"><img src="./images/gallery/thumb/pic2.jpg" alt="Thumb 2"></div>
-                                <div class="item"><img src="./images/gallery/thumb/pic3.jpg" alt="Thumb 3"></div>
-                                <div class="item"><img src="./images/gallery/thumb/pic4.jpg" alt="Thumb 4"></div>
-                                <div class="item"><img src="./images/gallery/thumb/pic5.jpg" alt="Thumb 5"></div>
+                            <!-- Thumbnails (Sync 2) -->
+                            <div class="hero-thumbs-wrap">
+                                <div class="owl-carousel owl-theme" id="sync2">
+                                    <div class="item"><img src="./images/gallery/thumb/pic1.jpg" alt="Thumb 1"></div>
+                                    <div class="item"><img src="./images/gallery/thumb/pic2.jpg" alt="Thumb 2"></div>
+                                    <div class="item"><img src="./images/gallery/thumb/pic3.jpg" alt="Thumb 3"></div>
+                                    <div class="item"><img src="./images/gallery/thumb/pic4.jpg" alt="Thumb 4"></div>
+                                    <div class="item"><img src="./images/gallery/thumb/pic5.jpg" alt="Thumb 5"></div>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
-    <!-- /Section: Intro Hero -->
+        <!-- /Section: Intro Hero -->
 
-    <!-- Section: Cleanroom Products -->
-    <!-- Section: Cleanroom Products (Redesigned) -->
-    <div id="cleanroom-products-section" class="section-full p-t80 p-b80">
-        <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center fade-in-up m-b60">
-                <div class="wt-separator-outer separator-center">
-                    <div class="wt-separator">
-                        <span class="site-text-primary text-uppercase sep-line-one">Manufactured in Pakistan</span>
-                    </div>
-                </div>
-                <h2>Cleanroom Products</h2>
-                <p class="m-auto w-75">PakGusu offers a full range of <strong>cleanroom components</strong> that
-                    integrate seamlessly into a modular system.</p>
-            </div>
-            <!-- TITLE END -->
-
-            <!-- NEW PRODUCT GRID -->
-            <div class="products-grid">
-
-                <!-- 1. Cleanroom Panels -->
-                <div class="product-card-wrap fade-in-up">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic1.jpg" alt="Cleanroom Panels">
-                            <div class="product-badge"><i class="fa fa-th-large"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Cleanroom Panels</h4>
-                            <p>Insulated wall and ceiling panels with smooth, non-shedding finishes for contamination
-                                control.</p>
-                            <a href="./products/cleanroom-panels/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Cleanroom Windows -->
-                <div class="product-card-wrap fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic2.jpg" alt="Cleanroom Windows">
-                            <div class="product-badge"><i class="fa fa-window-maximize"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Cleanroom Windows</h4>
-                            <p>Flush double-glazed vision panels for safe observation between zones.</p>
-                            <a href="./products/cleanroom-windows/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Cleanroom Doors -->
-                <div class="product-card-wrap fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic3.jpg" alt="Cleanroom Doors">
-                            <div class="product-badge"><i class="fa fa-columns"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Cleanroom Doors</h4>
-                            <p>Airtight swing and sliding doors with robust seals and optional interlocks.</p>
-                            <a href="./products/cleanroom-doors/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Pass-Through Chambers -->
-                <div class="product-card-wrap fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic4.jpg" alt="Pass-Through Chambers">
-                            <div class="product-badge"><i class="fa fa-exchange"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Pass-Through Chambers</h4>
-                            <p>Static and dynamic transfer boxes for safe material transfer.</p>
-                            <a href="./products/pass-through-chambers/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Aluminum Profiles -->
-                <div class="product-card-wrap fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic5.jpg" alt="Aluminum Profiles">
-                            <div class="product-badge"><i class="fa fa-bars"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Aluminum Profiles</h4>
-                            <p>Structural and coving profiles for robust, hygienic junctions.</p>
-                            <a href="./products/aluminum-profiles/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Cleanroom LED Lights -->
-                <div class="product-card-wrap fade-in-up" style="animation-delay: 0.5s;">
-                    <div class="product-card">
-                        <div class="product-media">
-                            <img src="./images/gallery/pic6.jpg" alt="Cleanroom LED Lights">
-                            <div class="product-badge"><i class="fa fa-lightbulb-o"></i></div>
-                        </div>
-                        <div class="product-details">
-                            <h4>Cleanroom LED Lights</h4>
-                            <p>Sealed, energy-efficient LED panels for uniform illumination.</p>
-                            <a href="./products/cleanroom-led-lights/" class="product-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- /Section: Cleanroom Products -->
-    <!-- Section: Industries We Serve (Redesigned: Cleanroom Windows) -->
-    <div id="industries-we-serve-section" class="section-full">
-        <!-- Tech Overlay -->
-        <div class="tech-grid-overlay"></div>
-
-        <div class="container-fluid"> <!-- Fluid for full width slider effect -->
-            <!-- TITLE START -->
-            <div class="section-head text-center fade-in-up">
-                <div class="wt-separator-outer separator-center">
-                    <div class="wt-separator">
-                        <span class="site-text-primary text-uppercase sep-line-one">Industries We Serve</span>
-                    </div>
-                </div>
-                <h2>Our cleanroom solutions are trusted across multiple sectors</h2>
-            </div>
-            <!-- TITLE END -->
-        </div>
-
-        <div class="container-fluid p-0"> <!-- Full width wrapper for slider -->
-            <div class="cleanroom-window-slider owl-carousel owl-theme">
-
-                <!-- Industry 1 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/1.jpg" alt="Pharmaceutical & Nutraceutical">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-medkit"></i></div>
-                            <h4 class="card-title">Pharmaceutical</h4>
-                            <p class="card-desc">GMP-compliant manufacturing and R&D environments.</p>
-                            <a href="./industries/pharmaceutical-nutraceutical/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry 2 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/2.jpg" alt="Healthcare & Hospitals">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-hospital-o"></i></div>
-                            <h4 class="card-title">Healthcare</h4>
-                            <p class="card-desc">Operating theatres, isolation rooms, and aseptic areas.</p>
-                            <a href="./industries/healthcare-hospitals/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry 3 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/3.jpg" alt="Food & Beverage">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-cutlery"></i></div>
-                            <h4 class="card-title">Food & Beverage</h4>
-                            <p class="card-desc">Hygienic processing, packaging, and bottling zones.</p>
-                            <a href="./industries/food-beverage/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry 4 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/4.jpg" alt="Electronics Manufacturing">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-microchip"></i></div>
-                            <h4 class="card-title">Electronics</h4>
-                            <p class="card-desc">ESD-safe cleanrooms for semi-conductor assembly.</p>
-                            <a href="./industries/electronics-manufacturing/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry 5 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/5.jpg" alt="Laboratories & R&D">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-flask"></i></div>
-                            <h4 class="card-title">Laboratories & R&D</h4>
-                            <p class="card-desc">Controlled environments for precision research.</p>
-                            <a href="./industries/laboratories-rnd/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry 6 -->
-                <div class="item">
-                    <div class="cleanroom-card">
-                        <div class="card-image-viewport">
-                            <img src="./images/project/6.jpg" alt="Medical Devices">
-                            <div class="card-overlay-scan"></div>
-                        </div>
-                        <div class="card-content">
-                            <div class="industry-icon"><i class="fa fa-stethoscope"></i></div>
-                            <h4 class="card-title">Medical Devices</h4>
-                            <p class="card-desc">Sterile assembly and packaging for surgical tools.</p>
-                            <a href="./industries/medical-surgical-devices/" class="card-cta">Explore Sector</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Custom Navigation Containers (Hooks for JS) -->
-            <div class="slider-nav-container">
-                <div class="cleanroom-nav-btn prev-slide"><i class="fa fa-angle-left"></i></div>
-                <div class="cleanroom-nav-btn next-slide"><i class="fa fa-angle-right"></i></div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Section: Turnkey Cleanroom Services (Redesigned) -->
-    <div id="turnkey-services-section" class="section-full p-t80 p-b50">
-        <div class="container">
-            <div class="section-content">
+        <!-- Section: Cleanroom Products -->
+        <!-- Section: Cleanroom Products (Redesigned) -->
+        <div id="cleanroom-products-section" class="section-full p-t80 p-b80">
+            <div class="container">
                 <!-- TITLE START -->
-                <div class="section-head text-center fade-in-up m-b50">
+                <div class="section-head text-center fade-in-up m-b60">
                     <div class="wt-separator-outer separator-center">
                         <div class="wt-separator">
-                            <span class="site-text-primary text-uppercase sep-line-one">End-to-End Solutions</span>
+                            <span class="site-text-primary text-uppercase sep-line-one">Manufactured in Pakistan</span>
                         </div>
                     </div>
-                    <h2>Turnkey Cleanroom Services</h2>
-                    <p class="m-auto w-75 d-none d-md-block">Detailed planning, precise construction, and comprehensive
-                        support for your facility.</p>
+                    <h2>Cleanroom Products</h2>
+                    <p class="m-auto w-75">PakGusu offers a full range of <strong>cleanroom components</strong> that
+                        integrate seamlessly into a modular system.</p>
                 </div>
                 <!-- TITLE END -->
 
-                <!-- SERVICE CARDS START -->
-                <div class="row d-flex justify-content-center">
+                <!-- NEW PRODUCT GRID -->
+                <div class="products-grid">
 
-                    <!-- Card 1: Planning -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
-                        <div class="turnkey-card">
-                            <div class="turnkey-media">
-                                <img src="./images/our-team5/pic1.jpg" alt="Cleanroom Planning & Design" />
-                                <div class="turnkey-overlay"></div>
+                    <!-- 1. Cleanroom Panels -->
+                    <div class="product-card-wrap fade-in-up">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic1.jpg" alt="Cleanroom Panels">
+                                <div class="product-badge"><i class="fa fa-th-large"></i></div>
                             </div>
-                            <div class="turnkey-content">
-                                <div class="turnkey-icon">
-                                    <i class="fa fa-pencil-square-o"></i>
-                                </div>
-                                <h4 class="wt-title">Planning &amp; Design</h4>
-                                <p>Conceptual design, layout optimization, airflow analysis, and classification
-                                    planning.</p>
-                                <a href="./services/" class="turnkey-btn">Read More <i
-                                        class="fa fa-angle-right"></i></a>
+                            <div class="product-details">
+                                <h4>Cleanroom Panels</h4>
+                                <p>Insulated wall and ceiling panels with smooth, non-shedding finishes for
+                                    contamination
+                                    control.</p>
+                                <a href="./products/cleanroom-panels/" class="product-link">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2: Construction -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
-                        <div class="turnkey-card">
-                            <div class="turnkey-media">
-                                <img src="./images/our-team5/pic2.jpg" alt="Cleanroom Construction" />
-                                <div class="turnkey-overlay"></div>
+                    <!-- 2. Cleanroom Windows -->
+                    <div class="product-card-wrap fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic2.jpg" alt="Cleanroom Windows">
+                                <div class="product-badge"><i class="fa fa-window-maximize"></i></div>
                             </div>
-                            <div class="turnkey-content">
-                                <div class="turnkey-icon">
-                                    <i class="fa fa-building-o"></i>
-                                </div>
-                                <h4 class="wt-title">Cleanroom Construction</h4>
-                                <p>Modular cleanroom build using our locally manufactured high-quality panels.</p>
-                                <a href="./services/" class="turnkey-btn">Read More <i
-                                        class="fa fa-angle-right"></i></a>
+                            <div class="product-details">
+                                <h4>Cleanroom Windows</h4>
+                                <p>Flush double-glazed vision panels for safe observation between zones.</p>
+                                <a href="./products/cleanroom-windows/" class="product-link">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3: Installation -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
-                        <div class="turnkey-card">
-                            <div class="turnkey-media">
-                                <img src="./images/our-team5/pic3.jpg" alt="Installation & Commissioning" />
-                                <div class="turnkey-overlay"></div>
+                    <!-- 3. Cleanroom Doors -->
+                    <div class="product-card-wrap fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic3.jpg" alt="Cleanroom Doors">
+                                <div class="product-badge"><i class="fa fa-columns"></i></div>
                             </div>
-                            <div class="turnkey-content">
-                                <div class="turnkey-icon">
-                                    <i class="fa fa-cogs"></i>
-                                </div>
-                                <h4 class="wt-title">Installation &amp; Commissioning</h4>
-                                <p>Equipment installation, HVAC balancing, and rigorous performance testing.</p>
-                                <a href="./services/" class="turnkey-btn">Read More <i
-                                        class="fa fa-angle-right"></i></a>
+                            <div class="product-details">
+                                <h4>Cleanroom Doors</h4>
+                                <p>Airtight swing and sliding doors with robust seals and optional interlocks.</p>
+                                <a href="./products/cleanroom-doors/" class="product-link">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 4: Support -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
-                        <div class="turnkey-card">
-                            <div class="turnkey-media">
-                                <img src="./images/our-team5/pic1.jpg" alt="After-Sales Support" />
-                                <div class="turnkey-overlay"></div>
+                    <!-- 4. Pass-Through Chambers -->
+                    <div class="product-card-wrap fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic4.jpg" alt="Pass-Through Chambers">
+                                <div class="product-badge"><i class="fa fa-exchange"></i></div>
                             </div>
-                            <div class="turnkey-content">
-                                <div class="turnkey-icon">
-                                    <i class="fa fa-life-ring"></i>
-                                </div>
-                                <h4 class="wt-title">After-Sales Support</h4>
-                                <p>Scheduled maintenance, real-time monitoring, and periodic re-validation services.</p>
-                                <a href="./services/" class="turnkey-btn">Read More <i
-                                        class="fa fa-angle-right"></i></a>
+                            <div class="product-details">
+                                <h4>Pass-Through Chambers</h4>
+                                <p>Static and dynamic transfer boxes for safe material transfer.</p>
+                                <a href="./products/pass-through-chambers/" class="product-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Aluminum Profiles -->
+                    <div class="product-card-wrap fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic5.jpg" alt="Aluminum Profiles">
+                                <div class="product-badge"><i class="fa fa-bars"></i></div>
+                            </div>
+                            <div class="product-details">
+                                <h4>Aluminum Profiles</h4>
+                                <p>Structural and coving profiles for robust, hygienic junctions.</p>
+                                <a href="./products/aluminum-profiles/" class="product-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Cleanroom LED Lights -->
+                    <div class="product-card-wrap fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="./images/gallery/pic6.jpg" alt="Cleanroom LED Lights">
+                                <div class="product-badge"><i class="fa fa-lightbulb-o"></i></div>
+                            </div>
+                            <div class="product-details">
+                                <h4>Cleanroom LED Lights</h4>
+                                <p>Sealed, energy-efficient LED panels for uniform illumination.</p>
+                                <a href="./products/cleanroom-led-lights/" class="product-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -804,144 +635,593 @@
                 </div>
             </div>
         </div>
-    </div><!-- /Section: Turnkey Cleanroom Services -->
+        <!-- /Section: Cleanroom Products -->
+        <!-- Section: Industries We Serve (Redesigned: Cleanroom Windows) -->
+        <div id="industries-we-serve-section" class="section-full">
+            <!-- Tech Overlay -->
+            <div class="tech-grid-overlay"></div>
 
-    <!-- Section: global-presence -->
-    <link rel="stylesheet" type="text/css" href="css/global-presence-master.css">
-
-    <section id="global-presence-section">
-        <div class="container">
-            <!-- Header -->
-            <header class="gp-header">
-                <span class="gp-eyebrow">Global Reach</span>
-                <h2 class="gp-title">Our Cleanroom Solutions Across the World</h2>
-                <p class="gp-subtitle">
-                    Combining our local manufacturing hub in <strong>Lahore</strong> with our strategic partnership with
-                    <strong>GUSU Purification (China)</strong> to deliver turnkey success globally.
-                </p>
-            </header>
-
-            <!-- Main Grid -->
-            <div class="gp-grid">
-
-                <!-- Map Panel (Left) -->
-                <div class="gp-map-card">
-                    <div class="gp-map-viewport">
-                        <div class="gp-map-bg"></div>
-                        <div id="gp-map-markers">
-                            <!-- Markers injected by JS -->
+            <div class="container-fluid"> <!-- Fluid for full width slider effect -->
+                <!-- TITLE START -->
+                <div class="section-head text-center fade-in-up">
+                    <div class="wt-separator-outer separator-center">
+                        <div class="wt-separator">
+                            <span class="site-text-primary text-uppercase sep-line-one">Industries We Serve</span>
                         </div>
+                    </div>
+                    <h2>Our cleanroom solutions are trusted across multiple sectors</h2>
+                </div>
+                <!-- TITLE END -->
+            </div>
 
-                        <!-- Dynamic Tooltip -->
-                        <div id="gp-tooltip" class="gp-tooltip">
-                            <h5 id="gp-tooltip-city">City</h5>
-                            <p id="gp-tooltip-desc">Description</p>
+            <div class="container-fluid p-0"> <!-- Full width wrapper for slider -->
+                <div class="cleanroom-window-slider owl-carousel owl-theme">
+
+                    <!-- Industry 1 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/1.jpg" alt="Pharmaceutical & Nutraceutical">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-medkit"></i></div>
+                                <h4 class="card-title">Pharmaceutical</h4>
+                                <p class="card-desc">GMP-compliant manufacturing and R&D environments.</p>
+                                <a href="./industries/pharmaceutical-nutraceutical/" class="card-cta">Explore Sector</a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Legend -->
-                    <div class="gp-legend">
-                        <div class="gp-legend-item">
-                            <span class="gp-dot manufacturing"></span> Manufacturing
-                        </div>
-                        <div class="gp-legend-item">
-                            <span class="gp-dot sales"></span> Sales & Support
-                        </div>
-                        <div class="gp-legend-item">
-                            <span class="gp-dot partner"></span> Partner
+                    <!-- Industry 2 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/2.jpg" alt="Healthcare & Hospitals">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-hospital-o"></i></div>
+                                <h4 class="card-title">Healthcare</h4>
+                                <p class="card-desc">Operating theatres, isolation rooms, and aseptic areas.</p>
+                                <a href="./industries/healthcare-hospitals/" class="card-cta">Explore Sector</a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Industry 3 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/3.jpg" alt="Food & Beverage">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-cutlery"></i></div>
+                                <h4 class="card-title">Food & Beverage</h4>
+                                <p class="card-desc">Hygienic processing, packaging, and bottling zones.</p>
+                                <a href="./industries/food-beverage/" class="card-cta">Explore Sector</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry 4 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/4.jpg" alt="Electronics Manufacturing">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-microchip"></i></div>
+                                <h4 class="card-title">Electronics</h4>
+                                <p class="card-desc">ESD-safe cleanrooms for semi-conductor assembly.</p>
+                                <a href="./industries/electronics-manufacturing/" class="card-cta">Explore Sector</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry 5 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/5.jpg" alt="Laboratories & R&D">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-flask"></i></div>
+                                <h4 class="card-title">Laboratories & R&D</h4>
+                                <p class="card-desc">Controlled environments for precision research.</p>
+                                <a href="./industries/laboratories-rnd/" class="card-cta">Explore Sector</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry 6 -->
+                    <div class="item">
+                        <div class="cleanroom-card">
+                            <div class="card-image-viewport">
+                                <img src="./images/project/6.jpg" alt="Medical Devices">
+                                <div class="card-overlay-scan"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="industry-icon"><i class="fa fa-stethoscope"></i></div>
+                                <h4 class="card-title">Medical Devices</h4>
+                                <p class="card-desc">Sterile assembly and packaging for surgical tools.</p>
+                                <a href="./industries/medical-surgical-devices/" class="card-cta">Explore Sector</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- List Panel (Right) -->
-                <aside class="gp-list-panel">
-                    <!-- Controls -->
-                    <div class="gp-controls">
-                        <!-- Filters -->
-                        <div class="gp-tabs" role="tablist">
-                            <button class="gp-tab" data-filter="all">All</button>
-                            <button class="gp-tab active" data-filter="manufacturing">Manufacturing</button>
-                            <button class="gp-tab" data-filter="sales">Sales & Support</button>
-                            <button class="gp-tab" data-filter="partner">Partner</button>
-                        </div>
-
-                        <!-- Search -->
-                        <div class="gp-search-wrapper">
-                            <i class="fa fa-search gp-search-icon"></i>
-                            <input type="text" id="gp-search" class="gp-search-input"
-                                placeholder="Search city or country...">
-                        </div>
-                    </div>
-
-                    <!-- List Items -->
-                    <ul id="gp-list" class="gp-list">
-                        <!-- List items injected by JS -->
-                    </ul>
-                </aside>
+                <!-- Custom Navigation Containers (Hooks for JS) -->
+                <div class="slider-nav-container">
+                    <div class="cleanroom-nav-btn prev-slide"><i class="fa fa-angle-left"></i></div>
+                    <div class="cleanroom-nav-btn next-slide"><i class="fa fa-angle-right"></i></div>
+                </div>
 
             </div>
         </div>
-    </section>
 
-    <!-- Global Presence Logic -->
-    <script>
-        (function () {
-            // Data Source
-            // Data Source based on SEO Doc
-            const locations = [
-                { id: 'pk-lahore', city: 'Lahore', country: 'Pakistan', type: 'manufacturing', lat: 31.5204, lng: 74.3587, desc: 'Headquarters & Primary Manufacturing Facility.<br>8- Km, Sundar-Raiwand Road.', link: '#contact' },
-                { id: 'pk-karachi', city: 'Karachi', country: 'Pakistan', type: 'sales', lat: 24.8607, lng: 67.0011, desc: 'Regional Sales Office for South & Seaports.', link: '#contact' },
-                { id: 'pk-islamabad', city: 'Islamabad', country: 'Pakistan', type: 'sales', lat: 33.6844, lng: 73.0479, desc: 'Government & Defense Sector Liaison Office.', link: '#contact' },
-                { id: 'cn-suzhou', city: 'Suzhou', country: 'China', type: 'manufacturing', lat: 31.2989, lng: 120.5853, desc: 'Strategic Manufacturing Partner: GUSU Purification.', link: '#suzhou' },
-                { id: 'cn-shanghai', city: 'Shanghai', country: 'China', type: 'sales', lat: 31.2304, lng: 121.4737, desc: 'East Asia Engineering & Support Hub.', link: '#shanghai' },
-                { id: 'ae-dubai', city: 'Dubai', country: 'UAE', type: 'partner', lat: 25.2048, lng: 55.2708, desc: 'Middle East Sales & Demo Center.', link: '#dubai' },
-                { id: 'sa-riyadh', city: 'Riyadh', country: 'Saudi Arabia', type: 'partner', lat: 24.7136, lng: 46.6753, desc: 'Vision 2030 Healthcare Projects Partner.', link: '#riyadh' },
-                { id: 'tr-istanbul', city: 'Istanbul', country: 'Türkiye', type: 'partner', lat: 41.0082, lng: 28.9784, desc: 'European Gateway & Integration Partner.', link: '#istanbul' },
-                { id: 'de-frankfurt', city: 'Frankfurt', country: 'Germany', type: 'sales', lat: 50.1109, lng: 8.6821, desc: 'European Distribution & Logistics Center.', link: '#frankfurt' },
-                { id: 'us-houston', city: 'Houston', country: 'USA', type: 'partner', lat: 29.7604, lng: -95.3698, desc: 'North American Representative Office.', link: '#houston' }
-            ];
+        <!-- Section: Turnkey Cleanroom Services (Redesigned) -->
+        <div id="turnkey-services-section" class="section-full p-t80 p-b50">
+            <div class="container">
+                <div class="section-content">
+                    <!-- TITLE START -->
+                    <div class="section-head text-center fade-in-up m-b50">
+                        <div class="wt-separator-outer separator-center">
+                            <div class="wt-separator">
+                                <span class="site-text-primary text-uppercase sep-line-one">End-to-End Solutions</span>
+                            </div>
+                        </div>
+                        <h2>Turnkey Cleanroom Services</h2>
+                        <p class="m-auto w-75 d-none d-md-block">Detailed planning, precise construction, and
+                            comprehensive
+                            support for your facility.</p>
+                    </div>
+                    <!-- TITLE END -->
 
-            // Elements
-            const mapContainer = document.getElementById('gp-map-markers');
-            const listContainer = document.getElementById('gp-list');
-            const tooltip = document.getElementById('gp-tooltip');
-            const searchInput = document.getElementById('gp-search');
-            const tabs = document.querySelectorAll('.gp-tab');
+                    <!-- SERVICE CARDS START -->
+                    <div class="row d-flex justify-content-center">
 
-            // State
-            let activeFilter = 'manufacturing';
+                        <!-- Card 1: Planning -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
+                            <div class="turnkey-card">
+                                <div class="turnkey-media">
+                                    <img src="./images/our-team5/pic1.jpg" alt="Cleanroom Planning & Design" />
+                                    <div class="turnkey-overlay"></div>
+                                </div>
+                                <div class="turnkey-content">
+                                    <div class="turnkey-icon">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </div>
+                                    <h4 class="wt-title">Planning &amp; Design</h4>
+                                    <p>Conceptual design, layout optimization, airflow analysis, and classification
+                                        planning.</p>
+                                    <a href="./services/" class="turnkey-btn">Read More <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-            // Helpers
-            function latLngToPercent(lat, lng) {
-                // Equirectangular projection mapping
-                const x = ((lng + 180) / 360) * 100;
-                const y = ((90 - lat) / 180) * 100;
-                return { x, y };
-            }
+                        <!-- Card 2: Construction -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
+                            <div class="turnkey-card">
+                                <div class="turnkey-media">
+                                    <img src="./images/our-team5/pic2.jpg" alt="Cleanroom Construction" />
+                                    <div class="turnkey-overlay"></div>
+                                </div>
+                                <div class="turnkey-content">
+                                    <div class="turnkey-icon">
+                                        <i class="fa fa-building-o"></i>
+                                    </div>
+                                    <h4 class="wt-title">Cleanroom Construction</h4>
+                                    <p>Modular cleanroom build using our locally manufactured high-quality panels.</p>
+                                    <a href="./services/" class="turnkey-btn">Read More <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-            function createMarker(loc) {
-                const pos = latLngToPercent(loc.lat, loc.lng);
-                const marker = document.createElement('div');
-                marker.className = `gp-marker`;
-                marker.dataset.type = loc.type;
-                marker.dataset.id = loc.id;
-                marker.style.left = `${pos.x}%`;
-                marker.style.top = `${pos.y}%`;
+                        <!-- Card 3: Installation -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
+                            <div class="turnkey-card">
+                                <div class="turnkey-media">
+                                    <img src="./images/our-team5/pic3.jpg" alt="Installation & Commissioning" />
+                                    <div class="turnkey-overlay"></div>
+                                </div>
+                                <div class="turnkey-content">
+                                    <div class="turnkey-icon">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                    <h4 class="wt-title">Installation &amp; Commissioning</h4>
+                                    <p>Equipment installation, HVAC balancing, and rigorous performance testing.</p>
+                                    <a href="./services/" class="turnkey-btn">Read More <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                marker.addEventListener('mouseenter', () => showTooltip(loc, marker));
-                marker.addEventListener('mouseleave', hideTooltip);
-                marker.addEventListener('click', () => activateLocation(loc.id));
+                        <!-- Card 4: Support -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 m-b30">
+                            <div class="turnkey-card">
+                                <div class="turnkey-media">
+                                    <img src="./images/our-team5/pic1.jpg" alt="After-Sales Support" />
+                                    <div class="turnkey-overlay"></div>
+                                </div>
+                                <div class="turnkey-content">
+                                    <div class="turnkey-icon">
+                                        <i class="fa fa-life-ring"></i>
+                                    </div>
+                                    <h4 class="wt-title">After-Sales Support</h4>
+                                    <p>Scheduled maintenance, real-time monitoring, and periodic re-validation services.
+                                    </p>
+                                    <a href="./services/" class="turnkey-btn">Read More <i
+                                            class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                return marker;
-            }
+                    </div>
+                </div>
+            </div>
+        </div><!-- /Section: Turnkey Cleanroom Services -->
 
-            function createListItem(loc) {
-                const item = document.createElement('li');
-                item.className = 'gp-item';
-                item.dataset.id = loc.id;
-                item.dataset.search = `${loc.city} ${loc.country} ${loc.type}`.toLowerCase();
+        <!-- Section: global-presence -->
+        <link rel="stylesheet" type="text/css" href="css/global-presence-master.css">
 
-                item.innerHTML = `
+        <section id="global-presence-section">
+            <div class="container">
+                <!-- Header -->
+                <!-- HEADER START -->
+                <header class="gh-site-header">
+                    <div class="gh-bg-anim"></div>
+                    <div class="gh-container">
+                        <!-- Mobile Toggle -->
+                        <button class="gh-mobile-toggle" aria-label="Toggle Menu">
+                            <div class="gh-bar"></div>
+                            <div class="gh-bar"></div>
+                            <div class="gh-bar"></div>
+                        </button>
+
+                        <!-- Logo -->
+                        <div class="gh-logo">
+                            <a href="./">
+                                <img src="./images/logo-dark.png" alt="PakGusu Intoriza">
+                            </a>
+                        </div>
+
+                        <!-- Desktop Nav -->
+                        <nav class="gh-nav-desktop">
+                            <ul class="gh-nav-list">
+                                <li class="gh-nav-item"><a href="./" class="gh-nav-link">Home</a></li>
+                                <li class="gh-nav-item"><a href="./about/" class="gh-nav-link">About Us</a></li>
+                                <li class="gh-nav-item">
+                                    <a href="javascript:;" class="gh-nav-link">Products <i
+                                            class="fa fa-angle-down m-l5"></i></a>
+                                    <div class="gh-dropdown">
+                                        <a href="./products/cleanroom-panels/" class="gh-dropdown-link">Cleanroom
+                                            Panels</a>
+                                        <a href="./products/cleanroom-windows/" class="gh-dropdown-link">Cleanroom
+                                            Windows</a>
+                                        <a href="./products/cleanroom-doors/" class="gh-dropdown-link">Cleanroom
+                                            Doors</a>
+                                        <a href="./products/pass-through-chambers/"
+                                            class="gh-dropdown-link">Pass-Through Chambers</a>
+                                        <a href="./products/aluminum-profiles/" class="gh-dropdown-link">Aluminum
+                                            Profiles</a>
+                                        <a href="./products/cleanroom-led-lights/" class="gh-dropdown-link">Cleanroom
+                                            LED Lights</a>
+                                    </div>
+                                </li>
+                                <li class="gh-nav-item"><a href="./services/" class="gh-nav-link">Services</a></li>
+                                <li class="gh-nav-item">
+                                    <a href="javascript:;" class="gh-nav-link">Industries <i
+                                            class="fa fa-angle-down m-l5"></i></a>
+                                    <div class="gh-dropdown">
+                                        <a href="./industries/pharmaceutical-nutraceutical/"
+                                            class="gh-dropdown-link">Pharmaceutical & Nutraceutical</a>
+                                        <a href="./industries/healthcare-hospitals/" class="gh-dropdown-link">Healthcare
+                                            & Hospitals</a>
+                                        <a href="./industries/food-beverage/" class="gh-dropdown-link">Food &
+                                            Beverage</a>
+                                        <a href="./industries/electronics-manufacturing/"
+                                            class="gh-dropdown-link">Electronics Manufacturing</a>
+                                        <a href="./industries/laboratories-rnd/" class="gh-dropdown-link">Laboratories &
+                                            R&D</a>
+                                        <a href="./industries/medical-surgical-devices/"
+                                            class="gh-dropdown-link">Medical & Surgical Devices</a>
+                                    </div>
+                                </li>
+                                <li class="gh-nav-item">
+                                    <a href="javascript:;" class="gh-nav-link">Resources <i
+                                            class="fa fa-angle-down m-l5"></i></a>
+                                    <div class="gh-dropdown">
+                                        <a href="./resources/cleanroom-standards-classifications/"
+                                            class="gh-dropdown-link">Cleanroom Standards</a>
+                                        <a href="./resources/blog/" class="gh-dropdown-link">Blog</a>
+                                        <a href="./resources/news-events/" class="gh-dropdown-link">News & Events</a>
+                                        <a href="./resources/faqs/" class="gh-dropdown-link">FAQs</a>
+                                    </div>
+                                </li>
+                                <li class="gh-nav-item"><a href="./contact/" class="gh-nav-link">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Right Actions -->
+                        <div class="gh-actions">
+                            <!-- Dark Mode Toggle -->
+                            <button class="gh-action-btn" data-action="theme-toggle" aria-label="Toggle Dark Mode">
+                                <i class="fa fa-moon-o"></i>
+                            </button>
+                            <!-- Existing Contact Arrow Func -->
+                            <button class="gh-action-btn contact-slide-show" aria-label="Open Contact Panel">
+                                <i class="fa fa-angle-left"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Panel -->
+                    <div class="gh-mobile-menu">
+                        <ul class="gh-mobile-list">
+                            <li class="gh-mobile-item"><a href="./" class="gh-mobile-link">Home</a></li>
+                            <li class="gh-mobile-item"><a href="./about/" class="gh-mobile-link">About Us</a></li>
+                            <li class="gh-mobile-item">
+                                <div class="gh-mobile-link-wrapper"
+                                    style="display:flex; justify-content:space-between; align-items:center;">
+                                    <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Products</a>
+                                    <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                                </div>
+                                <div class="gh-mobile-submenu">
+                                    <a href="./products/cleanroom-panels/" class="gh-mobile-submenu-link">Cleanroom
+                                        Panels</a>
+                                    <a href="./products/cleanroom-windows/" class="gh-mobile-submenu-link">Cleanroom
+                                        Windows</a>
+                                    <a href="./products/cleanroom-doors/" class="gh-mobile-submenu-link">Cleanroom
+                                        Doors</a>
+                                    <a href="./products/pass-through-chambers/"
+                                        class="gh-mobile-submenu-link">Pass-Through Chambers</a>
+                                    <a href="./products/aluminum-profiles/" class="gh-mobile-submenu-link">Aluminum
+                                        Profiles</a>
+                                    <a href="./products/cleanroom-led-lights/" class="gh-mobile-submenu-link">Cleanroom
+                                        LED Lights</a>
+                                </div>
+                            </li>
+                            <li class="gh-mobile-item"><a href="./services/" class="gh-mobile-link">Services</a></li>
+                            <li class="gh-mobile-item">
+                                <div class="gh-mobile-link-wrapper"
+                                    style="display:flex; justify-content:space-between; align-items:center;">
+                                    <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Industries</a>
+                                    <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                                </div>
+                                <div class="gh-mobile-submenu">
+                                    <a href="./industries/pharmaceutical-nutraceutical/"
+                                        class="gh-mobile-submenu-link">Pharmaceutical & Nutraceutical</a>
+                                    <a href="./industries/healthcare-hospitals/"
+                                        class="gh-mobile-submenu-link">Healthcare & Hospitals</a>
+                                    <a href="./industries/food-beverage/" class="gh-mobile-submenu-link">Food &
+                                        Beverage</a>
+                                    <a href="./industries/electronics-manufacturing/"
+                                        class="gh-mobile-submenu-link">Electronics Manufacturing</a>
+                                    <a href="./industries/laboratories-rnd/" class="gh-mobile-submenu-link">Laboratories
+                                        & R&D</a>
+                                    <a href="./industries/medical-surgical-devices/"
+                                        class="gh-mobile-submenu-link">Medical & Surgical Devices</a>
+                                </div>
+                            </li>
+                            <li class="gh-mobile-item">
+                                <div class="gh-mobile-link-wrapper"
+                                    style="display:flex; justify-content:space-between; align-items:center;">
+                                    <a href="javascript:;" class="gh-mobile-link" style="flex:1;">Resources</a>
+                                    <button class="gh-submenu-toggle"><i class="fa fa-angle-down"></i></button>
+                                </div>
+                                <div class="gh-mobile-submenu">
+                                    <a href="./resources/cleanroom-standards-classifications/"
+                                        class="gh-mobile-submenu-link">Standards</a>
+                                    <a href="./resources/blog/" class="gh-mobile-submenu-link">Blog</a>
+                                    <a href="./resources/news-events/" class="gh-mobile-submenu-link">News & Events</a>
+                                    <a href="./resources/faqs/" class="gh-mobile-submenu-link">FAQs</a>
+                                </div>
+                            </li>
+                            <li class="gh-mobile-item"><a href="./contact/" class="gh-mobile-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Overlay -->
+                    <div class="gh-overlay"></div>
+
+                    <!-- KEEP EXISTING CONTACT SLIDE DRAWER UNCHANGED - IT IS TRIGGERED BY .contact-slide-show -->
+                    <!-- Contact Nav -->
+                    <div class="contact-slide-hide">
+                        <div class="contact-nav">
+                            <a class="contact_close" href="javascript:void(0)">×</a>
+                            <div class="contact-nav-form p-a30">
+                                <form action="form-handler.php" class="cons-contact-form" method="post">
+                                    <div class="m-b30">
+                                        <!-- TITLE START -->
+                                        <div class="section-head text-left">
+                                            <h4 class="m-b5">Get In Touch</h4>
+                                        </div>
+                                        <!-- TITLE END -->
+                                        <div class="input input-animate">
+                                            <label for="name">Name</label>
+                                            <input id="name" name="username" required="" type="text" />
+                                            <span class="spin"></span>
+                                        </div>
+                                        <div class="input input-animate">
+                                            <label for="email">Email</label>
+                                            <input id="email" name="email" required="" type="email" />
+                                            <span class="spin"></span>
+                                        </div>
+                                        <div class="input input-animate">
+                                            <label for="message">Textarea</label>
+                                            <textarea id="message" name="message" required=""></textarea>
+                                            <span class="spin"></span>
+                                        </div>
+                                        <div class="text-right">
+                                            <button class="btn-half site-button m-b15" name="submit" type="submit"
+                                                value="Submit">
+                                                <span>Submit</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="contact-info text-black m-b30">
+                                    <!-- TITLE START -->
+                                    <div class="section-head text-left">
+                                        <h4 class="m-b5">Contact Info</h4>
+                                    </div>
+                                    <!-- TITLE END -->
+                                    <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="icon-xs"><i class="flaticon-smartphone icon-shake"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0 font-weight-500">Phone number</h5>
+                                            <p>92 321 8073738</p>
+                                        </div>
+                                    </div>
+                                    <div class="wt-icon-box-wraper left p-b40 icon-shake-outer">
+                                        <div class="icon-xs"><i class="flaticon-email icon-shake"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0 font-weight-500">Email address</h5>
+                                            <p>info@pakgusu.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="wt-icon-box-wraper left icon-shake-outer">
+                                        <div class="icon-xs"><i class="flaticon-placeholder icon-shake"></i></div>
+                                        <div class="icon-content">
+                                            <h5 class="m-t0 font-weight-500">Address info</h5>
+                                            <p>8-Km, Sundar-Raiwand Road, Lahore, Pakistan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- HEADER END -->
+
+                <!-- Main Grid -->
+                <div class="gp-grid">
+
+                    <!-- Map Panel (Left) -->
+                    <div class="gp-map-card">
+                        <div class="gp-map-viewport">
+                            <div class="gp-map-bg"></div>
+                            <div id="gp-map-markers">
+                                <!-- Markers injected by JS -->
+                            </div>
+
+                            <!-- Dynamic Tooltip -->
+                            <div id="gp-tooltip" class="gp-tooltip">
+                                <h5 id="gp-tooltip-city">City</h5>
+                                <p id="gp-tooltip-desc">Description</p>
+                            </div>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="gp-legend">
+                            <div class="gp-legend-item">
+                                <span class="gp-dot manufacturing"></span> Manufacturing
+                            </div>
+                            <div class="gp-legend-item">
+                                <span class="gp-dot sales"></span> Sales & Support
+                            </div>
+                            <div class="gp-legend-item">
+                                <span class="gp-dot partner"></span> Partner
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- List Panel (Right) -->
+                    <aside class="gp-list-panel">
+                        <!-- Controls -->
+                        <div class="gp-controls">
+                            <!-- Filters -->
+                            <div class="gp-tabs" role="tablist">
+                                <button class="gp-tab" data-filter="all">All</button>
+                                <button class="gp-tab active" data-filter="manufacturing">Manufacturing</button>
+                                <button class="gp-tab" data-filter="sales">Sales & Support</button>
+                                <button class="gp-tab" data-filter="partner">Partner</button>
+                            </div>
+
+                            <!-- Search -->
+                            <div class="gp-search-wrapper">
+                                <i class="fa fa-search gp-search-icon"></i>
+                                <input type="text" id="gp-search" class="gp-search-input"
+                                    placeholder="Search city or country...">
+                            </div>
+                        </div>
+
+                        <!-- List Items -->
+                        <ul id="gp-list" class="gp-list">
+                            <!-- List items injected by JS -->
+                        </ul>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence Logic -->
+        <script>
+            (function () {
+                // Data Source
+                // Data Source based on SEO Doc
+                const locations = [
+                    { id: 'pk-lahore', city: 'Lahore', country: 'Pakistan', type: 'manufacturing', lat: 31.5204, lng: 74.3587, desc: 'Headquarters & Primary Manufacturing Facility.<br>8- Km, Sundar-Raiwand Road.', link: '#contact' },
+                    { id: 'pk-karachi', city: 'Karachi', country: 'Pakistan', type: 'sales', lat: 24.8607, lng: 67.0011, desc: 'Regional Sales Office for South & Seaports.', link: '#contact' },
+                    { id: 'pk-islamabad', city: 'Islamabad', country: 'Pakistan', type: 'sales', lat: 33.6844, lng: 73.0479, desc: 'Government & Defense Sector Liaison Office.', link: '#contact' },
+                    { id: 'cn-suzhou', city: 'Suzhou', country: 'China', type: 'manufacturing', lat: 31.2989, lng: 120.5853, desc: 'Strategic Manufacturing Partner: GUSU Purification.', link: '#suzhou' },
+                    { id: 'cn-shanghai', city: 'Shanghai', country: 'China', type: 'sales', lat: 31.2304, lng: 121.4737, desc: 'East Asia Engineering & Support Hub.', link: '#shanghai' },
+                    { id: 'ae-dubai', city: 'Dubai', country: 'UAE', type: 'partner', lat: 25.2048, lng: 55.2708, desc: 'Middle East Sales & Demo Center.', link: '#dubai' },
+                    { id: 'sa-riyadh', city: 'Riyadh', country: 'Saudi Arabia', type: 'partner', lat: 24.7136, lng: 46.6753, desc: 'Vision 2030 Healthcare Projects Partner.', link: '#riyadh' },
+                    { id: 'tr-istanbul', city: 'Istanbul', country: 'Türkiye', type: 'partner', lat: 41.0082, lng: 28.9784, desc: 'European Gateway & Integration Partner.', link: '#istanbul' },
+                    { id: 'de-frankfurt', city: 'Frankfurt', country: 'Germany', type: 'sales', lat: 50.1109, lng: 8.6821, desc: 'European Distribution & Logistics Center.', link: '#frankfurt' },
+                    { id: 'us-houston', city: 'Houston', country: 'USA', type: 'partner', lat: 29.7604, lng: -95.3698, desc: 'North American Representative Office.', link: '#houston' }
+                ];
+
+                // Elements
+                const mapContainer = document.getElementById('gp-map-markers');
+                const listContainer = document.getElementById('gp-list');
+                const tooltip = document.getElementById('gp-tooltip');
+                const searchInput = document.getElementById('gp-search');
+                const tabs = document.querySelectorAll('.gp-tab');
+
+                // State
+                let activeFilter = 'manufacturing';
+
+                // Helpers
+                function latLngToPercent(lat, lng) {
+                    // Equirectangular projection mapping
+                    const x = ((lng + 180) / 360) * 100;
+                    const y = ((90 - lat) / 180) * 100;
+                    return { x, y };
+                }
+
+                function createMarker(loc) {
+                    const pos = latLngToPercent(loc.lat, loc.lng);
+                    const marker = document.createElement('div');
+                    marker.className = `gp-marker`;
+                    marker.dataset.type = loc.type;
+                    marker.dataset.id = loc.id;
+                    marker.style.left = `${pos.x}%`;
+                    marker.style.top = `${pos.y}%`;
+
+                    marker.addEventListener('mouseenter', () => showTooltip(loc, marker));
+                    marker.addEventListener('mouseleave', hideTooltip);
+                    marker.addEventListener('click', () => activateLocation(loc.id));
+
+                    return marker;
+                }
+
+                function createListItem(loc) {
+                    const item = document.createElement('li');
+                    item.className = 'gp-item';
+                    item.dataset.id = loc.id;
+                    item.dataset.search = `${loc.city} ${loc.country} ${loc.type}`.toLowerCase();
+
+                    item.innerHTML = `
                 <div class="gp-item-header">
                     <span class="gp-city">${loc.city}</span>
                     <span class="gp-badge ${loc.type}">${loc.type}</span>
@@ -951,219 +1231,161 @@
                 <a href="${loc.link}" class="gp-link">View Details <i class="fa fa-arrow-right"></i></a>
             `;
 
-                item.addEventListener('click', () => activateLocation(loc.id, true));
-                return item;
-            }
+                    item.addEventListener('click', () => activateLocation(loc.id, true));
+                    return item;
+                }
 
-            function showTooltip(loc, marker) {
-                const cityEl = document.getElementById('gp-tooltip-city');
-                const descEl = document.getElementById('gp-tooltip-desc');
+                function showTooltip(loc, marker) {
+                    const cityEl = document.getElementById('gp-tooltip-city');
+                    const descEl = document.getElementById('gp-tooltip-desc');
 
-                cityEl.textContent = loc.city;
-                descEl.textContent = loc.country;
+                    cityEl.textContent = loc.city;
+                    descEl.textContent = loc.country;
 
-                // Positioning relative to viewport container
-                // We use simple offset from the marker's % position
-                const pos = latLngToPercent(loc.lat, loc.lng);
+                    // Positioning relative to viewport container
+                    // We use simple offset from the marker's % position
+                    const pos = latLngToPercent(loc.lat, loc.lng);
 
-                tooltip.style.left = `${pos.x}%`;
-                tooltip.style.top = `${pos.y}%`;
-                tooltip.classList.add('visible');
-            }
+                    tooltip.style.left = `${pos.x}%`;
+                    tooltip.style.top = `${pos.y}%`;
+                    tooltip.classList.add('visible');
+                }
 
-            function hideTooltip() {
-                tooltip.classList.remove('visible');
-            }
+                function hideTooltip() {
+                    tooltip.classList.remove('visible');
+                }
 
-            function activateLocation(id, scroll = false) {
-                // Highlight Marker
-                document.querySelectorAll('.gp-marker').forEach(m => m.classList.remove('active'));
-                const marker = document.querySelector(`.gp-marker[data-id="${id}"]`);
-                if (marker) marker.classList.add('active');
+                function activateLocation(id, scroll = false) {
+                    // Highlight Marker
+                    document.querySelectorAll('.gp-marker').forEach(m => m.classList.remove('active'));
+                    const marker = document.querySelector(`.gp-marker[data-id="${id}"]`);
+                    if (marker) marker.classList.add('active');
 
-                // Highlight List Item
-                document.querySelectorAll('.gp-item').forEach(i => {
-                    if (i.dataset.id === id) {
-                        i.classList.add('active');
-                        if (scroll) return; // already clicked on item
+                    // Highlight List Item
+                    document.querySelectorAll('.gp-item').forEach(i => {
+                        if (i.dataset.id === id) {
+                            i.classList.add('active');
+                            if (scroll) return; // already clicked on item
 
-                        // Smooth scroll to item
-                        i.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    } else {
-                        i.classList.remove('active');
-                    }
-                });
-            }
-
-            function filterItems() {
-                const query = searchInput.value.toLowerCase();
-
-                locations.forEach(loc => {
-                    const marker = document.querySelector(`.gp-marker[data-id="${loc.id}"]`);
-                    const item = document.querySelector(`.gp-item[data-id="${loc.id}"]`);
-
-                    const matchesType = activeFilter === 'all' || loc.type === activeFilter;
-                    const matchesSearch = item.dataset.search.includes(query);
-
-                    const isVisible = matchesType && matchesSearch;
-
-                    if (marker) marker.style.display = isVisible ? 'block' : 'none';
-                    if (item) item.style.display = isVisible ? 'block' : 'none';
-                });
-            }
-
-            // Initialize
-            function init() {
-                locations.forEach(loc => {
-                    mapContainer.appendChild(createMarker(loc));
-                    listContainer.appendChild(createListItem(loc));
-                });
-
-                // Event Listeners
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        tabs.forEach(t => t.classList.remove('active'));
-                        tab.classList.add('active');
-                        activeFilter = tab.dataset.filter;
-                        filterItems();
+                            // Smooth scroll to item
+                            i.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            i.classList.remove('active');
+                        }
                     });
-                });
+                }
 
-                searchInput.addEventListener('input', filterItems);
+                function filterItems() {
+                    const query = searchInput.value.toLowerCase();
 
-                // Apply initial filter
-                filterItems();
-            }
+                    locations.forEach(loc => {
+                        const marker = document.querySelector(`.gp-marker[data-id="${loc.id}"]`);
+                        const item = document.querySelector(`.gp-item[data-id="${loc.id}"]`);
 
-            // Run
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
-            }
+                        const matchesType = activeFilter === 'all' || loc.type === activeFilter;
+                        const matchesSearch = item.dataset.search.includes(query);
 
-        })();
-    </script>
-    <!-- /Section: global-presence -->
-    <!-- Section: Latest from Resources (Redesigned: News Hub) -->
-    <div id="latest-news-section" class="section-full p-t80 p-b80">
-        <!-- Wave Background -->
-        <div class="wave-background">
-            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="wave-gradient-ln" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#004685;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#29afe3;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <path fill="url(#wave-gradient-ln)" fill-opacity="0.05"
-                    d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,160C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                </path>
-            </svg>
-        </div>
+                        const isVisible = matchesType && matchesSearch;
 
-        <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center">
-                <div class="wt-separator-outer separator-center">
-                    <div class="wt-separator">
-                        <span class="site-text-primary text-uppercase sep-line-one">Insights &amp; Updates</span>
-                    </div>
-                </div>
-                <h2>Latest News</h2>
+                        if (marker) marker.style.display = isVisible ? 'block' : 'none';
+                        if (item) item.style.display = isVisible ? 'block' : 'none';
+                    });
+                }
+
+                // Initialize
+                function init() {
+                    locations.forEach(loc => {
+                        mapContainer.appendChild(createMarker(loc));
+                        listContainer.appendChild(createListItem(loc));
+                    });
+
+                    // Event Listeners
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            tabs.forEach(t => t.classList.remove('active'));
+                            tab.classList.add('active');
+                            activeFilter = tab.dataset.filter;
+                            filterItems();
+                        });
+                    });
+
+                    searchInput.addEventListener('input', filterItems);
+
+                    // Apply initial filter
+                    filterItems();
+                }
+
+                // Run
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+
+            })();
+        </script>
+        <!-- /Section: global-presence -->
+        <!-- Section: Latest from Resources (Redesigned: News Hub) -->
+        <div id="latest-news-section" class="section-full p-t80 p-b80">
+            <!-- Wave Background -->
+            <div class="wave-background">
+                <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+                    preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="wave-gradient-ln" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#004685;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#29afe3;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#wave-gradient-ln)" fill-opacity="0.05"
+                        d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,160C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
             </div>
-            <!-- TITLE END -->
 
-            <!-- NEWS HUB GRID START -->
-            <div class="news-hub-grid">
-
-                <!-- Helper: Mobile Scroll Hint -->
-                <div class="mobile-scroll-hint d-md-none">
-                    <span>Swipe</span> <i class="fa fa-long-arrow-right"></i>
-                </div>
-
-                <!-- Featured Article (Larger, Left Side) -->
-                <div class="news-card featured-card">
-                    <div class="news-media">
-                        <a href="./resources/blog/" class="media-link">
-                            <img src="./images/blog/latest-blog/pic1.jpg" alt="Understanding Cleanroom Classifications">
-                            <div class="date-badge">
-                                <span class="day">04</span>
-                                <span class="month">Feb</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta-top">
-                            <span class="meta-tag">Featured</span>
-                            <span class="meta-read-time">5 min read</span>
-                        </div>
-                        <h3 class="news-title"><a href="./resources/blog/">Understanding Cleanroom Classifications</a>
-                        </h3>
-                        <p class="news-excerpt">A comprehensive guide to ISO 14644-1 standards. Learn what each
-                            classification means for your facility's compliance and operational safety.</p>
-
-                        <div class="news-footer">
-                            <div class="author-info">
-                                <img src="./images/blog/latest-blog/user-pic.jpg" alt="Admin">
-                                <span>By <strong>Admin</strong></span>
-                            </div>
-                            <div class="interaction-stats">
-                                <span class="stat"><i class="fa fa-heart-o"></i> 5</span>
-                                <span class="stat"><i class="fa fa-comment-o"></i> 10</span>
-                            </div>
+            <div class="container">
+                <!-- TITLE START -->
+                <div class="section-head text-center">
+                    <div class="wt-separator-outer separator-center">
+                        <div class="wt-separator">
+                            <span class="site-text-primary text-uppercase sep-line-one">Insights &amp; Updates</span>
                         </div>
                     </div>
+                    <h2>Latest News</h2>
                 </div>
+                <!-- TITLE END -->
 
-                <!-- Secondary Articles Stack (Right Side) -->
-                <div class="news-stack">
+                <!-- NEWS HUB GRID START -->
+                <div class="news-hub-grid">
 
-                    <!-- Article 2 -->
-                    <div class="news-card standard-card">
+                    <!-- Helper: Mobile Scroll Hint -->
+                    <div class="mobile-scroll-hint d-md-none">
+                        <span>Swipe</span> <i class="fa fa-long-arrow-right"></i>
+                    </div>
+
+                    <!-- Featured Article (Larger, Left Side) -->
+                    <div class="news-card featured-card">
                         <div class="news-media">
                             <a href="./resources/blog/" class="media-link">
-                                <img src="./images/blog/latest-blog/pic2.jpg"
-                                    alt="Cleanroom Maintenance Best Practices">
-                                <div class="date-badge small">
-                                    <span class="day">06</span>
-                                    <span class="month">Feb</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="news-content">
-                            <h4 class="news-title"><a href="./resources/blog/">Cleanroom Maintenance Best Practices</a>
-                            </h4>
-                            <p class="news-excerpt">Essential protocols for cleaning, monitoring, and maintaining your
-                                critical environments.</p>
-                            <div class="news-footer">
-                                <div class="author-info">
-                                    <img src="./images/blog/latest-blog/user-pic2.jpg" alt="Admin">
-                                    <span>By <strong>Admin</strong></span>
-                                </div>
-                                <div class="interaction-stats">
-                                    <span class="stat"><i class="fa fa-heart-o"></i> 5</span>
-                                    <span class="stat"><i class="fa fa-comment-o"></i> 10</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 3 -->
-                    <div class="news-card standard-card">
-                        <div class="news-media">
-                            <a href="./resources/blog/" class="media-link">
-                                <img src="./images/blog/latest-blog/pic3.jpg" alt="PakGusu Partners with GUSU China">
-                                <div class="date-badge small">
+                                <img src="./images/blog/latest-blog/pic1.jpg"
+                                    alt="Understanding Cleanroom Classifications">
+                                <div class="date-badge">
                                     <span class="day">04</span>
                                     <span class="month">Feb</span>
                                 </div>
                             </a>
                         </div>
                         <div class="news-content">
-                            <h4 class="news-title"><a href="./resources/blog/">PakGusu Partners with GUSU China</a></h4>
-                            <p class="news-excerpt">Strengthening our local manufacturing capabilities through strategic
-                                global partnership.</p>
+                            <div class="news-meta-top">
+                                <span class="meta-tag">Featured</span>
+                                <span class="meta-read-time">5 min read</span>
+                            </div>
+                            <h3 class="news-title"><a href="./resources/blog/">Understanding Cleanroom
+                                    Classifications</a>
+                            </h3>
+                            <p class="news-excerpt">A comprehensive guide to ISO 14644-1 standards. Learn what each
+                                classification means for your facility's compliance and operational safety.</p>
+
                             <div class="news-footer">
                                 <div class="author-info">
                                     <img src="./images/blog/latest-blog/user-pic.jpg" alt="Admin">
@@ -1177,68 +1399,135 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-            <!-- NEWS HUB GRID END -->
+                    <!-- Secondary Articles Stack (Right Side) -->
+                    <div class="news-stack">
 
-        </div>
-    </div>
-    <!-- Section: Call-to-Action Banner -->
-    <div class="section-full small-device bg-white p-t80 p-b60">
-        <div class="container">
-            <!-- TITLE START -->
-            <div class="section-head text-center">
-                <div class="wt-separator-outer separator-center">
-                    <div class="wt-separator">
-                        <span class="site-text-primary text-uppercase sep-line-one">Trusted
-                            Partners</span>
+                        <!-- Article 2 -->
+                        <div class="news-card standard-card">
+                            <div class="news-media">
+                                <a href="./resources/blog/" class="media-link">
+                                    <img src="./images/blog/latest-blog/pic2.jpg"
+                                        alt="Cleanroom Maintenance Best Practices">
+                                    <div class="date-badge small">
+                                        <span class="day">06</span>
+                                        <span class="month">Feb</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="news-content">
+                                <h4 class="news-title"><a href="./resources/blog/">Cleanroom Maintenance Best
+                                        Practices</a>
+                                </h4>
+                                <p class="news-excerpt">Essential protocols for cleaning, monitoring, and maintaining
+                                    your
+                                    critical environments.</p>
+                                <div class="news-footer">
+                                    <div class="author-info">
+                                        <img src="./images/blog/latest-blog/user-pic2.jpg" alt="Admin">
+                                        <span>By <strong>Admin</strong></span>
+                                    </div>
+                                    <div class="interaction-stats">
+                                        <span class="stat"><i class="fa fa-heart-o"></i> 5</span>
+                                        <span class="stat"><i class="fa fa-comment-o"></i> 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Article 3 -->
+                        <div class="news-card standard-card">
+                            <div class="news-media">
+                                <a href="./resources/blog/" class="media-link">
+                                    <img src="./images/blog/latest-blog/pic3.jpg"
+                                        alt="PakGusu Partners with GUSU China">
+                                    <div class="date-badge small">
+                                        <span class="day">04</span>
+                                        <span class="month">Feb</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="news-content">
+                                <h4 class="news-title"><a href="./resources/blog/">PakGusu Partners with GUSU China</a>
+                                </h4>
+                                <p class="news-excerpt">Strengthening our local manufacturing capabilities through
+                                    strategic
+                                    global partnership.</p>
+                                <div class="news-footer">
+                                    <div class="author-info">
+                                        <img src="./images/blog/latest-blog/user-pic.jpg" alt="Admin">
+                                        <span>By <strong>Admin</strong></span>
+                                    </div>
+                                    <div class="interaction-stats">
+                                        <span class="stat"><i class="fa fa-heart-o"></i> 5</span>
+                                        <span class="stat"><i class="fa fa-comment-o"></i> 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <h2>Our Clients</h2>
+                <!-- NEWS HUB GRID END -->
+
             </div>
-            <!-- TITLE END -->
-            <div class="section-content">
-                <div class="section-content p-tb10 owl-btn-vertical-center">
-                    <div class="owl-carousel home-client-carousel-2">
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w1.png" /></a>
+        </div>
+        <!-- Section: Call-to-Action Banner -->
+        <div class="section-full small-device bg-white p-t80 p-b60">
+            <div class="container">
+                <!-- TITLE START -->
+                <div class="section-head text-center">
+                    <div class="wt-separator-outer separator-center">
+                        <div class="wt-separator">
+                            <span class="site-text-primary text-uppercase sep-line-one">Trusted
+                                Partners</span>
+                        </div>
+                    </div>
+                    <h2>Our Clients</h2>
+                </div>
+                <!-- TITLE END -->
+                <div class="section-content">
+                    <div class="section-content p-tb10 owl-btn-vertical-center">
+                        <div class="owl-carousel home-client-carousel-2">
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w1.png" /></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w2.png" /></a>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w2.png" /></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w3.png" /></a>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w3.png" /></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w4.png" /></a>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w4.png" /></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w5.png" /></a>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w5.png" /></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="ow-client-logo">
-                                <div class="client-logo client-logo-media">
-                                    <a href="./contact/"><img alt="" src="./images/client-logo/w6.png" /></a>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="./contact/"><img alt="" src="./images/client-logo/w6.png" /></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1246,11 +1535,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Section: Call-to-Action Banner -->
+        <!-- /Section: Call-to-Action Banner -->
 
-    <!-- Section: Our Work (Hidden) -->
-    <!--
+        <!-- Section: Our Work (Hidden) -->
+        <!--
 <div class="section-full small-device p-t80 p-b50 bg-gray">
 <div class="container">
 <div class="section-head text-center">
@@ -1266,191 +1554,193 @@
 </div>
 </div>
 -->
-    <!-- /Section: Our Work (Hidden) -->
-    <!-- Section: Social Proof (Redesigned: Testimonials & Stats) -->
-    <div id="social-proof-section">
-        <div class="sp-bg-pattern"></div>
-        <div class="container">
-            <div class="row align-items-center">
+        <!-- /Section: Our Work (Hidden) -->
+        <!-- Section: Social Proof (Redesigned: Testimonials & Stats) -->
+        <div id="social-proof-section">
+            <div class="sp-bg-pattern"></div>
+            <div class="container">
+                <div class="row align-items-center">
 
-                <!-- Left Column: Testimonial Story -->
-                <div class="col-lg-7 col-md-12 m-b30">
-                    <div class="owl-carousel testimonial-home owl-btn-top-right fade-in-up">
+                    <!-- Left Column: Testimonial Story -->
+                    <div class="col-lg-7 col-md-12 m-b30">
+                        <div class="owl-carousel testimonial-home owl-btn-top-right fade-in-up">
 
-                        <!-- Item 1 -->
-                        <div class="item">
-                            <div class="sp-testimonial-card">
-                                <i class="fa fa-quote-left sp-quote-icon"></i>
-                                <div class="sp-testimonial-text">
-                                    <p>"PakGusu provided an exceptional turnkey solution for our new pharmaceutical
-                                        facility. Their attention to detail and compliance with ISO standards was
-                                        impressive."</p>
-                                </div>
-                                <div class="sp-author-block">
-                                    <img src="./images/testimonials/pic1.jpg" alt="Author" class="sp-author-img">
-                                    <div class="sp-author-info">
-                                        <strong>Director of Operations</strong>
-                                        <span>Pharmaceutical Co.</span>
+                            <!-- Item 1 -->
+                            <div class="item">
+                                <div class="sp-testimonial-card">
+                                    <i class="fa fa-quote-left sp-quote-icon"></i>
+                                    <div class="sp-testimonial-text">
+                                        <p>"PakGusu provided an exceptional turnkey solution for our new pharmaceutical
+                                            facility. Their attention to detail and compliance with ISO standards was
+                                            impressive."</p>
+                                    </div>
+                                    <div class="sp-author-block">
+                                        <img src="./images/testimonials/pic1.jpg" alt="Author" class="sp-author-img">
+                                        <div class="sp-author-info">
+                                            <strong>Director of Operations</strong>
+                                            <span>Pharmaceutical Co.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Item 2 -->
-                        <div class="item">
-                            <div class="sp-testimonial-card">
-                                <i class="fa fa-quote-left sp-quote-icon"></i>
-                                <div class="sp-testimonial-text">
-                                    <p>"The modular cleanroom panels were of high quality and the installation team was
-                                        professional and efficient. Highly recommended for local manufacturing."</p>
-                                </div>
-                                <div class="sp-author-block">
-                                    <img src="./images/testimonials/pic2.jpg" alt="Author" class="sp-author-img">
-                                    <div class="sp-author-info">
-                                        <strong>Plant Manager</strong>
-                                        <span>Food Processing Unit</span>
+                            <!-- Item 2 -->
+                            <div class="item">
+                                <div class="sp-testimonial-card">
+                                    <i class="fa fa-quote-left sp-quote-icon"></i>
+                                    <div class="sp-testimonial-text">
+                                        <p>"The modular cleanroom panels were of high quality and the installation team
+                                            was
+                                            professional and efficient. Highly recommended for local manufacturing."</p>
+                                    </div>
+                                    <div class="sp-author-block">
+                                        <img src="./images/testimonials/pic2.jpg" alt="Author" class="sp-author-img">
+                                        <div class="sp-author-info">
+                                            <strong>Plant Manager</strong>
+                                            <span>Food Processing Unit</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Item 3 -->
-                        <div class="item">
-                            <div class="sp-testimonial-card">
-                                <i class="fa fa-quote-left sp-quote-icon"></i>
-                                <div class="sp-testimonial-text">
-                                    <p>"We needed a quick deployment for our electronics assembly line. PakGusu
-                                        delivered on time and within budget, with excellent after-sales support."</p>
-                                </div>
-                                <div class="sp-author-block">
-                                    <img src="./images/testimonials/pic3.jpg" alt="Author" class="sp-author-img">
-                                    <div class="sp-author-info">
-                                        <strong>Project Lead</strong>
-                                        <span>Electronics Manufacturer</span>
+                            <!-- Item 3 -->
+                            <div class="item">
+                                <div class="sp-testimonial-card">
+                                    <i class="fa fa-quote-left sp-quote-icon"></i>
+                                    <div class="sp-testimonial-text">
+                                        <p>"We needed a quick deployment for our electronics assembly line. PakGusu
+                                            delivered on time and within budget, with excellent after-sales support."
+                                        </p>
+                                    </div>
+                                    <div class="sp-author-block">
+                                        <img src="./images/testimonials/pic3.jpg" alt="Author" class="sp-author-img">
+                                        <div class="sp-author-info">
+                                            <strong>Project Lead</strong>
+                                            <span>Electronics Manufacturer</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- Right Column: Stats Grid (Heroic Cluster) -->
-                <div class="col-lg-5 col-md-12 m-b30">
-                    <div class="sp-stat-grid fade-in-up" style="animation-delay: 0.2s;">
+                    <!-- Right Column: Stats Grid (Heroic Cluster) -->
+                    <div class="col-lg-5 col-md-12 m-b30">
+                        <div class="sp-stat-grid fade-in-up" style="animation-delay: 0.2s;">
 
-                        <!-- Primary Stat -->
-                        <div class="sp-stat-card primary">
-                            <div class="sp-stat-num" data-count="250">0</div>
-                            <div class="sp-stat-label">Turnkey Projects Delivered</div>
+                            <!-- Primary Stat -->
+                            <div class="sp-stat-card primary">
+                                <div class="sp-stat-num" data-count="250">0</div>
+                                <div class="sp-stat-label">Turnkey Projects Delivered</div>
+                            </div>
+
+                            <!-- Secondary Stat 1 -->
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-num" data-count="50">0</div>
+                                <div class="sp-stat-label">Expert Engineers</div>
+                            </div>
+
+                            <!-- Secondary Stat 2 -->
+                            <div class="sp-stat-card">
+                                <div class="sp-stat-num"><span data-count="100">0</span><small>%</small></div>
+                                <div class="sp-stat-label">Compliance Rate</div>
+                            </div>
+
                         </div>
-
-                        <!-- Secondary Stat 1 -->
-                        <div class="sp-stat-card">
-                            <div class="sp-stat-num" data-count="50">0</div>
-                            <div class="sp-stat-label">Expert Engineers</div>
-                        </div>
-
-                        <!-- Secondary Stat 2 -->
-                        <div class="sp-stat-card">
-                            <div class="sp-stat-num"><span data-count="100">0</span><small>%</small></div>
-                            <div class="sp-stat-label">Compliance Rate</div>
-                        </div>
-
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Inline Script for CountUp Animation (Social Proof Specific) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const counters = document.querySelectorAll('.sp-stat-num [data-count], .sp-stat-num[data-count]');
-            const options = {
-                threshold: 0.5
-            };
+        <!-- Inline Script for CountUp Animation (Social Proof Specific) -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const counters = document.querySelectorAll('.sp-stat-num [data-count], .sp-stat-num[data-count]');
+                const options = {
+                    threshold: 0.5
+                };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const countTo = target.getAttribute('data-count');
-                        let countNum = 0;
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target = entry.target;
+                            const countTo = target.getAttribute('data-count');
+                            let countNum = 0;
 
-                        // Simple linear interpolation
-                        const duration = 2000; // 2 seconds
-                        const stepTime = 20;
-                        const steps = duration / stepTime;
-                        const validCountTo = parseInt(countTo);
-                        const increment = validCountTo / steps;
+                            // Simple linear interpolation
+                            const duration = 2000; // 2 seconds
+                            const stepTime = 20;
+                            const steps = duration / stepTime;
+                            const validCountTo = parseInt(countTo);
+                            const increment = validCountTo / steps;
 
-                        const timer = setInterval(() => {
-                            countNum += increment;
-                            if (countNum >= validCountTo) {
-                                target.textContent = validCountTo;
-                                clearInterval(timer);
-                            } else {
-                                target.textContent = Math.floor(countNum);
-                            }
-                        }, stepTime);
+                            const timer = setInterval(() => {
+                                countNum += increment;
+                                if (countNum >= validCountTo) {
+                                    target.textContent = validCountTo;
+                                    clearInterval(timer);
+                                } else {
+                                    target.textContent = Math.floor(countNum);
+                                }
+                            }, stepTime);
 
-                        observer.unobserve(target);
-                    }
+                            observer.unobserve(target);
+                        }
+                    });
+                }, options);
+
+                counters.forEach(counter => {
+                    observer.observe(counter);
                 });
-            }, options);
-
-            counters.forEach(counter => {
-                observer.observe(counter);
             });
-        });
-    </script>
-    <!-- /Section: Social Proof -->
-    <!-- Section: Dual CTA (Redesigned: Contact & Video) -->
-    <div id="cta-dual-section">
-        <div class="container">
-            <div class="row">
+        </script>
+        <!-- /Section: Social Proof -->
+        <!-- Section: Dual CTA (Redesigned: Contact & Video) -->
+        <div id="cta-dual-section">
+            <div class="container">
+                <div class="row">
 
-                <!-- Left: Contact Card -->
-                <div class="col-md-6 m-b30">
-                    <div class="cta-card cta-contact-card fade-in-up">
-                        <div class="cta-content">
-                            <span class="cta-eyebrow">Ready to Start?</span>
-                            <h2 class="cta-heading">Plan Your Cleanroom Project Today</h2>
-                            <p class="cta-text">Contact our experts to discuss your specific requirements, standards
-                                compliance, and get a detailed quote.</p>
-                            <a href="./contact/" class="cta-btn-primary">
-                                Contact Us <i class="fa fa-arrow-right"></i>
-                            </a>
+                    <!-- Left: Contact Card -->
+                    <div class="col-md-6 m-b30">
+                        <div class="cta-card cta-contact-card fade-in-up">
+                            <div class="cta-content">
+                                <span class="cta-eyebrow">Ready to Start?</span>
+                                <h2 class="cta-heading">Plan Your Cleanroom Project Today</h2>
+                                <p class="cta-text">Contact our experts to discuss your specific requirements, standards
+                                    compliance, and get a detailed quote.</p>
+                                <a href="./contact/" class="cta-btn-primary">
+                                    Contact Us <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right: Video Card -->
-                <div class="col-md-6 m-b30">
-                    <div class="cta-card cta-video-card fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="cta-video-bg"></div>
-                        <div class="cta-content">
-                            <span class="cta-eyebrow">Why Choose PakGusu?</span>
-                            <h2 class="cta-heading">Global Expertise, Local Manufacturing.</h2>
+                    <!-- Right: Video Card -->
+                    <div class="col-md-6 m-b30">
+                        <div class="cta-card cta-video-card fade-in-up" style="animation-delay: 0.2s;">
+                            <div class="cta-video-bg"></div>
+                            <div class="cta-content">
+                                <span class="cta-eyebrow">Why Choose PakGusu?</span>
+                                <h2 class="cta-heading">Global Expertise, Local Manufacturing.</h2>
 
-                            <!-- Custom Play Button Hooked to mfp-video -->
-                            <a class="mfp-video cta-play-wrapper"
-                                href="https://player.vimeo.com/video/34741214?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0">
-                                <div class="cta-play-btn">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                                <span class="cta-play-label">Play Video</span>
-                            </a>
+                                <!-- Custom Play Button Hooked to mfp-video -->
+                                <a class="mfp-video cta-play-wrapper"
+                                    href="https://player.vimeo.com/video/34741214?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0">
+                                    <div class="cta-play-btn">
+                                        <i class="fa fa-play"></i>
+                                    </div>
+                                    <span class="cta-play-label">Play Video</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
-    <!-- /Section: Dual CTA -->
+        <!-- /Section: Dual CTA -->
     </div>
     <!-- CONTENT END -->
     <!-- FOOTER START -->
@@ -1557,7 +1847,7 @@
             </div>
         </div>
     </footer>
-    <!-- FOOTER END -->
+    <!--  END -->
     <!-- BUTTON TOP START -->
     <button class="scroltop"><span class="fa fa-angle-up relative" id="btn-vibrate"></span></button>
     </div>
@@ -1616,6 +1906,8 @@
     <script src="./js/ui-ux-enhancements.js"></script><!-- UI/UX ENHANCEMENTS -->
     <script src="./js/who-we-are-animations.js"></script><!-- WHO WE ARE ANIMATIONS -->
 
+    <!-- Header Custom JS (New) -->
+    <script src="./js/header-custom.js"></script>
 </body>
 
 </html>

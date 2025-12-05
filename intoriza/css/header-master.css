@@ -1,0 +1,408 @@
+/* ===================================================================
+   Global Header Master UI Design System
+   Scoped to: .gh-site-header
+   Animation: Light Sweep / Floating Rectangles
+   =================================================================== */
+
+/* ===================================================================
+   Variables & Theme
+   =================================================================== */
+:root {
+    /* Map to existing Skin-1.css colors */
+    --gh-primary: #29afe3;
+    --gh-secondary: #004685;
+
+    /* Header Specifics */
+    --gh-bg-light: #ffffff;
+    --gh-bg-dark: #0b1117;
+
+    --gh-text-light: #0f2034;
+    --gh-text-dark: #f0f6fc;
+
+    --gh-border-light: rgba(0, 0, 0, 0.08);
+    --gh-border-dark: rgba(255, 255, 255, 0.1);
+
+    --gh-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --gh-height-desktop: 80px;
+    --gh-height-mobile: 60px;
+
+    /* Animation */
+    --gh-anim-spline: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    --gh-bg-light: var(--gh-bg-dark);
+    --gh-text-light: var(--gh-text-dark);
+    --gh-border-light: var(--gh-border-dark);
+    --gh-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================
+   Base Structure
+   =================================================================== */
+.gh-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: var(--gh-bg-light);
+    box-shadow: var(--gh-shadow);
+    transition: background 0.3s ease, padding 0.3s ease;
+    width: 100%;
+}
+
+.gh-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: var(--gh-height-desktop);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Animation Container */
+.gh-bg-anim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Unique Animation: Light Sweep */
+.gh-bg-anim::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(41, 175, 227, 0.03) 40%,
+            rgba(41, 175, 227, 0.08) 50%,
+            rgba(41, 175, 227, 0.03) 60%,
+            transparent 100%);
+    transform: skewX(-20deg);
+    animation: gh-sweep 15s infinite linear;
+}
+
+@keyframes gh-sweep {
+    0% {
+        transform: translateX(-50%) skewX(-20deg);
+    }
+
+    100% {
+        transform: translateX(25%) skewX(-20deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gh-bg-anim::before {
+        animation: none;
+        opacity: 0.05;
+        background: var(--gh-primary);
+    }
+}
+
+/* ===================================================================
+   Logo
+   =================================================================== */
+.gh-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 10;
+}
+
+.gh-logo img {
+    height: 42px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+/* ===================================================================
+   Desktop Navigation
+   =================================================================== */
+.gh-nav-desktop {
+    display: none;
+    /* Mobile first hidden */
+    height: 100%;
+}
+
+.gh-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.gh-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 60%;
+    /* Clickable area */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gh-text-light);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.gh-nav-link:hover,
+.gh-nav-link:focus,
+.gh-nav-item.active .gh-nav-link {
+    color: var(--gh-primary);
+    background: rgba(41, 175, 227, 0.05);
+}
+
+/* Desktop Dropdown */
+.gh-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--gh-bg-light);
+    min-width: 260px;
+    box-shadow: var(--gh-shadow);
+    border-top: 2px solid var(--gh-primary);
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s var(--gh-anim-spline);
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.gh-nav-item:hover .gh-dropdown,
+.gh-nav-item:focus-within .gh-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.gh-dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: var(--gh-text-light);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 2px solid transparent;
+}
+
+.gh-dropdown-link:hover {
+    background: rgba(41, 175, 227, 0.03);
+    color: var(--gh-primary);
+    border-left-color: var(--gh-primary);
+    padding-left: 25px;
+}
+
+@media (min-width: 992px) {
+    .gh-nav-desktop {
+        display: block;
+    }
+}
+
+/* ===================================================================
+   Mobile Navigation
+   =================================================================== */
+.gh-mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    /* Above menu */
+    padding: 0;
+}
+
+.gh-bar {
+    width: 100%;
+    height: 2px;
+    background: var(--gh-text-light);
+    transition: all 0.3s ease;
+}
+
+/* Mobile Toggler Active State */
+.gh-mobile-toggle.active .gh-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.gh-mobile-toggle.active .gh-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.gh-mobile-toggle.active .gh-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.gh-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: var(--gh-bg-light);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s var(--gh-anim-spline);
+    z-index: 100;
+    padding: 80px 20px 20px;
+    /* Top padding cleared for toggle */
+    overflow-y: auto;
+}
+
+.gh-mobile-menu.active {
+    transform: translateX(0);
+}
+
+.gh-mobile-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gh-mobile-item {
+    border-bottom: 1px solid var(--gh-border-light);
+}
+
+.gh-mobile-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gh-text-light);
+    text-decoration: none;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+}
+
+.gh-mobile-link:hover {
+    color: var(--gh-primary);
+}
+
+.gh-submenu-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gh-border-light);
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.gh-submenu-toggle.active {
+    background: var(--gh-primary);
+    color: #fff;
+    transform: rotate(180deg);
+}
+
+.gh-mobile-submenu {
+    display: none;
+    padding-left: 15px;
+    background: rgba(0, 0, 0, 0.02);
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.gh-mobile-submenu-link {
+    display: block;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    color: var(--gh-text-light);
+    text-decoration: none;
+}
+
+/* Overlay */
+.gh-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+.gh-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (min-width: 992px) {
+
+    .gh-mobile-toggle,
+    .gh-mobile-menu,
+    .gh-overlay {
+        display: none;
+    }
+}
+
+/* ===================================================================
+   Actions (Right Side)
+   =================================================================== */
+.gh-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gh-action-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--gh-border-light);
+    background: transparent;
+    color: var(--gh-text-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.gh-action-btn:hover {
+    border-color: var(--gh-primary);
+    color: var(--gh-primary);
+    box-shadow: 0 4px 10px rgba(41, 175, 227, 0.2);
+}
+
+/* Dark Mode Toggle Checkbox Hidden Logic (Reuse existing if needed, or implement fresh) */
+/* Assuming usage of simple JS to click existing toggle or just new button */
