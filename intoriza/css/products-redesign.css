@@ -1,0 +1,295 @@
+/* =======================================================
+   Cleanroom Products Section Redesign
+   Scope: #cleanroom-products-section
+   Unique Layout: Staggered Grid with "Floating" Cards
+   ======================================================= */
+
+/* Section Wrapper */
+#cleanroom-products-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #f9fbfd;
+    /* Very subtle light blue-grey */
+}
+
+/* Background Decoration (Subtle Parallax-like shapes) */
+#cleanroom-products-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(41, 175, 227, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+#cleanroom-products-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 70, 133, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+/* Grid Layout */
+#cleanroom-products-section .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Zig-Zag Stagger Effect on Desktop */
+@media (min-width: 992px) {
+    #cleanroom-products-section .product-card-wrap:nth-child(3n+2) {
+        transform: translateY(40px);
+        /* Push middle column down */
+    }
+}
+
+/* Card Styling */
+#cleanroom-products-section .product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Image Area */
+#cleanroom-products-section .product-media {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+#cleanroom-products-section .product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* Unique Hover: Image Pan */
+#cleanroom-products-section .product-card:hover .product-media img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+/* Overlay Badge (Category/Icon) */
+#cleanroom-products-section .product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #004685;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+#cleanroom-products-section .product-card:hover .product-badge {
+    background: #29afe3;
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+/* Content Area */
+#cleanroom-products-section .product-details {
+    padding: 30px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Decorative Accent Line */
+#cleanroom-products-section .product-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 40px;
+    height: 3px;
+    background: #29afe3;
+    transition: width 0.4s ease;
+}
+
+#cleanroom-products-section .product-card:hover .product-details::before {
+    width: calc(100% - 50px);
+    /* Expand across */
+}
+
+/* Typography */
+#cleanroom-products-section h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#cleanroom-products-section p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Unique Button: Pill Shape that fills */
+#cleanroom-products-section .product-link {
+    align-self: flex-start;
+    padding: 10px 24px;
+    border-radius: 30px;
+    background: transparent;
+    border: 2px solid #e1e1e1;
+    color: #555;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+#cleanroom-products-section .product-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #004685;
+    z-index: -1;
+    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#cleanroom-products-section .product-card:hover .product-link {
+    border-color: #004685;
+    color: #fff;
+    padding-right: 35px;
+    /* Make room for arrow */
+}
+
+#cleanroom-products-section .product-card:hover .product-link::before {
+    width: 100%;
+}
+
+/* Arrow that appears on hover */
+#cleanroom-products-section .product-link::after {
+    content: '\f105';
+    /* FontAwesome Right Angle */
+    font-family: FontAwesome;
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s ease;
+}
+
+#cleanroom-products-section .product-card:hover .product-link::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =======================================================
+   DARK MODE OVERRIDES
+   ======================================================= */
+html[data-theme="dark"] #cleanroom-products-section {
+    background-color: #0a1628;
+}
+
+html[data-theme="dark"] #cleanroom-products-section::before {
+    background: radial-gradient(circle, rgba(41, 175, 227, 0.1) 0%, transparent 70%);
+}
+
+html[data-theme="dark"] #cleanroom-products-section::after {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
+}
+
+html[data-theme="dark"] #cleanroom-products-section .product-card {
+    background: #132238;
+    /* Slightly lighter than bg */
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] #cleanroom-products-section .product-badge {
+    background: rgba(30, 41, 59, 0.9);
+    color: #fff;
+}
+
+html[data-theme="dark"] #cleanroom-products-section h4 {
+    color: #fff;
+}
+
+html[data-theme="dark"] #cleanroom-products-section p {
+    color: #b0b8c4;
+}
+
+html[data-theme="dark"] #cleanroom-products-section .product-link {
+    border-color: #334e68;
+    color: #9aa5b1;
+}
+
+html[data-theme="dark"] #cleanroom-products-section .product-card:hover .product-link {
+    border-color: #29afe3;
+    color: #fff;
+}
+
+html[data-theme="dark"] #cleanroom-products-section .product-link::before {
+    background: #29afe3;
+}
+
+/* =======================================================
+   RESPONSIVENESS (Mobile First Principles)
+   ======================================================= */
+@media (max-width: 991px) {
+    #cleanroom-products-section .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #cleanroom-products-section .products-grid {
+        grid-template-columns: 1fr;
+        /* Stacked */
+        gap: 25px;
+    }
+
+    #cleanroom-products-section .product-card-wrap:nth-child(n) {
+        transform: none !important;
+        /* Remove stagger on mobile */
+    }
+
+    #cleanroom-products-section .product-media {
+        height: 200px;
+    }
+}

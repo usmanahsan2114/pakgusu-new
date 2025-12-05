@@ -1,7 +1,9 @@
 /* LIGHT MODE PATCH - FORCED VISIBILITY */
 /* Injected last to override all other styles */
 
-/* 1. Header Dropdown */
+/* =========================================
+   1. Header Dropdown
+   ========================================= */
 html body .header-nav .nav>li .sub-menu,
 html body .nav-dark.header-nav .nav>li .sub-menu {
     background-color: #004685 !important;
@@ -14,6 +16,7 @@ html body .nav-dark.header-nav .nav>li .sub-menu li a {
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
+    text-shadow: none !important;
 }
 
 html body .header-nav .nav>li .sub-menu li a:hover,
@@ -22,13 +25,16 @@ html body .nav-dark.header-nav .nav>li .sub-menu li a:hover {
     color: #ffffff !important;
 }
 
-/* 2. Contact Slide-out Panel */
+/* =========================================
+   2. Contact Slide-out Panel
+   ========================================= */
 html body .contact-slide-hide,
 html body .contact-nav,
 html body .contact-nav-form {
     background-color: #ffffff !important;
 }
 
+/* Headings */
 html body .contact-nav h4,
 html body .contact-nav h5,
 html body .contact-nav .section-head h4,
@@ -37,12 +43,13 @@ html body .contact-slide-hide h4 {
     color: #1a1a2e !important;
 }
 
+/* Paragraphs */
 html body .contact-nav p,
 html body .contact-nav .icon-content p {
     color: #333333 !important;
 }
 
-/* Labels must be dark vs white bg */
+/* Labels */
 html body .contact-nav label,
 html body .contact-nav-form label,
 html body .contact-nav .input-animate label,
@@ -54,7 +61,7 @@ html body .input-animate label {
     z-index: 10 !important;
 }
 
-/* Input fields - Aggressive Overlay */
+/* Inputs & Textareas - Aggressive Override */
 html body .contact-nav input,
 html body .contact-nav textarea,
 html body .contact-nav-form input,
@@ -82,11 +89,41 @@ html body .input-animate textarea::placeholder {
     -webkit-text-fill-color: #666666 !important;
 }
 
+/* Close Button Transformation (Replace ? with Icon) */
 html body .contact_close {
-    color: #000000 !important;
+    font-size: 0 !important;
+    /* Hide text '?' */
+    display: block !important;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    color: transparent !important;
 }
 
-/* 3. Dark Mode Protection */
+html body .contact_close::before {
+    content: "\f00d";
+    /* FontAwesome Times */
+    font-family: FontAwesome;
+    font-size: 24px !important;
+    color: #1a1a2e !important;
+    /* Dark Icon */
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    visibility: visible !important;
+}
+
+html body .contact_close:hover::before {
+    color: #ff0000 !important;
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   3. Dark Mode Protection
+   ========================================= */
 html[data-theme="dark"] body .contact-nav label,
 html[data-theme="dark"] body .contact-nav-form label,
 html[data-theme="dark"] body .input-animate label {
@@ -110,4 +147,45 @@ html[data-theme="dark"] body .contact-nav input::placeholder,
 html[data-theme="dark"] body .contact-nav textarea::placeholder {
     color: #aaaaaa !important;
     -webkit-text-fill-color: #aaaaaa !important;
+}
+
+html[data-theme="dark"] body .contact_close::before {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   4. Navigation Hover Fix (Strict Visibility Strategy)
+   ========================================= */
+
+/* 1. Container: Ignore clicks on padding/gaps */
+html body .header-nav .nav>li {
+    pointer-events: none !important;
+    height: auto !important;
+}
+
+/* 2. Link: Always interactive (Triggers hover) */
+html body .header-nav .nav>li>a {
+    pointer-events: auto !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+/* 3. Submenu Default: Hidden & Non-Interactive (Prevents phantom hovers) */
+html body .header-nav .nav>li .sub-menu {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: block !important;
+    top: 100% !important;
+    margin-top: 0 !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* 4. Submenu Hover: Show & Enable Interaction */
+html body .header-nav .nav>li:hover .sub-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }

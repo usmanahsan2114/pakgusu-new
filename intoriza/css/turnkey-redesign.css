@@ -1,0 +1,243 @@
+/* =======================================================
+   Turnkey Services Section Redesign (Premium Card Style)
+   Scope: #turnkey-services-section
+   ======================================================= */
+
+/* General Section Styling */
+#turnkey-services-section p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#turnkey-services-section .section-head p {
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+/* Card Wrapper */
+#turnkey-services-section .turnkey-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft, premium shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Lift Effect */
+#turnkey-services-section .turnkey-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 70, 133, 0.12);
+    border-color: transparent;
+}
+
+/* Media Area */
+#turnkey-services-section .turnkey-media {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+#turnkey-services-section .turnkey-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Image Zoom on Hover */
+#turnkey-services-section .turnkey-card:hover .turnkey-media img {
+    transform: scale(1.08);
+}
+
+/* Overlay Gradient */
+#turnkey-services-section .turnkey-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+#turnkey-services-section .turnkey-card:hover .turnkey-overlay {
+    opacity: 0.4;
+}
+
+/* Content Area */
+#turnkey-services-section .turnkey-content {
+    padding: 30px 25px 25px;
+    /* Top padding enables overlapping icon */
+    background: #ffffff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating Icon */
+#turnkey-services-section .turnkey-icon {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    /* Floats half over image */
+    right: 20px;
+    /* Positioned right for modern asymmetric look */
+    color: #004685;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    border: 3px solid #ffffff;
+    /* Seamless merge */
+}
+
+#turnkey-services-section .turnkey-card:hover .turnkey-icon {
+    background: #004685;
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+/* Titles */
+#turnkey-services-section .wt-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0d1d33;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+#turnkey-services-section .turnkey-card:hover .wt-title {
+    color: #29afe3;
+}
+
+/* Description Text */
+#turnkey-services-section .turnkey-content p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Read More Button */
+#turnkey-services-section .turnkey-btn {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: #29afe3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+#turnkey-services-section .turnkey-btn i {
+    transition: transform 0.3s ease;
+}
+
+#turnkey-services-section .turnkey-card:hover .turnkey-btn i {
+    transform: translateX(5px);
+}
+
+/* =======================================================
+   DARK MODE OVERRIDES
+   ======================================================= */
+html[data-theme="dark"] #turnkey-services-section .turnkey-card {
+    background: #0d1d33;
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] #turnkey-services-section .turnkey-card:hover {
+    background: #112540;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] #turnkey-services-section .turnkey-content {
+    background: transparent;
+}
+
+html[data-theme="dark"] #turnkey-services-section .wt-title {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] #turnkey-services-section .turnkey-card:hover .wt-title {
+    color: #29afe3;
+}
+
+html[data-theme="dark"] #turnkey-services-section p {
+    color: #b0b8c4;
+}
+
+html[data-theme="dark"] #turnkey-services-section .turnkey-icon {
+    background: #1a2e4d;
+    color: #29afe3;
+    border-color: #1a2e4d;
+}
+
+html[data-theme="dark"] #turnkey-services-section .turnkey-card:hover .turnkey-icon {
+    background: #29afe3;
+    color: #ffffff;
+}
+
+/* =======================================================
+   MOBILE OPTIMIZATION
+   ======================================================= */
+@media (max-width: 767px) {
+    #turnkey-services-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    #turnkey-services-section .turnkey-card {
+        margin-bottom: 25px;
+        /* Comfortable stack spacing */
+        height: auto;
+        min-height: auto;
+    }
+
+    #turnkey-services-section .turnkey-media {
+        height: 180px;
+        /* Reduced image height for compactness */
+    }
+
+    #turnkey-services-section .turnkey-content {
+        padding: 25px 20px 20px;
+    }
+
+    #turnkey-services-section .turnkey-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        top: -25px;
+        right: 15px;
+    }
+
+    #turnkey-services-section .wt-title {
+        font-size: 18px;
+    }
+
+    #turnkey-services-section .section-head h2 {
+        font-size: 28px;
+    }
+}
