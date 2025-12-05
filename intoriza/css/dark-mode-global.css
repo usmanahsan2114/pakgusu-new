@@ -370,32 +370,148 @@ html:not([data-theme="dark"]) .about-section h2 {
     border-color: var(--header-accent) !important;
 }
 
-/* Dropdown menus */
+/* Dropdown menus - Light mode (default) */
 .header-nav .nav>li .sub-menu {
-    background-color: var(--dm-bg-surface);
-    border: 1px solid var(--dm-border);
-}
-
-html[data-theme="dark"] .header-nav .nav>li .sub-menu,
-body.dark-mode .header-nav .nav>li .sub-menu {
-    background-color: var(--dm-bg-secondary);
-    border-color: var(--dm-border);
+    background-color: #004685 !important;
+    /* Dark blue dropdown */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .header-nav .nav>li .sub-menu>li>a {
-    color: var(--dm-text-primary);
+    color: #ffffff !important;
+    /* White text in dropdown */
+}
+
+.header-nav .nav>li .sub-menu>li>a:hover {
+    background-color: #29afe3 !important;
+    color: #ffffff !important;
+}
+
+/* Dark mode dropdown overrides */
+html[data-theme="dark"] .header-nav .nav>li .sub-menu,
+body.dark-mode .header-nav .nav>li .sub-menu {
+    background-color: #0d1d33 !important;
+    border-color: #1e3a5f;
+}
+
+html[data-theme="dark"] .header-nav .nav>li .sub-menu>li>a,
+body.dark-mode .header-nav .nav>li .sub-menu>li>a {
+    color: #ffffff !important;
 }
 
 html[data-theme="dark"] .header-nav .nav>li .sub-menu>li>a:hover,
 body.dark-mode .header-nav .nav>li .sub-menu>li>a:hover {
-    background-color: var(--dm-bg-primary);
-    color: var(--header-accent);
+    background-color: #29afe3 !important;
+    color: #ffffff !important;
 }
 
-/* Mobile nav */
+/* Contact Slide-out Panel - Light Mode */
+.contact-slide-hide,
+.contact-nav {
+    background-color: #ffffff !important;
+}
+
+.contact-nav-form,
+.contact-info {
+    background-color: #ffffff !important;
+}
+
+.contact-nav h4,
+.contact-nav h5,
+.contact-nav .section-head h4 {
+    color: #1a1a2e !important;
+}
+
+.contact-nav p,
+.contact-nav .icon-content p {
+    color: #333333 !important;
+}
+
+.contact-nav label,
+.contact-nav-form label {
+    color: #333333 !important;
+}
+
+.contact-nav input,
+.contact-nav textarea,
+.contact-nav-form input,
+.contact-nav-form textarea {
+    background-color: #f8f9fa !important;
+    color: #1a1a2e !important;
+    border: 1px solid #ddd !important;
+}
+
+.contact-nav input::placeholder,
+.contact-nav textarea::placeholder {
+    color: #666666 !important;
+}
+
+.contact_close {
+    color: #1a1a2e !important;
+}
+
+/* Mobile nav - Light mode */
+.mobile-sider-drawer-menu {
+    background-color: #004685 !important;
+}
+
+.mobile-sider-drawer-menu .nav>li>a {
+    color: #ffffff !important;
+}
+
+.mobile-sider-drawer-menu .nav>li>a:hover {
+    color: #29afe3 !important;
+}
+
+/* Dark mode mobile nav */
 html[data-theme="dark"] .mobile-sider-drawer-menu,
 body.dark-mode .mobile-sider-drawer-menu {
-    background-color: var(--dm-bg-secondary);
+    background-color: #0d1d33 !important;
+}
+
+/* Dark mode contact panel */
+html[data-theme="dark"] .contact-slide-hide,
+html[data-theme="dark"] .contact-nav,
+html[data-theme="dark"] .contact-nav-form,
+html[data-theme="dark"] .contact-info,
+body.dark-mode .contact-slide-hide,
+body.dark-mode .contact-nav,
+body.dark-mode .contact-nav-form,
+body.dark-mode .contact-info {
+    background-color: #0d1d33 !important;
+}
+
+html[data-theme="dark"] .contact-nav h4,
+html[data-theme="dark"] .contact-nav h5,
+html[data-theme="dark"] .contact-nav .section-head h4,
+body.dark-mode .contact-nav h4,
+body.dark-mode .contact-nav h5,
+body.dark-mode .contact-nav .section-head h4 {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .contact-nav p,
+html[data-theme="dark"] .contact-nav .icon-content p,
+html[data-theme="dark"] .contact-nav label,
+body.dark-mode .contact-nav p,
+body.dark-mode .contact-nav .icon-content p,
+body.dark-mode .contact-nav label {
+    color: #d0d8e0 !important;
+}
+
+html[data-theme="dark"] .contact-nav input,
+html[data-theme="dark"] .contact-nav textarea,
+body.dark-mode .contact-nav input,
+body.dark-mode .contact-nav textarea {
+    background-color: #0a1628 !important;
+    color: #ffffff !important;
+    border: 1px solid #1e3a5f !important;
+}
+
+html[data-theme="dark"] .contact_close,
+body.dark-mode .contact_close {
+    color: #ffffff !important;
 }
 
 /* ============================================
@@ -567,8 +683,10 @@ body.dark-mode .nav-tabs li a:hover {
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TYPOGRAPHY - HIGH CONTRAST FOR VISIBILITY
    ============================================ */
+
+/* Headings - Pure bright white for maximum visibility */
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
 html[data-theme="dark"] h3,
@@ -580,10 +698,20 @@ body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
-body.dark-mode h6 {
-    color: var(--dm-text-primary) !important;
+body.dark-mode h6,
+html[data-theme="dark"] .wt-title,
+html[data-theme="dark"] .wt-tilte,
+html[data-theme="dark"] .widget-title,
+html[data-theme="dark"] .section-head h2,
+body.dark-mode .wt-title,
+body.dark-mode .wt-tilte,
+body.dark-mode .widget-title,
+body.dark-mode .section-head h2 {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading links */
 html[data-theme="dark"] h1 a,
 html[data-theme="dark"] h2 a,
 html[data-theme="dark"] h3 a,
@@ -596,28 +724,107 @@ body.dark-mode h3 a,
 body.dark-mode h4 a,
 body.dark-mode h5 a,
 body.dark-mode h6 a {
-    color: var(--dm-text-primary) !important;
+    color: #ffffff !important;
 }
 
+html[data-theme="dark"] h1 a:hover,
+html[data-theme="dark"] h2 a:hover,
+html[data-theme="dark"] h3 a:hover,
+html[data-theme="dark"] h4 a:hover,
+html[data-theme="dark"] h5 a:hover,
+html[data-theme="dark"] h6 a:hover,
+body.dark-mode h1 a:hover,
+body.dark-mode h2 a:hover,
+body.dark-mode h3 a:hover,
+body.dark-mode h4 a:hover,
+body.dark-mode h5 a:hover,
+body.dark-mode h6 a:hover {
+    color: #29afe3 !important;
+}
+
+/* Paragraphs and body text - Bright light gray for readability */
 html[data-theme="dark"] p,
-html[data-theme="dark"] span,
+html[data-theme="dark"] span:not(.fa):not([class*="icon"]),
 html[data-theme="dark"] li,
 html[data-theme="dark"] td,
+html[data-theme="dark"] label,
+html[data-theme="dark"] .icon-content p,
+html[data-theme="dark"] .icon-content,
+html[data-theme="dark"] .testimonial-text,
+html[data-theme="dark"] .widget-section li,
 body.dark-mode p,
-body.dark-mode span,
+body.dark-mode span:not(.fa):not([class*="icon"]),
 body.dark-mode li,
-body.dark-mode td {
-    color: var(--dm-text-secondary);
+body.dark-mode td,
+body.dark-mode label,
+body.dark-mode .icon-content p,
+body.dark-mode .icon-content,
+body.dark-mode .testimonial-text,
+body.dark-mode .widget-section li {
+    color: #e8eef4 !important;
+    /* Very bright - near white */
 }
 
+/* Additional paragraph elements for full coverage */
+html[data-theme="dark"] .wt-box p,
+html[data-theme="dark"] .section-content p,
+html[data-theme="dark"] .about-section p,
+html[data-theme="dark"] .service-detail p,
+html[data-theme="dark"] .blog-post p,
+html[data-theme="dark"] .welcome-block p,
+html[data-theme="dark"] .m-b30,
+html[data-theme="dark"] .m-b20,
+html[data-theme="dark"] .text-gray,
+body.dark-mode .wt-box p,
+body.dark-mode .section-content p,
+body.dark-mode .about-section p,
+body.dark-mode .service-detail p,
+body.dark-mode .blog-post p,
+body.dark-mode .welcome-block p,
+body.dark-mode .m-b30,
+body.dark-mode .m-b20,
+body.dark-mode .text-gray {
+    color: #e8eef4 !important;
+}
+
+/* Strong/bold text - Pure white */
+html[data-theme="dark"] strong,
+html[data-theme="dark"] b,
+html[data-theme="dark"] .text-black,
+body.dark-mode strong,
+body.dark-mode b,
+body.dark-mode .text-black {
+    color: #ffffff !important;
+}
+
+/* Section separators and accent text */
+html[data-theme="dark"] .sep-line-one,
+html[data-theme="dark"] .site-text-primary,
+body.dark-mode .sep-line-one,
+body.dark-mode .site-text-primary {
+    color: #29afe3 !important;
+}
+
+/* Links - Bright accent blue */
 html[data-theme="dark"] a,
 body.dark-mode a {
-    color: var(--header-accent);
+    color: #29afe3 !important;
 }
 
 html[data-theme="dark"] a:hover,
 body.dark-mode a:hover {
-    color: #5cc4ed;
+    color: #5dd4ff !important;
+}
+
+/* Read More links */
+html[data-theme="dark"] .site-button-link,
+body.dark-mode .site-button-link {
+    color: #29afe3 !important;
+}
+
+html[data-theme="dark"] .site-button-link:hover,
+body.dark-mode .site-button-link:hover {
+    color: #ffffff !important;
 }
 
 /* ============================================
