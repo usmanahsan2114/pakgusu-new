@@ -1806,7 +1806,9 @@ html[data-theme="dark"] #cleanroom-products-section .product-link::before {
         font-size: 26px;
         color: #004685;
         background: -webkit-linear-gradient(#29afe3, #004685);
+        background: linear-gradient(#29afe3, #004685);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: all 0.3s;
     }
