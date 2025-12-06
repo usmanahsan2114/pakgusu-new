@@ -190,9 +190,10 @@
     transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-#cleanroom-products-section .product-card:hover .product-link {
+#cleanroom-products-section .product-card:hover .product-link,
+#cleanroom-products-section .product-link:hover {
     border-color: #004685;
-    color: #fff;
+    color: #ffffff !important;
     padding-right: 35px;
     /* Make room for arrow */
 }
