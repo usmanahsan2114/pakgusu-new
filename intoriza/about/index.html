@@ -2823,8 +2823,8 @@
                     display: inline-flex;
                     align-items: center;
                     gap: 0.75rem;
-                    background: var(--part-dark);
-                    color: var(--part-white);
+                    background: var(--part-dark) !important;
+                    color: #fff !important;
                     padding: 0.85rem 2rem;
                     border-radius: 4px;
                     font-weight: 600;
@@ -2835,11 +2835,13 @@
                     text-decoration: none;
                 }
 
-                .partner-btn:hover {
-                    background: var(--part-light);
+                .partner-btn:hover,
+                .partner-btn:focus,
+                .partner-btn:visited {
+                    background: var(--part-light) !important;
                     transform: translateY(-2px);
                     box-shadow: 0 5px 15px rgba(41, 175, 227, 0.3);
-                    color: #fff;
+                    color: #fff !important;
                 }
 
                 .partner-btn i {

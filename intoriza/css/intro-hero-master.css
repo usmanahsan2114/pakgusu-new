@@ -167,7 +167,7 @@
     box-shadow: var(--hero-shadow);
     background: #000;
     margin-bottom: 20px;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
 }
 
 .hero-main-slider-wrap .owl-stage-outer,
