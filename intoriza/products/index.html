@@ -1340,56 +1340,753 @@
                     });
                 });
             </script>
-            <!-- Section: How Our Products Integrate -->
-            <div class="section-full p-t80 p-b50 bg-gray">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-6 col-md-12 m-b30">
-                                <div class="section-head text-left">
-                                    <div class="wt-separator-outer separator-left">
-                                        <div class="wt-separator">
-                                            <span
-                                                class="site-text-primary text-uppercase sep-line-one">Integration</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="text-uppercase">Seamless Integration</h2>
+            <!-- Section: How Our Products Integrate (Redesigned) -->
+            <section id="integration-section" class="integration-section" aria-labelledby="integration-heading">
+                <!-- Scoped Styles -->
+                <style>
+                    #integration-section {
+                        --int-dark: #004685;
+                        --int-light: #29AFE3;
+                        --int-bg-light: #f0f4f8;
+                        --int-bg-dark: #0a121e;
+                        --int-text: #334e68;
+                        --int-text-muted: #627d98;
+                        --int-card-bg: #fff;
+                        --int-card-dark: #1f293a;
+                        --int-shadow: rgba(0, 70, 133, 0.1);
+                        --int-hotspot-pulse: rgba(41, 175, 227, 0.4);
+
+                        background-color: var(--int-bg-light);
+                        padding: 6rem 0;
+                        position: relative;
+                        overflow: hidden;
+                        font-family: 'Poppins', sans-serif;
+                    }
+
+                    /* Background Animation */
+                    .integration-bg-anim {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        pointer-events: none;
+                        overflow: hidden;
+                    }
+
+                    .anim-node {
+                        position: absolute;
+                        border-radius: 50%;
+                        background: radial-gradient(circle, var(--int-light) 0%, transparent 70%);
+                        opacity: 0.05;
+                    }
+
+                    .node-1 {
+                        width: 300px;
+                        height: 300px;
+                        top: -50px;
+                        right: -50px;
+                        animation: floatNode 15s ease-in-out infinite;
+                    }
+
+                    .node-2 {
+                        width: 400px;
+                        height: 400px;
+                        bottom: -100px;
+                        left: -100px;
+                        animation: floatNode 20s ease-in-out infinite reverse;
+                    }
+
+                    @keyframes floatNode {
+
+                        0%,
+                        100% {
+                            transform: translate(0, 0);
+                        }
+
+                        50% {
+                            transform: translate(30px, 40px);
+                        }
+                    }
+
+                    .integration-container {
+                        position: relative;
+                        z-index: 2;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 15px;
+                        display: grid;
+                        grid-template-columns: 1fr 1.2fr;
+                        gap: 4rem;
+                        align-items: center;
+                    }
+
+                    /* Content Side */
+                    .integration-copy {
+                        color: var(--int-text);
+                    }
+
+                    .integration-kicker {
+                        font-size: 0.85rem;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: var(--int-dark);
+                        margin-bottom: 1rem;
+                        display: block;
+                    }
+
+                    .integration-heading {
+                        font-size: 2.5rem;
+                        font-weight: 800;
+                        margin-bottom: 1.5rem;
+                        color: var(--int-dark);
+                        line-height: 1.2;
+                    }
+
+                    .integration-desc {
+                        font-size: 1.1rem;
+                        line-height: 1.7;
+                        margin-bottom: 2.5rem;
+                        color: var(--int-text-muted);
+                    }
+
+                    .integration-features {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                    }
+
+                    .int-feature {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+
+                    .int-icon {
+                        width: 40px;
+                        height: 40px;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(41, 175, 227, 0.1);
+                        color: var(--int-light);
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                    }
+
+                    .int-feat-content h3 {
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        color: var(--int-dark);
+                        margin: 0 0 0.25rem 0;
+                    }
+
+                    .int-feat-content p {
+                        font-size: 0.95rem;
+                        color: var(--int-text-muted);
+                        margin: 0;
+                        line-height: 1.5;
+                    }
+
+                    /* Visual Side (Image + Hotspots) */
+                    .integration-visual {
+                        position: relative;
+                    }
+
+                    .integration-image-wrapper {
+                        position: relative;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 50px var(--int-shadow);
+                        background: #eee;
+                    }
+
+                    .integration-main-img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        transition: transform 0.5s ease;
+                    }
+
+                    /* Hotspots */
+                    .hotspot {
+                        position: absolute;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background: var(--int-light);
+                        border: 2px solid #fff;
+                        box-shadow: 0 0 0 4px rgba(41, 175, 227, 0.3);
+                        cursor: pointer;
+                        z-index: 10;
+                        padding: 0;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        animation: pulse 2s infinite;
+                    }
+
+                    .hotspot:hover,
+                    .hotspot[aria-expanded="true"] {
+                        transform: scale(1.2);
+                        box-shadow: 0 0 0 8px rgba(41, 175, 227, 0.5);
+                        z-index: 20;
+                    }
+
+                    @keyframes pulse {
+                        0% {
+                            box-shadow: 0 0 0 0 var(--int-hotspot-pulse);
+                        }
+
+                        70% {
+                            box-shadow: 0 0 0 10px rgba(41, 175, 227, 0);
+                        }
+
+                        100% {
+                            box-shadow: 0 0 0 0 rgba(41, 175, 227, 0);
+                        }
+                    }
+
+                    /* Hotspot Positions */
+                    .hs-panels {
+                        top: 25%;
+                        left: 20%;
+                    }
+
+                    .hs-windows {
+                        top: 40%;
+                        right: 25%;
+                    }
+
+                    .hs-hvac {
+                        top: 15%;
+                        right: 15%;
+                    }
+
+                    .hs-doors {
+                        bottom: 30%;
+                        left: 45%;
+                    }
+
+                    /* Tooltips */
+                    .hotspot-tooltip {
+                        position: absolute;
+                        bottom: 150%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(10px);
+                        width: 200px;
+                        background: var(--int-card-bg);
+                        color: var(--int-text);
+                        padding: 1rem;
+                        border-radius: 8px;
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.3s ease;
+                        pointer-events: none;
+                        text-align: center;
+                        font-size: 0.9rem;
+                    }
+
+                    .hotspot-tooltip::after {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        margin-left: -6px;
+                        border-width: 6px;
+                        border-style: solid;
+                        border-color: var(--int-card-bg) transparent transparent transparent;
+                    }
+
+                    .hotspot:hover .hotspot-tooltip,
+                    .hotspot:focus .hotspot-tooltip,
+                    .hotspot[aria-expanded="true"] .hotspot-tooltip {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(-50%) translateY(0);
+                    }
+
+                    .tooltip-title {
+                        display: block;
+                        font-weight: 700;
+                        color: var(--int-dark);
+                        margin-bottom: 0.25rem;
+                    }
+
+                    /* Dark Mode */
+                    html[data-theme="dark"] #integration-section {
+                        background-color: var(--int-bg-dark);
+                        color: #a0b3c6;
+                    }
+
+                    html[data-theme="dark"] .integration-heading,
+                    html[data-theme="dark"] .integration-kicker,
+                    html[data-theme="dark"] .int-feat-content h3 {
+                        color: #ffffff;
+                    }
+
+                    html[data-theme="dark"] .int-feat-content p,
+                    html[data-theme="dark"] .integration-desc {
+                        color: #a0b3c6;
+                    }
+
+                    html[data-theme="dark"] .hotspot-tooltip {
+                        background: var(--int-card-dark);
+                        color: #e0e0e0;
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+
+                    html[data-theme="dark"] .hotspot-tooltip::after {
+                        border-color: var(--int-card-dark) transparent transparent transparent;
+                    }
+
+                    html[data-theme="dark"] .tooltip-title {
+                        color: var(--int-light);
+                    }
+
+                    /* Responsive */
+                    @media (max-width: 991px) {
+                        .integration-container {
+                            grid-template-columns: 1fr;
+                            gap: 3rem;
+                        }
+
+                        .integration-copy {
+                            order: 1;
+                        }
+
+                        .integration-visual {
+                            order: 2;
+                        }
+
+                        .hotspot {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+
+                    @media (max-width: 576px) {
+                        .integration-heading {
+                            font-size: 2rem;
+                        }
+
+                        .hotspot-tooltip {
+                            width: 160px;
+                            padding: 0.75rem;
+                            font-size: 0.85rem;
+                        }
+                    }
+
+                    @media (prefers-reduced-motion: reduce) {
+
+                        .anim-node,
+                        .hotspot {
+                            animation: none;
+                        }
+
+                        .hotspot-tooltip,
+                        .hotspot,
+                        .integration-main-img {
+                            transition: none;
+                        }
+                    }
+                </style>
+
+                <!-- Background Animation -->
+                <div class="integration-bg-anim">
+                    <div class="anim-node node-1"></div>
+                    <div class="anim-node node-2"></div>
+                </div>
+
+                <div class="integration-container">
+                    <!-- Left: Content -->
+                    <div class="integration-copy">
+                        <span class="integration-kicker">Integration</span>
+                        <h2 id="integration-heading" class="integration-heading">Seamless Integration</h2>
+                        <p class="integration-desc">
+                            Our cleanroom components are engineered as a cohesive system. From interlocking panels to
+                            flush-fit windows and airtight doors, every element works together to ensure structural
+                            integrity
+                            and maximum contamination control.
+                        </p>
+
+                        <ul class="integration-features">
+                            <li class="int-feature">
+                                <div class="int-icon"><i class="fa fa-cubes"></i></div>
+                                <div class="int-feat-content">
+                                    <h3>Modular Design</h3>
+                                    <p>Flexible components that adapt to any layout and scale seamlessly.</p>
                                 </div>
-                                <p>Our cleanroom components are designed to work together perfectly. From panels to
-                                    doors
-                                    and windows, every element fits precisely to ensure air tightness and structural
-                                    integrity.</p>
-                                <ul class="list-angle-right p-t15 m-b0">
-                                    <li>Modular Design for Flexibility</li>
-                                    <li>Easy Installation and Maintenance</li>
-                                    <li>Compatible with HVAC Systems</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 col-md-12 m-b30">
-                                <div class="wt-media">
-                                    <img alt="Product Integration" class="img-responsive"
-                                        src="../images/gallery/pic4.jpg" />
+                            </li>
+                            <li class="int-feature">
+                                <div class="int-icon"><i class="fa fa-wrench"></i></div>
+                                <div class="int-feat-content">
+                                    <h3>Easy Installation</h3>
+                                    <p>Precision-engineered connections reduce build time and complexity.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="int-feature">
+                                <div class="int-icon"><i class="fa fa-cogs"></i></div>
+                                <div class="int-feat-content">
+                                    <h3>HVAC Compatible</h3>
+                                    <p>Designed to integrate perfectly with standard filtration and air handling
+                                        systems.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Interactive Visual -->
+                    <div class="integration-visual">
+                        <figure class="integration-image-wrapper">
+                            <img src="../images/gallery/pic4.jpg"
+                                alt="Integrated cleanroom environment showing panels, doors, and windows working together"
+                                class="integration-main-img" loading="lazy">
+
+                            <!-- Hotspots -->
+                            <button class="hotspot hs-panels" aria-label="Learn about Panels" aria-expanded="false">
+                                <div class="hotspot-tooltip">
+                                    <span class="tooltip-title">Wall Panels</span>
+                                    Interlocking seams for airtight sterile barriers.
+                                </div>
+                            </button>
+
+                            <button class="hotspot hs-windows" aria-label="Learn about Windows" aria-expanded="false">
+                                <div class="hotspot-tooltip">
+                                    <span class="tooltip-title">Flush Windows</span>
+                                    Double-glazed and fully flush to prevent dust collection.
+                                </div>
+                            </button>
+
+                            <button class="hotspot hs-hvac" aria-label="Learn about HVAC" aria-expanded="false">
+                                <div class="hotspot-tooltip">
+                                    <span class="tooltip-title">HVAC Integration</span>
+                                    Seamless cutouts for HEPA filters and return air ducts.
+                                </div>
+                            </button>
+
+                            <button class="hotspot hs-doors" aria-label="Learn about Doors" aria-expanded="false">
+                                <div class="hotspot-tooltip">
+                                    <span class="tooltip-title">Airtight Doors</span>
+                                    High-performance seals to maintain pressure differentials.
+                                </div>
+                            </button>
+                        </figure>
                     </div>
                 </div>
-            </div>
+
+                <!-- Interaction Script -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const hotspots = document.querySelectorAll('.hotspot');
+
+                        hotspots.forEach(hotspot => {
+                            // Toggle on click (for mobile/tablet primarily)
+                            hotspot.addEventListener('click', function (e) {
+                                e.stopPropagation();
+                                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                                // Close all others
+                                hotspots.forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+                                // Toggle current
+                                this.setAttribute('aria-expanded', !isExpanded);
+                            });
+                        });
+
+                        // Close when clicking elsewhere
+                        document.addEventListener('click', function (e) {
+                            if (!e.target.closest('.hotspot')) {
+                                hotspots.forEach(h => h.setAttribute('aria-expanded', 'false'));
+                            }
+                        });
+
+                        // Close on Escape key
+                        document.addEventListener('keydown', function (e) {
+                            if (e.key === 'Escape') {
+                                hotspots.forEach(h => h.setAttribute('aria-expanded', 'false'));
+                            }
+                        });
+                    });
+                </script>
+            </section>
             <!-- /Section: How Our Products Integrate -->
-            <!-- Section: CTA -->
-            <div class="section-full p-tb80 bg-center bg-no-repeat bg-cover"
-                style="background-image:url(../images/background/bg-1.jpg);">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="video-section-full bg-white text-center p-a30">
-                            <span class="font-18 site-text-primary text-uppercase">Ready to Start?</span>
-                            <h2 class="wt-tilte m-tb20">Plan Your Cleanroom Project Today</h2>
-                            <p class="m-b30">Contact our experts to discuss your requirements and get a quote.</p>
-                            <a class="site-button" href="../contact/">Contact Us</a>
+            <!-- Section: CTA (Redesigned) -->
+            <section id="cta-cleanroom-project" aria-labelledby="cta-heading">
+                <!-- Scoped Styles -->
+                <style>
+                    #cta-cleanroom-project {
+                        --cta-dark: #004685;
+                        --cta-light: #29AFE3;
+                        --cta-text: #1d1d1f;
+                        --cta-text-muted: #6e6e73;
+                        --cta-glass-bg: rgba(255, 255, 255, 0.9);
+                        --cta-glass-border: rgba(255, 255, 255, 0.5);
+                        --cta-shadow: 0 20px 40px rgba(0, 70, 133, 0.15);
+
+                        position: relative;
+                        padding: 6rem 0;
+                        background-image: url(../images/background/bg-1.jpg);
+                        background-size: cover;
+                        background-position: center;
+                        background-attachment: fixed;
+                        /* Optional parallax feel */
+                        overflow: hidden;
+                        font-family: 'Poppins', sans-serif;
+                    }
+
+                    /* Overlay to ensure text readability if image is busy */
+                    #cta-cleanroom-project::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+                        z-index: 1;
+                    }
+
+                    .cta-inner {
+                        position: relative;
+                        z-index: 2;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 15px;
+                        display: flex;
+                        justify-content: flex-start;
+                        /* Align left */
+                    }
+
+                    /* Glass Panel */
+                    .cta-panel {
+                        background: var(--cta-glass-bg);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                        border: 1px solid var(--cta-glass-border);
+                        border-radius: 16px;
+                        padding: 3rem;
+                        max-width: 550px;
+                        box-shadow: var(--cta-shadow);
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        position: relative;
+                    }
+
+                    /* Decorative Accent */
+                    .cta-panel::after {
+                        content: '';
+                        position: absolute;
+                        top: 3rem;
+                        left: 0;
+                        width: 4px;
+                        height: 50px;
+                        background: var(--cta-light);
+                        border-radius: 0 4px 4px 0;
+                    }
+
+                    .cta-kicker {
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 1.5px;
+                        color: var(--cta-light);
+                        margin: 0;
+                    }
+
+                    .cta-heading {
+                        font-size: 2.25rem;
+                        font-weight: 800;
+                        color: var(--cta-dark);
+                        line-height: 1.2;
+                        margin: 0;
+                    }
+
+                    .cta-lead {
+                        font-size: 1.05rem;
+                        color: var(--cta-text);
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+
+                    /* Checklist */
+                    .cta-checklist {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.75rem;
+                    }
+
+                    .cta-checklist li {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 0.95rem;
+                        color: var(--cta-text-muted);
+                        font-weight: 500;
+                    }
+
+                    .cta-checklist li i {
+                        color: var(--cta-light);
+                        font-size: 1.1rem;
+                    }
+
+                    /* Actions */
+                    .cta-actions {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+                        margin-top: 0.5rem;
+                    }
+
+                    .cta-btn {
+                        padding: 0.75rem 1.75rem;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                    }
+
+                    .btn-primary {
+                        background-color: var(--cta-light);
+                        color: #ffffff;
+                        border: 2px solid var(--cta-light);
+                        box-shadow: 0 4px 15px rgba(41, 175, 227, 0.4);
+                    }
+
+                    .btn-primary:hover {
+                        background-color: var(--cta-dark);
+                        border-color: var(--cta-dark);
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 20px rgba(0, 70, 133, 0.3);
+                        color: #fff;
+                    }
+
+                    .btn-secondary {
+                        background-color: transparent;
+                        color: var(--cta-dark);
+                        border: 2px solid rgba(0, 70, 133, 0.2);
+                    }
+
+                    .btn-secondary:hover {
+                        border-color: var(--cta-dark);
+                        background-color: rgba(0, 70, 133, 0.05);
+                        color: var(--cta-dark);
+                    }
+
+                    .cta-note {
+                        font-size: 0.8rem;
+                        color: var(--cta-text-muted);
+                        margin: 0;
+                        opacity: 0.8;
+                        font-style: italic;
+                    }
+
+                    /* Dark Mode */
+                    html[data-theme="dark"] #cta-cleanroom-project {
+                        --cta-glass-bg: rgba(15, 28, 46, 0.9);
+                        --cta-glass-border: rgba(255, 255, 255, 0.1);
+                        --cta-text: #e0e0e0;
+                        --cta-text-muted: #a0b3c6;
+                        --cta-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+                    }
+
+                    html[data-theme="dark"] #cta-cleanroom-project::before {
+                        background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+                    }
+
+                    html[data-theme="dark"] .cta-heading {
+                        color: #ffffff;
+                    }
+
+                    html[data-theme="dark"] .btn-secondary {
+                        color: #ffffff;
+                        border-color: rgba(255, 255, 255, 0.3);
+                    }
+
+                    html[data-theme="dark"] .btn-secondary:hover {
+                        border-color: var(--cta-light);
+                        color: var(--cta-light);
+                    }
+
+
+                    /* Media Queries */
+                    @media (max-width: 768px) {
+                        #cta-cleanroom-project {
+                            padding: 4rem 0;
+                            background-attachment: scroll;
+                            /* Better perfo on mobile */
+                        }
+
+                        .cta-inner {
+                            justify-content: center;
+                        }
+
+                        .cta-panel {
+                            padding: 2rem;
+                            max-width: 100%;
+                            width: 100%;
+                        }
+
+                        .cta-heading {
+                            font-size: 1.75rem;
+                        }
+
+                        .cta-actions {
+                            flex-direction: column;
+                            width: 100%;
+                        }
+
+                        .cta-btn {
+                            width: 100%;
+                        }
+                    }
+                </style>
+
+                <div class="cta-inner">
+                    <div class="cta-panel">
+                        <p class="cta-kicker">Ready to Start?</p>
+                        <h2 id="cta-heading" class="cta-heading">Plan Your Cleanroom Project Today</h2>
+                        <p class="cta-lead">
+                            Share your requirements and our specialists will prepare a tailored turnkey proposal
+                            covering
+                            design, build, and validation.
+                        </p>
+
+                        <ul class="cta-checklist">
+                            <li><i class="fa fa-check-circle"></i> ISO / GMP Classification Guidance</li>
+                            <li><i class="fa fa-check-circle"></i> Complete HVAC & Utilities Integration</li>
+                            <li><i class="fa fa-check-circle"></i> Full IQ / OQ / PQ Documentation</li>
+                        </ul>
+
+                        <div class="cta-actions">
+                            <a href="../contact/" class="cta-btn btn-primary" role="button">
+                                Request Free Consultation
+                            </a>
+                            <a href="../resources/" class="cta-btn btn-secondary" role="button">
+                                Download Specs
+                            </a>
                         </div>
+
+                        <p class="cta-note"><i class="fa fa-clock-o"></i> Average response time: under 24 hours.</p>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- /Section: CTA -->
         </div>
         <!-- CONTENT END -->
