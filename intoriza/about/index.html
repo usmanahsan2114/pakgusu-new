@@ -4013,19 +4013,432 @@
                 </div>
             </div>
             <!-- /Section: Construction -->
-            <div class="section-full p-tb80 bg-center bg-no-repeat bg-cover"
-                style="background-image:url(../images/background/bg-1.jpg);">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="video-section-full bg-white text-center p-a30">
-                            <span class="font-18 site-text-primary text-uppercase">Ready to Start?</span>
-                            <h2 class="wt-tilte m-tb20">Plan Your Cleanroom Project Today</h2>
-                            <p class="m-b30">Contact our experts to discuss your requirements and get a quote.</p>
-                            <a class="site-button" href="../contact/">Contact Us</a>
+            <!-- CTA SECTION - REDESIGN -->
+            <section id="cta-cleanroom-project" class="cta-section" aria-labelledby="cta-cleanroom-heading">
+                <!-- Background Animation -->
+                <div class="cta-bg-anim">
+                    <div class="cta-shape shape-1"></div>
+                    <div class="cta-shape shape-2"></div>
+                </div>
+
+                <div class="cta-container">
+                    <div class="cta-layout">
+                        <!-- Left Panel: Text & Actions -->
+                        <div class="cta-text-col">
+                            <header class="cta-header">
+                                <span class="cta-eyebrow">READY TO START?</span>
+                                <h2 id="cta-cleanroom-heading" class="cta-title">Plan Your Cleanroom Project with Our
+                                    Experts</h2>
+                            </header>
+
+                            <p class="cta-desc">
+                                Contact us today to discuss your requirements. We provide tailored proposals and full
+                                lifecycle support for your critical environment.
+                            </p>
+
+                            <div class="cta-actions">
+                                <a href="../contact/" class="cta-btn cta-btn-primary">
+                                    Contact Us
+                                </a>
+                                <a href="../products/" class="cta-btn cta-btn-secondary">
+                                    Browse Products
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Visual & Trust -->
+                        <div class="cta-visual-col">
+                            <div class="cta-visual-card">
+                                <!-- Abstract cleanroom illustration / icon cluster -->
+                                <div class="cta-icon-cluster">
+                                    <i class="flaticon-factory cta-main-icon"></i>
+                                    <div class="cta-badge badge-1">
+                                        <i class="fa fa-check-circle"></i> ISO-Aligned
+                                    </div>
+                                    <div class="cta-badge badge-2">
+                                        <i class="fa fa-globe"></i> Global Delivery
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <style>
+                /* --- SCOPED VARIABLES --- */
+                #cta-cleanroom-project {
+                    --cta-dark: #004685;
+                    --cta-light: #29AFE3;
+                    --cta-bg-light: #f0f7fb;
+                    --cta-bg-dark: #0f2438;
+                    --cta-white: #ffffff;
+                    --cta-text: #334e68;
+                    --cta-border: #e2e8f0;
+                    --cta-shadow: rgba(0, 70, 133, 0.08);
+                }
+
+                /* --- SECTION LAYOUT --- */
+                .cta-section {
+                    position: relative;
+                    padding: 5rem 1rem;
+                    background: linear-gradient(135deg, var(--cta-bg-light) 0%, #ffffff 100%);
+                    overflow: hidden;
+                    font-family: 'Poppins', sans-serif;
+                    color: var(--cta-text);
+                }
+
+                .cta-container {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 1140px;
+                    margin: 0 auto;
+                }
+
+                .cta-layout {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4rem;
+                    align-items: center;
+                }
+
+                /* --- BACKGROUND ANIMATION --- */
+                .cta-bg-anim {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    pointer-events: none;
+                    overflow: hidden;
+                }
+
+                .cta-shape {
+                    position: absolute;
+                    border-radius: 50%;
+                    filter: blur(60px);
+                    opacity: 0.6;
+                    animation: floatBg 15s infinite alternate ease-in-out;
+                }
+
+                .cta-shape.shape-1 {
+                    width: 300px;
+                    height: 300px;
+                    background: rgba(41, 175, 227, 0.15);
+                    top: -50px;
+                    right: -50px;
+                }
+
+                .cta-shape.shape-2 {
+                    width: 400px;
+                    height: 400px;
+                    background: rgba(0, 70, 133, 0.05);
+                    bottom: -100px;
+                    left: -100px;
+                    animation-delay: -5s;
+                }
+
+                @keyframes floatBg {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+
+                    100% {
+                        transform: translate(30px, 40px);
+                    }
+                }
+
+                /* --- TEXT COLUMN --- */
+                .cta-header {
+                    margin-bottom: 1.5rem;
+                }
+
+                .cta-eyebrow {
+                    display: block;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    color: var(--cta-light);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                }
+
+                .cta-title {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    color: var(--cta-dark);
+                    margin: 0;
+                    line-height: 1.2;
+                }
+
+                .cta-desc {
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: var(--cta-text);
+                    margin-bottom: 2.5rem;
+                    max-width: 90%;
+                }
+
+                .cta-actions {
+                    display: flex;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+
+                .cta-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.85rem 2rem;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    border-radius: 50px;
+                    /* Pill shape */
+                    text-decoration: none;
+                    transition: all 0.25s ease;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .cta-btn-primary {
+                    background-color: var(--cta-light);
+                    color: #fff;
+                    box-shadow: 0 4px 15px rgba(41, 175, 227, 0.3);
+                }
+
+                .cta-btn-primary:hover,
+                .cta-btn-primary:focus-visible {
+                    background-color: var(--cta-dark);
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0, 70, 133, 0.25);
+                    color: #fff;
+                }
+
+                .cta-btn-secondary {
+                    background-color: transparent;
+                    color: var(--cta-dark);
+                    border: 2px solid rgba(0, 70, 133, 0.15);
+                }
+
+                .cta-btn-secondary:hover,
+                .cta-btn-secondary:focus-visible {
+                    border-color: var(--cta-dark);
+                    background-color: rgba(0, 70, 133, 0.05);
+                    color: var(--cta-dark);
+                    transform: translateY(-2px);
+                }
+
+                /* --- VISUAL COLUMN --- */
+                .cta-visual-col {
+                    display: flex;
+                    justify-content: center;
+                    perspective: 1000px;
+                }
+
+                .cta-visual-card {
+                    position: relative;
+                    width: 100%;
+                    max-width: 450px;
+                    aspect-ratio: 4/3;
+                    background: var(--cta-white);
+                    border-radius: 16px;
+                    box-shadow: 0 20px 60px var(--cta-shadow);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid var(--cta-border);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                }
+
+                .cta-visual-card:hover {
+                    transform: translateY(-10px) rotateX(2deg);
+                    box-shadow: 0 30px 70px rgba(0, 70, 133, 0.12);
+                }
+
+                .cta-icon-cluster {
+                    position: relative;
+                    text-align: center;
+                }
+
+                .cta-main-icon {
+                    font-size: 5rem;
+                    color: var(--cta-light);
+                    opacity: 0.9;
+                    background: linear-gradient(135deg, var(--cta-light), var(--cta-dark));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .cta-badge {
+                    position: absolute;
+                    background: var(--cta-white);
+                    padding: 0.5rem 1rem;
+                    border-radius: 50px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: var(--cta-dark);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                    white-space: nowrap;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    border: 1px solid var(--cta-border);
+                    animation: floatBadge 6s infinite ease-in-out;
+                }
+
+                .badge-1 {
+                    top: -40px;
+                    right: -60px;
+                    animation-delay: 0s;
+                }
+
+                .badge-2 {
+                    bottom: -30px;
+                    left: -50px;
+                    animation-delay: 3s;
+                }
+
+                .cta-badge i {
+                    color: var(--cta-light);
+                }
+
+                @keyframes floatBadge {
+
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+
+                /* --- DARK MODE --- */
+                html[data-theme="dark"] #cta-cleanroom-project {
+                    --cta-bg-light: var(--cta-bg-dark);
+                    --cta-white: #112233;
+                    --cta-text: #a0b3c6;
+                    --cta-border: #1e3a5f;
+                    --cta-shadow: rgba(0, 0, 0, 0.3);
+                }
+
+                html[data-theme="dark"] .cta-section {
+                    background: linear-gradient(135deg, #0b1a2b 0%, #0f2438 100%);
+                }
+
+                html[data-theme="dark"] .cta-title {
+                    color: #fff;
+                }
+
+                html[data-theme="dark"] .cta-visual-card {
+                    background: #15273a;
+                }
+
+                html[data-theme="dark"] .cta-badge {
+                    background: #1a344f;
+                    color: #fff;
+                    border-color: #2b4c6F;
+                }
+
+                html[data-theme="dark"] .cta-desc {
+                    color: #a0b3c6;
+                }
+
+                html[data-theme="dark"] .cta-btn-secondary {
+                    color: #fff;
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+
+                html[data-theme="dark"] .cta-btn-secondary:hover {
+                    border-color: var(--cta-light);
+                    background-color: rgba(41, 175, 227, 0.1);
+                }
+
+                /* --- RESPONSIVE --- */
+                @media (max-width: 991px) {
+                    .cta-layout {
+                        grid-template-columns: 1fr;
+                        gap: 3rem;
+                        text-align: center;
+                    }
+
+                    .cta-text-col {
+                        order: 1;
+                        /* Mobile Stack: Text, then Visual? User asked for:
+                           "Eyebrow + heading + supporting text" then "Buttons" then "Visual + trust".
+                           This is exactly what Order 1 for text-col (containing header+desc+actions) gives if visual-col is Order 2.
+                           Wait...
+                           Grid auto placement: visual-col is fast in DOM if I swap them? No, Text is first in DOM.
+                           So Text (1) -> Visual (2).
+                           Responsive: 1 col. Text is on top. Visual on bottom. */
+                    }
+
+                    .cta-actions {
+                        justify-content: center;
+                    }
+
+                    .cta-desc {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    .cta-visual-card {
+                        margin: 0 auto;
+                        max-width: 100%;
+                    }
+
+                    .badge-1 {
+                        right: 0;
+                    }
+
+                    .badge-2 {
+                        left: 0;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .cta-section {
+                        padding: 4rem 1.5rem;
+                    }
+
+                    .cta-title {
+                        font-size: 1.75rem;
+                    }
+
+                    .badge-1,
+                    .badge-2 {
+                        position: relative;
+                        top: auto;
+                        right: auto;
+                        bottom: auto;
+                        left: auto;
+                        margin: 0.5rem;
+                        display: inline-flex;
+                        animation: none;
+                    }
+
+                    .cta-icon-cluster {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+
+                    .cta-shape,
+                    .cta-badge,
+                    .cta-visual-card,
+                    .cta-btn {
+                        animation: none;
+                        transition: none;
+                        transform: none;
+                    }
+                }
+            </style>
             <!-- /Section: CTA -->
         </div>
         <!-- CONTENT END -->
