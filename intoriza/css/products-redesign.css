@@ -294,3 +294,1556 @@ html[data-theme="dark"] #cleanroom-products-section .product-link::before {
         height: 200px;
     }
 }
+
+/* =======================================================
+   Key Benefits Visual Map Redesign
+   Scope: #key-benefits-map
+   ======================================================= */
+
+/* --- Container & Background --- */
+#key-benefits-map {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-light-blue-pattern {
+    background-color: #f8fbff;
+}
+
+.text-light-blue {
+    color: #29afe3 !important;
+}
+
+.text-dark-blue {
+    color: #004685 !important;
+}
+
+/* --- Left: Image Collage --- */
+.benefits-collage-wrapper {
+    position: relative;
+    height: 500px;
+    /* Fixed height for desktop to manage overlapping */
+    width: 100%;
+}
+
+.collage-tile {
+    position: absolute;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.collage-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.collage-tile:hover img,
+.collage-tile.active img {
+    transform: scale(1.05);
+}
+
+.collage-tile:hover,
+.collage-tile.active {
+    box-shadow: 0 20px 40px rgba(41, 175, 227, 0.2);
+    border-color: #29afe3;
+    z-index: 10;
+    /* Bring to front on hover/active */
+}
+
+/* Tile Positioning (Desktop) */
+.tile-1 {
+    width: 55%;
+    height: 60%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.tile-2 {
+    width: 40%;
+    height: 50%;
+    top: 5%;
+    right: 0;
+    z-index: 1;
+}
+
+.tile-3 {
+    width: 85%;
+    height: 45%;
+    bottom: 0;
+    left: 10%;
+    z-index: 3;
+}
+
+/* Tablet/Mobile Adjustments */
+@media (max-width: 991px) {
+    .benefits-collage-wrapper {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .collage-tile {
+        position: relative !important;
+        width: 100% !important;
+        height: 200px !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    .tile-3 {
+        grid-column: span 2;
+    }
+}
+
+/* --- Hotspots --- */
+.hotspot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #29afe3;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(41, 175, 227, 0.4);
+    pointer-events: none;
+    /* Let clicks pass through to tile */
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.collage-tile.active .hotspot,
+.collage-tile:hover .hotspot {
+    opacity: 1;
+    transform: scale(1);
+    animation: pulse-ring 2s infinite;
+}
+
+.hotspot-label {
+    position: absolute;
+    top: 15%;
+    /* Adjust based on design preference */
+    right: 15%;
+    background: rgba(0, 70, 133, 0.9);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease 0.1s;
+}
+
+.collage-tile.active .hotspot-label,
+.collage-tile:hover .hotspot-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(41, 175, 227, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(41, 175, 227, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(41, 175, 227, 0);
+    }
+}
+
+/* --- Right: Benefit Cards Stack --- */
+.benefit-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card.active {
+    border-color: #29afe3;
+    box-shadow: 0 10px 30px rgba(41, 175, 227, 0.15);
+}
+
+.card-status-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #004685, #29afe3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card.active .card-status-line {
+    opacity: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-icon {
+    font-size: 24px;
+}
+
+.card-number {
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(200, 200, 200, 0.2);
+    line-height: 1;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card.active .card-number {
+    color: rgba(41, 175, 227, 0.15);
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #6c757d;
+    /* Muted text */
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Dark Mode Overrides (Assumes global .dark class on body) --- */
+[data-theme="dark"] #key-benefits-map {
+    background-color: #0d121c !important;
+    /* Extremely dark blue/bg */
+}
+
+[data-theme="dark"] .bg-light-blue-pattern {
+    background-color: #0d121c;
+    /* Fallback */
+}
+
+[data-theme="dark"] .benefit-card {
+    background-color: #16202e;
+    border-color: #2a3546;
+}
+
+[data-theme="dark"] .text-dark-blue {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .card-desc {
+    color: #a0aec0;
+}
+
+/* =======================================================
+   Types & Options Configurator
+   Scope: #types-configurator
+   ======================================================= */
+
+/* Type Selector List */
+.type-selector-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.type-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.type-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.type-card.active {
+    border-color: #29afe3;
+    box-shadow: 0 10px 30px rgba(41, 175, 227, 0.15);
+}
+
+.type-card.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #004685, #29afe3);
+}
+
+.type-icon i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.type-card.active .type-icon i {
+    color: #29afe3;
+}
+
+/* Detail Panel */
+.config-detail-panel {
+    transition: all 0.3s ease;
+}
+
+/* Chips */
+.stat-chip {
+    background: #f8f9fa;
+    border-radius: 50px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.stat-chip:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: #29afe3;
+}
+
+/* Option Pills */
+.option-pill {
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+}
+
+.option-pill.active {
+    background-color: #29afe3;
+    color: #fff;
+    border-color: #29afe3;
+}
+
+/* Summary Box */
+.config-summary {
+    border: 1px solid #e1e8ed;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .type-selector-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .type-card {
+        min-width: 250px;
+    }
+}
+
+/* =======================================================
+   Dark Mode Overrides - Types Configurator
+   section: #types-configurator
+   ======================================================= */
+[data-theme="dark"] #types-configurator {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .type-card,
+[data-theme="dark"] .config-detail-panel {
+    background-color: #16202e;
+    border-color: #2a3546;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .type-card:hover {
+    background-color: #1c2a3d;
+}
+
+[data-theme="dark"] .text-dark-blue {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: #a0aec0 !important;
+}
+
+[data-theme="dark"] .badge-light {
+    background-color: #2a3546;
+    color: #e2e8f0;
+}
+
+/* Chips in Dark Mode */
+[data-theme="dark"] .stat-chip {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .stat-chip i {
+    color: #94a3b8 !important;
+    /* Lighter muted icon */
+}
+
+/* Option Pills in Dark Mode */
+[data-theme="dark"] .option-pill {
+    color: #cbd5e1;
+    border-color: #475569;
+}
+
+[data-theme="dark"] .option-pill:hover {
+    background-color: #334155;
+    border-color: #64748b;
+}
+
+[data-theme="dark"] .option-pill.active {
+    background-color: #29afe3;
+    color: #ffffff;
+    border-color: #29afe3;
+}
+
+/* Summary Box in Dark Mode */
+[data-theme="dark"] .config-summary {
+    background-color: #0f172a !important;
+    border-color: #1e293b;
+}
+
+
+/* =======================================================
+   Key Features Console
+   section: #features-console
+   ======================================================= */
+/* Feature Nav List */
+.feature-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-nav-pill {
+    background: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 50px;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.feature-nav-pill i {
+    color: #29afe3;
+    transition: transform 0.3s;
+}
+
+.feature-nav-pill:hover {
+    transform: translateX(5px);
+    border-color: #29afe3;
+    box-shadow: 0 4px 12px rgba(41, 175, 227, 0.1);
+}
+
+.feature-nav-pill.active {
+    background-color: rgba(41, 175, 227, 0.08);
+    /* Very light blue tint */
+    border-color: #29afe3;
+    color: #004685;
+}
+
+.feature-nav-pill.active i {
+    transform: scale(1.2);
+}
+
+/* Schematic & Nodes */
+.schematic-wrapper {
+    position: relative;
+}
+
+.feature-node {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.node-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #29afe3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.node-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 175, 227, 0.3);
+    border-radius: 50%;
+    animation: none;
+}
+
+.feature-node:hover .node-dot,
+.feature-node.active .node-dot {
+    background-color: #29afe3;
+    box-shadow: 0 0 15px rgba(41, 175, 227, 0.6);
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+.feature-node.active .node-ring {
+    animation: pulse-ring 2s infinite;
+}
+
+/* Story Panel */
+.feature-story-panel {
+    transition: opacity 0.3s ease;
+}
+
+.metric-pill {
+    background: #f0f4f8;
+    border-left: 3px solid #004685;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* Dark Mode Overrides - Console */
+[data-theme="dark"] #features-console {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .console-grid-bg {
+    background-image: radial-gradient(#2a3546 1px, transparent 1px) !important;
+    opacity: 0.3 !important;
+}
+
+[data-theme="dark"] .feature-nav-pill {
+    background-color: #16202e;
+    border-color: #2a3546;
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .feature-nav-pill:hover,
+[data-theme="dark"] .feature-nav-pill.active {
+    background-color: #1c2a3d;
+    color: #fff;
+    border-color: #29afe3;
+}
+
+[data-theme="dark"] .feature-story-panel {
+    background-color: #16202e !important;
+    border-color: #2a3546 !important;
+}
+
+
+/* =======================================================
+   Typical Applications Explorer
+   section: #typical-applications
+   ======================================================= */
+/* Background Animation */
+@keyframes drift {
+    0% {
+        transform: translateY(0) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(-40px) rotate(15deg);
+    }
+}
+
+.anim-grid {
+    animation: drift 20s linear infinite alternate;
+}
+
+.anim-orb {
+    filter: blur(40px);
+    animation: pulse-soft 8s ease-in-out infinite alternate;
+}
+
+.anim-orb.delay-1 {
+    animation-delay: 2s;
+}
+
+@keyframes pulse-soft {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Tabs Nav */
+.app-tabs-wrapper {
+    text-align: center;
+}
+
+.app-tab-link {
+    border: none;
+    background: transparent;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.app-tab-link.active {
+    color: #004685;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, #004685, #29afe3);
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Tab Content & Card */
+.app-tab-pane {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.app-tab-pane.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.app-row-card {
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.app-row-card:hover {
+    background: #fcfdfe;
+    border-left-color: #29afe3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-expand-details {
+    display: none;
+    /* Toggled by JS or kept visible? Request says expand. */
+}
+
+.card-expand-details.expanded {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark Mode - Applications */
+[data-theme="dark"] #typical-applications {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .anim-grid {
+    background: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+}
+
+[data-theme="dark"] .app-tabs-nav,
+[data-theme="dark"] .app-content-stage {
+    background-color: #16202e !important;
+}
+
+[data-theme="dark"] .app-tab-link {
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .app-tab-link.active {
+    color: #fff;
+}
+
+[data-theme="dark"] .app-row-card {
+    background-color: #16202e;
+    border-color: #2a3546;
+    /* Borders */
+}
+
+[data-theme="dark"] .app-row-card:hover {
+    background-color: #1c2a3d;
+}
+
+[data-theme="dark"] .icon-box-sm {
+    background-color: rgba(41, 175, 227, 0.1);
+}
+
+/* =======================================================
+   Animated CTA Section
+   section: #interactive-cta
+   ======================================================= */
+/* Floating Shapes */
+.cta-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.6;
+    animation: float-y 6s ease-in-out infinite;
+}
+
+.cta-shape.shape-1 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #29afe3, transparent);
+    animation-delay: 0s;
+}
+
+.cta-shape.shape-2 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #004685, transparent);
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+
+.cta-shape.shape-3 {
+    width: 100px;
+    height: 100px;
+    background: #29afe3;
+    opacity: 0.3;
+    animation: float-y 5s ease-in-out infinite alternate-reverse;
+}
+
+.cta-shape.shape-4 {
+    width: 300px;
+    height: 300px;
+    background: #e1e8ed;
+    filter: blur(80px);
+    animation-duration: 10s;
+}
+
+@keyframes float-y {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* CTA Card */
+.cta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cta-icon-box i {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-card:hover .cta-icon-box i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Dark Mode - CTA */
+[data-theme="dark"] #interactive-cta {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .cta-bg-gradient {
+    background: linear-gradient(135deg, #0d121c 0%, #16202e 100%) !important;
+    opacity: 0.8 !important;
+}
+
+[data-theme="dark"] .cta-card {
+    background-color: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .cta-card .text-dark-blue {
+    color: #fff !important;
+}
+
+[data-theme="dark"] .cta-card .text-muted {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .cta-shape {
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .cta-shape.shape-4 {
+    background: #004685;
+}
+
+/* =======================================================
+   Visual Story Wall
+   section: #visual-story-wall
+   ======================================================= */
+/* Background Animation */
+.anim-grid-faint {
+    animation: drift 30s linear infinite alternate;
+}
+
+.anim-orb-float {
+    animation: drift-orb 12s ease-in-out infinite alternate;
+}
+
+@keyframes drift-orb {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-30px, 30px);
+    }
+}
+
+/* Filters */
+.filter-nav {
+    display: inline-flex;
+    gap: 5px;
+}
+
+.filter-chip {
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #555;
+    border: 1px solid transparent;
+}
+
+.filter-chip:hover {
+    color: #29afe3;
+    background: #f8fafc;
+}
+
+.filter-chip.active {
+    background: #004685;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 70, 133, 0.2);
+}
+
+/* Media Tiles */
+.tile-inner {
+    position: relative;
+    background: #000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    /* Hardware accel */
+}
+
+.tile-inner:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.media-img-wrapper img {
+    opacity: 0.9;
+    transition: transform 0.6s ease, opacity 0.4s;
+    backface-visibility: hidden;
+}
+
+.tile-inner:hover .media-img-wrapper img {
+    transform: scale(1.05);
+    opacity: 0.6;
+}
+
+.tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px);
+}
+
+.tile-inner:hover .tile-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark Mode - Gallery */
+[data-theme="dark"] #visual-story-wall {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .anim-grid-faint {
+    background-image: radial-gradient(#2a3546 1px, transparent 1px) !important;
+    opacity: 0.3 !important;
+}
+
+[data-theme="dark"] .filter-nav {
+    background-color: #16202e !important;
+}
+
+[data-theme="dark"] .filter-chip {
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .filter-chip:hover {
+    background: #1c2a3d;
+    color: #fff;
+}
+
+[data-theme="dark"] .filter-chip.active {
+    background: #29afe3;
+    color: #004685;
+}
+
+/* Force White Text in Gallery Overlays (All Themes) */
+.tile-overlay .text-white,
+.tile-overlay .text-white-50,
+.tile-overlay h4,
+.tile-overlay p {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .tile-overlay .text-white,
+[data-theme="dark"] .tile-overlay .text-white-50 {
+    color: #ffffff !important;
+}
+
+/* =======================================================
+   Ecosystem of Solutions
+   section: #ecosystem-section
+   ======================================================= */
+/* Network Background */
+.anim-net-grid {
+    background-image:
+        linear-gradient(rgba(41, 175, 227, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(41, 175, 227, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: pan-grid 60s linear infinite;
+}
+
+@keyframes pan-grid {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
+
+/* Nodes */
+.eco-node-center {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.center-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #29afe3;
+    animation: pulse-ring 2s infinite;
+}
+
+.eco-node {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 5;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+.node-dot {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node-label {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Active / Hover Node */
+.eco-node:hover .node-dot,
+.eco-node.active .node-dot {
+    background: #004685;
+    border-color: #29afe3;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(41, 175, 227, 0.5);
+}
+
+.eco-node:hover .node-label,
+.eco-node.active .node-label {
+    color: #004685;
+    opacity: 1;
+    font-weight: 700;
+}
+
+/* Connections */
+.eco-line {
+    stroke: #ccc;
+    stroke-width: 1;
+    stroke-dasharray: 5;
+    transition: all 0.4s;
+}
+
+
+
+.eco-line.active-line {
+    stroke: #29afe3;
+    stroke-width: 2;
+    stroke-dasharray: 0;
+    filter: drop-shadow(0 0 3px #29afe3);
+}
+
+/* Detail Card */
+.eco-card {
+    transition: all 0.3s;
+    border-left: 4px solid #29afe3;
+}
+
+.eco-card.animate-in {
+    animation: fadeSlideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Dark Mode - Ecosystem */
+[data-theme="dark"] #ecosystem-section {
+    background-color: #0d121c !important;
+}
+
+[data-theme="dark"] .anim-net-grid {
+    opacity: 0.1 !important;
+}
+
+[data-theme="dark"] .eco-node-center {
+    background: #16202e;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .node-dot {
+    background: #2a3546;
+    border-color: #4a5568;
+}
+
+[data-theme="dark"] .node-label {
+    color: #a0aec0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .eco-card {
+    background-color: #16202e;
+    border-left-color: #004685;
+}
+
+[data-theme="dark"] .eco-card h3 {
+    color: #fff !important;
+}
+
+[data-theme="dark"] .eco-card p,
+[data-theme="dark"] .eco-card .text-muted {
+    color: #cbd5e1 !important;
+}
+
+/* =======================================================
+   Footer Enhancement
+   section: #footer-main-section
+   ======================================================= */
+/* Footer Background */
+.footer-floater {
+    filter: blur(20px);
+    opacity: 0.8;
+    animation: float-slow 10s ease-in-out infinite alternate;
+}
+
+.float-1 {
+    animation-delay: 0s;
+}
+
+.float-2 {
+    animation-delay: 5s;
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Widget Icons */
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.bg-primary-light {
+    background-color: rgba(41, 175, 227, 0.1);
+    color: #004685;
+}
+
+/* Dark Mode - Footer */
+[data-theme="dark"] .footer-light {
+    background-color: #0d121c !important;
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .footer-light .widget-title {
+    color: #fff !important;
+}
+
+[data-theme="dark"] .footer-light a {
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .footer-light a:hover {
+    color: #29afe3;
+}
+
+[data-theme="dark"] .icon-circle {
+    background-color: rgba(41, 175, 227, 0.2);
+    color: #fff;
+}
+
+[data-theme="dark"] .footer-bottom {
+    background-color: #0d121c !important;
+    border-top-color: #2a3546;
+}
+
+[data-theme="dark"] .widget_address ul li,
+[data-theme="dark"] .getin-touch ul li {
+    color: #a0aec0;
+}
+
+
+/* =======================================================
+   Ecosystem Enhancements (Maximized Visuals)
+   section: #ecosystem-section
+   ======================================================= */
+
+/* 1. Node Icons - Larger & Floating */
+.node-icon-circle {
+    width: 65px;
+    height: 65px;
+    /* Bigger Icon */
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f0f4f8;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Gentle Float Animation for ALL nodes */
+.eco-node .node-icon-circle {
+    animation: float-node 3s ease-in-out infinite alternate;
+}
+
+/* Stagger animations so they don't move in unison */
+.eco-node:nth-child(2) .node-icon-circle {
+    animation-delay: 0.5s;
+}
+
+.eco-node:nth-child(3) .node-icon-circle {
+    animation-delay: 1.0s;
+}
+
+.eco-node:nth-child(4) .node-icon-circle {
+    animation-delay: 1.5s;
+}
+
+.eco-node:nth-child(5) .node-icon-circle {
+    animation-delay: 2.0s;
+}
+
+@keyframes float-node {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(-8px);
+    }
+}
+
+.node-icon-circle i {
+    color: #004685;
+    font-size: 24px;
+    /* Larger Icon Font */
+    transition: all 0.3s;
+}
+
+/* Active State Override */
+.eco-node.active .node-icon-circle,
+.eco-node:hover .node-icon-circle {
+    width: 80px;
+    height: 80px;
+    /* Even Larger active */
+    border-color: #29afe3;
+    box-shadow: 0 0 30px rgba(41, 175, 227, 0.6);
+    background: #004685;
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Slight pop */
+    z-index: 10;
+}
+
+.eco-node.active .node-icon-circle i,
+.eco-node:hover .node-icon-circle i {
+    color: #fff;
+    font-size: 32px;
+}
+
+/* Hide old dot if still present */
+.node-dot {
+    display: none;
+}
+
+/* Adjust label position for larger icons */
+.node-label {
+    top: 50px;
+    /* Pushed further down */
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Enhanced Background Floaters */
+.eco-floater {
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    animation: float-drift 25s infinite alternate ease-in-out;
+}
+
+.float-Orb-1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(41, 175, 227, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.float-Orb-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 70, 133, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation-delay: -5s;
+}
+
+.float-Dash-1 {
+    width: 150px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, rgba(41, 175, 227, 0.4), transparent);
+    border-radius: 6px;
+    transform: rotate(-15deg);
+    animation: float-dash 10s infinite linear;
+}
+
+@keyframes float-drift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(40px, -40px);
+    }
+}
+
+@keyframes float-dash {
+    0% {
+        transform: translateX(-60px) rotate(-15deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(60px) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+/* Dark Mode Updates for Icons */
+[data-theme="dark"] .node-icon-circle {
+    background: #16202e;
+    border-color: #2a3546;
+}
+
+[data-theme="dark"] .node-icon-circle i {
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .eco-node.active .node-icon-circle {
+    background: #29afe3;
+    border-color: #29afe3;
+}
+
+[data-theme="dark"] .eco-node.active .node-icon-circle i {
+    color: #0d121c;
+
+    /* =======================================================
+   Typical Applications Enhancements
+   section: #typical-applications
+   ======================================================= */
+
+    /* 1. App Background Floaters */
+    .app-floater {
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .float-Hex-1 {
+        width: 200px;
+        height: 174px;
+        /* Hexagon approx */
+        background-color: #004685;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        animation: float-rotate-slow 30s infinite linear;
+    }
+
+    .float-Hex-2 {
+        width: 120px;
+        height: 104px;
+        background-color: #29afe3;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        animation: float-rotate-slow 25s infinite linear reverse;
+    }
+
+    .float-Dot-1 {
+        width: 20px;
+        height: 20px;
+        background: #29afe3;
+        border-radius: 50%;
+        animation: pulse-soft 3s infinite ease-in-out;
+    }
+
+    @keyframes float-rotate-slow {
+        0% {
+            transform: rotate(0deg) translate(0, 0);
+        }
+
+        50% {
+            transform: rotate(180deg) translate(20px, 20px);
+        }
+
+        100% {
+            transform: rotate(360deg) translate(0, 0);
+        }
+    }
+
+    /* 2. Modern Icon Wrapper (Premium Look) */
+    .modern-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+        border-radius: 12px;
+        display: flex;
+        /* Center icon */
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px rgba(0, 70, 133, 0.1);
+        margin-right: 20px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .modern-icon-wrapper i {
+        font-size: 26px;
+        color: #004685;
+        background: -webkit-linear-gradient(#29afe3, #004685);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s;
+    }
+
+    /* Hover Effect: Icon Pop */
+    .app-row-card:hover .modern-icon-wrapper {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 25px rgba(41, 175, 227, 0.2);
+        border-color: #29afe3;
+    }
+
+    /* Remove old icon box styles from this context if conflicts arise, 
+   but new class .modern-icon-wrapper handles specificity */
+
+    /* 3. Card Interactive States */
+    .app-row-card {
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+        /* Prepare for border transition */
+    }
+
+    .app-row-card:hover {
+        background: #fff;
+        border-color: rgba(41, 175, 227, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        z-index: 2;
+        position: relative;
+    }
+
+    /* Dark Mode Updates */
+    [data-theme="dark"] .modern-icon-wrapper {
+        background: linear-gradient(135deg, #16202e 0%, #0d121c 100%);
+        border-color: #2a3546;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .app-row-card:hover {
+        background: #16202e;
+        border-color: #29afe3;
+    }
