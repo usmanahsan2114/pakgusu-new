@@ -40,7 +40,7 @@
     <link href="../css/light-mode-patch.css" rel="stylesheet" /> <!-- LIGHT MODE PATCH -->
     <link href="../css/turnkey-redesign.css" rel="stylesheet" />
     <link href="../css/products-redesign.css" rel="stylesheet" /> <!-- TURNKEY REDESIGN -->
-    <link href="../css/industries-redesign.css" rel="stylesheet" /> <!-- INDUSTRIES REDESIGN -->
+
     <link href="../css/header-master.css" rel="stylesheet" />
 </head>
 
@@ -268,7 +268,7 @@
         <!-- HEADER END -->
         <!-- CONTENT START -->
         <div class="page-content"><!-- Section: Hero -->
-            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(images/banner/1.jpg);">
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(../images/banner/2.jpg);">
                 <div class="overlay-main bg-black opacity-07"></div>
                 <div class="container">
                     <div class="wt-bnr-inr-entry">
@@ -961,19 +961,9 @@
 
                                 <!-- Illustrative Content -->
                                 <div class="visual-content">
-                                    <div class="visual-pulse-ring"></div>
-                                    <div class="visual-icon">
-                                        <!-- Simple SVG Factory Icon -->
-                                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path
-                                                d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-                                            <path d="M17 18h1" />
-                                            <path d="M12 18h1" />
-                                            <path d="M7 18h1" />
-                                        </svg>
-                                    </div>
+                                    <!-- Image will be swapped by JS -->
+                                    <img id="visual-image" src="../images/gallery/pic1.jpg" alt="Facility Overview"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                                 </div>
 
                                 <div class="visual-badges">
@@ -1445,6 +1435,31 @@
                     color: #d1deea;
                 }
 
+                /* Visual Badge Dark Mode */
+                html[data-theme="dark"] .visual-badge {
+                    background: #112233;
+                    border-color: #1e3a5f;
+                }
+
+                html[data-theme="dark"] .v-badge-label {
+                    color: #a0b3c6;
+                }
+
+                html[data-theme="dark"] .v-badge-val {
+                    color: #29afe3;
+                }
+
+                /* Button Dark Mode Override */
+                html[data-theme="dark"] .site-button,
+                html[data-theme="dark"] .site-button-link {
+                    color: #ffffff !important;
+                }
+
+                html[data-theme="dark"] .site-button:hover,
+                html[data-theme="dark"] .site-button-link:hover {
+                    color: #ffffff !important;
+                }
+
                 .panel-bullets li::before {
                     content: "\2022";
                     /* Bullet */
@@ -1584,6 +1599,13 @@
                         'panel-capacity': 'Scale & Output'
                     };
 
+                    const images = {
+                        'panel-facility': '../images/gallery/pic1.jpg',
+                        'panel-machinery': '../images/gallery/pic2.jpg',
+                        'panel-capacity': '../images/gallery/pic3.jpg'
+                    };
+                    const visualImage = document.getElementById('visual-image');
+
                     function activateTab(tab) {
                         // Deactivate all
                         tabs.forEach(t => {
@@ -1611,6 +1633,14 @@
                         // Update Visual Label
                         if (visualLabel && labels[targetId]) {
                             visualLabel.textContent = labels[targetId];
+                        }
+
+                        // Update Visual Image
+                        if (visualImage && images[targetId]) {
+                            console.log('Switching image to:', images[targetId]); // Debug
+                            visualImage.src = images[targetId];
+                        } else {
+                            console.warn('Image element or path missing for:', targetId);
                         }
                     }
 
@@ -2311,6 +2341,15 @@
                 html[data-theme="dark"] .qc-kpi-ring {
                     border-color: var(--qc-light);
                     background: transparent;
+                }
+
+                html[data-theme="dark"] .qc-kpi-badge {
+                    background-color: #112233;
+                    border: 1px solid #1e3a5f;
+                }
+
+                html[data-theme="dark"] .qc-kpi-label {
+                    color: #d1deea;
                 }
 
                 /* --- RESPONSIVE --- */
@@ -4050,7 +4089,8 @@
 
                         <!-- Right Panel: Visual & Trust -->
                         <div class="cta-visual-col">
-                            <div class="cta-visual-card">
+                            <div class="cta-visual-card"
+                                style="background-image: url(../images/gallery/pic2.jpg); background-size: cover; background-position: center;">
                                 <!-- Abstract cleanroom illustration / icon cluster -->
                                 <div class="cta-icon-cluster">
                                     <i class="flaticon-factory cta-main-icon"></i>
