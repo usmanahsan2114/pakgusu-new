@@ -2,96 +2,107 @@
 
 **URL:** `/`
 **Source File:** `intoriza/index.html`
-**Parent Template:** `index-3.html` (Likely based on structure)
+**Parent Template:** `index-3.html`
 
 ## Page Overview
-The main landing page for PakGusu Technology, designed to showcase turnkey cleanroom solutions, products, and industries served. It serves as the primary gateway for potential clients.
+The main landing page for PakGusu Technology, acting as a comprehensive portal to Products, Services, and Industries. It features a modern, section-rich layout with interactive elements like a global map, solution pathways, and a news hub.
 
 ## Section-by-Section Design
 
 ### 1. Header
-- **Type:** Sticky Header (`.sticky-header`, `.header-style-1`)
-- **Components:**
-    - Logo (`.logo-header`)
-    - Main Navigation (`.header-nav`)
-    - **Dark Mode Toggle** (`.dark-mode-toggle`) - User-activated, defaults to Light Mode. See [Dark Mode Feature](../dark-mode.md).
-    - "Get In Touch" Slide-out Panel (`.contact-slide-hide`)
+- **Type:** Sticky Global Header
+- **Components:** Logo, Main Navigation (Desktop + Mobile), Dark Mode Toggle, Contact Slide-out Panel.
 
 ### 2. Hero Section
-- **Type:** Revolution Slider (`#rev_slider_346_1_wrapper`)
+- **Type:** Revolution Slider (`fullscreenbanner`)
+- **ID:** `rev_slider_346_1`
 - **Content:**
-    - Slide 1: "Turnkey Cleanroom Solutions" - "Build World-Class Modular Cleanrooms Locally in Pakistan."
-    - Background: Image with parallax effect.
-    - Animation: Text fades in with 3D effects.
+    - Slide: "Turnkey Cleanroom Solutions" / "Build World-Class Modular Cleanrooms Locally in Pakistan."
+    - Visuals: Parallax text, fade-in animations, text-swap effects.
+- **Next Section Trigger:** Scroll Indicator mouse icon.
 
-### 3. Who We Are Section
-- **ID:** `#who-we-are-section`
+### 3. Intro / Who We Are (`#intro-hero-section`)
 - **Layout:** 2-Column Split
-    - **Left Column:** "About PakGusu" intro text with an Accordion (`#accordion5`) featuring:
-        - Turnkey Design & Build
-        - ISO-Classified Environments
-        - Local Manufacturing Support
-    - **Right Column:** Synced Owl Carousel Gallery (`#sync1`, `#sync2`) displaying project/product images.
-- **Visuals:** Wave background animation (`.wave-container`).
+    - **Left:** "About PakGusu" intro text + Accordion (Turnkey Design, ISO Environments, Local Support).
+    - **Right:** Visual Frame with Main Slider (`#sync1`) and Thumbnail Carousel (`#sync2`).
 
-### 4. Cleanroom Products Section
-- **ID:** `#cleanroom-products-section`
-- **Layout:** Grid of 6 items (3 columns on desktop).
-- **Content:**
-    - Cleanroom Panels
-    - Cleanroom Windows
-    - Cleanroom Doors
-    - Pass-Through Chambers
-    - Aluminum Profiles
-    - Cleanroom LED Lights
-- **Styling:** Hover effects on cards (`.hover-box-effect`, `.v-icon-effect`).
-- **Visuals:** Background "blobs" animation (`.cp-background`).
+### 4. Cleanroom Products (`#cleanroom-products-section`)
+- **Header:** "Manufactured in Pakistan / Cleanroom Products"
+- **Layout:** 3-Column Grid (`.products-grid`)
+- **Items:**
+    1.  Cleanroom Panels
+    2.  Cleanroom Windows
+    3.  Cleanroom Doors
+    4.  Pass-Through Chambers
+    5.  Aluminum Profiles
+    6.  Cleanroom LED Lights
+- **Visuals:** Hover cards with icons and descriptions.
 
-### 5. Industries We Serve Section
-- **ID:** `#industries-we-serve-section`
-- **Layout:** Carousel (`.owl-carousel-filter3`)
+### 5. Industries We Serve (`#industries-we-serve-section`)
+- **Header:** "Industries We Serve"
+- **Layout:** Full-width Owl Carousel (`.cleanroom-window-slider`)
 - **Content:**
-    - Pharmaceutical & Nutraceutical
-    - Healthcare & Hospitals
+    - Pharmaceutical
+    - Healthcare
     - Food & Beverage
-    - Electronics Manufacturing
+    - Electronics
     - Laboratories & R&D
-    - Medical & Surgical Devices
-- **Styling:** Cards with background images and hover descriptions (`.hover-effect-1`).
+    - Medical Devices
+- **Visuals:** Scan-line overlay effect on images.
 
-### 6. Turnkey Cleanroom Services
-- **ID:** `#turnkey-services-section`
-- **Layout:** 4 Columns.
-- **Content:**
-    - Planning & Design
-    - Cleanroom Construction
-    - Installation & Commissioning
-    - Validation & Certification
-- **Styling:** Image cards with text overlay on hover (`.our-team-two`).
+### 6. Turnkey Services (`#turnkey-services-section`)
+- **Header:** "End-to-End Solutions / Turnkey Cleanroom Services"
+- **Layout:** 4-Column Row
+- **Items:**
+    1.  Planning & Design
+    2.  Cleanroom Construction
+    3.  Installation & Commissioning
+    4.  After-Sales Support
+- **Visuals:** Card layout with icon top and "Read More" link.
 
-### 7. Why Choose PakGusu
-- **ID:** `#why-choose-pakgusu-section`
-- **Layout:** 2-Column (Text Left, Image/Video Right).
-- **Content:**
-    - Accordion listing advantages (Expertise, Cost-Effective, Compliance, Support).
-    - Video popup (`.mfp-video`) linking to a corporate video.
+### 7. Global Presence (`#global-presence-section`)
+- **Type:** Interactive Map & List
+- **Layout:** Split View
+    - **Left:** Map visualizations with markers (`.gp-map-card`).
+    - **Right:** Filterable List (`.gp-list-panel`) with tabs (Manufacturing, Sales, Partner) and Search.
+- **Data:** JS-driven location data (Pakistan, China, UAE, etc.).
 
-### 8. Latest News (Blog)
-- **ID:** `#latest-news-section`
-- **Layout:** 3-Column Grid.
-- **Content:** Recent blog posts with dates, titles, and snippets.
+### 8. Solutions Overview (`#solutions-overview`)
+- **Header:** "Two Paths, One Integrated Cleanroom Solution"
+- **Layout:** 2-Card "Choice" Layout
+    - **Left:** Components (Modular Cleanroom Components)
+    - **Right:** Turnkey (End-to-End Engineering Services)
+- **Visuals:** Animated background streams, hover glow effects.
 
-### 9. Footer
-- **Type:** Main Footer (`footer-dark`)
-- **Components:**
-    - About widget
-    - Useful Links
-    - Recent Posts
-    - Newsletter Signup
-    - Copyright and Social Icons
+### 9. Latest News Hub (`#latest-news-section`)
+- **Header:** "Insights & Updates / Latest News"
+- **Layout:** News Grid (`.news-hub-grid`)
+    - **Left:** Featured Article (Large card).
+    - **Right:** Secondary Article Stack (2 smaller cards).
+- **Style:** Wave background SVG.
 
-## Scripts & Interactive Elements
-- **Revolution Slider:** Main hero banner.
-- **Owl Carousel:** Product gallery, Industries carousel, Blog carousel.
+### 10. Trusted Partners (`.home-client-carousel-2`)
+- **Header:** "Trusted Partners / Our Clients"
+- **Layout:** Logo Carousel.
+
+### 11. Social Proof (`#social-proof-section`)
+- **Layout:** Split Row
+    - **Left:** Testimonial Carousel (`.testimonial-home`).
+    - **Right:** Stats Grid (Turnkey Projects, Expert Engineers, Compliance Rate).
+- **Scripts:** CountUp animation for stats.
+
+### 12. Dual CTA (`#cta-dual-section`)
+- **Layout:** 2-Column Split
+    - **Left:** Contact CTA ("Ready to Start?").
+    - **Right:** Video CTA ("Why Choose PakGusu?" with Vimeo popup).
+
+### 13. Footer
+- **Type:** Standard Global Footer
+- **Components:** Get In Touch, Address, More Links, Social Icons.
+
+## Scripts & Libraries
+- **Revolution Slider:** Hero banner.
+- **Owl Carousel:** Intro sync, Industries, Partners, Testimonials.
 - **Magnific Popup:** Video lightboxes.
-- **Waypoints:** Scroll animations (`.fade-in-up`).
+- **IntersectionObserver:** Scroll animations (`fade-in-up`, etc) and Stats counter.
+- **Custom JS:** Global Presence map logic, Solution Overview hover effects.

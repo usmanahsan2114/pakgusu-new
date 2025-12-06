@@ -2,37 +2,41 @@
 
 **URL:** `/contact/`
 **Source File:** `intoriza/contact/index.html`
-**Parent Template:** `contact-1.html`
 
 ## Page Overview
-Provides contact information and a form for users to get in touch with PakGusu Technology.
+Primary contact interface featuring a redesigned location showcase, contact grid, and inquiry form.
 
 ## Section-by-Section Design
 
 ### 1. Header
 - **Type:** Standard Global Header
-- **Includes:** Dark Mode Toggle. Header is always Dark Blue (#004685) with Light Blue (#29afe3) accents. See [Dark Mode](../dark-mode.md).
+- **Includes:** Dark Mode Toggle, Mobile Menu.
 
-### 2. Page Title / Breadcrumb
+### 2. Page Title / Hero
 - **Type:** Inner Page Banner (`.wt-bnr-inr`)
-- **Background:** Image overlay (`.overlay-primary`).
-- **Content:** "Contact" text and breadcrumb navigation.
+- **Background:** Image (`banner/4.jpg`) with black overlay.
+- **Content:** Title "Contact Us", Breadcrumb "Home / Contact Us".
 
-### 3. Contact Info & Form Section
-- **Layout:** 2-Column
-    - **Left Column:** Contact Form (`.cons-contact-form`)
-        - Fields: Username, Email, Message.
-        - Button: "Submit".
-    - **Right Column:** Contact Details (`.contact-info`)
-        - Phone, Email, Address iconic boxes (`.wt-icon-box-wraper`).
+### 3. Location & Map Section (`.new-location-section`)
+- **Layout:** Duo-Card Wrapper (`.new-location-wrapper`)
+    - **Location Card:** "Visit Us / Lahore Office", Address, Phone/Email links, "Get Directions" button.
+    - **Map Card:** Embedded Google Map iframe (showing New York placeholder/custom location).
 
-### 4. Google Map
-- **Type:** Full-width Map (`.map-section`)
-- **Implementation:** Embedded Google Maps iframe or API integration.
+### 4. Contact Ways Grid (`.new-contact-section`)
+- **Header:** "Trust & Recommend / Contact Us"
+- **Layout:** 4-Column Grid (`.new-contact-grid`)
+- **Items:**
+    1.  **Phone Support:** Icon, Number +92..., Link.
+    2.  **Email Us:** Icon, info@pakgusu.com link.
+    3.  **Office Address:** Icon, Address text, "View on map" link.
+    4.  **WhatsApp:** Icon, direct WA link.
 
-### 5. Footer
-- **Type:** Standard Global Footer (Dark Blue #004685, Light Blue #29afe3 accents, white text)
+### 5. Contact Form Section (`.new-form-section`)
+- **Header:** "Let's Connect / Get In Touch"
+- **Form Wrapper:** `.new-form-wrapper`
+- **Fields:** Name, Email, Message (Textarea).
+- **Button:** "Send Message" (Submit).
 
-## Scripts
-- **Form Validation:** Likely uses standard HTML5 or a JS validator.
-- **Map:** Google Maps script (if API based).
+### 6. Footer
+- **Type:** Standard Global Footer
+- **Features:** "Get In Touch", Address, More Links columns, Social Icon row, Copyright bar.

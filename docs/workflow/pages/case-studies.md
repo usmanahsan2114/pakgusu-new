@@ -2,41 +2,34 @@
 
 **URL:** `/case-studies/`
 **Source File:** `intoriza/case-studies/index.html`
-**Parent Template:** `work-grid.html` or `work-masonry.html`
+**Parent Template:** `work-masonry.html` (implied)
 
 ## Page Overview
-Showcases completed cleanroom projects across various industries to demonstrate PakGusu's capabilities.
+Intended to showcase completed projects. Currently setup with a masonry grid container (content appears to be creating dynamically or is currently empty placeholder) followed by support and CTA sections.
 
 ## Section-by-Section Design
 
 ### 1. Header
 - **Type:** Standard Global Header
-- **Includes:** Dark Mode Toggle. Header is always Dark Blue (#004685) with Light Blue (#29afe3) accents. See [Dark Mode](../dark-mode.md).
+- **Includes:** Dark Mode Toggle, Mobile Menu.
 
-### 2. Page Title / Breadcrumb
+### 2. Page Title / Hero
 - **Type:** Inner Page Banner (`.wt-bnr-inr`)
-- **Content:** "Case Studies" or "Our Projects" title and breadcrumb.
+- **Background:** Image (`banner/1.jpg`) with black overlay.
+- **Content:** Title "Work Masonry", Breadcrumb "Home / Work Masonry".
 
-### 3. Filter Bar (Optional)
-- **Layout:** Horizontal filter buttons.
-- **Content:** Industry categories (Pharma, Healthcare, Food, Electronics, etc.)
-- **Scripts:** Isotope.js or similar for filtering.
+### 3. Gallery Grid Section
+- **Container:** `.portfolio-wrap .mfp-gallery .work-grid .row`
+- **Status:** Empty in static HTML source (likely populated via JS or manual update needed).
 
-### 4. Projects Grid
-- **Layout:** Masonry or Standard Grid (3-4 columns).
-- **Content:**
-    - Project thumbnail image.
-    - Project title (e.g., "Pharmaceutical Cleanroom – XYZ Pharma").
-    - Industry tag.
-    - Link to detail page (if available).
-- **Styling:** Hover effect revealing title/category (`.wt-img-overlay`).
+### 4. Support Information
+- **Layout:** Centered Text Block (`.bg-gray`)
+- **Content:** "Need More Information? / Support", Paragraph, "Get in Touch" button.
 
-### 5. Pagination (Optional)
-- **Layout:** Standard pagination or "Load More" button.
+### 5. Primary CTA (`.video-section-full`)
+- **Background:** Image (`bg-1.jpg`)
+- **Content:** "Ready to Start? / Plan Your Cleanroom Project Today", "Contact Us" button.
 
 ### 6. Footer
-- **Type:** Standard Global Footer (Dark Blue #004685, Light Blue #29afe3 accents, white text)
-
-## Scripts
-- **Isotope.js:** For masonry layout and filtering.
-- **ImagesLoaded:** To ensure grid calculates layout after images load.
+- **Type:** Standard Global Footer
+- **Includes:** Navigation links, Contact Grid, Social Icons, Copyright.
