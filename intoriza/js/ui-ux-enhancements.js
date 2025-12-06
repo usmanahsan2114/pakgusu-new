@@ -232,7 +232,7 @@ jQuery(document).ready(function ($) {
     if ($('#types-configurator').length) {
 
         // Data Store
-        const configData = {
+        const configData = window.productConfigData || {
             standard: {
                 title: 'Standard View',
                 desc: 'Cost-effective panel for non-fire-rated, non-ESD areas.',
@@ -341,7 +341,7 @@ jQuery(document).ready(function ($) {
     if ($('#features-console').length) {
 
         // Data Store
-        const featuresData = {
+        const featuresData = window.productFeaturesData || {
             clean: {
                 id: '01',
                 title: 'Easy to Clean',
@@ -723,6 +723,105 @@ jQuery(document).ready(function ($) {
         // Pause on interaction
         $('#ecosystem-section').on('mouseenter', stopRotation).on('mouseleave', startRotation);
     }
+});
+
+/* =======================================================
+   Motion Wave System Logic
+   ======================================================= */
+jQuery(document).ready(function ($) {
+
+    // 1. Intersection Observer for Scroll Activation
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2 // Trigger when 20% visible
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } else {
+                // Optional: Remove class to reset animation on scroll up
+                // entry.target.classList.remove('is-visible'); 
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections with waves
+    document.querySelectorAll('.section-full').forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // 2. Interaction: Speed Up on Hover
+    $('.section-full').hover(
+        function () {
+            // Mouse Enter
+            document.documentElement.style.setProperty('--wave-speed-slow', '30s');
+            document.documentElement.style.setProperty('--wave-speed-med', '20s');
+        },
+        function () {
+            // Mouse Leave
+            document.documentElement.style.setProperty('--wave-speed-slow', '60s');
+            document.documentElement.style.setProperty('--wave-speed-med', '40s');
+        }
+    );
+
+
+    // 3. Section-Specific Micro-Interactions
+
+    // 3a. Benefits Map: Link Cards to Wave Highlights
+    $('.benefit-card').hover(
+        function () {
+            // Activate
+            $(this).addClass('active').siblings().removeClass('active');
+            // Logic to pulse specific hotspot is already in CSS/HTML structure (sibling selection)
+        }
+    );
+
+    // 3b. Types Configurator: "Whoosh" on Hover
+    $('.type-card').hover(
+        function () {
+            // Add momentary speed-up class to wrapper
+            $('#types-configurator .wave-layer').addClass('wave-fast');
+        },
+        function () {
+            $('#types-configurator .wave-layer').removeClass('wave-fast');
+        }
+    );
+
+    // 3c. Features Console: Sonar Ring Pulse
+    $('.feature-nav-pill').on('click', function () {
+        // Reset animations
+        $('.sonar-ring').removeClass('active-pulse');
+        // Force reflow
+        void document.querySelector('.sonar-ring').offsetWidth;
+        // Start new pulse
+        $('.sonar-ring').addClass('active-pulse');
+    });
+
+    // 3d. Typical Applications: Tab Wave Transitions
+    $('.app-tab-link').on('click', function () {
+        // Simple crossfade simulation via opacity toggle
+        $('.wave-apps').addClass('wave-dim');
+        setTimeout(() => {
+            $('.wave-apps').removeClass('wave-dim');
+        }, 300);
+    });
+
+    // 3e. Ecosystem: Line Pulse on Node Hover (delegated from existing logic)
+    // Existing logic handles class switching, CSS handles the animation via .eco-line.active-line
+
+    // 3f. Footer: Social Ripple
+    $('.new-footer-social-icon ul li a').hover(
+        function () {
+            $('.wave-footer path').css('stroke', 'rgba(41, 175, 227, 0.4)');
+        },
+        function () {
+            $('.wave-footer path').css('stroke', '');
+        }
+    );
+
 });
 
 

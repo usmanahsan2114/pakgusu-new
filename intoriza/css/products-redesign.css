@@ -1734,118 +1734,119 @@ html[data-theme="dark"] #cleanroom-products-section .product-link::before {
 
 [data-theme="dark"] .eco-node.active .node-icon-circle i {
     color: #0d121c;
+}
 
-    /* =======================================================
+/* =======================================================
    Typical Applications Enhancements
    section: #typical-applications
    ======================================================= */
 
-    /* 1. App Background Floaters */
-    .app-floater {
-        opacity: 0.15;
-        pointer-events: none;
-        z-index: 0;
+/* 1. App Background Floaters */
+.app-floater {
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.float-Hex-1 {
+    width: 200px;
+    height: 174px;
+    /* Hexagon approx */
+    background-color: #004685;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: float-rotate-slow 30s infinite linear;
+}
+
+.float-Hex-2 {
+    width: 120px;
+    height: 104px;
+    background-color: #29afe3;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: float-rotate-slow 25s infinite linear reverse;
+}
+
+.float-Dot-1 {
+    width: 20px;
+    height: 20px;
+    background: #29afe3;
+    border-radius: 50%;
+    animation: pulse-soft 3s infinite ease-in-out;
+}
+
+@keyframes float-rotate-slow {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
     }
 
-    .float-Hex-1 {
-        width: 200px;
-        height: 174px;
-        /* Hexagon approx */
-        background-color: #004685;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        animation: float-rotate-slow 30s infinite linear;
+    50% {
+        transform: rotate(180deg) translate(20px, 20px);
     }
 
-    .float-Hex-2 {
-        width: 120px;
-        height: 104px;
-        background-color: #29afe3;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        animation: float-rotate-slow 25s infinite linear reverse;
+    100% {
+        transform: rotate(360deg) translate(0, 0);
     }
+}
 
-    .float-Dot-1 {
-        width: 20px;
-        height: 20px;
-        background: #29afe3;
-        border-radius: 50%;
-        animation: pulse-soft 3s infinite ease-in-out;
-    }
+/* 2. Modern Icon Wrapper (Premium Look) */
+.modern-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    border-radius: 12px;
+    display: flex;
+    /* Center icon */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 70, 133, 0.1);
+    margin-right: 20px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
 
-    @keyframes float-rotate-slow {
-        0% {
-            transform: rotate(0deg) translate(0, 0);
-        }
+.modern-icon-wrapper i {
+    font-size: 26px;
+    color: #004685;
+    background: -webkit-linear-gradient(#29afe3, #004685);
+    background: linear-gradient(#29afe3, #004685);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s;
+}
 
-        50% {
-            transform: rotate(180deg) translate(20px, 20px);
-        }
+/* Hover Effect: Icon Pop */
+.app-row-card:hover .modern-icon-wrapper {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(41, 175, 227, 0.2);
+    border-color: #29afe3;
+}
 
-        100% {
-            transform: rotate(360deg) translate(0, 0);
-        }
-    }
-
-    /* 2. Modern Icon Wrapper (Premium Look) */
-    .modern-icon-wrapper {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
-        border-radius: 12px;
-        display: flex;
-        /* Center icon */
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 20px rgba(0, 70, 133, 0.1);
-        margin-right: 20px;
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-
-    .modern-icon-wrapper i {
-        font-size: 26px;
-        color: #004685;
-        background: -webkit-linear-gradient(#29afe3, #004685);
-        background: linear-gradient(#29afe3, #004685);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transition: all 0.3s;
-    }
-
-    /* Hover Effect: Icon Pop */
-    .app-row-card:hover .modern-icon-wrapper {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 12px 25px rgba(41, 175, 227, 0.2);
-        border-color: #29afe3;
-    }
-
-    /* Remove old icon box styles from this context if conflicts arise, 
+/* Remove old icon box styles from this context if conflicts arise, 
    but new class .modern-icon-wrapper handles specificity */
 
-    /* 3. Card Interactive States */
-    .app-row-card {
-        transition: all 0.3s ease;
-        border: 1px solid transparent;
-        /* Prepare for border transition */
-    }
+/* 3. Card Interactive States */
+.app-row-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    /* Prepare for border transition */
+}
 
-    .app-row-card:hover {
-        background: #fff;
-        border-color: rgba(41, 175, 227, 0.2);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-        z-index: 2;
-        position: relative;
-    }
+.app-row-card:hover {
+    background: #fff;
+    border-color: rgba(41, 175, 227, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+    position: relative;
+}
 
-    /* Dark Mode Updates */
-    [data-theme="dark"] .modern-icon-wrapper {
-        background: linear-gradient(135deg, #16202e 0%, #0d121c 100%);
-        border-color: #2a3546;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
+/* Dark Mode Updates */
+[data-theme="dark"] .modern-icon-wrapper {
+    background: linear-gradient(135deg, #16202e 0%, #0d121c 100%);
+    border-color: #2a3546;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-    [data-theme="dark"] .app-row-card:hover {
-        background: #16202e;
-        border-color: #29afe3;
-    }
+[data-theme="dark"] .app-row-card:hover {
+    background: #16202e;
+    border-color: #29afe3;
+}

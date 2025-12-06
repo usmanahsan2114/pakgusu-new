@@ -1,0 +1,257 @@
+/* =======================================================
+   Products Waves Motion System
+   ======================================================= */
+
+:root {
+    /* Wave System Tokens */
+    --wave-color-primary: rgba(0, 70, 133, 0.08);
+    --wave-color-accent: rgba(41, 175, 227, 0.12);
+    --wave-color-glow: rgba(41, 175, 227, 0.4);
+
+    --wave-speed-slow: 60s;
+    --wave-speed-med: 40s;
+    --wave-speed-fast: 20s;
+
+    --wave-ease: linear;
+}
+
+/* Base Wave Layer Container */
+.wave-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    /* Above bg grid (0), below content */
+}
+
+.section-waves {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* Visibility State (Managed by IntersectionObserver) */
+.is-visible .section-waves {
+    opacity: 1;
+}
+
+/* Common Wave Paths */
+.wave-path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.wave-primary {
+    stroke: var(--wave-color-primary);
+    stroke-width: 2px;
+}
+
+.wave-accent {
+    stroke: var(--wave-color-accent);
+    stroke-width: 2px;
+}
+
+/* =======================================================
+   Animations
+   ======================================================= */
+
+/* Continuous Flow */
+@keyframes wave-flow-right {
+    0% {
+        transform: translateX(-5%);
+    }
+
+    50% {
+        transform: translateX(5%);
+    }
+
+    100% {
+        transform: translateX(-5%);
+    }
+}
+
+@keyframes wave-dash-flow {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+.flow-anim {
+    animation: wave-flow-right var(--wave-speed-slow) infinite ease-in-out alternate;
+}
+
+.dash-anim {
+    stroke-dasharray: 20 10;
+    animation: wave-dash-flow var(--wave-speed-med) infinite linear;
+}
+
+/* Pulse Interaction */
+@keyframes wave-pulse-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0px var(--wave-color-accent));
+        stroke-opacity: 0.12;
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px var(--wave-color-glow));
+        stroke-opacity: 0.6;
+    }
+}
+
+.pulse-on-hover {
+    animation: wave-pulse-glow 3s infinite ease-in-out paused;
+}
+
+.section-full:hover .pulse-on-hover {
+    animation-play-state: running;
+}
+
+/* =======================================================
+   Section Specific Modifiers
+   ======================================================= */
+
+/* 1. Benefits Map */
+.wave-benefits {
+    /* Custom style for this section */
+    opacity: 0.8;
+}
+
+/* 2. Configurator - Parallax Rails */
+.wave-rail-top {
+    animation-duration: var(--wave-speed-fast);
+}
+
+.wave-rail-bottom {
+    animation-duration: var(--wave-speed-slow);
+    animation-direction: reverse;
+}
+
+/* 3. Console - Sonar Rings */
+.sonar-ring {
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(0.5);
+    animation: sonar-expand 6s infinite ease-out;
+}
+
+@keyframes sonar-expand {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+/* 4. Typical Apps - Snake Waves */
+.snake-wave {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: snake-draw 3s ease-out forwards, wave-undulate 8s infinite ease-in-out;
+}
+
+@keyframes snake-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =======================================================
+   Interaction Modifiers
+   ======================================================= */
+
+/* Speed Modifiers */
+.wave-fast {
+    --wave-speed-slow: 5s !important;
+    --wave-speed-med: 3s !important;
+    transition: all 0.5s ease;
+}
+
+/* Visibility/Focus Modifiers */
+.wave-dim {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.wave-highlight {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--wave-color-glow));
+    stroke: var(--wave-color-accent);
+    transition: all 0.3s ease;
+}
+
+/* 1. Benefits Map Interactions */
+.benefit-card.active~.wave-layer .wave-path {
+    stroke: var(--wave-color-accent);
+    filter: drop-shadow(0 0 2px var(--wave-color-primary));
+}
+
+/* 2. Configurator Interactions */
+.type-card:hover~.wave-layer .wave-rail-top,
+.type-card.active~.wave-layer .wave-rail-top {
+    animation-duration: 2s;
+    stroke: var(--wave-color-accent);
+}
+
+/* 3. Console - Active Ring Pulse */
+.sonar-ring.active-pulse {
+    animation: sonar-expand 2s ease-out forwards;
+    stroke: var(--wave-color-accent);
+    stroke-opacity: 0.8;
+}
+
+/* 4. Apps - Tab Transitions */
+.app-tab-pane {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 5. Story Wall - Spotlight */
+.wave-story {
+    transition: opacity 0.5s ease;
+}
+
+.tile-inner:hover .wave-story {
+    opacity: 0.8;
+}
+
+/* 6. Ecosystem - Line Pulse */
+.eco-line.pulse-active {
+    stroke-dasharray: 10;
+    animation: dash-flow 1s linear infinite;
+    stroke: var(--wave-color-accent);
+}
+
+/* 7. CTA - Orbit Speed Up */
+.cta-card:hover~.cta-anim-wrapper .wave-cta circle {
+    animation-duration: 10s !important;
+    stroke: var(--wave-color-accent);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .section-waves *,
+    .flow-anim,
+    .dash-anim,
+    .sonar-ring,
+    .snake-wave,
+    .eco-line {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}

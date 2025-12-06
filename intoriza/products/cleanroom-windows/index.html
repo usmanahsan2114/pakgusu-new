@@ -45,6 +45,7 @@
     <link href="../../css/light-mode-patch.css" rel="stylesheet" /> <!-- LIGHT MODE PATCH -->
     <link href="../../css/turnkey-redesign.css" rel="stylesheet" />
     <link href="../../css/products-redesign.css" rel="stylesheet" /> <!-- TURNKEY REDESIGN -->
+    <link href="../../css/products-waves.css" rel="stylesheet" /> <!-- MOTION WAVE SYSTEM -->
     <!-- <link href="../../css/industries-redesign.css" rel="stylesheet" /> -->
     <!-- INDUSTRIES REDESIGN (Removed: File not found) -->
     <link href="../../css/header-master.css" rel="stylesheet" />
@@ -313,6 +314,16 @@
             </svg>
         </div>
 
+        <!-- Wave Layer: Benefits -->
+        <div class="wave-layer">
+            <svg class="section-waves wave-benefits" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                <path class="wave-path wave-primary flow-anim" d="M-100,100 C200,50 400,150 600,100 S1000,50 1540,100"
+                    style="opacity:0.3;"></path>
+                <path class="wave-path wave-accent flow-anim" d="M-100,150 C300,200 600,100 900,150 S1300,200 1540,150"
+                    style="animation-delay: -5s; opacity:0.15;"></path>
+            </svg>
+        </div>
+
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row display-flex align-items-center">
 
@@ -420,8 +431,20 @@
     </div>
     <!-- /Section: Key Benefits Visual Map -->
     <!-- Section: Types & Options Configurator -->
-    <div id="types-configurator" class="section-full p-t80 p-b80 bg-gray" style="background-color: #f4f6f9;">
-        <div class="container">
+    <div id="types-configurator" class="section-full p-t80 p-b80 bg-gray"
+        style="background-color: #f4f6f9; position: relative; overflow: hidden;">
+        <!-- Wave Layer: Configurator (Parallax Rails) -->
+        <div class="wave-layer">
+            <svg class="section-waves wave-config" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                <!-- Top Rail -->
+                <path class="wave-path wave-primary wave-rail-top flow-anim" d="M-200,200 L1640,200"
+                    style="stroke-width: 40; opacity: 0.03;"></path>
+                <!-- Bottom Rail -->
+                <path class="wave-path wave-accent wave-rail-bottom flow-anim" d="M-200,600 L1640,600"
+                    style="stroke-width: 60; opacity: 0.02;"></path>
+            </svg>
+        </div>
+        <div class="container" style="position: relative; z-index: 2;">
             <!-- Section Header -->
             <div class="section-head text-center m-b50">
                 <div class="wt-separator-outer separator-center m-b10">
@@ -577,10 +600,22 @@
     <!-- /Section: Types & Options Configurator -->
     <!-- Section: Features Console -->
     <div id="features-console" class="section-full p-t80 p-b80 bg-light"
-        style="background-color: #fcfdfe; position: relative;">
+        style="background-color: #fcfdfe; position: relative; overflow: hidden;">
         <!-- Background Pattern -->
         <div class="console-grid-bg"
             style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: radial-gradient(#e1e8ed 1px, transparent 1px); background-size: 20px 20px; opacity: 0.5; z-index: 0;">
+        </div>
+
+        <!-- Wave Layer: Features Console (Sonar Rings) -->
+        <div class="wave-layer">
+            <svg class="section-waves wave-console" viewBox="0 0 1440 900" preserveAspectRatio="none">
+                <circle cx="720" cy="450" r="100" class="wave-path wave-accent sonar-ring"
+                    style="fill: none; stroke-width: 1.5;"></circle>
+                <circle cx="720" cy="450" r="200" class="wave-path wave-primary sonar-ring"
+                    style="fill: none; stroke-width: 1; animation-delay: 1s;"></circle>
+                <circle cx="720" cy="450" r="350" class="wave-path wave-accent sonar-ring"
+                    style="fill: none; stroke-width: 0.5; animation-delay: 2.5s;"></circle>
+            </svg>
         </div>
 
         <div class="container" style="position: relative; z-index: 1;">
@@ -704,6 +739,17 @@
             style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; pointer-events: none;">
             <div class="anim-grid"
                 style="position: absolute; width: 200%; height: 200%; background: linear-gradient(rgba(0,70,133,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,70,133,0.03) 1px, transparent 1px); background-size: 40px 40px; transform: rotate(15deg);">
+            </div>
+            <!-- Wave Layer: Snake Waves -->
+            <div class="wave-layer">
+                <svg class="section-waves wave-apps" viewBox="0 0 1440 900" preserveAspectRatio="none">
+                    <path class="wave-path wave-primary snake-wave"
+                        d="M0,800 C300,700 300,400 600,300 S900,200 1440,100"
+                        style="opacity: 0.2; transform: translateY(20px);"></path>
+                    <path class="wave-path wave-accent snake-wave"
+                        d="M1440,800 C1100,700 900,500 600,600 S300,700 0,500"
+                        style="opacity: 0.1; animation-delay: -2s;"></path>
+                </svg>
             </div>
             <!-- Enhanced Floaters -->
             <div class="app-floater float-Hex-1" style="position: absolute; top: 10%; left: 5%;"></div>
@@ -872,6 +918,15 @@
             <div class="anim-grid-faint"
                 style="position: absolute; width: 100%; height: 100%; background-image: radial-gradient(#e1e8ed 1px, transparent 1px); background-size: 30px 30px; opacity: 0.6;">
             </div>
+            <!-- Wave Layer: Story Wall (Curved Masonry) -->
+            <div class="wave-layer">
+                <svg class="section-waves wave-story" viewBox="0 0 1440 1000" preserveAspectRatio="none">
+                    <path class="wave-path wave-primary flow-anim" d="M-100,200 Q400,100 900,300 T1540,400"
+                        style="opacity:0.2; transform: translateY(-50px);"></path>
+                    <path class="wave-path wave-accent flow-anim" d="M1540,800 Q1000,900 500,700 T-100,600"
+                        style="opacity:0.15; animation-delay: -3s;"></path>
+                </svg>
+            </div>
             <div class="anim-orb-float"
                 style="position: absolute; top: 10%; right: 10%; width: 200px; height: 200px; background: rgba(41,175,227,0.05); filter: blur(40px); border-radius: 50%;">
             </div>
@@ -1009,6 +1064,21 @@
         <div class="eco-bg-anim"
             style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; pointer-events: none;">
             <div class="anim-net-grid" style="position: absolute; width: 100%; height: 100%; opacity: 0.4;"></div>
+            <!-- Wave Layer: Ecosystem (Data Flow) -->
+            <div class="wave-layer">
+                <svg class="section-waves wave-eco" viewBox="0 0 1440 800" preserveAspectRatio="none">
+                    <path class="wave-path wave-primary dash-anim" d="M720,400 L720,100"
+                        style="opacity:0.3; stroke-width:1;"></path>
+                    <path class="wave-path wave-accent dash-anim" d="M720,400 L1100,200"
+                        style="opacity:0.3; stroke-width:1; animation-delay: -2s;"></path>
+                    <path class="wave-path wave-primary dash-anim" d="M720,400 L1100,600"
+                        style="opacity:0.3; stroke-width:1; animation-delay: -4s;"></path>
+                    <path class="wave-path wave-accent dash-anim" d="M720,400 L340,600"
+                        style="opacity:0.3; stroke-width:1; animation-delay: -1s;"></path>
+                    <path class="wave-path wave-primary dash-anim" d="M720,400 L340,200"
+                        style="opacity:0.3; stroke-width:1; animation-delay: -3s;"></path>
+                </svg>
+            </div>
             <!-- Enhanced Floating Elements -->
             <div class="eco-floater float-Orb-1" style="position: absolute; top: 15%; left: 10%;"></div>
             <div class="eco-floater float-Orb-2" style="position: absolute; bottom: 20%; right: 15%;"></div>
@@ -1136,6 +1206,18 @@
                 style="position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); opacity: 0.5;">
             </div>
 
+            <!-- Wave Layer: CTA (Fluid Orbits) -->
+            <div class="wave-layer">
+                <svg class="section-waves wave-cta" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                    <circle cx="720" cy="300" r="400" class="wave-path wave-primary"
+                        style="opacity: 0.1; stroke-width: 20; stroke-dasharray: 100 50; animation: rotate-slow 120s linear infinite;">
+                    </circle>
+                    <circle cx="720" cy="300" r="350" class="wave-path wave-accent"
+                        style="opacity: 0.15; stroke-width: 2; stroke-dasharray: 20 10; animation: rotate-slow 60s linear infinite reverse;">
+                    </circle>
+                </svg>
+            </div>
+
             <!-- Floating Objects -->
             <div class="cta-shape shape-1" style="top: 10%; left: 5%;"></div>
             <div class="cta-shape shape-2" style="bottom: 15%; left: 20%;"></div>
@@ -1181,6 +1263,18 @@
             <div class="footer-anim-bg"
                 style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; pointer-events: none;">
                 <div class="anim-net-grid" style="position: absolute; width: 100%; height: 100%; opacity: 0.05;"></div>
+
+                <!-- Wave Layer: Footer (Baseline) -->
+                <div class="wave-layer">
+                    <svg class="section-waves wave-footer" viewBox="0 0 1440 500" preserveAspectRatio="none">
+                        <path class="wave-path wave-primary flow-anim" d="M-100,50 L1540,50"
+                            style="opacity:0.1; stroke-width:2; stroke-dasharray: 10 5;"></path>
+                        <path class="wave-path wave-accent flow-anim"
+                            d="M-100,450 C200,400 600,480 900,420 S1400,450 1540,480"
+                            style="opacity:0.1; stroke-width:2;"></path>
+                    </svg>
+                </div>
+
                 <div class="footer-floater float-1"
                     style="position: absolute; top: 10%; left: 5%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(41,175,227,0.1) 0%, transparent 70%); border-radius: 50%;">
                 </div>
