@@ -895,157 +895,265 @@
 
         /* ======= 3. CTA SECTION ======= */
 
+        /* ======= 3. CTA SECTION (REDESIGNED) ======= */
         #new-industries-cta {
-          background: radial-gradient(circle at 0% 0%, rgba(41, 175, 227, 0.25), transparent 52%),
-            radial-gradient(circle at 100% 100%, rgba(0, 70, 133, 0.9), rgba(0, 15, 54, 1));
-          color: #f9fafb;
+          /* No background here, handled by internal container if desired, or keep section clear */
+          padding: 4rem 0;
+        }
+
+        .new-cta-container {
+          background: radial-gradient(circle at 70% 50%, #063c6e 0%, #004685 100%);
+          background: linear-gradient(135deg, #004685 0%, #002d57 100%);
+          border-radius: var(--new-radius-xl);
+          padding: 3.5rem 4rem;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Decorative blobs */
+        .new-cta-container::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          right: -10%;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(41, 175, 227, 0.1) 0%, transparent 70%);
+          pointer-events: none;
+          z-index: 1;
         }
 
         .new-cta-inner {
           display: grid;
-          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-          gap: 2.8rem;
+          grid-template-columns: 1.2fr 0.9fr;
+          gap: 4rem;
           align-items: center;
+          position: relative;
+          z-index: 2;
         }
 
-        @media (max-width: 920px) {
-          .new-cta-inner {
-            grid-template-columns: minmax(0, 1fr);
-          }
+        /* Left Side */
+        .new-cta-copy {
+          color: #ffffff;
         }
 
-        .new-cta-copy .new-heading-main {
-          color: #f9fafb;
+        .new-cta-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          background: rgba(41, 175, 227, 0.15);
+          color: #29afe3;
+          padding: 0.35rem 0.85rem;
+          border-radius: 99px;
+          font-size: 0.76rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 1.5rem;
         }
 
-        .new-cta-copy .new-heading-sub {
-          color: #d1d5db;
+        .new-dot {
+          width: 6px;
+          height: 6px;
+          background: #29afe3;
+          border-radius: 50%;
+          margin-right: 0.5rem;
         }
 
+        .new-cta-heading {
+          font-size: 2.75rem;
+          font-weight: 800;
+          color: #ffffff;
+          line-height: 1.15;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        #new-industries-cta .new-cta-desc,
+        .new-cta-desc {
+          font-size: 1.05rem;
+          color: #e2e8f0 !important;
+          line-height: 1.6;
+          margin-bottom: 2.5rem;
+          max-width: 520px;
+        }
+
+        /* Actions */
         .new-cta-actions {
           display: flex;
-          flex-wrap: wrap;
-          align-items: center;
           gap: 1rem;
-          margin-top: 1.9rem;
-        }
-
-        .new-cta-btn-primary,
-        .new-cta-btn-secondary {
-          position: relative;
-          border-radius: 999px;
-          padding: 0.8rem 1.6rem;
-          font-size: 0.9rem;
-          font-weight: 600;
-          outline: none;
-          border: none;
-          cursor: pointer;
-          overflow: hidden;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
         }
 
         .new-cta-btn-primary {
-          background: linear-gradient(120deg, var(--new-color-light), #7fd6ff);
-          color: #03111f;
-          box-shadow: 0 12px 35px rgba(15, 23, 42, 0.45);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #29afe3;
+          color: #ffffff;
+          padding: 0.9rem 2rem;
+          border-radius: 99px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(41, 175, 227, 0.3);
         }
 
-        .new-cta-btn-primary:hover {
+        .new-cta-btn-primary:hover,
+        .new-cta-btn-primary:focus-visible {
+          background: #3ebbf0;
           transform: translateY(-2px);
-          box-shadow: 0 18px 50px rgba(15, 23, 42, 0.6);
+          box-shadow: 0 8px 25px rgba(41, 175, 227, 0.4);
         }
 
         .new-cta-btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
           background: transparent;
-          color: #e5e7eb;
-          border: 1px solid rgba(229, 231, 235, 0.4);
+          color: #29afe3;
+          padding: 0.85rem 1.8rem;
+          border-radius: 99px;
+          border: 1px solid #29afe3;
+          font-weight: 600;
+          font-size: 0.95rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
         }
 
-        .new-cta-btn-primary::after,
-        .new-cta-btn-secondary::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at var(--x) var(--y), rgba(255, 255, 255, 0.3), transparent 40%);
-          opacity: 0;
-          transition: opacity 0.35s ease;
-          pointer-events: none;
+        .new-cta-btn-secondary:hover,
+        .new-cta-btn-secondary:focus-visible {
+          background: rgba(41, 175, 227, 0.1);
+          color: #ffffff;
+          border-color: #5dc3eb;
         }
 
-        .new-cta-btn-primary.new-rippling::after,
-        .new-cta-btn-secondary.new-rippling::after {
-          opacity: 1;
+        /* Footer / Microcopy */
+        .new-cta-footer {
+          display: flex;
+          gap: 1.5rem;
+          margin-top: 1rem;
+          align-items: center;
         }
 
-        .new-cta-note {
-          margin-top: 0.75rem;
-          font-size: 0.82rem;
-          color: #9ca3af;
+        #new-industries-cta .new-cta-micro,
+        .new-cta-micro {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.8rem;
+          color: #94a3b8 !important;
+          font-weight: 500;
         }
 
+        .new-cta-micro svg {
+          opacity: 0.8;
+        }
+
+        /* Right Image Card */
         .new-cta-visual {
           position: relative;
-          height: clamp(240px, 33vw, 320px);
+          height: 100%;
+          min-height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        .new-cta-visual-img {
-          position: absolute;
-          inset: 0;
-          border-radius: var(--new-radius-xl);
+        .new-cta-card {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: var(--new-radius-lg);
           overflow: hidden;
-          box-shadow: 0 24px 65px rgba(15, 23, 42, 0.55);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transform: rotate(2deg);
+          transition: transform 0.4s ease;
         }
 
-        .new-cta-visual-img img {
+        @media (hover: hover) {
+          .new-cta-card:hover {
+            transform: rotate(0deg) scale(1.02);
+          }
+        }
+
+        .new-cta-card img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transform: scale(1.06);
-          transition: transform 6s ease-out;
+          display: block;
         }
 
-        #new-industries-cta.new-in-view .new-cta-visual-img img {
-          transform: scale(1.01);
-        }
-
-        .new-cta-orb {
+        .new-cta-img-badge {
           position: absolute;
-          width: 155px;
-          height: 155px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 60%);
-          top: -25px;
-          right: -40px;
-          filter: blur(1px);
-          opacity: 0.7;
-          pointer-events: none;
-          animation: new-cta-orb-move 12s ease-in-out infinite alternate;
+          top: 1.25rem;
+          left: 1.25rem;
+          z-index: 10;
+          background: rgba(15, 23, 42, 0.85);
+          backdrop-filter: blur(8px);
+          color: #ffffff;
+          padding: 0.5rem 1rem;
+          border-radius: 99px;
+          font-size: 0.8rem;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
-        @keyframes new-cta-orb-move {
-          from {
-            transform: translate3d(0, 0, 0);
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+          .new-cta-inner {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            text-align: center;
           }
 
-          to {
-            transform: translate3d(-40px, 26px, 0);
+          .new-cta-eyebrow {
+            width: fit-content;
+            margin: 0 auto 1.5rem;
+          }
+
+          .new-cta-desc {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .new-cta-actions {
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .new-cta-btn-primary,
+          .new-cta-btn-secondary {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .new-cta-footer {
+            justify-content: center;
+          }
+
+          .new-cta-visual {
+            min-height: 300px;
+          }
+
+          .new-cta-card {
+            transform: rotate(0deg);
           }
         }
 
-        .new-cta-badge {
-          position: absolute;
-          left: 1.2rem;
-          top: 1.2rem;
-          padding: 0.45rem 0.85rem;
-          background: rgba(3, 7, 18, 0.76);
-          color: #e5e7eb;
-          font-size: 0.76rem;
-          border-radius: 999px;
-          backdrop-filter: blur(15px);
-        }
+        @media (max-width: 768px) {
+          .new-cta-container {
+            padding: 2.5rem 1.5rem;
+          }
 
-        .new-cta-badge strong {
-          color: var(--new-color-light);
+          .new-cta-heading {
+            font-size: 2rem;
+          }
         }
 
         /* ======= DARK MODE OVERRIDES ======= */
@@ -1395,40 +1503,70 @@
 
       <!-- ========== 3. CTA SECTION: DON’T SEE YOUR INDUSTRY? ========== -->
       <section id="new-industries-cta" class="new-section">
-        <div class="new-wrapper new-cta-inner">
-          <div class="new-cta-copy">
-            <span class="new-pill">Custom applications</span>
-            <h2 class="new-heading-main">Don’t see your industry? Let’s talk.</h2>
-            <p class="new-heading-sub">
-              Many of our most interesting projects started with a blank category. If your process demands controlled
-              environments, we can help you design a cleanroom that fits your space, your standards and your budget.
-            </p>
+        <div class="new-wrapper new-cta-container">
+          <div class="new-cta-inner">
+            <!-- Left Side: Copy & Actions -->
+            <div class="new-cta-copy">
+              <div class="new-cta-eyebrow">
+                <span class="new-dot"></span> Custom Applications
+              </div>
+              <h2 class="new-cta-heading">Don’t see your industry?<br>Let’s talk.</h2>
+              <p class="new-cta-desc">
+                Many of our most interesting projects started with a blank category. If your process demands controlled
+                environments, we can design a cleanroom that fits your space, standards, and budget.
+              </p>
 
-            <div class="new-cta-actions">
-              <button type="button" class="new-cta-btn-primary">
-                Schedule a conversation
-              </button>
-              <button type="button" class="new-cta-btn-secondary">
-                Share your project brief
-              </button>
-            </div>
+              <div class="new-cta-actions">
+                <button type="button" class="new-cta-btn-primary">
+                  Schedule a conversation
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+                <button type="button" class="new-cta-btn-secondary">
+                  Share your project brief
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
 
-            <p class="new-cta-note">
-              We usually respond within <strong>1 business day</strong>. NDA-protected discussions available on request.
-            </p>
-          </div>
-
-          <div class="new-cta-visual">
-            <div class="new-cta-visual-img">
-              <!-- Placeholder CTA image -->
-              <img
-                src="https://images.pexels.com/photos/8867435/pexels-photo-8867435.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Consultation in a cleanroom facility" />
-              <div class="new-cta-badge">
-                1:1 with a <strong>cleanroom specialist</strong>
+              <div class="new-cta-footer">
+                <span class="new-cta-micro">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  Response in <strong>1 business day</strong>
+                </span>
+                <span class="new-cta-micro">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  NDA-protected
+                </span>
               </div>
             </div>
-            <div class="new-cta-orb"></div>
+
+            <!-- Right Side: Visual -->
+            <div class="new-cta-visual">
+              <div class="new-cta-card">
+                <div class="new-cta-img-badge">
+                  1:1 with a <strong>cleanroom specialist</strong>
+                </div>
+                <img
+                  src="https://images.pexels.com/photos/8867435/pexels-photo-8867435.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Specialist consultation" loading="lazy" />
+                <div class="new-cta-overlay"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
