@@ -17,6 +17,12 @@
   <title>Industries We Serve | PakGusu Cleanroom Solutions</title>
   <!-- MOBILE SPECIFIC -->
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="PakGusu designs and builds industry-specific cleanroom environments across pharmaceutical, healthcare, food, electronics, laboratories, and medical device sectors."
+    name="description" />
+  <meta
+    content="cleanroom industries Pakistan, pharmaceutical cleanrooms, hospital cleanrooms, electronics cleanroom, food safety cleanroom"
+    name="keywords" />
   <link href="../css/bootstrap.min.css" rel="stylesheet" /><!-- BOOTSTRAP STYLE SHEET -->
   <link href="../css/fontawesome/css/font-awesome.min.css" rel="stylesheet" /><!-- FONTAWESOME STYLE SHEET -->
   <link href="../css/owl.carousel.min.css" rel="stylesheet" /><!-- OWL CAROUSEL STYLE SHEET -->
@@ -27,13 +33,6 @@
   <!-- MAIN STYLE SHEET -->
   <link href="../css/flaticon.min.css" rel="stylesheet" /><!-- FLATICON STYLE SHEET -->
   <link class="skin" href="../css/skin/skin-1.css" rel="stylesheet" /><!-- THEME COLOR CHANGE STYLE SHEET -->
-  <!-- REVOLUTION SLIDER CSS -->
-  <link href="../plugins/revolution/revolution/css/settings.css" rel="stylesheet" type="text/css" />
-  <!-- REVOLUTION NAVIGATION STYLE -->
-  <link href="../plugins/revolution/revolution/css/navigation.css" rel="stylesheet" type="text/css" />
-  <!-- BEFORE/AFTER ADD-ON FILES  MUST BE INSERTED AFTER THE SLIDER DOM ELEMENTS !-->
-  <link href="../plugins/revolution/revolution-addons/beforeafter/css/revolution.addon.beforeafter.css" media="all"
-    rel="stylesheet" type="text/css" />
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900"
     rel="stylesheet" />
@@ -259,7 +258,7 @@
     <!-- CONTENT START -->
     <div class="page-content"><!-- Section: Hero -->
       <!-- Section: Hero -->
-      <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(images/banner/2.jpg);">
+      <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(../images/banner/2.jpg);">
         <div class="overlay-main bg-black opacity-07"></div>
         <div class="container">
           <div class="wt-bnr-inr-entry">
@@ -1240,12 +1239,13 @@
                 <span class="new-pill">Industries We Serve</span>
               </div>
               <h1 class="new-heading-main">
-                Cleanroom solutions<br>
-                tuned to your sector.
+                Industry-Specific<br>
+                Cleanroom Environments
               </h1>
               <p class="new-heading-sub">
-                From ultra-sterile pharmaceutical production to precision electronics assembly, our team designs,
-                engineers and qualifies cleanroom environments that match your industry’s standards and pace.
+                PakGusu designs and builds industry-specific cleanroom environments across pharmaceutical, healthcare,
+                food, electronics, laboratories, and medical device sectors. Each industry has unique contamination
+                risks and regulatory requirements; our team tailors solutions accordingly.
               </p>
 
               <div class="new-intro-stats">
@@ -1768,96 +1768,8 @@
   <script src="../js/jquery.owl-filter.js"></script>
   <script src="../js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
   <script src="../js/shortcode.js"></script><!-- SHORTCODE FUCTIONS  -->
-  <!-- REVOLUTION JS FILES -->
-  <script src="../plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
-  <script src="../plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
-  <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-  <script src="../plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
-  <script src="../plugins/revolution/revolution-addons/beforeafter/js/revolution.addon.beforeafter.min.js"></script>
-  <!-- REVOLUTION SLIDER SCRIPT FILES -->
-  <script src="../js/rev-script-2.js"></script>
-  <script>
-    $(document).ready(function () {
 
-      var sync1 = $("#sync1");
-      var sync2 = $("#sync2");
-      var slidesPerPage = 4; //globaly define number of elements per page
-      var syncedSecondary = true;
 
-      sync1.owlCarousel({
-        items: 1,
-        slideSpeed: 2000,
-        nav: true,
-        autoplay: true,
-        dots: false,
-        loop: true,
-        responsiveRefreshRate: 200,
-        navText: ['<i class="flaticon-back"></i> Prev', 'Next <i class="flaticon-next"></i>'],
-      }).on('changed.owl.carousel', syncPosition);
-
-      sync2
-        .on('initialized.owl.carousel', function () {
-          sync2.find(".owl-item").eq(0).addClass("current");
-        })
-        .owlCarousel({
-          items: slidesPerPage,
-          dots: false,
-          nav: false,
-          margin: 5,
-          smartSpeed: 200,
-          slideSpeed: 500,
-          slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-          responsiveRefreshRate: 100
-        }).on('changed.owl.carousel', syncPosition2);
-
-      function syncPosition(el) {
-        //if you set loop to false, you have to restore this next line
-        //var current = el.item.index;
-
-        //if you disable loop you have to comment this block
-        var count = el.item.count - 1;
-        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-        if (current < 0) {
-          current = count;
-        }
-        if (current > count) {
-          current = 0;
-        }
-
-        //end block
-
-        sync2
-          .find(".owl-item")
-          .removeClass("current")
-          .eq(current)
-          .addClass("current");
-        var onscreen = sync2.find('.owl-item.active').length - 1;
-        var start = sync2.find('.owl-item.active').first().index();
-        var end = sync2.find('.owl-item.active').last().index();
-
-        if (current > end) {
-          sync2.data('owl.carousel').to(current, 100, true);
-        }
-        if (current < start) {
-          sync2.data('owl.carousel').to(current - onscreen, 100, true);
-        }
-      }
-
-      function syncPosition2(el) {
-        if (syncedSecondary) {
-          var number = el.item.index;
-          sync1.data('owl.carousel').to(number, 100, true);
-        }
-      }
-
-      sync2.on("click", ".owl-item", function (e) {
-        e.preventDefault();
-        var number = $(this).index();
-        sync1.data('owl.carousel').to(number, 300, true);
-      });
-    });
-  </script>
   <script src="../js/ui-ux-enhancements.js"></script><!-- UI/UX ENHANCEMENTS -->
 
   <script src="../js/header-custom.js"></script>

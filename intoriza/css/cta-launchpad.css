@@ -1,0 +1,399 @@
+/* =======================================================
+   CTA Launch Pad Section
+   Scope: #launchpad-cta
+   Concept: Cinematic "Launch Board" / Briefing Panel
+   Colors: Dark Blue #004685 | Light Blue #29afe3
+   ======================================================= */
+
+/* --- Container & Layout --- */
+#launchpad-cta {
+    position: relative;
+    /* Height will be handled by padding/content on mobile, fixed min-height on desktop */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef6fb 100%);
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+#launchpad-cta .container-fluid {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 5%;
+}
+
+.lp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    /* Above background */
+}
+
+/* --- Left: Content Card (The Brief) --- */
+.lp-content-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 70, 133, 0.1);
+    padding: 50px;
+    position: relative;
+    z-index: 10;
+    max-width: 550px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    /* Gentle Floating Animation */
+    animation: lp-float 6s ease-in-out infinite;
+    transform-origin: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.lp-content-card:hover {
+    box-shadow: 0 30px 70px rgba(41, 175, 227, 0.15);
+    transform: translateY(-5px) scale(1.01);
+}
+
+@keyframes lp-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Typography on Card */
+.lp-eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9aa5b1;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #29afe3;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(41, 175, 227, 0.2);
+}
+
+.lp-title {
+    font-family: 'Poppins', sans-serif;
+    /* Assuming font availability */
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #004685;
+    margin-bottom: 20px;
+    transition: text-shadow 0.4s ease;
+}
+
+.lp-content-card:hover .lp-title {
+    text-shadow: 0 0 1px rgba(0, 70, 133, 0.1);
+}
+
+.lp-copy {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.lp-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.lp-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+.lp-feature-icon {
+    width: 20px;
+    height: 20px;
+    background: rgba(41, 175, 227, 0.1);
+    color: #29afe3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+/* User Context Tags ("You explored...") */
+.lp-context-tags {
+    margin-bottom: 20px;
+    display: none;
+    /* Hidden by default, shown via JS if data exists */
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.lp-tag {
+    font-size: 12px;
+    background: #eef6fb;
+    color: #004685;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid #dae7f0;
+}
+
+/* Button Styling */
+.lp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 18px 40px;
+    background: linear-gradient(90deg, #004685, #005a9e);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 70, 133, 0.25);
+    z-index: 1;
+}
+
+.lp-btn-primary span {
+    position: relative;
+    z-index: 2;
+}
+
+.lp-btn-primary i {
+    margin-left: 10px;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* Gradient hover effect overlay */
+.lp-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #29afe3, #0077c8);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.lp-btn-primary:hover::before {
+    opacity: 1;
+}
+
+.lp-btn-primary:hover {
+    box-shadow: 0 15px 35px rgba(41, 175, 227, 0.35);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.lp-btn-primary:hover i {
+    transform: translateX(5px) rotate(-10deg);
+}
+
+.lp-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(0, 70, 133, 0.2);
+}
+
+/* --- Right: Animated Blueprint Canvas --- */
+.lp-visual-canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    /* Occupies right side */
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    /* Let clicks pass unless strictly needed */
+}
+
+/* Base Image: Faded Blueprint/Facility */
+.lp-bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background-image: url('../../images/background/bg-1.jpg');
+    /* Needs actual URL */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    /* Very faint */
+    filter: grayscale(100%) blur(1px);
+    transition: transform 0.1s ease-out;
+    /* For JS parallax */
+}
+
+/* SVG Overlay */
+.lp-svg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Stroke Animations */
+.lp-wave-path {
+    fill: none;
+    stroke: #29afe3;
+    stroke-width: 1.5;
+    stroke-dasharray: 10, 20;
+    opacity: 0.3;
+}
+
+/* Keyframes defined inline or here if static */
+@keyframes dash-flow {
+    to {
+        stroke-dashoffset: -300;
+    }
+}
+
+.lp-wave-path.animated {
+    animation: dash-flow 20s linear infinite;
+}
+
+/* Particles Container */
+.lp-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lp-particle {
+    position: absolute;
+    background: #29afe3;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+    from {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateY(-20vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet & Mobile (<= 991px) */
+@media (max-width: 991px) {
+    #launchpad-cta {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .lp-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lp-content-card {
+        margin: 0 auto;
+        padding: 35px 25px;
+        text-align: center;
+        /* Disable float on mobile for stability */
+        animation: none;
+    }
+
+    .lp-eyebrow {
+        justify-content: center;
+    }
+
+    .lp-features-list {
+        align-items: center;
+    }
+
+    .lp-visual-canvas {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0.5;
+        /* Even fainter background since it's behind text now? or below? */
+        /* If below, we need a different layout. 
+           Let's keep it absolute bg for mobile but simpler. */
+    }
+
+    .lp-bg-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Mobile Small (<= 576px) */
+@media (max-width: 576px) {
+    .lp-title {
+        font-size: 28px;
+    }
+
+    .lp-content-card {
+        padding: 30px 20px;
+    }
+}
+
+/* --- Dark Mode Overrides --- */
+[data-theme="dark"] #launchpad-cta {
+    background: linear-gradient(135deg, #0a1628 0%, #0d1b30 100%);
+}
+
+[data-theme="dark"] .lp-content-card {
+    background: #132238;
+    border-color: #2a3546;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .lp-title {
+    color: #fff;
+}
+
+[data-theme="dark"] .lp-copy {
+    color: #b0b8c4;
+}
+
+[data-theme="dark"] .lp-feature-item {
+    color: #9aa5b1;
+}
+
+[data-theme="dark"] .lp-bg-image {
+    opacity: 0.05;
+}

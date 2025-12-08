@@ -32,7 +32,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900" rel="stylesheet" />
     <!-- UI/UX Enhancements -->
-    <link href="../css/ui-ux-enhancements.css" rel="stylesheet" />
+    <link href="../../css/ui-ux-enhancements.css" rel="stylesheet" />
     <!-- Footer Master UI -->
     <link href="../../css/footer-master.css" rel="stylesheet" />
     <!-- Footer Main Master UI -->
@@ -40,7 +40,9 @@
     <link href="../../css/light-mode-patch.css" rel="stylesheet" /> <!-- LIGHT MODE PATCH -->
     <link href="../../css/turnkey-redesign.css" rel="stylesheet" />
     <link href="../../css/products-redesign.css" rel="stylesheet" /> <!-- TURNKEY REDESIGN -->
-    <link href="../../css/industries-redesign.css" rel="stylesheet" /> <!-- INDUSTRIES REDESIGN -->
+    <link href="../../css/cta-launchpad.css" rel="stylesheet" /> <!-- CTA LAUNCH PAD -->
+    <!-- <link href="../../css/industries-redesign.css" rel="stylesheet" /> -->
+    <!-- INDUSTRIES REDESIGN (File not found) -->
     <link href="../../css/header-master.css" rel="stylesheet" />
 </head>
 
@@ -271,20 +273,21 @@
         <!-- HEADER END -->
         <!-- CONTENT START -->
         <div class="page-content"><!-- Section: Hero -->
-            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(images/banner/1.jpg);">
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(../../images/banner/1.jpg);">
                 <div class="overlay-main bg-black opacity-07"></div>
                 <div class="container">
                     <div class="wt-bnr-inr-entry">
                         <div class="banner-title-outer">
                             <div class="banner-title-name">
-                                <h2 class="text-white">Post Gallery</h2>
+                                <h2 class="text-white">Cleanroom Standards & Classifications</h2>
                             </div>
                         </div>
                         <!-- BREADCRUMB ROW -->
                         <div>
                             <ul class="wt-breadcrumb breadcrumb-style-2">
                                 <li><a href="../../">Home</a></li>
-                                <li>Post Gallery</li>
+                                <li><a href="javascript:;">Resources</a></li>
+                                <li>Standards</li>
                             </ul>
                         </div>
                         <!-- BREADCRUMB ROW END -->
@@ -292,23 +295,1321 @@
                 </div>
             </div><!-- /Section: Hero -->
 
+            <!-- ===========================
+NEW CLEANROOM STANDARD SECTIONS
+All class / id names start with "new-"
+Theme colors:
+  Dark Blue #004685
+  Light Blue #29afe3
+=========================== -->
 
+            <style>
+                /* ---------- THEME-AWARE TOKENS ---------- */
+                :root {
+                    --new-color-accent: #29afe3;
+                    --new-color-accent-strong: #004685;
 
-            <!-- Section: CTA -->
-            <div class="section-full p-tb80 bg-center bg-no-repeat bg-cover"
-                style="background-image:url(../../images/background/bg-1.jpg);">
-                <div class="container">
-                    <div class="section-content">
-                        <div class="video-section-full bg-white text-center p-a30">
-                            <span class="font-18 site-text-primary text-uppercase">Ready to Start?</span>
-                            <h2 class="wt-tilte m-tb20">Plan Your Cleanroom Project Today</h2>
-                            <p class="m-b30">Contact our experts to discuss your requirements and get a quote.</p>
-                            <a class="site-button" href="../../contact/">Contact Us</a>
+                    --new-color-bg: #f5f9ff;
+                    --new-color-surface: #ffffff;
+
+                    --new-color-text: #06223d;
+                    --new-color-text-soft: #50627b;
+
+                    --new-color-border: rgba(0, 70, 133, 0.14);
+                    --new-color-border-soft: rgba(0, 70, 133, 0.08);
+
+                    --new-shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.08);
+                }
+
+                /* Dark-mode fallbacks – tries to match common patterns
+     (body.dark, body[data-theme="dark"], :root[data-theme="dark"], etc.)
+     and also OS dark if the site does not override it. */
+
+                :root[data-theme="dark"],
+                body[data-theme="dark"],
+                body.dark,
+                body.dark-mode,
+                body.theme-dark {
+                    --new-color-bg: #020915;
+                    --new-color-surface: #041324;
+                    --new-color-text: #e3f0ff;
+                    --new-color-text-soft: #a7bdd8;
+
+                    --new-color-border: rgba(12, 118, 207, 0.55);
+                    --new-color-border-soft: rgba(12, 118, 207, 0.3);
+
+                    --new-shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.65);
+                }
+
+                @media (prefers-color-scheme: dark) {
+                    :root:not([data-theme="light"]) {
+                        --new-color-bg: #020915;
+                        --new-color-surface: #041324;
+                        --new-color-text: #e3f0ff;
+                        --new-color-text-soft: #a7bdd8;
+                        --new-color-border: rgba(12, 118, 207, 0.55);
+                        --new-color-border-soft: rgba(12, 118, 207, 0.3);
+                        --new-shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.65);
+                    }
+                }
+
+                /* ---------- SHARED LAYOUT ---------- */
+
+                .new-section {
+                    position: relative;
+                    padding: 72px 0;
+                    color: var(--new-color-text);
+                    background: radial-gradient(circle at 0% 0%, rgba(41, 175, 227, 0.12), transparent 55%),
+                        radial-gradient(circle at 100% 100%, rgba(0, 70, 133, 0.18), transparent 55%),
+                        var(--new-color-bg);
+                    overflow: hidden;
+                }
+
+                .new-section::before {
+                    /* animated "snake" waves */
+                    content: "";
+                    position: absolute;
+                    inset: -60%;
+                    background-image:
+                        radial-gradient(circle at 10% 20%, rgba(41, 175, 227, 0.07) 0, transparent 55%),
+                        radial-gradient(circle at 80% 80%, rgba(0, 70, 133, 0.09) 0, transparent 60%);
+                    opacity: 0.9;
+                    transform: translate3d(0, 0, 0);
+                    animation: new-wave-drift 30s linear infinite alternate;
+                    pointer-events: none;
+                }
+
+                @keyframes new-wave-drift {
+                    0% {
+                        transform: translate3d(-6%, -4%, 0) rotate(0.5deg);
+                    }
+
+                    50% {
+                        transform: translate3d(5%, 4%, 0) rotate(-1deg);
+                    }
+
+                    100% {
+                        transform: translate3d(-4%, 6%, 0) rotate(0.5deg);
+                    }
+                }
+
+                .new-section-inner {
+                    position: relative;
+                    max-width: 1120px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                    z-index: 1;
+                }
+
+                .new-section-header {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 10px;
+                    margin-bottom: 32px;
+                }
+
+                .new-section-eyebrow {
+                    font-size: 11px;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: var(--new-color-accent) !important;
+                    font-weight: 600;
+                }
+
+                .new-section-title {
+                    font-size: clamp(26px, 3vw, 32px);
+                    font-weight: 700;
+                    color: var(--new-color-text) !important;
+                    line-height: 1.3;
+                }
+
+                .new-section-subtitle {
+                    max-width: 640px;
+                    margin-top: 4px;
+                    font-size: 14px;
+                    color: var(--new-color-text-soft) !important;
+                    line-height: 1.6;
+                }
+
+                .new-grid {
+                    display: grid;
+                    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+                    gap: 28px;
+                    align-items: center;
+                }
+
+                @media (max-width: 880px) {
+                    .new-grid {
+                        grid-template-columns: minmax(0, 1fr);
+                        gap: 20px;
+                    }
+                }
+
+                .new-card {
+                    background: var(--new-color-surface);
+                    border-radius: 18px;
+                    padding: 20px 22px;
+                    box-shadow: var(--new-shadow-soft);
+                    border: 1px solid var(--new-color-border-soft);
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .new-card::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(135deg,
+                            rgba(41, 175, 227, 0.08),
+                            transparent 50%);
+                    opacity: 0;
+                    transition: opacity 220ms ease-out;
+                    pointer-events: none;
+                }
+
+                .new-card-hoverable:hover::before {
+                    opacity: 1;
+                }
+
+                .new-tag {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 4px 10px;
+                    font-size: 11px;
+                    border-radius: 999px;
+                    border: 1px solid var(--new-color-border-soft);
+                    color: var(--new-color-text-soft);
+                    background: rgba(255, 255, 255, 0.04);
+                }
+
+                .new-tag-dot {
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 999px;
+                    background: var(--new-color-accent);
+                }
+
+                .new-img-frame {
+                    position: relative;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: var(--new-shadow-soft);
+                    border: 1px solid var(--new-color-border-soft);
+                }
+
+                .new-img-frame img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                .new-img-label {
+                    position: absolute;
+                    inset-inline: 12px;
+                    bottom: 12px;
+                    padding: 6px 10px;
+                    border-radius: 12px;
+                    font-size: 11px;
+                    color: #ffffff;
+                    background: linear-gradient(90deg,
+                            rgba(0, 70, 133, 0.86),
+                            rgba(41, 175, 227, 0.9));
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 10px;
+                }
+
+                .new-badge-pill {
+                    font-size: 10px;
+                    padding: 3px 8px;
+                    border-radius: 999px;
+                    background: rgba(255, 255, 255, 0.15);
+                }
+
+                .new-body-text {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: var(--new-color-text-soft) !important;
+                }
+
+                .new-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 16px 0 0;
+                    display: grid;
+                    gap: 8px;
+                    font-size: 13px;
+                    color: var(--new-color-text-soft) !important;
+                }
+
+                .new-list li {
+                    display: flex;
+                    gap: 6px;
+                }
+
+                .new-list li::before {
+                    content: "•";
+                    color: var(--new-color-accent);
+                    font-size: 16px;
+                    line-height: 1.25;
+                }
+
+                .new-pill-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin-top: 16px;
+                }
+
+                .new-pill {
+                    border-radius: 999px;
+                    border: 1px solid var(--new-color-border);
+                    background: rgba(255, 255, 255, 0.9);
+                    padding: 6px 12px;
+                    font-size: 12px;
+                    color: var(--new-color-text-soft) !important;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: border-color 160ms ease-out, background 160ms ease-out, color 160ms ease-out,
+                        transform 160ms ease-out;
+                }
+
+                .new-pill span {
+                    font-size: 10px;
+                    opacity: 0.7;
+                }
+
+                .new-pill svg {
+                    width: 12px;
+                    height: 12px;
+                    flex-shrink: 0;
+                }
+
+                .new-pill-active,
+                .new-pill:hover {
+                    background: linear-gradient(90deg, rgba(0, 70, 133, 0.95), rgba(41, 175, 227, 0.95));
+                    border-color: transparent;
+                    color: #ffffff;
+                    transform: translateY(-1px);
+                }
+
+                /* ---------- SECTION 1: WHAT IS A CLEANROOM ---------- */
+
+                .new-feature-main {
+                    font-size: 15px;
+                    margin-top: 8px;
+                    color: var(--new-color-text);
+                }
+
+                .new-feature-detail {
+                    margin-top: 10px;
+                }
+
+                .new-feature-detail[data-new-feature-content] {
+                    display: none;
+                }
+
+                .new-feature-detail.new-active {
+                    display: block;
+                }
+
+                /* ---------- SECTION 2: ISO 14644-1 RANGE SLIDER ---------- */
+
+                .new-iso-slider-wrap {
+                    margin-top: 14px;
+                }
+
+                .new-iso-range {
+                    width: 100%;
+                    accent-color: var(--new-color-accent);
+                }
+
+                .new-iso-meta {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 6px;
+                    font-size: 11px;
+                    color: var(--new-color-text-soft);
+                }
+
+                .new-iso-class-label {
+                    font-weight: 600;
+                    color: var(--new-color-accent-strong);
+                }
+
+                .new-iso-bubbles {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 8px;
+                    margin-top: 16px;
+                    font-size: 12px;
+                }
+
+                .new-iso-bubble {
+                    border-radius: 14px;
+                    border: 1px solid var(--new-color-border-soft);
+                    padding: 10px 10px 8px;
+                    background: rgba(255, 255, 255, 0.96);
+                }
+
+                .new-iso-bubble-title {
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--new-color-text-soft);
+                }
+
+                .new-iso-bubble-value {
+                    margin-top: 4px;
+                    font-weight: 600;
+                    color: var(--new-color-text);
+                }
+
+                @media (max-width: 880px) {
+                    .new-iso-bubbles {
+                        grid-template-columns: minmax(0, 1fr);
+                    }
+                }
+
+                /* ---------- SECTION 3: LEGACY STANDARDS TIMELINE ---------- */
+
+                .new-timeline {
+                    border-left: 1px solid var(--new-color-border);
+                    padding-left: 16px;
+                    margin-left: 6px;
+                    display: grid;
+                    gap: 18px;
+                    font-size: 13px;
+                    color: var(--new-color-text-soft);
+                }
+
+                .new-timeline-item {
+                    position: relative;
+                }
+
+                .new-timeline-dot {
+                    position: absolute;
+                    left: -19px;
+                    top: 4px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 999px;
+                    background: var(--new-color-accent);
+                    box-shadow: 0 0 0 4px rgba(41, 175, 227, 0.25);
+                }
+
+                .new-timeline-year {
+                    font-size: 11px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.12em;
+                    color: var(--new-color-accent-strong);
+                }
+
+                .new-timeline-title {
+                    font-weight: 600;
+                    margin-top: 4px;
+                    color: var(--new-color-text);
+                }
+
+                .new-timeline a {
+                    color: var(--new-color-accent);
+                    text-decoration: none;
+                }
+
+                /* ---------- SECTION 4: MAPPING CLASSES TO INDUSTRIES ---------- */
+
+                .new-industry-tabs {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                }
+
+                .new-industry-button {
+                    border-radius: 999px;
+                    border: 1px solid var(--new-color-border-soft);
+                    padding: 6px 12px;
+                    background: rgba(255, 255, 255, 0.9);
+                    font-size: 12px;
+                    color: var(--new-color-text-soft);
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: background 150ms, border-color 150ms, color 150ms, transform 150ms;
+                }
+
+                .new-industry-button svg {
+                    width: 13px;
+                    height: 13px;
+                }
+
+                .new-industry-button.new-active {
+                    background: var(--new-color-accent-strong);
+                    color: #ffffff;
+                    border-color: transparent;
+                    transform: translateY(-1px);
+                }
+
+                .new-industry-panel {
+                    display: none;
+                    margin-top: 14px;
+                    font-size: 13px;
+                    color: var(--new-color-text-soft);
+                }
+
+                .new-industry-panel.new-active {
+                    display: block;
+                }
+
+                .new-industry-metrics {
+                    margin-top: 10px;
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 8px;
+                    font-size: 12px;
+                }
+
+                .new-industry-metric {
+                    border-radius: 12px;
+                    border: 1px dashed var(--new-color-border-soft);
+                    padding: 8px 10px;
+                }
+
+                .new-industry-metric span {
+                    display: block;
+                    font-weight: 600;
+                    color: var(--new-color-accent-strong);
+                }
+
+                @media (max-width: 880px) {
+                    .new-industry-metrics {
+                        grid-template-columns: minmax(0, 1fr);
+                    }
+                }
+
+                /* ---------- SECTION 5: REFERENCE TABLE ---------- */
+
+                .new-table-controls {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                    color: var(--new-color-text-soft);
+                    flex-wrap: wrap;
+                }
+
+                .new-table-buttons {
+                    display: inline-flex;
+                    border-radius: 999px;
+                    border: 1px solid var(--new-color-border-soft);
+                    overflow: hidden;
+                }
+
+                .new-table-btn {
+                    background: transparent;
+                    border: 0;
+                    padding: 5px 10px;
+                    font-size: 11px;
+                    cursor: pointer;
+                    color: var(--new-color-text-soft);
+                }
+
+                .new-table-btn.new-active {
+                    background: var(--new-color-accent);
+                    color: #ffffff;
+                }
+
+                .new-reference-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 12px;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: var(--new-shadow-soft);
+                }
+
+                .new-reference-table thead {
+                    background: linear-gradient(90deg, #004685, #29afe3);
+                    color: #ffffff;
+                }
+
+                .new-reference-table th,
+                .new-reference-table td {
+                    padding: 8px 10px;
+                    text-align: left;
+                }
+
+                .new-reference-table tbody tr:nth-child(even) {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+
+                .new-reference-table tbody tr:nth-child(odd) {
+                    background: rgba(255, 255, 255, 0.5);
+                }
+
+                .new-reference-table tbody tr.new-muted-row {
+                    opacity: 0.4;
+                }
+
+                /* ---------- SCROLL / FADE ANIMATION ---------- */
+                .new-observe {
+                    opacity: 0;
+                    transform: translateY(14px);
+                    transition: opacity 260ms ease-out, transform 260ms ease-out;
+                }
+
+                .new-observe.new-in-view {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            </style>
+
+            <!-- ========= SECTION 1: WHAT IS A CLEANROOM ========= -->
+            <section class="new-section" id="new-sec-cleanroom-definition">
+                <div class="new-section-inner">
+                    <header class="new-section-header">
+                        <div>
+                            <div class="new-section-eyebrow">Overview</div>
+                            <h2 class="new-section-title">What Is a Cleanroom?</h2>
+                            <p class="new-section-subtitle">
+                                A cleanroom is more than a white room with filters. It is a carefully
+                                engineered volume of air, surfaces and procedures that keeps particles
+                                within strict limits.
+                            </p>
+                        </div>
+                    </header>
+
+                    <div class="new-grid new-observe">
+                        <article class="new-card new-card-hoverable">
+                            <span class="new-tag">
+                                <span class="new-tag-dot"></span>
+                                Controlled environments
+                            </span>
+                            <h3 class="new-feature-main">
+                                Think of a cleanroom as a “tool” that shapes the air, not just the walls.
+                            </h3>
+                            <p class="new-body-text new-feature-detail new-active" data-new-feature-content="air">
+                                Air enters through HEPA or ULPA filters, flows in a predictable pattern
+                                and is continuously replaced to sweep particles away from critical work.
+                            </p>
+                            <p class="new-body-text new-feature-detail" data-new-feature-content="surfaces">
+                                Every surface — panels, windows, doors and pass-throughs — is chosen for
+                                smoothness, chemical resistance and ease of cleaning, so particles have
+                                nowhere to hide.
+                            </p>
+                            <p class="new-body-text new-feature-detail" data-new-feature-content="procedures">
+                                Classification alone is not enough. Gowning, cleaning and maintenance
+                                routines are built into the design so real-world performance stays
+                                within the specified ISO class.
+                            </p>
+
+                            <div class="new-pill-row">
+                                <button class="new-pill new-pill-active" data-new-feature="air">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M2 8.5c2.5-2.3 5.1-2.3 7.6 0 2-1.9 3.6-1.9 4.9 0v1.3c-1.3-1.9-2.9-1.9-4.9 0-2.5-2.3-5.1-2.3-7.6 0V8.5z" />
+                                    </svg>
+                                    Airflow <span>filters &amp; patterns</span>
+                                </button>
+                                <button class="new-pill" data-new-feature="surfaces">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v9a.5.5 0 0 1-.5.5H4a2 2 0 0 1-2-2V3.5zM4 4v7a1 1 0 0 0 1 1h7V4H4z" />
+                                    </svg>
+                                    Surfaces <span>panels &amp; windows</span>
+                                </button>
+                                <button class="new-pill" data-new-feature="procedures">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v11a.5.5 0 0 1-.8.4L9 11.5l-3.2 2.4a.5.5 0 0 1-.8-.4v-11z" />
+                                    </svg>
+                                    Procedures <span>people &amp; process</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <aside class="new-img-frame">
+                            <!-- placeholder image only -->
+                            <img src="https://images.unsplash.com/photo-1581093588401-22d3273c6f48?auto=format&fit=crop&w=1000&q=80"
+                                alt="Cleanroom illustration placeholder">
+                            <div class="new-img-label">
+                                Cleanroom envelope
+                                <span class="new-badge-pill">ISO classes 1 &ndash; 9</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========= SECTION 2: ISO 14644-1 EXPLAINED ========= -->
+            <section class="new-section" id="new-sec-iso14644">
+                <div class="new-section-inner">
+                    <header class="new-section-header">
+                        <div>
+                            <div class="new-section-eyebrow">Standard</div>
+                            <h2 class="new-section-title">ISO&nbsp;14644-1 Explained</h2>
+                            <p class="new-section-subtitle">
+                                ISO 14644-1 links your required “cleanliness class” to particle
+                                concentrations. Use the slider to see how classes tighten as you move
+                                towards more critical applications.
+                            </p>
+                        </div>
+                    </header>
+
+                    <div class="new-grid new-observe">
+                        <article class="new-card new-card-hoverable">
+                            <span class="new-tag">
+                                <span class="new-tag-dot"></span>
+                                Class range ISO 1–9
+                            </span>
+                            <p class="new-body-text">
+                                Choose a class to preview typical particle limits (0.5&nbsp;µm) and
+                                where it is commonly used.
+                            </p>
+
+                            <div class="new-iso-slider-wrap">
+                                <input id="new-iso-range" class="new-iso-range" type="range" min="1" max="9" value="7">
+                                <div class="new-iso-meta">
+                                    <span>Less clean &larr;</span>
+                                    <span class="new-iso-class-label" id="new-iso-range-label">ISO 7 &middot; Controlled
+                                        manufacturing</span>
+                                    <span>&rarr; Ultra clean</span>
+                                </div>
+                            </div>
+
+                            <p class="new-body-text new-feature-detail new-active" id="new-iso-range-text">
+                                ISO 7 is a common choice for pharmaceutical support areas and general
+                                electronics assembly where full cleanroom procedures are still needed,
+                                but the process is less particle-sensitive than wafer fabrication.
+                            </p>
+
+                            <ul class="new-list">
+                                <li>Particle limits are measured per cubic metre of air.</li>
+                                <li>Sampling plans and locations are defined in ISO 14644-1 and -2.</li>
+                                <li>Other parts of ISO 14644 cover testing, operation and terminology.</li>
+                            </ul>
+                        </article>
+
+                        <aside class="new-img-frame">
+                            <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1000&q=80"
+                                alt="Particle counter in laboratory placeholder">
+                            <div class="new-img-label">
+                                Classification snapshot
+                                <span class="new-badge-pill">0.5&nbsp;µm particles / m³</span>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="new-iso-bubbles new-observe">
+                        <div class="new-iso-bubble">
+                            <div class="new-iso-bubble-title">Typical class</div>
+                            <div class="new-iso-bubble-value" id="new-iso-bubble-class">ISO 7</div>
+                            <div class="new-body-text">Slider position in ISO 14644-1.</div>
+                        </div>
+                        <div class="new-iso-bubble">
+                            <div class="new-iso-bubble-title">0.5&nbsp;µm limit</div>
+                            <div class="new-iso-bubble-value" id="new-iso-bubble-particles">352&nbsp;000 / m³</div>
+                            <div class="new-body-text">Approximate maximum particle concentration.</div>
+                        </div>
+                        <div class="new-iso-bubble">
+                            <div class="new-iso-bubble-title">Example uses</div>
+                            <div class="new-iso-bubble-value" id="new-iso-bubble-use">Fill / finish, assembly areas
+                            </div>
+                            <div class="new-body-text">Where cleanliness complements, not replaces, sterile barriers.
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /Section: CTA -->
+            </section>
+
+            <!-- ========= SECTION 3: LEGACY STANDARDS ========= -->
+            <section class="new-section" id="new-sec-legacy-standards">
+                <div class="new-section-inner">
+                    <header class="new-section-header">
+                        <div>
+                            <div class="new-section-eyebrow">History</div>
+                            <h2 class="new-section-title">Legacy Standards in Two Lines Each</h2>
+                            <p class="new-section-subtitle">
+                                Before ISO 14644, many projects relied on FS 209E or local standards
+                                like BS 5295. You may still see them referenced on older drawings and
+                                specifications.
+                            </p>
+                        </div>
+                    </header>
+
+                    <div class="new-grid new-observe">
+                        <article class="new-card new-card-hoverable">
+                            <h3 class="new-feature-main">Why they still matter</h3>
+                            <p class="new-body-text">
+                                Understanding legacy standards helps you interpret older documents and
+                                map existing facilities to modern ISO classes.
+                            </p>
+                            <div class="new-timeline">
+                                <div class="new-timeline-item">
+                                    <span class="new-timeline-dot"></span>
+                                    <div class="new-timeline-year">1963 &ndash; FS 209</div>
+                                    <div class="new-timeline-title">US Federal Standard 209</div>
+                                    <p>
+                                        Defined cleanrooms by particles per cubic foot and introduced
+                                        familiar “Class&nbsp;100 / 10&nbsp;000 / 100&nbsp;000” language.
+                                    </p>
+                                </div>
+                                <div class="new-timeline-item">
+                                    <span class="new-timeline-dot"></span>
+                                    <div class="new-timeline-year">1989 &ndash; BS 5295</div>
+                                    <div class="new-timeline-title">British Standard 5295</div>
+                                    <p>
+                                        Provided UK guidance on design and operation, including grades for
+                                        both physical cleanliness and microbial control.
+                                    </p>
+                                </div>
+                                <div class="new-timeline-item">
+                                    <span class="new-timeline-dot"></span>
+                                    <div class="new-timeline-year">1999 &ndash; ISO 14644-1</div>
+                                    <div class="new-timeline-title">Global convergence</div>
+                                    <p>
+                                        ISO 14644 replaced FS&nbsp;209E and many national documents, using
+                                        particles per cubic metre and a unified class scale (ISO&nbsp;1&ndash;9).
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <aside class="new-img-frame">
+                            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1000&q=80"
+                                alt="Archive documents placeholder">
+                            <div class="new-img-label">
+                                From drawings to ISO mapping
+                                <span class="new-badge-pill">FS 209E → ISO 14644-1</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========= SECTION 4: MAPPING CLASSES TO INDUSTRIES ========= -->
+            <section class="new-section" id="new-sec-class-mapping">
+                <div class="new-section-inner">
+                    <header class="new-section-header">
+                        <div>
+                            <div class="new-section-eyebrow">Applications</div>
+                            <h2 class="new-section-title">Mapping Classes to Industries</h2>
+                            <p class="new-section-subtitle">
+                                ISO classes are technology-agnostic. This quick map shows how
+                                different sectors typically use them. Tap a sector to explore.
+                            </p>
+                        </div>
+                    </header>
+
+                    <div class="new-grid new-observe">
+                        <article class="new-card new-card-hoverable">
+                            <div class="new-industry-tabs">
+                                <button class="new-industry-button new-active" data-new-industry="pharma">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M3 2h4a2 2 0 0 1 2 2v1H7a1 1 0 0 0-1 1v2H4a1 1 0 0 0-1 1v3H2V4a2 2 0 0 1 1-2zM8 7h3a1 1 0 0 1 1 1v4.5a1.5 1.5 0 0 1-3 0V10H8a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" />
+                                    </svg>
+                                    Pharma &amp; Biotech
+                                </button>
+                                <button class="new-industry-button" data-new-industry="electronics">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor" d="M3 3h10v10H3V3zm2 2v6h6V5H5z" />
+                                    </svg>
+                                    Electronics &amp; Optics
+                                </button>
+                                <button class="new-industry-button" data-new-industry="healthcare">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor" d="M7 2h2v4h4v2H9v4H7V8H3V6h4V2z" />
+                                    </svg>
+                                    Hospitals &amp; ORs
+                                </button>
+                                <button class="new-industry-button" data-new-industry="aero">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M2 9.5 14 8 2 6.5v1.5l3.5.5L2 9.5zm4.5 4.5L8 12l1.5 2h1L9 9h-.9L6.5 14z" />
+                                    </svg>
+                                    Aerospace &amp; Space
+                                </button>
+                                <button class="new-industry-button" data-new-industry="food">
+                                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path fill="currentColor"
+                                            d="M4 2h1v5h1V2h1v5h1V2h1v5.5A2.5 2.5 0 0 1 7.5 10H7v4H5v-4h-.5A2.5 2.5 0 0 1 2 7.5V2h2zM11 2h1v5h1V2h1v9a2 2 0 0 1-2 2h-1V2z" />
+                                    </svg>
+                                    Food &amp; Beverage
+                                </button>
+                            </div>
+
+                            <div class="new-industry-panel new-active" data-new-industry-panel="pharma">
+                                <p>
+                                    Pharmaceutical and biotech facilities combine ISO classes with GMP
+                                    zoning. Product contact operations often require higher classes than
+                                    surrounding support areas.
+                                </p>
+                                <div class="new-industry-metrics">
+                                    <div class="new-industry-metric">
+                                        <span>ISO 5</span>
+                                        Aseptic filling, isolators, critical transfers.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 7</span>
+                                        Background rooms for Grade B/C according to EU-GMP.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 8</span>
+                                        Prep areas, staging, corridors and material airlocks.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-industry-panel" data-new-industry-panel="electronics">
+                                <p>
+                                    Semiconductor, flat-panel and optics manufacturing push towards
+                                    tighter classes to protect patterns measured in nanometres.
+                                </p>
+                                <div class="new-industry-metrics">
+                                    <div class="new-industry-metric">
+                                        <span>ISO 3–4</span>
+                                        Lithography, critical etch and deposition tools.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 5</span>
+                                        Photomask handling, assembly of precision optics.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 6–7</span>
+                                        Sub-fab, equipment bays, clean corridors.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-industry-panel" data-new-industry-panel="healthcare">
+                                <p>
+                                    Hospitals use “cleanroom-like” principles for operating rooms and
+                                    isolation suites, often aligning with mid-range ISO classes.
+                                </p>
+                                <div class="new-industry-metrics">
+                                    <div class="new-industry-metric">
+                                        <span>ISO 5–6</span>
+                                        Laminar flow ORs for orthopaedic or transplant surgery.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 7</span>
+                                        Standard operating rooms and sterile prep areas.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 8</span>
+                                        Sterile storage and clean corridors.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-industry-panel" data-new-industry-panel="aero">
+                                <p>
+                                    Space hardware must survive launch and planetary protection rules,
+                                    so contamination control extends from assembly to testing.
+                                </p>
+                                <div class="new-industry-metrics">
+                                    <div class="new-industry-metric">
+                                        <span>ISO 5</span>
+                                        Instrument integration and optical benches.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 6</span>
+                                        Spacecraft assembly, integration and test (AIT) areas.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 7–8</span>
+                                        Support workshops and equipment bays.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-industry-panel" data-new-industry-panel="food">
+                                <p>
+                                    Food and beverage industries often use ISO concepts alongside
+                                    hygienic zoning to protect ready-to-eat and high-risk products.
+                                </p>
+                                <div class="new-industry-metrics">
+                                    <div class="new-industry-metric">
+                                        <span>ISO 7–8</span>
+                                        High-hygiene packing of chilled and ready-to-eat items.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>ISO 8 / controlled</span>
+                                        Blending rooms, ingredient staging, quality labs.
+                                    </div>
+                                    <div class="new-industry-metric">
+                                        <span>Unclassified</span>
+                                        Raw material receipt with localised controls.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <aside class="new-img-frame">
+                            <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1000&q=80"
+                                alt="People working in various cleanroom industries placeholder">
+                            <div class="new-img-label">
+                                Same language, different sectors
+                                <span class="new-badge-pill">ISO class as common thread</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========= SECTION 5: SIMPLE REFERENCE TABLE ========= -->
+            <section class="new-section" id="new-sec-reference-table">
+                <div class="new-section-inner">
+                    <header class="new-section-header">
+                        <div>
+                            <div class="new-section-eyebrow">Quick lookup</div>
+                            <h2 class="new-section-title">ISO Class Reference Snapshot</h2>
+                            <p class="new-section-subtitle">
+                                Use this pocket table to translate between ISO class, legacy FS 209E
+                                notation and approximate 0.5&nbsp;µm particle limits.
+                            </p>
+                        </div>
+                    </header>
+
+                    <div class="new-grid new-observe">
+                        <article class="new-card">
+                            <div class="new-table-controls">
+                                <div>
+                                    Highlight classes most frequently specified in projects.
+                                </div>
+                                <div class="new-table-buttons">
+                                    <button class="new-table-btn new-active"
+                                        data-new-table-filter="common">Common</button>
+                                    <button class="new-table-btn" data-new-table-filter="all">All classes</button>
+                                </div>
+                            </div>
+
+                            <table class="new-reference-table">
+                                <thead>
+                                    <tr>
+                                        <th>ISO class</th>
+                                        <th>FS 209E approx.</th>
+                                        <th>0.5&nbsp;µm limit (particles / m³)</th>
+                                        <th>Typical uses</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-new-table-row data-new-row-type="rare">
+                                        <td>ISO 1</td>
+                                        <td>&mdash;</td>
+                                        <td>10</td>
+                                        <td>Experimental nanotech, EUV lithography.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="rare">
+                                        <td>ISO 2</td>
+                                        <td>&mdash;</td>
+                                        <td>100</td>
+                                        <td>High-end semiconductor steps, research tools.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="rare">
+                                        <td>ISO 3</td>
+                                        <td>Class 1</td>
+                                        <td>1&nbsp;000</td>
+                                        <td>Critical lithography, precision optics assembly.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="rare">
+                                        <td>ISO 4</td>
+                                        <td>Class 10</td>
+                                        <td>10&nbsp;000</td>
+                                        <td>Photomask manufacturing, some implant tools.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="common">
+                                        <td>ISO 5</td>
+                                        <td>Class 100</td>
+                                        <td>100&nbsp;000</td>
+                                        <td>Aseptic filling, laminar flow hoods, clean ORs.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="common">
+                                        <td>ISO 6</td>
+                                        <td>Class 1&nbsp;000</td>
+                                        <td>1&nbsp;000&nbsp;000</td>
+                                        <td>Support zones for ISO&nbsp;5, semiconductor sub-fab.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="common">
+                                        <td>ISO 7</td>
+                                        <td>Class 10&nbsp;000</td>
+                                        <td>352&nbsp;000</td>
+                                        <td>Pharma backgrounds, high-hygiene packaging.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="common">
+                                        <td>ISO 8</td>
+                                        <td>Class 100&nbsp;000</td>
+                                        <td>3&nbsp;520&nbsp;000</td>
+                                        <td>Gown rooms, equipment rooms, general clean areas.</td>
+                                    </tr>
+                                    <tr data-new-table-row data-new-row-type="rare">
+                                        <td>ISO 9</td>
+                                        <td>Unclassified</td>
+                                        <td>35&nbsp;200&nbsp;000</td>
+                                        <td>Controlled but not fully cleanroom environments.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+
+                        <aside class="new-img-frame">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=80"
+                                alt="Infographic concept placeholder">
+                            <div class="new-img-label">
+                                Quick “cheat sheet”
+                                <span class="new-badge-pill">Use in design reviews</span>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                // Wrap all logic in DOMContentLoaded to avoid conflicts
+                document.addEventListener("DOMContentLoaded", function () {
+                    /* -------- SECTION 1: feature pills -------- */
+                    (function newInitFeaturePills() {
+                        const buttons = document.querySelectorAll("[data-new-feature]");
+                        const contents = document.querySelectorAll("[data-new-feature-content]");
+                        if (!buttons.length || !contents.length) return;
+
+                        buttons.forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                const key = btn.getAttribute("data-new-feature");
+
+                                buttons.forEach(b => b.classList.toggle("new-pill-active", b === btn));
+                                contents.forEach(el => {
+                                    const match = el.getAttribute("data-new-feature-content") === key;
+                                    el.classList.toggle("new-active", match);
+                                });
+                            });
+                        });
+                    })();
+
+                    /* -------- SECTION 2: ISO 14644-1 slider -------- */
+                    (function newInitIsoSlider() {
+                        const range = document.getElementById("new-iso-range");
+                        const label = document.getElementById("new-iso-range-label");
+                        const text = document.getElementById("new-iso-range-text");
+                        const bubbleClass = document.getElementById("new-iso-bubble-class");
+                        const bubbleParticles = document.getElementById("new-iso-bubble-particles");
+                        const bubbleUse = document.getElementById("new-iso-bubble-use");
+                        if (!range || !label) return;
+
+                        const isoData = {
+                            1: {
+                                title: "ISO 1 · Research-grade ultra clean",
+                                desc: "Ultra-low particle levels used in advanced nanotechnology or experimental lithography tools.",
+                                particles: "10 / m³",
+                                use: "Experimental nanotech, EUV research"
+                            },
+                            2: {
+                                title: "ISO 2 · Extreme precision",
+                                desc: "A step looser than ISO 1 but still extraordinarily clean; mainly for highly specialised semiconductor steps.",
+                                particles: "100 / m³",
+                                use: "High-end semiconductor R&D"
+                            },
+                            3: {
+                                title: "ISO 3 · Class 1 equivalent",
+                                desc: "Common in cutting-edge wafer fabrication and precision optics where a single particle can ruin a product.",
+                                particles: "1 000 / m³",
+                                use: "Lithography, precision optics"
+                            },
+                            4: {
+                                title: "ISO 4 · Class 10 equivalent",
+                                desc: "Used where features are still extremely small but process stages are slightly more tolerant.",
+                                particles: "10 000 / m³",
+                                use: "Photomask production, implant tools"
+                            },
+                            5: {
+                                title: "ISO 5 · Aseptic and laminar flow",
+                                desc: "Frequently specified for sterile manufacturing and high-risk surgical procedures.",
+                                particles: "100 000 / m³",
+                                use: "Aseptic filling, clean operating rooms"
+                            },
+                            6: {
+                                title: "ISO 6 · Clean support zones",
+                                desc: "Often used as the background for ISO 5 zones or as main class for less critical electronics work.",
+                                particles: "1 000 000 / m³",
+                                use: "Semiconductor sub-fab, support areas"
+                            },
+                            7: {
+                                title: "ISO 7 · Controlled manufacturing",
+                                desc: "A popular class for pharmaceutical cleanrooms, background zones and high-hygiene packaging.",
+                                particles: "352 000 / m³ (nominal)",
+                                use: "Fill / finish background, clean packaging"
+                            },
+                            8: {
+                                title: "ISO 8 · Clean but not critical",
+                                desc: "For spaces that must be visibly clean and monitored but are not directly product-contact.",
+                                particles: "3 520 000 / m³",
+                                use: "Gown rooms, storage, airlocks"
+                            },
+                            9: {
+                                title: "ISO 9 · Controlled environment",
+                                desc: "Represents typical room air with defined monitoring – often used as the envelope around cleaner zones.",
+                                particles: "35 200 000 / m³",
+                                use: "Controlled but non-cleanroom spaces"
+                            }
+                        };
+
+                        const update = () => {
+                            const value = String(range.value);
+                            const info = isoData[value];
+                            if (!info) return;
+                            label.textContent = info.title;
+                            text.textContent = info.desc;
+                            if (bubbleClass) bubbleClass.textContent = "ISO " + value;
+                            if (bubbleParticles) bubbleParticles.textContent = info.particles;
+                            if (bubbleUse) bubbleUse.textContent = info.use;
+                        };
+
+                        range.addEventListener("input", update);
+                        update();
+                    })();
+
+                    /* -------- SECTION 4: industry mapping tabs -------- */
+                    (function newInitIndustryTabs() {
+                        const buttons = document.querySelectorAll("[data-new-industry]");
+                        const panels = document.querySelectorAll("[data-new-industry-panel]");
+                        if (!buttons.length) return;
+
+                        buttons.forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                const key = btn.getAttribute("data-new-industry");
+                                buttons.forEach(b => b.classList.toggle("new-active", b === btn));
+                                panels.forEach(panel => {
+                                    panel.classList.toggle(
+                                        "new-active",
+                                        panel.getAttribute("data-new-industry-panel") === key
+                                    );
+                                });
+                            });
+                        });
+                    })();
+
+                    /* -------- SECTION 5: reference table filter -------- */
+                    (function newInitTableFilter() {
+                        const buttons = document.querySelectorAll("[data-new-table-filter]");
+                        const rows = document.querySelectorAll("[data-new-table-row]");
+                        if (!buttons.length) return;
+
+                        const applyFilter = (type) => {
+                            rows.forEach(row => {
+                                const rowType = row.getAttribute("data-new-row-type");
+                                if (type === "all") {
+                                    row.classList.remove("new-muted-row");
+                                } else if (type === "common") {
+                                    row.classList.toggle("new-muted-row", rowType === "rare");
+                                }
+                            });
+                        };
+
+                        buttons.forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                const type = btn.getAttribute("data-new-table-filter");
+                                buttons.forEach(b => b.classList.toggle("new-active", b === btn));
+                                applyFilter(type);
+                            });
+                        });
+
+                        applyFilter("common");
+                    })();
+
+                    /* -------- SCROLL ANIMATION (IntersectionObserver) -------- */
+                    (function newInitObserver() {
+                        const observed = document.querySelectorAll(".new-observe");
+                        if (!("IntersectionObserver" in window) || !observed.length) {
+                            // If not supported, just show everything
+                            observed.forEach(el => el.classList.add("new-in-view"));
+                            return;
+                        }
+
+                        const observer = new IntersectionObserver(entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add("new-in-view");
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, { threshold: 0.2 });
+
+                        observed.forEach(el => observer.observe(el));
+                    })();
+                });
+            </script>
+
+
+            <!-- Section: CTA Launch Pad -->
+            <section id="launchpad-cta">
+                <div class="lp-visual-canvas" id="lp-canvas">
+                    <div class="lp-bg-image"></div>
+                    <svg class="lp-svg-overlay" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                        <!-- Snake-like waves -->
+                        <path class="lp-wave-path animated"
+                            d="M -100 800 C 400 800, 600 400, 1000 400 S 1600 800, 2200 600" />
+                        <path class="lp-wave-path animated"
+                            d="M -100 600 C 300 600, 500 900, 1100 900 S 1800 500, 2200 500"
+                            style="animation-delay: -5s" />
+                    </svg>
+                    <div class="lp-particles" id="lp-particles"></div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="lp-grid">
+                        <!-- Left: Project Brief Card -->
+                        <div class="lp-content-card" id="lp-card">
+                            <div class="lp-eyebrow">
+                                <span class="lp-eyebrow-dot"></span>
+                                Ready to Start?
+                            </div>
+                            <h2 class="lp-title">Plan Your Cleanroom Project Today</h2>
+
+                            <!-- Context Tags (Hidden unless triggered) -->
+                            <div class="lp-context-tags" id="lp-context-tags">
+                                <!-- JS will inject tags here -->
+                            </div>
+
+                            <p class="lp-copy">
+                                Discuss your requirements with our engineering team and get a tailored proposal that
+                                matches your specific industry standards.
+                            </p>
+
+                            <div class="lp-features-list">
+                                <div class="lp-feature-item">
+                                    <span class="lp-feature-icon"><i class="fa fa-check"></i></span>
+                                    Concept Layouts &amp; Workflow Design
+                                </div>
+                                <div class="lp-feature-item">
+                                    <span class="lp-feature-icon"><i class="fa fa-check"></i></span>
+                                    Budgetary Quote &amp; Timeline Estimate
+                                </div>
+                                <div class="lp-feature-item">
+                                    <span class="lp-feature-icon"><i class="fa fa-check"></i></span>
+                                    Compliance Advisory (GMP, ISO, FDA)
+                                </div>
+                            </div>
+
+                            <a href="../../contact/" class="lp-btn-primary" id="lp-cta-btn">
+                                <span>Request a Project Call</span>
+                                <i class="fa fa-paper-plane"></i>
+                            </a>
+                        </div>
+
+                        <!-- Right: Visual Canvas Area (Empty div for grid spacing) -->
+                        <div></div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Section: CTA Launch Pad -->
         </div>
         <!-- CONTENT END -->
         <!-- FOOTER START -->
@@ -440,9 +1741,86 @@
     <script src="../../js/jquery.owl-filter.js"></script>
     <script src="../../js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
     <script src="../../js/shortcode.js"></script><!-- SHORTCODE FUCTIONS  -->
-    <script src="../js/ui-ux-enhancements.js"></script><!-- UI/UX ENHANCEMENTS -->
+    <script src="../../js/ui-ux-enhancements.js"></script><!-- UI/UX ENHANCEMENTS -->
 
     <script src="../../js/header-custom.js"></script>
+    <script src="../../js/header-custom.js"></script>
+
+    <!-- Launch Pad CTA Interactions -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            /* --- Launch Pad CTA Interactions --- */
+            (function initLaunchPad() {
+                const ctaSection = document.getElementById("launchpad-cta");
+                const card = document.getElementById("lp-card");
+                const btn = document.getElementById("lp-cta-btn");
+                const canvas = document.getElementById("lp-canvas");
+                const tagsContainer = document.getElementById("lp-context-tags");
+
+                if (!ctaSection) return;
+
+                // 1. Dynamic Particles
+                const particleContainer = document.getElementById("lp-particles");
+                if (particleContainer) {
+                    for (let i = 0; i < 20; i++) {
+                        const p = document.createElement("div");
+                        p.classList.add("lp-particle");
+                        p.style.left = Math.random() * 100 + "%";
+                        p.style.animationDuration = (10 + Math.random() * 20) + "s";
+                        p.style.animationDelay = (Math.random() * -20) + "s";
+                        particleContainer.appendChild(p);
+                    }
+                }
+
+                // 2. Parallax Effect on Mouse Move
+                ctaSection.addEventListener("mousemove", (e) => {
+                    if (window.innerWidth < 992) return; // Desktop only
+                    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+                    // Move canvas opposite to mouse
+                    if (canvas) canvas.style.transform = `translate(${-x}px, ${-y}px)`;
+                    // Move card slightly with mouse (depth effect) - manual since CSS float also runs
+                    // Note: This might conflict with the CSS keyframe transform 'lp-float'. 
+                    // To avoid conflict, we apply parallax to a wrapper or rely on CSS float only.
+                    // For now, let's leave the card float pure CSS and only parallax the background for stability.
+                });
+
+                // 3. Button Hover Ripple (Visual sync with background)
+                if (btn) {
+                    btn.addEventListener("mouseenter", () => {
+                        const waves = document.querySelectorAll(".lp-wave-path");
+                        waves.forEach(w => w.style.animationDuration = "2s");
+                    });
+                    btn.addEventListener("mouseleave", () => {
+                        const waves = document.querySelectorAll(".lp-wave-path");
+                        waves.forEach(w => w.style.animationDuration = ""); // Reset
+                    });
+                }
+
+                // 4. Mock Context Tags (simulating user journey)
+                const mockInterests = ["ISO 7", "Pharma"];
+                if (mockInterests.length > 0 && tagsContainer) {
+                    tagsContainer.style.display = "flex";
+                    const label = document.createElement("span");
+                    label.textContent = "You explored:";
+                    label.style.fontSize = "12px";
+                    label.style.color = "#9aa5b1";
+                    label.style.marginRight = "5px";
+                    label.style.display = "flex";
+                    label.style.alignItems = "center";
+                    tagsContainer.appendChild(label);
+
+                    mockInterests.forEach(text => {
+                        const tag = document.createElement("span");
+                        tag.className = "lp-tag";
+                        tag.textContent = text;
+                        tagsContainer.appendChild(tag);
+                    });
+                }
+            })();
+        });
+    </script>
 </body>
 
 </html>
