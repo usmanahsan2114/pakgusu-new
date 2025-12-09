@@ -3,7 +3,6 @@
 // =========================================
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Banner Wave Animation Initialized");
     // Currently, the animation is pure CSS. 
     // This file is reserved for future complex interactions if needed.
 });
