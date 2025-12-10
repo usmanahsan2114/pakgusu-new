@@ -1022,8 +1022,12 @@
                 // Helpers
                 function latLngToPercent(lat, lng) {
                     // Equirectangular projection mapping
-                    const x = ((lng + 180) / 360) * 100;
-                    const y = ((90 - lat) / 180) * 100;
+                    // Adjusted to align with map background (Left & Down)
+                    const offsetX = -1.5;
+                    const offsetY = 1.5;
+
+                    const x = ((lng + 180) / 360) * 100 + offsetX;
+                    const y = ((90 - lat) / 180) * 100 + offsetY;
                     return { x, y };
                 }
 
