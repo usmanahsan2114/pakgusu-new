@@ -65,7 +65,9 @@
 
         toggleSubmenu: function (e) {
             const toggle = e.currentTarget;
-            const submenu = toggle.nextElementSibling;
+            // Traverse up to wrapper to find the submenu sibling
+            const wrapper = toggle.closest('.gh-mobile-link-wrapper');
+            const submenu = wrapper ? wrapper.nextElementSibling : toggle.nextElementSibling;
 
             toggle.classList.toggle('active');
             if (submenu) {
