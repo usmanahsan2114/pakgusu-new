@@ -95,6 +95,35 @@
                 icon.classList.remove('fa-sun-o');
                 icon.classList.add('fa-moon-o');
             }
+
+            this.updateLogo(newTheme);
+        },
+
+        updateLogo: function (theme) {
+            const logo = document.querySelector('.gh-logo img');
+            if (!logo) return;
+
+            const currentSrc = logo.getAttribute('src');
+            // Prevent errors if src is missing
+            if (!currentSrc) return;
+
+            let newSrc = currentSrc;
+
+            if (theme === 'dark') {
+                // Switch to logo2.png (Dark Mode Logo)
+                if (currentSrc.includes('logo1.png')) {
+                    newSrc = currentSrc.replace('logo1.png', 'logo2.png');
+                }
+            } else {
+                // Switch to logo1.png (Light Mode Logo)
+                if (currentSrc.includes('logo2.png')) {
+                    newSrc = currentSrc.replace('logo2.png', 'logo1.png');
+                }
+            }
+
+            if (newSrc !== currentSrc) {
+                logo.setAttribute('src', newSrc);
+            }
         },
 
         checkTheme: function () {
@@ -108,6 +137,7 @@
                         icon.classList.add('fa-sun-o');
                     }
                 }
+                this.updateLogo(savedTheme);
             }
         },
 
