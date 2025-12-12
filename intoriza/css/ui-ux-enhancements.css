@@ -1465,3 +1465,13 @@ a:active {
     color: #ffffff !important;
     border-color: #444 !important;
 }
+
+/* Ensure breadcrumbs remain white on dark banners in dark mode */
+[data-theme="dark"] .wt-breadcrumb li,
+[data-theme="dark"] .wt-breadcrumb li a {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .wt-breadcrumb li a:hover {
+    color: var(--secondary-color) !important;
+}
