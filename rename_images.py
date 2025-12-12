@@ -1,11 +1,12 @@
-
 import os
 import shutil
 
-base_dir = r"c:\xampp\htdocs\pakgusu-1\intoriza\pakgusu-new\intoriza\images\products\WINDOW PRODUCTS"
+base_dir = r"c:\xampp\htdocs\pakgusu-1\intoriza\pakgusu-new\intoriza\images\resources"
 
 def to_kebab_case(name):
-    return name.lower().replace(" & ", "-").replace(" – ", "-").replace(" ", "-").replace("---", "-").replace("--", "-")
+    # Remove parentheses, handle double spaces, ampersands
+    name = name.replace("(", "-").replace(")", "")
+    return name.lower().replace("  ", "-").replace(" & ", "-").replace(" – ", "-").replace(" ", "-").replace("---", "-").replace("--", "-")
 
 def rename_recursive(directory):
     for root, dirs, files in os.walk(directory, topdown=False):
