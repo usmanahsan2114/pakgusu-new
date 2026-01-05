@@ -236,21 +236,21 @@ jQuery(document).ready(function ($) {
             standard: {
                 title: 'Standard View',
                 desc: 'Cost-effective panel for non-fire-rated, non-ESD areas.',
-                img: '../../images/gallery/pic1.jpg',
+                img: '../../images/products/window-products/types-options/strandard-view.webp',
                 stats: { fire: 'None', esd: 'None', iso: 'ISO 7-9', cost: '●○○○' },
                 defaults: ['glazing-single']
             },
             fire: {
                 title: 'Fire Rated (60 Min)',
                 desc: 'Certified borosilicate glass and thermal insulation for fire compartments.',
-                img: '../../images/gallery/pic2.jpg',
+                img: '../../images/products/window-products/types-options/fire.webp',
                 stats: { fire: '60 Min', esd: 'None', iso: 'ISO 7-8', cost: '●●●○' },
                 defaults: ['glazing-double', 'addon-tint']
             },
             esd: {
                 title: 'Anti-Static / ESD',
                 desc: 'Dissipative coating and grounding points for electronics assembly.',
-                img: '../../images/gallery/pic3.jpg',
+                img: '../../images/products/window-products/types-options/anti-static.webp',
                 stats: { fire: 'None', esd: 'Yes', iso: 'ISO 5-7', cost: '●●○○' },
                 defaults: ['glazing-double']
             }

@@ -127,6 +127,24 @@
         },
 
         checkTheme: function () {
+            // Check for forced theme on body (e.g. for pages that must start in light mode)
+            const forcedTheme = document.body.getAttribute('data-force-theme');
+            if (forcedTheme) {
+                document.documentElement.setAttribute('data-theme', forcedTheme);
+                this.updateLogo(forcedTheme);
+                if (this.themeToggle) {
+                    const icon = this.themeToggle.querySelector('i');
+                    if (forcedTheme === 'dark') {
+                        icon.classList.remove('fa-moon-o');
+                        icon.classList.add('fa-sun-o');
+                    } else {
+                        icon.classList.remove('fa-sun-o');
+                        icon.classList.add('fa-moon-o');
+                    }
+                }
+                return;
+            }
+
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 document.documentElement.setAttribute('data-theme', savedTheme);
